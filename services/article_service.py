@@ -29,7 +29,7 @@ def update_article(article_id: int, new_article: Article):
     article.quantiteStock = new_article.quantiteStock
     session.commit()
 
-def delete_article(article_id) -> bool:
+def delete_article_by_id(article_id: id) -> bool:
     article = session.query(Article).filter_by(Article.numeroArticle==article_id).one_or_none()
     if article:
         session.delete(article)
@@ -39,12 +39,16 @@ def delete_article(article_id) -> bool:
         return False
 
 def delete_article_by_id(article_id) -> bool:
-    session.query(Article).filter_by(numeroArticle=article_id).delete()
+    article = session.query(Article).where(Article.numeroArticle == article_id).delete()
     session.commit()
     return True
 
 def get_article_by_name(article_name):
     articles = session.query(Article).filter(Article.libelle.contains(article_name)).all()
+    return articles
+
+def get_article_by_price(article_price):
+    articles = session.query(Article).where(Article.prixUnitaire == article_price).order_by(Article.quantiteStock.asc()).all()
     return articles
 
 

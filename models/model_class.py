@@ -8,7 +8,7 @@ class Client(Base):
 
     numeroClient = Column(Integer, primary_key=True, autoincrement=True)
     nom : Mapped[str_50]
-    adresse : Mapped[str_30]
+    adresse : Mapped[str_50]
     telephone : Mapped[str_10]
     commandes: Mapped[list["Commande"]] = relationship()
     factures: Mapped[list["Facture"]] = relationship()

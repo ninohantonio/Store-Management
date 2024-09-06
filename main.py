@@ -1,28 +1,25 @@
-from models.model_class import Article
+from models.model_class import Article, Client
+from services.client_service import insert_new_client, get_all_client, get_client_by_id, update_client, \
+    get_client_by_name, delete_client_by_id
 
-from services.article_service import insert_new_article, get_all_article, update_article, get_article_by_id
 
-
-def print_article(articles):
+def print_article(client):
     # for article in articles:
     print(f"""
-                   numero article = {article.numeroArticle}
-                   libelle = {article.libelle}
-                   prix Unitaire = {article.prixUnitaire}
-                   quantite en Stock = {article.quantiteStock}
-                   date d'Entrer en stock = {article.dateEntrer}
-                   article description = {article.description}
+                id = {client.numeroClient}
+                nom = {client.nom}
+                adresse = {client.adresse}
+                telephone = {client.telephone}
            """)
 
-new_article = Article(libelle = "Stylo schneider", quantiteStock = 100, prixUnitaire=800, dateEntrer="2024-09-06", description="miampy description")
-old_article = Article(libelle = "Stylo schneider", quantiteStock = 100, prixUnitaire=800, dateEntrer="2024-09-06", description="")
+client1 = Client(nom = "RAKOTO be", adresse = "lot 1234 uidfadsidaf tanambao", telephone="0341234567")
+client2 = Client(nom = "RANDRIA kely", adresse = "lot 1234 uidfadsidaf tanambao", telephone="0343214561")
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    article = get_article_by_id(1)
-    print_article(article)
-    update_article(1, new_article)
-    print("separation")
-    article = get_article_by_id(1)
-    print_article(article)
+    delete_client_by_id(1)
+    clients = get_all_client()
+    for client in clients:
+        print_article(client)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
