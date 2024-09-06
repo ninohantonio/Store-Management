@@ -29,7 +29,7 @@ def update_article(article_id: int, new_article: Article):
     article.quantiteStock = new_article.quantiteStock
     session.commit()
 
-def delete_article_by_id(article_id: id) -> bool:
+def delete_article_by_id(article_id: int) -> bool:
     article = session.query(Article).filter_by(Article.numeroArticle==article_id).one_or_none()
     if article:
         session.delete(article)
