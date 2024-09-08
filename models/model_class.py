@@ -44,4 +44,6 @@ class Facture(Base):
     numeroClient = Column(ForeignKey("client.numeroClient"))
 
 
+
+
 Base.metadata.create_all(engine)

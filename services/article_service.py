@@ -38,10 +38,10 @@ def delete_article_by_id(article_id: int) -> bool:
     else:
         return False
 
-def delete_article_by_id(article_id) -> bool:
-    article = session.query(Article).where(Article.numeroArticle == article_id).delete()
-    session.commit()
-    return True
+# def delete_article_by_id(article_id) -> bool:
+#     article = session.query(Article).where(Article.numeroArticle == article_id).delete()
+#     session.commit()
+#     return True
 
 def get_article_by_name(article_name):
     articles = session.query(Article).filter(Article.libelle.contains(article_name)).all()

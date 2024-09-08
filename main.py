@@ -1,6 +1,7 @@
 from models.model_class import Article, Client, Base, engine, Commande
 from services.client_service import insert_new_client, get_all_client, get_client_by_id, update_client, \
     get_client_by_name, delete_client_by_id
+from services.commande_service import get_commande_by_article
 
 
 def print_article(client):
@@ -17,10 +18,10 @@ client2 = Client(nom = "RANDRIA kely", adresse = "lot 1234 uidfadsidaf tanambao"
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # delete_client_by_id(1)
-    # clients = get_all_client()
-    # for client in clients:
-    #     print_article(client)
+
+    clients = get_commande_by_article(1)
+    for client in clients:
+        print_article(client)
     pass
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

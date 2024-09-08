@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 
-from models.model_class import Commande
+from models.model_class import Commande, Client, Article
 from utils.database import engine
 
 Session = sessionmaker(bind=engine)
@@ -19,4 +19,19 @@ def get_commande_by_article(article_id: int):
     return commades
 
 def get_client_by_commande(article_id: int):
-    pass
+    clients = (session.query(Client, Commande, Article)
+               .where(Client.numeroClient == Commande.numeroClient and Article.numeroArticle == Commande.numeroArticle and Article.numeroArticle == article_id).all())
+    return clients
+
+def get_article_by_commande(client_id: int):
+    articles = session.query(Article, Commande, Client).where(Article.numeroArticle == Commande.numeroArticle and Client.numeroClient == Commande.numeroClient and Client.numeroClient == client_id).all()
+    return articles
+
+def insert_new_commande(commande: Commande):
+    session.add(commande)
+    session.commit()
+
+def delete_commande_by_id(commande_id: int):
+    commande = session.query(Commande).where(Commande.numeroCommande == commande_id).first()
+    session.delete(commande)
+    session.commit()
