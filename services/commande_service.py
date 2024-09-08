@@ -19,12 +19,12 @@ def get_commande_by_article(article_id: int):
     return commades
 
 def get_client_by_commande(article_id: int):
-    clients = (session.query(Client, Commande, Article)
+    clients = (session.query(Client)
                .where(Client.numeroClient == Commande.numeroClient and Article.numeroArticle == Commande.numeroArticle and Article.numeroArticle == article_id).all())
     return clients
 
 def get_article_by_commande(client_id: int):
-    articles = session.query(Article, Commande, Client).where(Article.numeroArticle == Commande.numeroArticle and Client.numeroClient == Commande.numeroClient and Client.numeroClient == client_id).all()
+    articles = session.query(Article).where(Article.numeroArticle == Commande.numeroArticle and Client.numeroClient == Commande.numeroClient and Client.numeroClient == client_id).all()
     return articles
 
 def insert_new_commande(commande: Commande):
