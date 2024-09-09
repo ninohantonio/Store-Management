@@ -16,7 +16,7 @@ class Client(Base):
 class Article(Base):
     __tablename__: str = "article"
 
-    numeroArticle = Column(Integer, primary_key=True, autoincrement=True)
+    numeroArticle = Column(String(13), primary_key=True)
     libelle: Mapped[str_20]
     quantiteStock: Mapped[int_small]
     prixUnitaire: Mapped[int_small]
