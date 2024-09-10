@@ -44,6 +44,10 @@ class Facture(Base):
     statutPayement: Mapped[bool] = mapped_column()
     numeroClient = Column(ForeignKey("client.numeroClient"))
 
+class Journal(Base):
+    __tablename__ = "journal"
+
+    numeroJournal = Column(Integer, primary_key=True, autoincrement=True)
 
 
 
