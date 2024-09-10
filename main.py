@@ -2,7 +2,6 @@ import sys
 
 from PySide6.QtWidgets import QApplication
 
-from models.model_class import Client
 from views.main_ui_launcher import MainWindow
 
 # Press the green button in the gutter to run the script.
