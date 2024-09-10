@@ -1,5 +1,11 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/logout.png</file>
+    <file>icons/shut-dowm.png</file>
+    <file>icons/facture.png</file>
+    <file>icons/home.png</file>
+    <file>icons/people.png</file>
+    <file>icons/stock.png</file>
     <file>icons/arrow-right.png</file>
     <file>icons/caddie.png</file>
     <file>icons/avatar.png</file>
