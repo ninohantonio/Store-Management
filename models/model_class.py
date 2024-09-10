@@ -48,6 +48,9 @@ class Journal(Base):
     __tablename__ = "journal"
 
     numeroJournal = Column(Integer, primary_key=True, autoincrement=True)
+    dateEnregistrement: Mapped[str_date_time]
+    listeArticle = Column(String)
+    typeAction = Column(String(50))
 
 
 
