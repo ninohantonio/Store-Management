@@ -1,7 +1,8 @@
 from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy.orm import Mapped, relationship, mapped_column
 
-from utils.database import Base, engine, str_50, str_10, str_30, str_date, str_date_time, int_small, str_20, str_30_optional
+from utils.database import Base, engine, str_50, str_10, str_date, str_date_time, int_small, str_20, str_30_optional
+
 
 class Client(Base):
     __tablename__: str = "client"
