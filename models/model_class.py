@@ -53,5 +53,4 @@ class Journal(Base):
     typeAction = Column(String(50))
 
 
-
 Base.metadata.create_all(engine)
