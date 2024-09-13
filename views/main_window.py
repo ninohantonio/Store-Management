@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowuEWIfs.ui'
+## Form generated from reading UI file 'main_windowbDlIwr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -258,11 +258,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.label_2)
 
-        self.lineEdit = QLineEdit(self.searchFrame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setMaximumSize(QSize(16777215, 300))
+        self.searchField = QLineEdit(self.searchFrame)
+        self.searchField.setObjectName(u"searchField")
+        self.searchField.setMaximumSize(QSize(16777215, 300))
 
-        self.horizontalLayout_5.addWidget(self.lineEdit)
+        self.horizontalLayout_5.addWidget(self.searchField)
 
 
         self.horizontalLayout_4.addWidget(self.searchFrame, 0, Qt.AlignmentFlag.AlignTop)
@@ -597,8 +597,8 @@ class Ui_MainWindow(object):
         self.menuBtn.setText("")
         self.appHeader.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
         self.label_2.setText("")
-        self.lineEdit.setText("")
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Rechercher ici . . .", None))
+        self.searchField.setText("")
+        self.searchField.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Rechercher ici . . .", None))
         self.accountBtn.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"2000,000", None))
         self.label_3.setText("")
