@@ -1,5 +1,3 @@
-from PySide6.QtWidgets import QMainWindow
-
 from views.main_window import *
 
 class MainWindow(QMainWindow):
@@ -7,7 +5,6 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.seeMoreButton.clicked.connect(lambda : self.print_search_value())
         self.show()
 
     def print_search_value(self):

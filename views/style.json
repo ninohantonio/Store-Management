@@ -1,0 +1,36 @@
+{
+  "QCustomSlideMenu": [{
+      "name": "leftMenu",
+      "defaultSize": [{
+			"width": 250,
+			"height": "auto"
+		}],
+
+      "collapsedSize": [{
+              "width": 50,
+              "height": "auto"
+		}],
+
+      "expandedSize": [{
+              "width": 250,
+              "height": "auto"
+		}],
+
+      "menuTransitionAnimation": [{
+			"animationDuration": 1000,
+			"animationEasingCurve": "OutInBack"
+		}],
+
+      "toggleButton": [{
+			"buttonName": "my_toggle_button"
+		}],
+
+      "floatPosition": [
+			{
+				"relativeTo": "centralwidget"
+			}
+		],
+
+
+	}]
+}
