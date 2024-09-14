@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowNglKdb.ui'
+## Form generated from reading UI file 'main_windowNXkYvW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-import resources_rc
+import views.resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
