@@ -1,3 +1,5 @@
+
+from Custom_Widgets.Widgets import *
 from views.main_window import *
 
 class MainWindow(QMainWindow):
@@ -5,6 +7,7 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        loadJsonStyle(self, self.ui)
         self.show()
 
     def print_search_value(self):

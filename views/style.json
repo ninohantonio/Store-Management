@@ -22,14 +22,18 @@
 		}],
 
       "toggleButton": [{
-			"buttonName": "my_toggle_button"
+			"buttonName": "my_toggle_button",
+		  	"icons": [{
+				"whenMenuIsCollapsed": ":/icons/icons/burger-menu.png",
+				"whenMenuIsExpanded": ":/icons/icons/burger-menu.png"
+			}]
 		}],
 
       "floatPosition": [
 			{
 				"relativeTo": "centralwidget"
 			}
-		],
+		]
 
 
 	}]
