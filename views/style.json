@@ -1,40 +1,48 @@
 {
-  "QCustomSlideMenu": [{
-      "name": "leftMenu",
-      "defaultSize": [{
+	"QMainWindow": [{
+		"title": "Irina Service"
+	}],
+
+	"QSettings": [{
+		"ThemeSettings": [{
+			"CustomTheme": []
+		}],
+		"AppSettings": {
+			"OrganizationName": "Irina Service",
+			"ApplicationName": "Store-Management",
+			"OrganizationDomain": "Irina Service"
+		}
+	}],
+
+	"QCustomSlideMenu": [{
+		"name": "leftMenu",
+		"defaultSize": [{
 			"width": 250,
 			"height": "auto"
 		}],
-
-      "collapsedSize": [{
-              "width": 50,
-              "height": "auto"
+		"collapsedSize": [{
+			"width": 53,
+			"height": "parent"
 		}],
-
-      "expandedSize": [{
-              "width": 250,
-              "height": "auto"
+		"expandedSize": [{
+			"width": 200,
+			"height": "parent"
 		}],
+		"toggleButton": [{
+			"buttonName": "menuBtn"
 
-      "menuTransitionAnimation": [{
-			"animationDuration": 1000,
-			"animationEasingCurve": "OutInBack"
 		}],
-
-      "toggleButton": [{
-			"buttonName": "my_toggle_button",
-		  	"icons": [{
-				"whenMenuIsCollapsed": ":/icons/icons/burger-menu.png",
-				"whenMenuIsExpanded": ":/icons/icons/burger-menu.png"
+		"menuTransitionAnimation": [{
+			"animationDuration": 700,
+			"animationEasingCurve": "Linear",
+			"whenCollapsing": [{
+				"animationDuration": 500,
+				"animationEasingCurve": "Linear"
+			}],
+			"whenExpanding": [{
+				"animationDuration": 500,
+				"animationEasingCurve": "Linear"
 			}]
-		}],
-
-      "floatPosition": [
-			{
-				"relativeTo": "centralwidget"
-			}
-		]
-
-
+		}]
 	}]
 }

@@ -2,12 +2,13 @@
 from Custom_Widgets.Widgets import *
 from views.main_window import *
 
+settings = QSettings()
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        loadJsonStyle(self, self.ui)
+        loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
         self.show()
 
     def print_search_value(self):

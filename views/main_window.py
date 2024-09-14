@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowniwimG.views'
+## Form generated from reading UI file 'main_windowoQRgBj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -18,6 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
+
+from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
 import views.resources_rc
 
 class Ui_MainWindow(object):
@@ -37,7 +39,7 @@ class Ui_MainWindow(object):
 "	color: #000;\n"
 "	border: none;\n"
 "}\n"
-"#leftMenu{\n"
+"#leftMenu,QCustomSlideMenu{\n"
 "	background-color: #2596be;\n"
 "}\n"
 "\n"
@@ -88,7 +90,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(-1, -1, 0, -1)
-        self.leftMenu = QWidget(self.centralwidget)
+        self.leftMenu = QCustomSlideMenu(self.centralwidget)
         self.leftMenu.setObjectName(u"leftMenu")
         self.verticalLayout_7 = QVBoxLayout(self.leftMenu)
         self.verticalLayout_7.setSpacing(0)
@@ -468,7 +470,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
