@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, ForeignKey, String
+from sqlalchemy import Column, Integer, ForeignKey, String, DateTime, Date
 from sqlalchemy.orm import Mapped, relationship, mapped_column
 
 from utils.database import Base, engine, str_50, str_10, str_date, str_date_time, int_small, str_20, str_30_optional
@@ -19,9 +19,11 @@ class Article(Base):
 
     numeroArticle = Column(String(13), primary_key=True)
     libelle: Mapped[str_20]
+    pieceParPaquet: Mapped[int_small]
     quantiteStock: Mapped[int_small]
+    margeApprovisionnement: Mapped[int_small]
     prixUnitaire: Mapped[int_small]
-    dateEntrer: Mapped[str_date]
+    dateEntrer = Column(Date)
     description: Mapped[str_30_optional]
     commandes: Mapped[list["Commande"]] = relationship()
 
@@ -39,7 +41,7 @@ class Facture(Base):
     __tablename__ = "facture"
 
     numeroFacture = Column(String(10), primary_key=True, unique=True)
-    dateEnregistrement: Mapped[str_date_time]
+    dateEnregistrement = Column(DateTime)
     listeArticle = Column(String)
     statutPayement: Mapped[bool] = mapped_column()
     numeroClient = Column(ForeignKey("client.numeroClient"))
@@ -48,7 +50,7 @@ class Journal(Base):
     __tablename__ = "journal"
 
     numeroJournal = Column(Integer, primary_key=True, autoincrement=True)
-    dateEnregistrement: Mapped[str_date_time]
+    dateEnregistrement = Column(DateTime)
     listeArticle = Column(String)
     typeAction = Column(String(50))
 
