@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowoQRgBj.ui'
+## Form generated from reading UI file 'main_windowNglKdb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-import views.resources_rc
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -153,6 +153,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(12)
         font1.setBold(False)
         self.accueilBtn.setFont(font1)
+        self.accueilBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon = QIcon()
         icon.addFile(u":/icons/icons/home.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.accueilBtn.setIcon(icon)
@@ -165,6 +166,7 @@ class Ui_MainWindow(object):
         font2 = QFont()
         font2.setPointSize(12)
         self.stockBtn.setFont(font2)
+        self.stockBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon1 = QIcon()
         icon1.addFile(u":/icons/icons/stock.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.stockBtn.setIcon(icon1)
@@ -175,6 +177,7 @@ class Ui_MainWindow(object):
         self.clientBtn = QPushButton(self.menuFrame)
         self.clientBtn.setObjectName(u"clientBtn")
         self.clientBtn.setFont(font2)
+        self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon2 = QIcon()
         icon2.addFile(u":/icons/icons/people.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.clientBtn.setIcon(icon2)
@@ -185,6 +188,7 @@ class Ui_MainWindow(object):
         self.factureBtn = QPushButton(self.menuFrame)
         self.factureBtn.setObjectName(u"factureBtn")
         self.factureBtn.setFont(font2)
+        self.factureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon3 = QIcon()
         icon3.addFile(u":/icons/icons/facture.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.factureBtn.setIcon(icon3)
@@ -195,6 +199,7 @@ class Ui_MainWindow(object):
         self.journalBtn = QPushButton(self.menuFrame)
         self.journalBtn.setObjectName(u"journalBtn")
         self.journalBtn.setFont(font2)
+        self.journalBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.journalBtn.setIcon(icon3)
         self.journalBtn.setIconSize(QSize(19, 19))
 
@@ -214,18 +219,33 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.settingBtn = QPushButton(self.frame_6)
         self.settingBtn.setObjectName(u"settingBtn")
+        self.settingBtn.setFont(font2)
+        self.settingBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.settingBtn.setIcon(icon4)
+        self.settingBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_2.addWidget(self.settingBtn)
 
         self.helpBtn = QPushButton(self.frame_6)
         self.helpBtn.setObjectName(u"helpBtn")
+        self.helpBtn.setFont(font2)
+        self.helpBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/icons/about.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.helpBtn.setIcon(icon5)
+        self.helpBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_2.addWidget(self.helpBtn)
 
         self.abouBtn = QPushButton(self.frame_6)
         self.abouBtn.setObjectName(u"abouBtn")
         self.abouBtn.setFont(font2)
-        self.abouBtn.setIcon(icon1)
+        self.abouBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.abouBtn.setIcon(icon6)
         self.abouBtn.setIconSize(QSize(22, 22))
 
         self.verticalLayout_2.addWidget(self.abouBtn)
@@ -268,9 +288,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.menuBtn = QPushButton(self.widget)
         self.menuBtn.setObjectName(u"menuBtn")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.menuBtn.setIcon(icon4)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.menuBtn.setIcon(icon7)
         self.menuBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_3.addWidget(self.menuBtn)
@@ -327,9 +347,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.accountBtn = QPushButton(self.widget_3)
         self.accountBtn.setObjectName(u"accountBtn")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.accountBtn.setIcon(icon5)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.accountBtn.setIcon(icon8)
         self.accountBtn.setIconSize(QSize(30, 30))
 
         self.horizontalLayout_6.addWidget(self.accountBtn)
@@ -453,9 +473,9 @@ class Ui_MainWindow(object):
 
         self.pushButton_5 = QPushButton(self.frame_10)
         self.pushButton_5.setObjectName(u"pushButton_5")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_5.setIcon(icon6)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_5.setIcon(icon9)
         self.pushButton_5.setIconSize(QSize(18, 18))
 
         self.verticalLayout_12.addWidget(self.pushButton_5, 0, Qt.AlignmentFlag.AlignTop)
