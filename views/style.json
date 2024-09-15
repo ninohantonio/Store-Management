@@ -1,6 +1,6 @@
 {
 	"QMainWindow": [{
-		"title": "Irina Service"
+		"title": "Irina Services"
 	}],
 
 	"QSettings": [{
@@ -44,5 +44,23 @@
 				"animationEasingCurve": "Linear"
 			}]
 		}]
+	}],
+
+	"QPushButtonGroup": [{
+		"Buttons": [
+			"accueilBtn",
+			"stockBtn",
+			"clientBtn",
+			"factureBtn",
+			"journalBtn",
+			"settingBtn",
+			"aboutBtn",
+			"helpBtn"
+		],
+		"Style": [{
+			"Active": "background-color: #fefeff;border-top-left-radius: 15px;",
+			"NotActive": "background-color: transparent;"
+		}]
+
 	}]
 }

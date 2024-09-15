@@ -75,7 +75,16 @@ QLineEdit{
 }</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
     <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
      <number>0</number>
     </property>
     <item>
@@ -422,7 +431,7 @@ QLineEdit{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="abouBtn">
+                    <widget class="QPushButton" name="aboutBtn">
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>

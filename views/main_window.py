@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowNXkYvW.ui'
+## Form generated from reading UI file 'main_windowsQrbsX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -89,7 +89,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(-1, -1, 0, -1)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.leftMenu = QCustomSlideMenu(self.centralwidget)
         self.leftMenu.setObjectName(u"leftMenu")
         self.verticalLayout_7 = QVBoxLayout(self.leftMenu)
@@ -239,16 +239,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.helpBtn)
 
-        self.abouBtn = QPushButton(self.frame_6)
-        self.abouBtn.setObjectName(u"abouBtn")
-        self.abouBtn.setFont(font2)
-        self.abouBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.aboutBtn = QPushButton(self.frame_6)
+        self.aboutBtn.setObjectName(u"aboutBtn")
+        self.aboutBtn.setFont(font2)
+        self.aboutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon6 = QIcon()
         icon6.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.abouBtn.setIcon(icon6)
-        self.abouBtn.setIconSize(QSize(22, 22))
+        self.aboutBtn.setIcon(icon6)
+        self.aboutBtn.setIconSize(QSize(22, 22))
 
-        self.verticalLayout_2.addWidget(self.abouBtn)
+        self.verticalLayout_2.addWidget(self.aboutBtn)
 
 
         self.verticalLayout_9.addWidget(self.frame_6)
@@ -506,7 +506,7 @@ class Ui_MainWindow(object):
         self.journalBtn.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
         self.settingBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
-        self.abouBtn.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.menuBtn.setText("")
         self.appHeader.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
         self.label_2.setText("")
