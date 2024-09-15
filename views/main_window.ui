@@ -168,6 +168,12 @@ QLineEdit{
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="frameShape">
              <enum>QFrame::Shape::StyledPanel</enum>
             </property>
@@ -661,11 +667,11 @@ QLineEdit{
         </widget>
        </item>
        <item>
-        <widget class="QCustomStackedWidget" name="stackedWidget">
+        <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
-         <widget class="QWidget" name="page">
+         <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
            <property name="geometry">
             <rect>
@@ -701,7 +707,7 @@ QLineEdit{
            </widget>
           </widget>
          </widget>
-         <widget class="QWidget" name="page_2">
+         <widget class="QWidget" name="stockPage">
           <widget class="QFrame" name="frame_2">
            <property name="geometry">
             <rect>
@@ -737,7 +743,7 @@ QLineEdit{
            </widget>
           </widget>
          </widget>
-         <widget class="QWidget" name="page_3">
+         <widget class="QWidget" name="clientPage">
           <widget class="QFrame" name="frame_3">
            <property name="geometry">
             <rect>
@@ -773,7 +779,7 @@ QLineEdit{
            </widget>
           </widget>
          </widget>
-         <widget class="QWidget" name="page_4">
+         <widget class="QWidget" name="facturePage">
           <widget class="QFrame" name="frame_4">
            <property name="geometry">
             <rect>
@@ -809,7 +815,7 @@ QLineEdit{
            </widget>
           </widget>
          </widget>
-         <widget class="QWidget" name="page_5">
+         <widget class="QWidget" name="journalPage">
           <widget class="QFrame" name="frame_5">
            <property name="geometry">
             <rect>
@@ -963,9 +969,9 @@ QLineEdit{
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QCustomStackedWidget</class>
+   <class>QCustomQStackedWidget</class>
    <extends>QStackedWidget</extends>
-   <header location="global">Custom_Widgets.Widgets.h</header>
+   <header location="global">Custom_Widgets.QCustomQStackedWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

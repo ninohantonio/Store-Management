@@ -62,5 +62,46 @@
 			"NotActive": "background-color: transparent;"
 		}]
 
-	}]
+	}],
+
+
+
+	"QCustomQStackedWidget":[
+		{
+			"name":"mainNavigationScreen",
+			"transitionAnimation":[
+				{
+					"fade":[
+						{
+							"active": true,
+							"duration":1000,
+							"easingCurve": "OutBack"
+						}
+					],
+					"slide":[
+						{
+							"active":true,
+							"duration": 1000,
+							"direction": "horizontal",
+							"easingCurve": "OutBack"
+						}
+					]
+				}
+			],
+			"navigation":[
+				{
+					"navigationButtons":[
+						{
+							"accueilBtn": "homePage",
+							"stockBtn": "stockPage",
+							"clientBtn": "clientPage",
+							"factureBtn": "facturePage",
+							"journalBtn": "journalPage"
+						}
+					]
+				}
+			]
+
+		}
+	]
 }

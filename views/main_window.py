@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowLVCIFg.ui'
+## Form generated from reading UI file 'main_windowUSyVrq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -19,8 +19,8 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QVBoxLayout, QWidget)
 
+from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-from Custom_Widgets.Widgets import QCustomStackedWidget
 import views.resources_rc
 
 class Ui_MainWindow(object):
@@ -132,6 +132,7 @@ class Ui_MainWindow(object):
         self.frame_9.setObjectName(u"frame_9")
         sizePolicy.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
         self.frame_9.setSizePolicy(sizePolicy)
+        self.frame_9.setMinimumSize(QSize(200, 0))
         self.frame_9.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_9.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_10 = QVBoxLayout(self.frame_9)
@@ -361,11 +362,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.headerFrame, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.stackedWidget = QCustomStackedWidget(self.mainContainer)
-        self.stackedWidget.setObjectName(u"stackedWidget")
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.frame = QFrame(self.page)
+        self.mainNavigationScreen = QCustomQStackedWidget(self.mainContainer)
+        self.mainNavigationScreen.setObjectName(u"mainNavigationScreen")
+        self.homePage = QWidget()
+        self.homePage.setObjectName(u"homePage")
+        self.frame = QFrame(self.homePage)
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(30, 20, 401, 80))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -376,10 +377,10 @@ class Ui_MainWindow(object):
         font4 = QFont()
         font4.setPointSize(15)
         self.label.setFont(font4)
-        self.stackedWidget.addWidget(self.page)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.frame_2 = QFrame(self.page_2)
+        self.mainNavigationScreen.addWidget(self.homePage)
+        self.stockPage = QWidget()
+        self.stockPage.setObjectName(u"stockPage")
+        self.frame_2 = QFrame(self.stockPage)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setGeometry(QRect(30, 30, 401, 80))
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
@@ -388,10 +389,10 @@ class Ui_MainWindow(object):
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(60, 20, 141, 31))
         self.label_3.setFont(font4)
-        self.stackedWidget.addWidget(self.page_2)
-        self.page_3 = QWidget()
-        self.page_3.setObjectName(u"page_3")
-        self.frame_3 = QFrame(self.page_3)
+        self.mainNavigationScreen.addWidget(self.stockPage)
+        self.clientPage = QWidget()
+        self.clientPage.setObjectName(u"clientPage")
+        self.frame_3 = QFrame(self.clientPage)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setGeometry(QRect(40, 30, 401, 80))
         self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
@@ -400,10 +401,10 @@ class Ui_MainWindow(object):
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(60, 20, 141, 31))
         self.label_4.setFont(font4)
-        self.stackedWidget.addWidget(self.page_3)
-        self.page_4 = QWidget()
-        self.page_4.setObjectName(u"page_4")
-        self.frame_4 = QFrame(self.page_4)
+        self.mainNavigationScreen.addWidget(self.clientPage)
+        self.facturePage = QWidget()
+        self.facturePage.setObjectName(u"facturePage")
+        self.frame_4 = QFrame(self.facturePage)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setGeometry(QRect(40, 30, 401, 80))
         self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
@@ -412,10 +413,10 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(60, 20, 141, 31))
         self.label_5.setFont(font4)
-        self.stackedWidget.addWidget(self.page_4)
-        self.page_5 = QWidget()
-        self.page_5.setObjectName(u"page_5")
-        self.frame_5 = QFrame(self.page_5)
+        self.mainNavigationScreen.addWidget(self.facturePage)
+        self.journalPage = QWidget()
+        self.journalPage.setObjectName(u"journalPage")
+        self.frame_5 = QFrame(self.journalPage)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setGeometry(QRect(30, 30, 401, 80))
         self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
@@ -424,9 +425,9 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(80, 20, 141, 31))
         self.label_6.setFont(font4)
-        self.stackedWidget.addWidget(self.page_5)
+        self.mainNavigationScreen.addWidget(self.journalPage)
 
-        self.verticalLayout.addWidget(self.stackedWidget)
+        self.verticalLayout.addWidget(self.mainNavigationScreen)
 
 
         self.horizontalLayout.addWidget(self.mainContainer)
@@ -491,7 +492,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
