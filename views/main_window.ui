@@ -661,7 +661,7 @@ QLineEdit{
         </widget>
        </item>
        <item>
-        <widget class="QStackedWidget" name="stackedWidget">
+        <widget class="QCustomStackedWidget" name="stackedWidget">
          <property name="currentIndex">
           <number>3</number>
          </property>
@@ -960,6 +960,12 @@ QLineEdit{
    <class>QCustomSlideMenu</class>
    <extends>QWidget</extends>
    <header location="global">Custom_Widgets.QCustomSlideMenu.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QCustomStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">Custom_Widgets.Widgets.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

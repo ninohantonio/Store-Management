@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowsQrbsX.ui'
+## Form generated from reading UI file 'main_windowLVCIFg.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -17,9 +17,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
+    QSpacerItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
+from Custom_Widgets.Widgets import QCustomStackedWidget
 import views.resources_rc
 
 class Ui_MainWindow(object):
@@ -360,7 +361,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.headerFrame, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.stackedWidget = QStackedWidget(self.mainContainer)
+        self.stackedWidget = QCustomStackedWidget(self.mainContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.page = QWidget()
         self.page.setObjectName(u"page")
