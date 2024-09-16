@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowraZgNV.ui'
+## Form generated from reading UI file 'main_windowgaJczm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -440,7 +440,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.profileMenu = QCustomSlideMenu(self.profileContainer)
         self.profileMenu.setObjectName(u"profileMenu")
-        self.profileMenu.setMinimumSize(QSize(100, 0))
+        self.profileMenu.setMinimumSize(QSize(100, 150))
         self.verticalLayout_12 = QVBoxLayout(self.profileMenu)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)

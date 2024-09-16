@@ -14,37 +14,80 @@
 		}
 	}],
 
-	"QCustomSlideMenu": [{
-		"name": "leftMenu",
-		"defaultSize": [{
-			"width": 250,
-			"height": "auto"
-		}],
-		"collapsedSize": [{
-			"width": 53,
-			"height": "parent"
-		}],
-		"expandedSize": [{
-			"width": 200,
-			"height": "parent"
-		}],
-		"toggleButton": [{
-			"buttonName": "menuBtn"
-
-		}],
-		"menuTransitionAnimation": [{
-			"animationDuration": 700,
-			"animationEasingCurve": "Linear",
-			"whenCollapsing": [{
-				"animationDuration": 500,
-				"animationEasingCurve": "Linear"
+	"QCustomSlideMenu": [
+		{
+			"name": "leftMenu",
+			"defaultSize": [{
+				"width": 250,
+				"height": "auto"
 			}],
-			"whenExpanding": [{
-				"animationDuration": 500,
-				"animationEasingCurve": "Linear"
+			"collapsedSize": [{
+				"width": 53,
+				"height": "parent"
+			}],
+			"expandedSize": [{
+				"width": 200,
+				"height": "parent"
+			}],
+			"toggleButton": [{
+				"buttonName": "menuBtn"
+
+			}],
+			"menuTransitionAnimation": [{
+				"animationDuration": 700,
+				"animationEasingCurve": "Linear",
+				"whenCollapsing": [{
+					"animationDuration": 500,
+					"animationEasingCurve": "Linear"
+				}],
+				"whenExpanding": [{
+					"animationDuration": 500,
+					"animationEasingCurve": "Linear"
+				}]
 			}]
-		}]
-	}],
+		},
+		{
+			"name": "profileMenu",
+			"defaultSize": [{
+				"width": 120,
+				"height": 150
+			}],
+			"collapsedSize": [{
+				"width": 0,
+				"height": 150
+			}],
+			"expandedSize": [{
+				"width": 120,
+				"height": 150
+			}],
+			"toggleButton": [{
+				"buttonName": "accountBtn",
+
+				"style": [{
+					"whenMenuIsCollapsed": [
+						"border: 1px solid transparent; border-radius: 10px;"
+					],
+					"whenMenuIsExpanded": [
+						"border: 1px solid rgb(9, 5, 13); border-radius: 10px;"
+					]
+				}]
+			}],
+			"menuTransitionAnimation": [{
+				"animationDuration": 700,
+				"animationEasingCurve": "Linear",
+				"whenCollapsing": [{
+					"animationDuration": 700,
+					"animationEasingCurve": "Linear"
+				}],
+				"whenExpanding": [{
+					"animationDuration": 700,
+					"animationEasingCurve": "Linear"
+				}]
+			}]
+		}
+	],
+
+
 
 	"QPushButtonGroup": [{
 		"Buttons": [

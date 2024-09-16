@@ -879,7 +879,7 @@ QLineEdit{
          <property name="minimumSize">
           <size>
            <width>100</width>
-           <height>0</height>
+           <height>150</height>
           </size>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
