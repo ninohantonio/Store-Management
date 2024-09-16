@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowUSyVrq.ui'
+## Form generated from reading UI file 'main_windowraZgNV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -438,14 +438,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.frame_10 = QFrame(self.profileContainer)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setMinimumSize(QSize(100, 0))
-        self.frame_10.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.frame_10)
+        self.profileMenu = QCustomSlideMenu(self.profileContainer)
+        self.profileMenu.setObjectName(u"profileMenu")
+        self.profileMenu.setMinimumSize(QSize(100, 0))
+        self.verticalLayout_12 = QVBoxLayout(self.profileMenu)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.label_18 = QLabel(self.frame_10)
+        self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
         font5 = QFont()
         font5.setPointSize(12)
@@ -455,25 +453,25 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.label_18, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.label_17 = QLabel(self.frame_10)
+        self.label_17 = QLabel(self.profileMenu)
         self.label_17.setObjectName(u"label_17")
         self.label_17.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_17, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.label_16 = QLabel(self.frame_10)
+        self.label_16 = QLabel(self.profileMenu)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setPixmap(QPixmap(u":/icons/icons/avatar.png"))
         self.label_16.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_16, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
-        self.pushButton = QPushButton(self.frame_10)
+        self.pushButton = QPushButton(self.profileMenu)
         self.pushButton.setObjectName(u"pushButton")
 
         self.verticalLayout_12.addWidget(self.pushButton, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.pushButton_5 = QPushButton(self.frame_10)
+        self.pushButton_5 = QPushButton(self.profileMenu)
         self.pushButton_5.setObjectName(u"pushButton_5")
         icon9 = QIcon()
         icon9.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -483,7 +481,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.addWidget(self.pushButton_5, 0, Qt.AlignmentFlag.AlignTop)
 
 
-        self.verticalLayout_11.addWidget(self.frame_10, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTop)
+        self.verticalLayout_11.addWidget(self.profileMenu)
 
 
         self.horizontalLayout.addWidget(self.profileContainer, 0, Qt.AlignmentFlag.AlignTop)

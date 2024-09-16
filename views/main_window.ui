@@ -874,19 +874,13 @@ QLineEdit{
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop">
-        <widget class="QFrame" name="frame_10">
+       <item>
+        <widget class="QCustomSlideMenu" name="profileMenu" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>0</height>
           </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
           <item alignment="Qt::AlignmentFlag::AlignTop">
