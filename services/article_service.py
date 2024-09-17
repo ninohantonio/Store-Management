@@ -51,4 +51,7 @@ def get_article_by_price(article_price):
     articles = session.query(Article).where(Article.prixUnitaire == article_price).order_by(Article.quantiteStock.asc()).all()
     return articles
 
+def verify_article_by_id(article_id):
+    return session.query(Article).filter_by(numeroArticle=article_id).first() is not None
+
 
