@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windoweJbURV.ui'
+## Form generated from reading UI file 'main_windowdUoevv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
 "	color: #000;\n"
 "	border: none;\n"
 "}\n"
-"#leftMenu,QCustomSlideMenu{\n"
+"#leftMenu, QCustomSlideMenu{\n"
 "	background-color: #2596be;\n"
 "}\n"
 "\n"
@@ -94,6 +94,10 @@ class Ui_MainWindow(object):
 "	padding: 4px 7px;\n"
 "	border: 1px solid #000;\n"
 "	border-radius: 7px\n"
+"}\n"
+"\n"
+"#profileMenu{\n"
+"	background-color: #b9b9ff;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
