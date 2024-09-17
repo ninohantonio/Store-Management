@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowgaJczm.ui'
+## Form generated from reading UI file 'main_windoweJbURV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -87,6 +87,13 @@ class Ui_MainWindow(object):
 "#profileContainer{\n"
 "	background-color: #fefeff;\n"
 "	border-radius: 20px;\n"
+"}\n"
+"\n"
+""
+                        "#logoutBtn{\n"
+"	padding: 4px 7px;\n"
+"	border: 1px solid #000;\n"
+"	border-radius: 7px\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -471,14 +478,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.pushButton, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.pushButton_5 = QPushButton(self.profileMenu)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.logoutBtn = QPushButton(self.profileMenu)
+        self.logoutBtn.setObjectName(u"logoutBtn")
         icon9 = QIcon()
         icon9.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_5.setIcon(icon9)
-        self.pushButton_5.setIconSize(QSize(18, 18))
+        self.logoutBtn.setIcon(icon9)
+        self.logoutBtn.setIconSize(QSize(18, 18))
 
-        self.verticalLayout_12.addWidget(self.pushButton_5, 0, Qt.AlignmentFlag.AlignTop)
+        self.verticalLayout_12.addWidget(self.logoutBtn, 0, Qt.AlignmentFlag.AlignTop)
 
 
         self.verticalLayout_11.addWidget(self.profileMenu)
@@ -522,6 +529,6 @@ class Ui_MainWindow(object):
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_16.setText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
+        self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
     # retranslateUi
 

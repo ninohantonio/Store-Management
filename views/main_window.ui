@@ -76,7 +76,7 @@ QLineEdit{
 
 #logoutBtn{
 	padding: 4px 7px;
-	border: 1px solide #c4e4db;
+	border: 1px solid #000;
 	border-radius: 7px
 }</string>
    </property>

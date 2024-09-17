@@ -34,14 +34,14 @@
 
 			}],
 			"menuTransitionAnimation": [{
-				"animationDuration": 700,
+				"animationDuration": 300,
 				"animationEasingCurve": "Linear",
 				"whenCollapsing": [{
-					"animationDuration": 500,
+					"animationDuration": 300,
 					"animationEasingCurve": "Linear"
 				}],
 				"whenExpanding": [{
-					"animationDuration": 500,
+					"animationDuration": 300,
 					"animationEasingCurve": "Linear"
 				}]
 			}]
@@ -49,7 +49,7 @@
 		{
 			"name": "profileMenu",
 			"defaultSize": [{
-				"width": 120,
+				"width": 140,
 				"height": 150
 			}],
 			"collapsedSize": [{
@@ -57,7 +57,7 @@
 				"height": 150
 			}],
 			"expandedSize": [{
-				"width": 120,
+				"width": 140,
 				"height": 150
 			}],
 			"toggleButton": [{
@@ -68,19 +68,19 @@
 						"border: 1px solid transparent; border-radius: 10px;"
 					],
 					"whenMenuIsExpanded": [
-						"border: 1px solid rgb(9, 5, 13); border-radius: 10px;"
+						"border: 1px solid #c4e4db; border-radius: 10px; padding: 4px 7px;"
 					]
 				}]
 			}],
 			"menuTransitionAnimation": [{
-				"animationDuration": 700,
+				"animationDuration": 300,
 				"animationEasingCurve": "Linear",
 				"whenCollapsing": [{
-					"animationDuration": 700,
+					"animationDuration": 300,
 					"animationEasingCurve": "Linear"
 				}],
 				"whenExpanding": [{
-					"animationDuration": 700,
+					"animationDuration": 300,
 					"animationEasingCurve": "Linear"
 				}]
 			}]
@@ -117,14 +117,14 @@
 					"fade":[
 						{
 							"active": true,
-							"duration":1000,
+							"duration":500,
 							"easingCurve": "OutBack"
 						}
 					],
 					"slide":[
 						{
 							"active":true,
-							"duration": 1000,
+							"duration": 500,
 							"direction": "horizontal",
 							"easingCurve": "OutBack"
 						}
