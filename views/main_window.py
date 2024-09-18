@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowdUoevv.ui'
+## Form generated from reading UI file 'main_windowIQYhKK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -96,8 +96,12 @@ class Ui_MainWindow(object):
 "	border-radius: 7px\n"
 "}\n"
 "\n"
-"#profileMenu{\n"
-"	background-color: #b9b9ff;\n"
+"\n"
+"#welcomeLabel{\n"
+"	text-align: center;\n"
+"	color:  #2596be;\n"
+"	background-color: #e5e0ff;\n"
+"	padding: 10px 15px;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -379,15 +383,61 @@ class Ui_MainWindow(object):
         self.homePage.setObjectName(u"homePage")
         self.frame = QFrame(self.homePage)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(30, 20, 401, 80))
+        self.frame.setGeometry(QRect(0, 20, 661, 71))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.label = QLabel(self.frame)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(60, 20, 141, 31))
+        self.verticalLayout_3 = QVBoxLayout(self.frame)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.welcomeLabel = QLabel(self.frame)
+        self.welcomeLabel.setObjectName(u"welcomeLabel")
         font4 = QFont()
         font4.setPointSize(15)
-        self.label.setFont(font4)
+        self.welcomeLabel.setFont(font4)
+
+        self.verticalLayout_3.addWidget(self.welcomeLabel)
+
+        self.frame_10 = QFrame(self.homePage)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setGeometry(QRect(10, 90, 161, 34))
+        self.frame_10.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_10)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.label = QLabel(self.frame_10)
+        self.label.setObjectName(u"label")
+        font5 = QFont()
+        font5.setPointSize(13)
+        font5.setBold(True)
+        self.label.setFont(font5)
+
+        self.horizontalLayout_7.addWidget(self.label)
+
+        self.widget_5 = QWidget(self.homePage)
+        self.widget_5.setObjectName(u"widget_5")
+        self.widget_5.setGeometry(QRect(10, 500, 201, 51))
+        self.horizontalLayout_8 = QHBoxLayout(self.widget_5)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.label_7 = QLabel(self.widget_5)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setFont(font2)
+
+        self.horizontalLayout_8.addWidget(self.label_7)
+
+        self.label_8 = QLabel(self.widget_5)
+        self.label_8.setObjectName(u"label_8")
+        font6 = QFont()
+        font6.setFamilies([u"Lucida Fax"])
+        font6.setPointSize(15)
+        self.label_8.setFont(font6)
+
+        self.horizontalLayout_8.addWidget(self.label_8)
+
+        self.gridLayoutWidget = QWidget(self.homePage)
+        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
+        self.gridLayoutWidget.setGeometry(QRect(20, 140, 641, 361))
+        self.cardContainer = QGridLayout(self.gridLayoutWidget)
+        self.cardContainer.setObjectName(u"cardContainer")
+        self.cardContainer.setContentsMargins(0, 0, 0, 0)
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
@@ -456,10 +506,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font5 = QFont()
-        font5.setPointSize(12)
-        font5.setBold(True)
-        self.label_18.setFont(font5)
+        font7 = QFont()
+        font7.setPointSize(12)
+        font7.setBold(True)
+        self.label_18.setFont(font7)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18, 0, Qt.AlignmentFlag.AlignTop)
@@ -524,7 +574,10 @@ class Ui_MainWindow(object):
         self.searchField.setText("")
         self.searchField.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Rechercher ici . . .", None))
         self.accountBtn.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Accueil", None))
+        self.welcomeLabel.setText(QCoreApplication.translate("MainWindow", u"BIENVENUE DANS NOTRE SERVICE", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Vos commandes :", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
