@@ -31,8 +31,8 @@ class Commande(Base):
     __tablename__: str = "commande"
 
     numeroCommande = Column(Integer, primary_key=True, autoincrement=True)
-    dateCommande: Mapped[str_date_time]
-    dateLivraison: Mapped[str_date]
+    dateCommande = Column(DateTime)
+    dateLivraison = Column(Date)
     quantiteCommande: Mapped[int_small]
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))
     numeroArticle: Mapped[int] = mapped_column(ForeignKey("article.numeroArticle"))
@@ -42,7 +42,7 @@ class Facture(Base):
 
     numeroFacture = Column(String(10), primary_key=True, unique=True)
     dateEnregistrement = Column(DateTime)
-    listeArticle = Column(String)
+    listeArticle = Column(String(255))
     statutPayement: Mapped[bool] = mapped_column()
     numeroClient = Column(ForeignKey("client.numeroClient"))
 
@@ -51,7 +51,7 @@ class Journal(Base):
 
     numeroJournal = Column(Integer, primary_key=True, autoincrement=True)
     dateEnregistrement = Column(DateTime)
-    listeArticle = Column(String)
+    listeArticle = Column(String(255))
     typeAction = Column(String(50))
 
 
