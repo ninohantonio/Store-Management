@@ -1,7 +1,8 @@
 from sqlalchemy import Column, Integer, ForeignKey, String, DateTime, Date
 from sqlalchemy.orm import Mapped, relationship, mapped_column
 
-from utils.database import Base, engine, str_50, str_10, str_date, str_date_time, int_small, str_20, str_30_optional
+from utils.database import Base, engine, str_50, str_10, str_date, str_date_time, int_small, str_20, str_30_optional, \
+    str_13
 
 
 class Client(Base):
@@ -20,12 +21,23 @@ class Article(Base):
     numeroArticle = Column(String(13), primary_key=True)
     libelle: Mapped[str_20]
     pieceParPaquet: Mapped[int_small]
-    quantiteStock: Mapped[int_small]
+    quantitePieceStock: Mapped[int_small]
+    packetEnStock: Mapped[int_small]
     margeApprovisionnement: Mapped[int_small]
     prixUnitaire: Mapped[int_small]
     dateEntrer = Column(Date)
     description: Mapped[str_30_optional]
     commandes: Mapped[list["Commande"]] = relationship()
+
+
+class Approvisionnement(Base):
+    __tablename__: str = "approvisionnement"
+
+    numeroApprovisionnement = Column(Integer, primary_key=True, autoincrement=True)
+    quantiteLimite: Mapped[int_small]
+    typeQuantite: Mapped[str_10]
+    numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
+
 
 class Commande(Base):
     __tablename__: str = "commande"
@@ -35,7 +47,7 @@ class Commande(Base):
     dateLivraison = Column(Date)
     quantiteCommande: Mapped[int_small]
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))
-    numeroArticle: Mapped[int] = mapped_column(ForeignKey("article.numeroArticle"))
+    numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
 
 class Facture(Base):
     __tablename__ = "facture"
@@ -53,6 +65,15 @@ class Journal(Base):
     dateEnregistrement = Column(DateTime)
     listeArticle = Column(String(255))
     typeAction = Column(String(50))
+
+class Notification(Base):
+    __tablename__ = "notification"
+
+    numeroNotification = Column(Integer, primary_key=True, autoincrement=True)
+    titre: Mapped[str_50]
+    dateEmmission = Column(DateTime)
+    contenu = Column(String(100))
+    numeroArticle: Mapped[str_13]
 
 
 Base.metadata.create_all(engine)
