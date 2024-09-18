@@ -3,6 +3,7 @@ import os
 
 from PySide6.QtWidgets import QApplication
 
+from services.article_service import get_article_by_name
 from views.main_ui_launcher import MainWindow
 
 # Press the green button in the gutter to run the script.

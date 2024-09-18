@@ -15,20 +15,6 @@ class Client(Base):
     commandes: Mapped[list["Commande"]] = relationship()
     factures: Mapped[list["Facture"]] = relationship()
 
-class Article(Base):
-    __tablename__: str = "article"
-
-    numeroArticle = Column(String(13), primary_key=True)
-    libelle: Mapped[str_20]
-    pieceParPaquet: Mapped[int_small]
-    quantitePieceStock: Mapped[int_small]
-    packetEnStock: Mapped[int_small]
-    margeApprovisionnement: Mapped[int_small]
-    prixUnitaire: Mapped[int_small]
-    dateEntrer = Column(Date)
-    description: Mapped[str_30_optional]
-    commandes: Mapped[list["Commande"]] = relationship()
-
 
 class Approvisionnement(Base):
     __tablename__: str = "approvisionnement"
@@ -37,6 +23,21 @@ class Approvisionnement(Base):
     quantiteLimite: Mapped[int_small]
     typeQuantite: Mapped[str_10]
     numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
+
+
+class Article(Base):
+    __tablename__: str = "article"
+
+    numeroArticle = Column(String(13), primary_key=True)
+    libelle: Mapped[str_20]
+    pieceParPaquet: Mapped[int_small]
+    quantitePieceStock: Mapped[int_small]
+    packetEnStock: Mapped[int_small]
+    prixUnitaire: Mapped[int_small]
+    dateEntrer = Column(Date)
+    description: Mapped[str_30_optional]
+    commandes: Mapped[list["Commande"]] = relationship()
+    approvisionnement: Mapped["Approvisionnement"] = relationship()
 
 
 class Commande(Base):
