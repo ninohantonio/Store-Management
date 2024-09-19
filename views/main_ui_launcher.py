@@ -30,7 +30,8 @@ class MainWindow(QMainWindow):
 
         # Effacer le texte pour préparer le prochain scan
         self.ui.searchField.clear()
-        self.add_new_card_commande(search_value)
+        print(f"Article existe = {verify_article_by_id(search_value)}")
+        self.add_new_card_commande(search_value) if verify_article_by_id(search_value) else print("Veuillez ajoutez l'article")
 
     def add_new_card_commande(self, numero):
         self.commande_item.append(numero)
