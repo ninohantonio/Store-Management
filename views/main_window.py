@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowIQYhKK.ui'
+## Form generated from reading UI file 'main_windowmSshMQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1024, 613)
+        MainWindow.resize(1229, 701)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"#centralwidget{\n"
@@ -414,7 +414,7 @@ class Ui_MainWindow(object):
 
         self.widget_5 = QWidget(self.homePage)
         self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(10, 500, 201, 51))
+        self.widget_5.setGeometry(QRect(10, 580, 201, 51))
         self.horizontalLayout_8 = QHBoxLayout(self.widget_5)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.label_7 = QLabel(self.widget_5)
@@ -434,7 +434,7 @@ class Ui_MainWindow(object):
 
         self.gridLayoutWidget = QWidget(self.homePage)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(20, 140, 641, 361))
+        self.gridLayoutWidget.setGeometry(QRect(20, 140, 761, 431))
         self.cardContainer = QGridLayout(self.gridLayoutWidget)
         self.cardContainer.setObjectName(u"cardContainer")
         self.cardContainer.setContentsMargins(0, 0, 0, 0)

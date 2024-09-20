@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>613</height>
+    <width>1229</width>
+    <height>701</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -751,7 +751,7 @@ QLineEdit{
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>500</y>
+             <y>580</y>
              <width>201</width>
              <height>51</height>
             </rect>
@@ -789,8 +789,8 @@ QLineEdit{
             <rect>
              <x>20</x>
              <y>140</y>
-             <width>641</width>
-             <height>361</height>
+             <width>761</width>
+             <height>431</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="cardContainer"/>

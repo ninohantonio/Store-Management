@@ -1,6 +1,6 @@
 from Custom_Widgets.Widgets import *
 
-from services.article_service import verify_article_by_id
+from services.article_service import verify_article_by_id, get_article_by_id
 from views.main_window import *
 from Custom_Widgets.Widgets import QMainWindow
 
@@ -12,7 +12,7 @@ settings = QSettings()
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
-        self.commande_item = []
+        self.commande_item = {}
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
@@ -34,8 +34,11 @@ class MainWindow(QMainWindow):
         self.add_new_card_commande(search_value) if verify_article_by_id(search_value) else print("Veuillez ajoutez l'article")
 
     def add_new_card_commande(self, numero):
-        self.commande_item.append(numero)
-        element = len(self.commande_item)
-        carte = CardCommande(numero)
-        # self.ui.cardContainer.addWidget(carte, (element // 3) - 1, element % 4)
-        self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
+        if numero in self.commande_item:
+            print("deja scanner")
+        else:
+            self.commande_item[numero] = get_article_by_id(numero)
+            article = self.commande_item[numero]
+            element = len(self.commande_item)
+            carte = CardCommande(article, parent=self)
+            self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
