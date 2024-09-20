@@ -45,8 +45,16 @@ class MainWindow(QMainWindow):
 
             carte.sous_total_changed.connect(self.update_total_payer)
 
+            # Connecter le signal card_removed pour gérer la suppression
+            carte.card_removed.connect(self.remove_card)
+
             self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
 
     def update_total_payer(self, sous_total: int):
-        total = self.total_a_payer + sous_total
-        self.ui.total_payer.setText(f"{total} Ar")
+        self.total_a_payer = self.total_a_payer + sous_total
+        self.ui.total_payer.setText(f"{self.total_a_payer} Ar")
+
+    def remove_card(self, numero_article, sous_total):
+        if numero_article in self.commande_item:
+            del self.commande_item[numero_article]
+            self.update_total_payer(sous_total * -1)

@@ -8,6 +8,7 @@ from models.model_class import Article
 
 class CardCommande(QWidget):
     sous_total_changed = Signal(int)
+    card_removed = Signal(str, int)
 
     def __init__(self, article: Article, parent=None):
         super().__init__(parent)
@@ -66,6 +67,13 @@ class CardCommande(QWidget):
         self.rightFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.rightFrame)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+
+        # Bouton de suppression (croix) en haut à droite
+        self.btn_remove = QPushButton("❌", self.rightFrame)
+        self.btn_remove.setFixedSize(25, 25)
+        self.btn_remove.setStyleSheet("padding: 3px; background-color: #ffe4bd; border-radius: 3px;")
+        self.btn_remove.clicked.connect(self.remove_card)  # Connecter au slot pour supprimer la carte
+        self.verticalLayout_2.addWidget(self.btn_remove)
 
         # Champ pour entrer la quantité, uniquement numérique
         self.line_edit_quantite = QLineEdit(self.rightFrame)
@@ -159,3 +167,10 @@ class CardCommande(QWidget):
             stock_error_dialog.rejected.connect(
                 lambda: self.line_edit_quantite.setText(f"{self.article.quantitePieceStock}"))  # cancel button clicked,
 
+    def remove_card(self):
+        """Supprime la carte de l'affichage."""
+        # Émet un signal pour notifier la suppression de la carte
+        self.card_removed.emit(self.article.numeroArticle, self.sou_total)
+        # Supprime le widget lui-même
+        self.setParent(None)
+        self.deleteLater()
