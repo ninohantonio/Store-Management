@@ -26,7 +26,7 @@ class CardCommande(QWidget):
                     #widget{
                         background-color: #fefeff;
                         border-radius: 10px;
-                        border: 1px solid #000;
+                        border: 2px solid #f56614;
                     }
                 """)
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
@@ -91,7 +91,7 @@ class CardCommande(QWidget):
         self.comboBox.currentIndexChanged.connect(self.update_sous_total)
 
         #Labelle error
-        self.labele_stock_error = QLabel(f"Stock insuffisant pour cette quantite en packet")
+        self.labele_stock_error = QLabel(f"Stock insuffisant pour cette quantite en {self.type_quantite}")
         self.labele_stock_error.setStyleSheet("color: #2596be; font-size: 18px;")
 
     def update_sous_total(self):
@@ -105,20 +105,21 @@ class CardCommande(QWidget):
             if quantite <= self.article.packetEnStock:
                 self.sou_total = quantite * self.article.prixUnitaire * self.article.pieceParPaquet
             else:
-                print("Stock insuffisant pour cette quantite en packet")
-                self.show_stock_unavailable()
+                self.labele_stock_error.setText("Stock insuffisant pour cette quantite en packet")
+                self.show_stock_unavailable("packets")
         else:
             if quantite <= self.article.quantitePieceStock:
                 self.sou_total = quantite * self.article.prixUnitaire
             else:
-                print("Stock insuffisant pour cette quantite en packet")
+                self.labele_stock_error.setText("Stock insuffisant pour cette quantite en pieces")
+                self.show_stock_unavailable("pieces")
 
         # Calcul du sous-total (exemple simple, à ajuster selon les règles métier)
 
         self.total_card.setText(f"Sous-total = {self.sou_total} Ar")
 
 
-    def show_stock_unavailable(self):
+    def show_stock_unavailable(self, type: str):
         stock_error_dialog = QCustomQDialog(
             title="Stock Insuffisant !!",
             description="Voulez vous voir l'etat de stock ?",
@@ -143,6 +144,14 @@ class CardCommande(QWidget):
 
         stock_error_dialog.show()
 
-        stock_error_dialog.accepted.connect(lambda: self.line_edit_quantite.setText(self.article.packetEnStock))  # yes button clicked
-        stock_error_dialog.rejected.connect(lambda: self.line_edit_quantite.setText(self.article.packetEnStock))  # cancel button clicked
+        if type == "packets":
+            stock_error_dialog.accepted.connect(
+                lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # yes button clicked
+            stock_error_dialog.rejected.connect(
+                lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # cancel button clicked
+        else:
+            stock_error_dialog.accepted.connect(
+                lambda: self.line_edit_quantite.setText(f"{self.article.quantitePieceStock}"))  # yes button clicked
+            stock_error_dialog.rejected.connect(
+                lambda: self.line_edit_quantite.setText(f"{self.article.quantitePieceStock}"))  # cancel button clicked,
 
