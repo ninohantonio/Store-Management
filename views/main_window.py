@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowmSshMQ.ui'
+## Form generated from reading UI file 'main_windowBYyZNT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -102,6 +102,16 @@ class Ui_MainWindow(object):
 "	color:  #2596be;\n"
 "	background-color: #e5e0ff;\n"
 "	padding: 10px 15px;\n"
+"}\n"
+"\n"
+"#total_payer{\n"
+"	color: #f56614;\n"
+"}\n"
+"\n"
+"#valider_commandeBtn{\n"
+"	background: #d5d2ff;\n"
+"	padding: 7px;\n"
+"	border-radius: 7px;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -305,6 +315,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.menuBtn = QPushButton(self.widget)
         self.menuBtn.setObjectName(u"menuBtn")
+        self.menuBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon7 = QIcon()
         icon7.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.menuBtn.setIcon(icon7)
@@ -414,7 +425,7 @@ class Ui_MainWindow(object):
 
         self.widget_5 = QWidget(self.homePage)
         self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(10, 580, 201, 51))
+        self.widget_5.setGeometry(QRect(10, 580, 441, 51))
         self.horizontalLayout_8 = QHBoxLayout(self.widget_5)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.label_7 = QLabel(self.widget_5)
@@ -423,14 +434,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.label_7)
 
-        self.label_8 = QLabel(self.widget_5)
-        self.label_8.setObjectName(u"label_8")
+        self.total_payer = QLabel(self.widget_5)
+        self.total_payer.setObjectName(u"total_payer")
         font6 = QFont()
         font6.setFamilies([u"Lucida Fax"])
         font6.setPointSize(15)
-        self.label_8.setFont(font6)
+        self.total_payer.setFont(font6)
 
-        self.horizontalLayout_8.addWidget(self.label_8)
+        self.horizontalLayout_8.addWidget(self.total_payer)
 
         self.gridLayoutWidget = QWidget(self.homePage)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
@@ -438,6 +449,18 @@ class Ui_MainWindow(object):
         self.cardContainer = QGridLayout(self.gridLayoutWidget)
         self.cardContainer.setObjectName(u"cardContainer")
         self.cardContainer.setContentsMargins(0, 0, 0, 0)
+        self.valider_commandeBtn = QPushButton(self.homePage)
+        self.valider_commandeBtn.setObjectName(u"valider_commandeBtn")
+        self.valider_commandeBtn.setGeometry(QRect(540, 580, 241, 51))
+        font7 = QFont()
+        font7.setPointSize(13)
+        font7.setBold(False)
+        self.valider_commandeBtn.setFont(font7)
+        self.valider_commandeBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/icons/caddie.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.valider_commandeBtn.setIcon(icon9)
+        self.valider_commandeBtn.setIconSize(QSize(30, 30))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
@@ -506,10 +529,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font7 = QFont()
-        font7.setPointSize(12)
-        font7.setBold(True)
-        self.label_18.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(12)
+        font8.setBold(True)
+        self.label_18.setFont(font8)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18, 0, Qt.AlignmentFlag.AlignTop)
@@ -534,9 +557,9 @@ class Ui_MainWindow(object):
 
         self.logoutBtn = QPushButton(self.profileMenu)
         self.logoutBtn.setObjectName(u"logoutBtn")
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon10)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_12.addWidget(self.logoutBtn, 0, Qt.AlignmentFlag.AlignTop)
@@ -577,7 +600,8 @@ class Ui_MainWindow(object):
         self.welcomeLabel.setText(QCoreApplication.translate("MainWindow", u"BIENVENUE DANS NOTRE SERVICE", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Vos commandes :", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
+        self.total_payer.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
+        self.valider_commandeBtn.setText(QCoreApplication.translate("MainWindow", u"Valider la commande", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))

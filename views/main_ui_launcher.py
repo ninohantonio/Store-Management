@@ -11,6 +11,7 @@ settings = QSettings()
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
+        self.total_a_payer = 0
         QMainWindow.__init__(self)
         self.commande_item = {}
         self.ui = Ui_MainWindow()
@@ -41,4 +42,11 @@ class MainWindow(QMainWindow):
             article = self.commande_item[numero]
             element = len(self.commande_item)
             carte = CardCommande(article, parent=self)
+
+            carte.sous_total_changed.connect(self.update_total_payer)
+
             self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
+
+    def update_total_payer(self, sous_total: int):
+        total = self.total_a_payer + sous_total
+        self.ui.total_payer.setText(f"{total} Ar")

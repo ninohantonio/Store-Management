@@ -1,5 +1,5 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
-from PySide6.QtCore import QSize, QRect
+from PySide6.QtCore import QSize, QRect, Signal
 from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QWidget, QFrame, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox
 
@@ -7,6 +7,8 @@ from models.model_class import Article
 
 
 class CardCommande(QWidget):
+    sous_total_changed = Signal(int)
+
     def __init__(self, article: Article, parent=None):
         super().__init__(parent)
         self.parent = parent
@@ -104,12 +106,14 @@ class CardCommande(QWidget):
         if type_quantite == "pacquets":
             if quantite <= self.article.packetEnStock:
                 self.sou_total = quantite * self.article.prixUnitaire * self.article.pieceParPaquet
+                self.sous_total_changed.emit(self.sou_total)
             else:
                 self.labele_stock_error.setText("Stock insuffisant pour cette quantite en packet")
                 self.show_stock_unavailable("packets")
         else:
             if quantite <= self.article.quantitePieceStock:
                 self.sou_total = quantite * self.article.prixUnitaire
+                self.sous_total_changed.emit(self.sou_total)
             else:
                 self.labele_stock_error.setText("Stock insuffisant pour cette quantite en pieces")
                 self.show_stock_unavailable("pieces")
