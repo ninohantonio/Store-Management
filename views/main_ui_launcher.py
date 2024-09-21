@@ -50,11 +50,11 @@ class MainWindow(QMainWindow):
 
             self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
 
-    def update_total_payer(self, sous_total: int):
-        self.total_a_payer = self.total_a_payer + sous_total
+    def update_total_payer(self, ancien: int, sous_total: int):
+        self.total_a_payer = self.total_a_payer + sous_total - ancien
         self.ui.total_payer.setText(f"{self.total_a_payer} Ar")
 
     def remove_card(self, numero_article, sous_total):
         if numero_article in self.commande_item:
             del self.commande_item[numero_article]
-            self.update_total_payer(sous_total * -1)
+            self.update_total_payer(0, sous_total * -1)

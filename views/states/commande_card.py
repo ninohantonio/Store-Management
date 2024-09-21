@@ -7,7 +7,7 @@ from models.model_class import Article
 
 
 class CardCommande(QWidget):
-    sous_total_changed = Signal(int)
+    sous_total_changed = Signal(int, int)
     card_removed = Signal(str, int)
 
     def __init__(self, article: Article, parent=None):
@@ -113,15 +113,17 @@ class CardCommande(QWidget):
         type_quantite = self.comboBox.currentText()
         if type_quantite == "pacquets":
             if quantite <= self.article.packetEnStock:
+                ancien_sous_total = self.sou_total
                 self.sou_total = quantite * self.article.prixUnitaire * self.article.pieceParPaquet
-                self.sous_total_changed.emit(self.sou_total)
+                self.sous_total_changed.emit(ancien_sous_total, self.sou_total)
             else:
                 self.labele_stock_error.setText("Stock insuffisant pour cette quantite en packet")
                 self.show_stock_unavailable("packets")
         else:
             if quantite <= self.article.quantitePieceStock:
+                ancien_sous_total = self.sou_total
                 self.sou_total = quantite * self.article.prixUnitaire
-                self.sous_total_changed.emit(self.sou_total)
+                self.sous_total_changed.emit(ancien_sous_total, self.sou_total)
             else:
                 self.labele_stock_error.setText("Stock insuffisant pour cette quantite en pieces")
                 self.show_stock_unavailable("pieces")
