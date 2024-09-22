@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowlhxiAC.ui'
+## Form generated from reading UI file 'main_windowlcltaW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -113,6 +113,10 @@ class Ui_MainWindow(object):
 "	background: #d5d2ff;\n"
 "	padding: 7px;\n"
 "	border-radius: 7px;\n"
+"}\n"
+"\n"
+"#stockTable{\n"
+"	background-color: rgb(220, 222, 255);\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -475,17 +479,25 @@ class Ui_MainWindow(object):
         self.stock_labele.setObjectName(u"stock_labele")
         self.stock_labele.setGeometry(QRect(20, 20, 841, 51))
         self.stock_labele.setFont(font4)
-        self.tableWidget = QTableWidget(self.frame_2)
-        if (self.tableWidget.columnCount() < 3):
-            self.tableWidget.setColumnCount(3)
+        self.stockTable = QTableWidget(self.frame_2)
+        if (self.stockTable.columnCount() < 7):
+            self.stockTable.setColumnCount(7)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.stockTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.stockTable.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(20, 100, 841, 431))
+        self.stockTable.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        self.stockTable.setObjectName(u"stockTable")
+        self.stockTable.setGeometry(QRect(20, 100, 841, 431))
 
         self.verticalLayout_4.addWidget(self.frame_2)
 
@@ -590,7 +602,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(1)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -619,12 +631,20 @@ class Ui_MainWindow(object):
         self.total_payer.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
         self.valider_commandeBtn.setText(QCoreApplication.translate("MainWindow", u"Valider la commande", None))
         self.stock_labele.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.stockTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.stockTable.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Pieces en stock", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.stockTable.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Paquets en stock", None));
+        ___qtablewidgetitem3 = self.stockTable.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Boites en stock", None));
+        ___qtablewidgetitem4 = self.stockTable.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Prix unitaire", None));
+        ___qtablewidgetitem5 = self.stockTable.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem6 = self.stockTable.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
