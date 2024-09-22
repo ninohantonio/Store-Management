@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowBYyZNT.ui'
+## Form generated from reading UI file 'main_windowlhxiAC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,8 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QSpacerItem, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -97,7 +98,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"#welcomeLabel{\n"
+"#welcomeLabel, #stock_labele{\n"
 "	text-align: center;\n"
 "	color:  #2596be;\n"
 "	background-color: #e5e0ff;\n"
@@ -464,15 +465,30 @@ class Ui_MainWindow(object):
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
+        self.verticalLayout_4 = QVBoxLayout(self.stockPage)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.frame_2 = QFrame(self.stockPage)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(30, 30, 401, 80))
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
-        self.label_3 = QLabel(self.frame_2)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(60, 20, 141, 31))
-        self.label_3.setFont(font4)
+        self.stock_labele = QLabel(self.frame_2)
+        self.stock_labele.setObjectName(u"stock_labele")
+        self.stock_labele.setGeometry(QRect(20, 20, 841, 51))
+        self.stock_labele.setFont(font4)
+        self.tableWidget = QTableWidget(self.frame_2)
+        if (self.tableWidget.columnCount() < 3):
+            self.tableWidget.setColumnCount(3)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(20, 100, 841, 431))
+
+        self.verticalLayout_4.addWidget(self.frame_2)
+
         self.mainNavigationScreen.addWidget(self.stockPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -574,7 +590,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -602,7 +618,13 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
         self.total_payer.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
         self.valider_commandeBtn.setText(QCoreApplication.translate("MainWindow", u"Valider la commande", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
+        self.stock_labele.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Pieces en stock", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Paquets en stock", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Journal", None))

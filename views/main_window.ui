@@ -81,7 +81,7 @@ QLineEdit{
 }
 
 
-#welcomeLabel{
+#welcomeLabel, #stock_labele{
 	text-align: center;
 	color:  #2596be;
 	background-color: #e5e0ff;
@@ -696,7 +696,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -842,40 +842,61 @@ QLineEdit{
           </widget>
          </widget>
          <widget class="QWidget" name="stockPage">
-          <widget class="QFrame" name="frame_2">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>30</y>
-             <width>401</width>
-             <height>80</height>
-            </rect>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Shape::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Shadow::Raised</enum>
-           </property>
-           <widget class="QLabel" name="label_3">
-            <property name="geometry">
-             <rect>
-              <x>60</x>
-              <y>20</y>
-              <width>141</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>15</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Etat de stock</string>
-            </property>
-           </widget>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QFrame" name="frame_2">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <widget class="QLabel" name="stock_labele">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>841</width>
+                <height>51</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Etat de stock</string>
+              </property>
+             </widget>
+             <widget class="QTableWidget" name="tableWidget">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>100</y>
+                <width>841</width>
+                <height>431</height>
+               </rect>
+              </property>
+              <column>
+               <property name="text">
+                <string>Libelle</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Pieces en stock</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Paquets en stock</string>
+               </property>
+              </column>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="clientPage">
           <widget class="QFrame" name="frame_3">
