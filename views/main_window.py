@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowlcltaW.ui'
+## Form generated from reading UI file 'main_windowrwTguk.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -480,8 +480,8 @@ class Ui_MainWindow(object):
         self.stock_labele.setGeometry(QRect(20, 20, 841, 51))
         self.stock_labele.setFont(font4)
         self.stockTable = QTableWidget(self.frame_2)
-        if (self.stockTable.columnCount() < 7):
-            self.stockTable.setColumnCount(7)
+        if (self.stockTable.columnCount() < 9):
+            self.stockTable.setColumnCount(9)
         __qtablewidgetitem = QTableWidgetItem()
         self.stockTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -496,6 +496,10 @@ class Ui_MainWindow(object):
         self.stockTable.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
         self.stockTable.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(8, __qtablewidgetitem8)
         self.stockTable.setObjectName(u"stockTable")
         self.stockTable.setGeometry(QRect(20, 100, 841, 431))
 
@@ -602,7 +606,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -634,17 +638,21 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem = self.stockTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
         ___qtablewidgetitem1 = self.stockTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Pieces en stock", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Prix unitaire", None));
         ___qtablewidgetitem2 = self.stockTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Paquets en stock", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Pieces en stock", None));
         ___qtablewidgetitem3 = self.stockTable.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Boites en stock", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Description", None));
         ___qtablewidgetitem4 = self.stockTable.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Prix unitaire", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Pieces par pacquet", None));
         ___qtablewidgetitem5 = self.stockTable.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Pieces par boite", None));
         ___qtablewidgetitem6 = self.stockTable.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None));
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Paquets en stock", None));
+        ___qtablewidgetitem7 = self.stockTable.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Boites en stock", None));
+        ___qtablewidgetitem8 = self.stockTable.horizontalHeaderItem(8)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Journal", None))

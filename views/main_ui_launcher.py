@@ -58,3 +58,4 @@ class MainWindow(QMainWindow):
         if numero_article in self.commande_item:
             del self.commande_item[numero_article]
             self.update_total_payer(0, sous_total * -1)
+

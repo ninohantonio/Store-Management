@@ -700,7 +700,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -889,7 +889,27 @@ QLineEdit{
               </column>
               <column>
                <property name="text">
+                <string>Prix unitaire</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>Pieces en stock</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Description</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Pieces par pacquet</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Pieces par boite</string>
                </property>
               </column>
               <column>
@@ -900,16 +920,6 @@ QLineEdit{
               <column>
                <property name="text">
                 <string>Boites en stock</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Prix unitaire</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Description</string>
                </property>
               </column>
               <column>
