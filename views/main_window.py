@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowrwTguk.ui'
+## Form generated from reading UI file 'main_windowuHSrcu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -116,7 +116,17 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#stockTable{\n"
-"	background-color: rgb(220, 222, 255);\n"
+"	background-color: rgb(244, 244, 255);\n"
+"}\n"
+"\n"
+"#filter_labele{\n"
+"	padding: 5px;\n"
+"}\n"
+"\n"
+"#filterCombo{\n"
+"	padding: 5px;\n"
+"	border-radius: 10px;\n"
+"	background-color: rgb(255, 220, 219);\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -501,7 +511,25 @@ class Ui_MainWindow(object):
         __qtablewidgetitem8 = QTableWidgetItem()
         self.stockTable.setHorizontalHeaderItem(8, __qtablewidgetitem8)
         self.stockTable.setObjectName(u"stockTable")
-        self.stockTable.setGeometry(QRect(20, 100, 841, 431))
+        self.stockTable.setGeometry(QRect(20, 130, 841, 431))
+        self.filter_labele = QLabel(self.frame_2)
+        self.filter_labele.setObjectName(u"filter_labele")
+        self.filter_labele.setGeometry(QRect(70, 80, 111, 31))
+        font8 = QFont()
+        font8.setPointSize(13)
+        self.filter_labele.setFont(font8)
+        self.label_3 = QLabel(self.frame_2)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(30, 80, 31, 31))
+        self.label_3.setPixmap(QPixmap(u":/icons/icons/filter.png"))
+        self.label_3.setScaledContents(True)
+        self.filterCombo = QComboBox(self.frame_2)
+        self.filterCombo.addItem("")
+        self.filterCombo.addItem("")
+        self.filterCombo.addItem("")
+        self.filterCombo.addItem("")
+        self.filterCombo.setObjectName(u"filterCombo")
+        self.filterCombo.setGeometry(QRect(180, 81, 161, 31))
 
         self.verticalLayout_4.addWidget(self.frame_2)
 
@@ -561,10 +589,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font8 = QFont()
-        font8.setPointSize(12)
-        font8.setBold(True)
-        self.label_18.setFont(font8)
+        font9 = QFont()
+        font9.setPointSize(12)
+        font9.setBold(True)
+        self.label_18.setFont(font9)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18, 0, Qt.AlignmentFlag.AlignTop)
@@ -606,7 +634,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(1)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -653,6 +681,13 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Boites en stock", None));
         ___qtablewidgetitem8 = self.stockTable.horizontalHeaderItem(8)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None));
+        self.filter_labele.setText(QCoreApplication.translate("MainWindow", u"Filtrer par :", None))
+        self.label_3.setText("")
+        self.filterCombo.setItemText(0, QCoreApplication.translate("MainWindow", u"Libelle", None))
+        self.filterCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"Quantite en stock", None))
+        self.filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Prix Unitaire", None))
+        self.filterCombo.setItemText(3, QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None))
+
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
