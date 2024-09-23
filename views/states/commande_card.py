@@ -77,7 +77,7 @@ class CardCommande(QWidget):
 
         # Champ pour entrer la quantité, uniquement numérique
         self.line_edit_quantite = QLineEdit(self.rightFrame)
-        self.line_edit_quantite.setValidator(QIntValidator(0, article.quantitePieceStock))  # Limite numérique (ex: entre 0 et 10000)
+        self.line_edit_quantite.setValidator(QIntValidator(0, article.pieceEnStock))  # Limite numérique (ex: entre 0 et 10000)
         self.line_edit_quantite.setPlaceholderText("Entrez la quantité")
         self.line_edit_quantite.setStyleSheet("padding: 3px; border: 1px solid #000; border-radius: 3px;")
         self.verticalLayout_2.addWidget(self.line_edit_quantite)
@@ -120,7 +120,7 @@ class CardCommande(QWidget):
                 self.labele_stock_error.setText("Stock insuffisant pour cette quantite en packet")
                 self.show_stock_unavailable("packets")
         else:
-            if quantite <= self.article.quantitePieceStock:
+            if quantite <= self.article.pieceEnStock:
                 ancien_sous_total = self.sou_total
                 self.sou_total = quantite * self.article.prixUnitaire
                 self.sous_total_changed.emit(ancien_sous_total, self.sou_total)
