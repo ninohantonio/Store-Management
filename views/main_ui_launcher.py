@@ -1,23 +1,31 @@
 from Custom_Widgets.Widgets import *
 
-from services.article_service import verify_article_by_id
+from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
+    get_article_by_price
 from views.main_window import *
 from Custom_Widgets.Widgets import QMainWindow
 
 from views.states.commande_card import CardCommande
+from views.states.stock_state import refresh_stock_table_data
 
 settings = QSettings()
 
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
+        self.total_a_payer = 0
         QMainWindow.__init__(self)
-        self.commande_item = []
+        self.commande_item = {}
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
-        self.ui.searchField.returnPressed.connect(self.print_search_value)
-        self.ui.searchField.setFocus()
+        if self.ui.mainNavigationScreen.currentIndex() == 0:
+            self.ui.searchField.returnPressed.connect(self.print_search_value)
+            self.ui.searchField.setFocus()
+            pass
+
+
+        self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
         # self.ui.searchField.setVisible(False)
         self.show()
 
@@ -34,8 +42,80 @@ class MainWindow(QMainWindow):
         self.add_new_card_commande(search_value) if verify_article_by_id(search_value) else print("Veuillez ajoutez l'article")
 
     def add_new_card_commande(self, numero):
-        self.commande_item.append(numero)
-        element = len(self.commande_item)
-        carte = CardCommande(numero)
-        # self.ui.cardContainer.addWidget(carte, (element // 3) - 1, element % 4)
-        self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
+        if numero in self.commande_item:
+            print("deja scanner")
+        else:
+            self.commande_item[numero] = get_article_by_id(numero)
+            article = self.commande_item[numero]
+            element = len(self.commande_item)
+            carte = CardCommande(article, parent=self)
+
+            carte.sous_total_changed.connect(self.update_total_payer)
+
+            # Connecter le signal card_removed pour gérer la suppression
+            carte.card_removed.connect(self.remove_card)
+
+            self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
+
+    def update_total_payer(self, ancien: int, sous_total: int):
+        self.total_a_payer = self.total_a_payer + sous_total - ancien
+        self.ui.total_payer.setText(f"{self.total_a_payer} Ar")
+
+    def remove_card(self, numero_article, sous_total):
+        if numero_article in self.commande_item:
+            del self.commande_item[numero_article]
+            self.update_total_payer(0, sous_total * -1)
+
+    def manage_navigation(self, index):
+        if index == 1:
+            self.refresh_stock_screen()
+            self.ui.searchField.returnPressed.disconnect()
+            self.ui.searchField.returnPressed.connect(self.refresh_data_search)
+        elif index == 0:
+            self.ui.searchField.returnPressed.disconnect()
+            self.ui.searchField.returnPressed.connect(self.print_search_value)
+            self.ui.searchField.setFocus()
+        pass
+
+    def refresh_stock_screen(self):
+        articles = get_all_article()
+        refresh_stock_table_data(self.ui.stockTable, articles)
+
+    def refresh_data_search(self):
+        current_filter_index = self.ui.filterCombo.currentIndex()
+        articles = []
+        if current_filter_index == 0:
+            ## search by libelle
+            if self.ui.searchField.text().strip() == "":
+                articles = get_all_article()
+            else:
+                articles = get_article_by_name(self.ui.searchField.text())
+
+        elif current_filter_index == 1:
+            ## search by quantite en stock
+            if self.ui.searchField.text().strip() == "":
+                articles = get_all_article()
+            else:
+                pass
+            pass
+
+        elif current_filter_index == 2:
+            ## search by prix unitaire
+            if self.ui.searchField.text().strip() == "":
+                articles = get_all_article()
+            else:
+                articles = get_article_by_price(self.ui.searchField.text())
+            pass
+
+        elif current_filter_index == 3:
+            ## search by date d'entrer
+            if self.ui.searchField.text().strip() == "":
+                articles = get_all_article()
+            else:
+                articles = get_article_by_name(self.ui.searchField.text())
+            pass
+        print(f"articles = {articles}")
+        refresh_stock_table_data(self.ui.stockTable, articles)
+        pass
+
+

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowIQYhKK.ui'
+## Form generated from reading UI file 'main_windowuHSrcu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,9 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -27,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1024, 613)
+        MainWindow.resize(1229, 701)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"#centralwidget{\n"
@@ -97,11 +98,35 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"#welcomeLabel{\n"
+"#welcomeLabel, #stock_labele{\n"
 "	text-align: center;\n"
 "	color:  #2596be;\n"
 "	background-color: #e5e0ff;\n"
 "	padding: 10px 15px;\n"
+"}\n"
+"\n"
+"#total_payer{\n"
+"	color: #f56614;\n"
+"}\n"
+"\n"
+"#valider_commandeBtn{\n"
+"	background: #d5d2ff;\n"
+"	padding: 7px;\n"
+"	border-radius: 7px;\n"
+"}\n"
+"\n"
+"#stockTable{\n"
+"	background-color: rgb(244, 244, 255);\n"
+"}\n"
+"\n"
+"#filter_labele{\n"
+"	padding: 5px;\n"
+"}\n"
+"\n"
+"#filterCombo{\n"
+"	padding: 5px;\n"
+"	border-radius: 10px;\n"
+"	background-color: rgb(255, 220, 219);\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -305,6 +330,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.menuBtn = QPushButton(self.widget)
         self.menuBtn.setObjectName(u"menuBtn")
+        self.menuBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon7 = QIcon()
         icon7.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.menuBtn.setIcon(icon7)
@@ -414,7 +440,7 @@ class Ui_MainWindow(object):
 
         self.widget_5 = QWidget(self.homePage)
         self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(10, 500, 201, 51))
+        self.widget_5.setGeometry(QRect(10, 580, 441, 51))
         self.horizontalLayout_8 = QHBoxLayout(self.widget_5)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.label_7 = QLabel(self.widget_5)
@@ -423,33 +449,90 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.label_7)
 
-        self.label_8 = QLabel(self.widget_5)
-        self.label_8.setObjectName(u"label_8")
+        self.total_payer = QLabel(self.widget_5)
+        self.total_payer.setObjectName(u"total_payer")
         font6 = QFont()
         font6.setFamilies([u"Lucida Fax"])
         font6.setPointSize(15)
-        self.label_8.setFont(font6)
+        self.total_payer.setFont(font6)
 
-        self.horizontalLayout_8.addWidget(self.label_8)
+        self.horizontalLayout_8.addWidget(self.total_payer)
 
         self.gridLayoutWidget = QWidget(self.homePage)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(20, 140, 641, 361))
+        self.gridLayoutWidget.setGeometry(QRect(20, 140, 761, 431))
         self.cardContainer = QGridLayout(self.gridLayoutWidget)
         self.cardContainer.setObjectName(u"cardContainer")
         self.cardContainer.setContentsMargins(0, 0, 0, 0)
+        self.valider_commandeBtn = QPushButton(self.homePage)
+        self.valider_commandeBtn.setObjectName(u"valider_commandeBtn")
+        self.valider_commandeBtn.setGeometry(QRect(540, 580, 241, 51))
+        font7 = QFont()
+        font7.setPointSize(13)
+        font7.setBold(False)
+        self.valider_commandeBtn.setFont(font7)
+        self.valider_commandeBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/icons/caddie.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.valider_commandeBtn.setIcon(icon9)
+        self.valider_commandeBtn.setIconSize(QSize(30, 30))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
+        self.verticalLayout_4 = QVBoxLayout(self.stockPage)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.frame_2 = QFrame(self.stockPage)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(30, 30, 401, 80))
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
+        self.stock_labele = QLabel(self.frame_2)
+        self.stock_labele.setObjectName(u"stock_labele")
+        self.stock_labele.setGeometry(QRect(20, 20, 841, 51))
+        self.stock_labele.setFont(font4)
+        self.stockTable = QTableWidget(self.frame_2)
+        if (self.stockTable.columnCount() < 9):
+            self.stockTable.setColumnCount(9)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.stockTable.setHorizontalHeaderItem(8, __qtablewidgetitem8)
+        self.stockTable.setObjectName(u"stockTable")
+        self.stockTable.setGeometry(QRect(20, 130, 841, 431))
+        self.filter_labele = QLabel(self.frame_2)
+        self.filter_labele.setObjectName(u"filter_labele")
+        self.filter_labele.setGeometry(QRect(70, 80, 111, 31))
+        font8 = QFont()
+        font8.setPointSize(13)
+        self.filter_labele.setFont(font8)
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(60, 20, 141, 31))
-        self.label_3.setFont(font4)
+        self.label_3.setGeometry(QRect(30, 80, 31, 31))
+        self.label_3.setPixmap(QPixmap(u":/icons/icons/filter.png"))
+        self.label_3.setScaledContents(True)
+        self.filterCombo = QComboBox(self.frame_2)
+        self.filterCombo.addItem("")
+        self.filterCombo.addItem("")
+        self.filterCombo.addItem("")
+        self.filterCombo.addItem("")
+        self.filterCombo.setObjectName(u"filterCombo")
+        self.filterCombo.setGeometry(QRect(180, 81, 161, 31))
+
+        self.verticalLayout_4.addWidget(self.frame_2)
+
         self.mainNavigationScreen.addWidget(self.stockPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -506,10 +589,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font7 = QFont()
-        font7.setPointSize(12)
-        font7.setBold(True)
-        self.label_18.setFont(font7)
+        font9 = QFont()
+        font9.setPointSize(12)
+        font9.setBold(True)
+        self.label_18.setFont(font9)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18, 0, Qt.AlignmentFlag.AlignTop)
@@ -534,9 +617,9 @@ class Ui_MainWindow(object):
 
         self.logoutBtn = QPushButton(self.profileMenu)
         self.logoutBtn.setObjectName(u"logoutBtn")
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon10)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_12.addWidget(self.logoutBtn, 0, Qt.AlignmentFlag.AlignTop)
@@ -577,8 +660,34 @@ class Ui_MainWindow(object):
         self.welcomeLabel.setText(QCoreApplication.translate("MainWindow", u"BIENVENUE DANS NOTRE SERVICE", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Vos commandes :", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
+        self.total_payer.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
+        self.valider_commandeBtn.setText(QCoreApplication.translate("MainWindow", u"Valider la commande", None))
+        self.stock_labele.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
+        ___qtablewidgetitem = self.stockTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
+        ___qtablewidgetitem1 = self.stockTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Prix unitaire", None));
+        ___qtablewidgetitem2 = self.stockTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Pieces en stock", None));
+        ___qtablewidgetitem3 = self.stockTable.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem4 = self.stockTable.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Pieces par pacquet", None));
+        ___qtablewidgetitem5 = self.stockTable.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Pieces par boite", None));
+        ___qtablewidgetitem6 = self.stockTable.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Paquets en stock", None));
+        ___qtablewidgetitem7 = self.stockTable.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Boites en stock", None));
+        ___qtablewidgetitem8 = self.stockTable.horizontalHeaderItem(8)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None));
+        self.filter_labele.setText(QCoreApplication.translate("MainWindow", u"Filtrer par :", None))
+        self.label_3.setText("")
+        self.filterCombo.setItemText(0, QCoreApplication.translate("MainWindow", u"Libelle", None))
+        self.filterCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"Quantite en stock", None))
+        self.filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Prix Unitaire", None))
+        self.filterCombo.setItemText(3, QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None))
+
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Journal", None))

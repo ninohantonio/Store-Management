@@ -31,8 +31,10 @@ class Article(Base):
     numeroArticle = Column(String(13), primary_key=True)
     libelle: Mapped[str_20]
     pieceParPaquet: Mapped[int_small]
-    quantitePieceStock: Mapped[int_small]
+    pieceParBoite: Mapped[int_small]
+    pieceEnStock: Mapped[int_small]
     packetEnStock: Mapped[int_small]
+    boiteEnStock: Mapped[int_small]
     prixUnitaire: Mapped[int_small]
     dateEntrer = Column(Date)
     description: Mapped[str_30_optional]
