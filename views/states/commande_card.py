@@ -10,13 +10,15 @@ class CardCommande(QWidget):
     sous_total_changed = Signal(int, int)
     card_removed = Signal(str, int)
 
-    def __init__(self, article: Article, parent=None):
+    def __init__(self, article: Article, numero_article: str, parent=None):
         super().__init__(parent)
+        self.setObjectName(article.numeroArticle)
         self.parent = parent
         self.article = article
+        self.numero_article = numero_article
         self.sou_total = 0
-        self.quantite = 0  # Quantité par défaut
-        self.type_quantite = "paquets"  # Type par défaut
+        self.quantite = 1  # Quantité par défaut
+        self.type_quantite = "pieces"  # Type par défaut
         # Création du cadre (carte)
 
         self.horizontalLayout = QHBoxLayout(self)
@@ -85,8 +87,8 @@ class CardCommande(QWidget):
 
 
         self.comboBox = QComboBox(self.rightFrame)
-        self.comboBox.addItem("pacquets")
         self.comboBox.addItem("pieces")
+        self.comboBox.addItem("pacquets")
         self.comboBox.addItem("boites")
         self.comboBox.setObjectName(u"comboBox")
 
@@ -165,9 +167,9 @@ class CardCommande(QWidget):
                 lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # cancel button clicked
         else:
             stock_error_dialog.accepted.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.quantitePieceStock}"))  # yes button clicked
+                lambda: self.line_edit_quantite.setText(f"{self.article.pieceEnStock}"))  # yes button clicked
             stock_error_dialog.rejected.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.quantitePieceStock}"))  # cancel button clicked,
+                lambda: self.line_edit_quantite.setText(f"{self.article.pieceEnStock}"))  # cancel button clicked,
 
     def remove_card(self):
         """Supprime la carte de l'affichage."""
