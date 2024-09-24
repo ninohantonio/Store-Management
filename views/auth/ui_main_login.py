@@ -19,12 +19,12 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QRadioButton,
     QSizePolicy, QSpacerItem, QTextEdit, QVBoxLayout,
     QWidget)
-import resources_rc
+import views.resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
+            MainWindow.setObjectName(u"AdminWindow")
         MainWindow.resize(1312, 669)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
