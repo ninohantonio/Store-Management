@@ -37,6 +37,10 @@ QLineEdit, QTextEdit{
 	padding-left: 35px;
 	background: #fefeff;
 }
+#affichage1{
+	background: rgb(146, 200, 206);
+	border-radius: 15px;
+}
 
 #formulaire1{
 	background: rgb(146, 200, 206);
@@ -246,6 +250,19 @@ QLineEdit, QTextEdit{
                     <property name="geometry">
                      <rect>
                       <x>0</x>
+                      <y>40</y>
+                      <width>211</width>
+                      <height>31</height>
+                     </rect>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Nom de l'article</string>
+                    </property>
+                   </widget>
+                   <widget class="QLineEdit" name="lineEdit_6">
+                    <property name="geometry">
+                     <rect>
+                      <x>590</x>
                       <y>40</y>
                       <width>211</width>
                       <height>31</height>
@@ -575,7 +592,336 @@ QLineEdit, QTextEdit{
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="widget_4" native="true"/>
+           <widget class="QWidget" name="affichage1" native="true">
+            <widget class="QWidget" name="widget_2" native="true">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>551</width>
+               <height>591</height>
+              </rect>
+             </property>
+             <widget class="QFrame" name="frame_14">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>-40</y>
+                <width>531</width>
+                <height>621</height>
+               </rect>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
+              </property>
+              <widget class="QFrame" name="frame_15">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>140</y>
+                 <width>261</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_9">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>49</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Libelle</string>
+                </property>
+               </widget>
+               <widget class="QLineEdit" name="lineEdit_8">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>40</y>
+                  <width>201</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_16">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>140</y>
+                 <width>231</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_10">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>121</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Prix unitaire</string>
+                </property>
+               </widget>
+               <widget class="QLineEdit" name="lineEdit_9">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>40</y>
+                  <width>201</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_17">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>250</y>
+                 <width>261</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_13">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>71</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Conteneur</string>
+                </property>
+               </widget>
+               <widget class="QLineEdit" name="lineEdit_10">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>40</y>
+                  <width>201</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_18">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>360</y>
+                 <width>261</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_14">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>49</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+               <widget class="QLineEdit" name="lineEdit_11">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>40</y>
+                  <width>201</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_19">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>250</y>
+                 <width>261</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_15">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>49</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+               <widget class="QLineEdit" name="lineEdit_12">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>40</y>
+                  <width>201</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_20">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>360</y>
+                 <width>261</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_16">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>49</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+               <widget class="QLineEdit" name="lineEdit_13">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>40</y>
+                  <width>201</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_21">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>50</y>
+                 <width>511</width>
+                 <height>80</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_17">
+                <property name="geometry">
+                 <rect>
+                  <x>230</x>
+                  <y>30</y>
+                  <width>49</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="frame_22">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>489</y>
+                 <width>511</width>
+                 <height>81</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QTextEdit" name="textEdit">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>491</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_18">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>10</y>
+                  <width>49</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
           </item>
          </layout>
         </widget>
