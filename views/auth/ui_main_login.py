@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_loginHpPdvH.ui'
+## Form generated from reading UI file 'main_loginoYYMFG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -19,6 +19,9 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QRadioButton,
     QSizePolicy, QSpacerItem, QStackedWidget, QTextEdit,
     QVBoxLayout, QWidget)
+
+from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
+
 import views.resources_rc
 
 class Ui_MainWindow(object):
@@ -431,7 +434,7 @@ class Ui_MainWindow(object):
 
         self.frame_7 = QFrame(self.formulaire1)
         self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setGeometry(QRect(20, 390, 511, 81))
+        self.frame_7.setGeometry(QRect(20, 390, 501, 101))
         self.frame_7.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_7.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_8 = QVBoxLayout(self.frame_7)
@@ -449,7 +452,7 @@ class Ui_MainWindow(object):
 
         self.submitBtn = QPushButton(self.formulaire1)
         self.submitBtn.setObjectName(u"submitBtn")
-        self.submitBtn.setGeometry(QRect(30, 490, 241, 41))
+        self.submitBtn.setGeometry(QRect(30, 530, 241, 41))
         font2 = QFont()
         font2.setFamilies([u"Arial"])
         font2.setPointSize(10)
@@ -457,7 +460,7 @@ class Ui_MainWindow(object):
         self.submitBtn.setFont(font2)
         self.resetBtn = QPushButton(self.formulaire1)
         self.resetBtn.setObjectName(u"resetBtn")
-        self.resetBtn.setGeometry(QRect(310, 490, 221, 41))
+        self.resetBtn.setGeometry(QRect(300, 530, 221, 41))
         self.resetBtn.setFont(font2)
 
         self.horizontalLayout_7.addWidget(self.formulaire1)
@@ -553,12 +556,12 @@ class Ui_MainWindow(object):
         self.article_name.setFont(font3)
         self.frame_22 = QFrame(self.frame_14)
         self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setGeometry(QRect(10, 489, 511, 91))
+        self.frame_22.setGeometry(QRect(10, 489, 511, 111))
         self.frame_22.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_22.setFrameShadow(QFrame.Shadow.Raised)
         self.textEdit = QTextEdit(self.frame_22)
         self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(10, 30, 491, 51))
+        self.textEdit.setGeometry(QRect(10, 30, 491, 61))
         self.label_18 = QLabel(self.frame_22)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setGeometry(QRect(30, 10, 121, 16))
@@ -584,12 +587,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.widget)
 
-        self.widget_13 = QWidget(self.centralwidget)
-        self.widget_13.setObjectName(u"widget_13")
-        self.horizontalLayout_18 = QHBoxLayout(self.widget_13)
+        self.profile_container = QCustomSlideMenu(self.centralwidget)
+        self.profile_container.setObjectName(u"profile_container")
+        self.horizontalLayout_18 = QHBoxLayout(self.profile_container)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(-1, 0, 0, 0)
-        self.widget_14 = QWidget(self.widget_13)
+        self.widget_14 = QWidget(self.profile_container)
         self.widget_14.setObjectName(u"widget_14")
         self.verticalLayout_5 = QVBoxLayout(self.widget_14)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -635,7 +638,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_18.addWidget(self.widget_14, 0, Qt.AlignmentFlag.AlignTop)
 
 
-        self.horizontalLayout_3.addWidget(self.widget_13)
+        self.horizontalLayout_3.addWidget(self.profile_container)
 
         MainWindow.setCentralWidget(self.centralwidget)
 

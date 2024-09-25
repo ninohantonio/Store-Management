@@ -837,8 +837,8 @@ QLineEdit, QTextEdit{
                         <rect>
                          <x>20</x>
                          <y>390</y>
-                         <width>511</width>
-                         <height>81</height>
+                         <width>501</width>
+                         <height>101</height>
                         </rect>
                        </property>
                        <property name="frameShape">
@@ -873,7 +873,7 @@ QLineEdit, QTextEdit{
                        <property name="geometry">
                         <rect>
                          <x>30</x>
-                         <y>490</y>
+                         <y>530</y>
                          <width>241</width>
                          <height>41</height>
                         </rect>
@@ -892,8 +892,8 @@ QLineEdit, QTextEdit{
                       <widget class="QPushButton" name="resetBtn">
                        <property name="geometry">
                         <rect>
-                         <x>310</x>
-                         <y>490</y>
+                         <x>300</x>
+                         <y>530</y>
                          <width>221</width>
                          <height>41</height>
                         </rect>
@@ -1213,7 +1213,7 @@ QLineEdit, QTextEdit{
                            <x>10</x>
                            <y>489</y>
                            <width>511</width>
-                           <height>91</height>
+                           <height>111</height>
                           </rect>
                          </property>
                          <property name="frameShape">
@@ -1228,7 +1228,7 @@ QLineEdit, QTextEdit{
                             <x>10</x>
                             <y>30</y>
                             <width>491</width>
-                            <height>51</height>
+                            <height>61</height>
                            </rect>
                           </property>
                          </widget>
@@ -1268,7 +1268,7 @@ QLineEdit, QTextEdit{
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="widget_13" native="true">
+     <widget class="QCustomSlideMenu" name="profile_container" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_18">
        <property name="topMargin">
         <number>0</number>
@@ -1366,6 +1366,14 @@ QLineEdit, QTextEdit{
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomSlideMenu</class>
+   <extends>QWidget</extends>
+   <header location="global">Custom_Widgets.QCustomSlideMenu.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../resources.qrc"/>
   <include location="resources.qrc"/>

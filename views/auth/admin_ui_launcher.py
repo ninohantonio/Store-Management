@@ -12,6 +12,7 @@ class AdminWindow(QMainWindow):
         super(AdminWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        loadJsonStyle(self, self.ui, jsonFiles=["views/auth/style.json"])
 
 
 #         self.show()
