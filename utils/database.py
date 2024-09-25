@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base, mapped_column
 from typing_extensions import Annotated
 from typing import Optional
 
-db_url = "mysql+pymysql://dev:dev123@192.168.1.110:3306/irinaservice"
+db_url = "mysql+pymysql://dev:dev123@localhost:3306/irinaservice"
 
 
 engine = create_engine(db_url)
