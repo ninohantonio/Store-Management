@@ -150,7 +150,7 @@ class MainWindow(QMainWindow):
             margin=60,
             # yesButtonIcon=my_yes_icon,
             # cancelButtonIcon=my_cancel_icon,
-            yesButtonText="Voir stock",
+            yesButtonText="Ajouter",
             cancelButtonText="Annuler",
             animationDuration=500,
             showYesButton=True,

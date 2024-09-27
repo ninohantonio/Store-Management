@@ -30,6 +30,7 @@ class Article(Base):
 
     numeroArticle = Column(String(13), primary_key=True)
     libelle: Mapped[str_20]
+    typeConteneur: Mapped[str_10]
     pieceParPaquet: Mapped[int_small]
     pieceParBoite: Mapped[int_small]
     pieceEnStock: Mapped[int_small]
