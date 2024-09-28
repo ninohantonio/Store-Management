@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
     QWidget)
 
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-import resources_rc
+import views.resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
