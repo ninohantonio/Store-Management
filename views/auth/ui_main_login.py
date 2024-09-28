@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_loginGDCwXC.ui'
+## Form generated from reading UI file 'main_loginavhBEO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,13 +15,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QStackedWidget, QTextEdit,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QRadioButton, QSizePolicy, QSpacerItem, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QTextEdit, QVBoxLayout,
+    QWidget)
 
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-import views.resources_rc
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -385,11 +386,11 @@ class Ui_MainWindow(object):
         self.frame_11.setFrameShadow(QFrame.Shadow.Raised)
         self.label_5 = QLabel(self.frame_11)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(20, 16, 91, 20))
+        self.label_5.setGeometry(QRect(10, 16, 91, 20))
         self.label_5.setFont(font1)
         self.prix_form = QLineEdit(self.frame_11)
         self.prix_form.setObjectName(u"prix_form")
-        self.prix_form.setGeometry(QRect(20, 40, 201, 31))
+        self.prix_form.setGeometry(QRect(10, 40, 201, 31))
 
         self.verticalLayout_7.addWidget(self.frame_11)
 
@@ -399,11 +400,11 @@ class Ui_MainWindow(object):
         self.frame_12.setFrameShadow(QFrame.Shadow.Raised)
         self.label_6 = QLabel(self.frame_12)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(20, 16, 151, 20))
+        self.label_6.setGeometry(QRect(10, 16, 151, 20))
         self.label_6.setFont(font1)
         self.nbConteneur_form = QLineEdit(self.frame_12)
         self.nbConteneur_form.setObjectName(u"nbConteneur_form")
-        self.nbConteneur_form.setGeometry(QRect(20, 40, 201, 31))
+        self.nbConteneur_form.setGeometry(QRect(10, 40, 201, 31))
 
         self.verticalLayout_7.addWidget(self.frame_12)
 
@@ -413,11 +414,11 @@ class Ui_MainWindow(object):
         self.frame_13.setFrameShadow(QFrame.Shadow.Raised)
         self.label_7 = QLabel(self.frame_13)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(10, 20, 231, 18))
+        self.label_7.setGeometry(QRect(0, 20, 231, 18))
         self.label_7.setFont(font1)
         self.pieceSupplement_form = QLineEdit(self.frame_13)
         self.pieceSupplement_form.setObjectName(u"pieceSupplement_form")
-        self.pieceSupplement_form.setGeometry(QRect(20, 40, 201, 31))
+        self.pieceSupplement_form.setGeometry(QRect(10, 40, 201, 31))
 
         self.verticalLayout_7.addWidget(self.frame_13)
 
@@ -452,7 +453,7 @@ class Ui_MainWindow(object):
         self.submitBtn.setFont(font2)
         self.resetBtn = QPushButton(self.formulaire1)
         self.resetBtn.setObjectName(u"resetBtn")
-        self.resetBtn.setGeometry(QRect(300, 530, 221, 41))
+        self.resetBtn.setGeometry(QRect(290, 530, 221, 41))
         self.resetBtn.setFont(font2)
 
         self.horizontalLayout_7.addWidget(self.formulaire1)
@@ -485,7 +486,7 @@ class Ui_MainWindow(object):
         self.prixUnitaire_detail.setFont(font3)
         self.frame_16 = QFrame(self.frame_14)
         self.frame_16.setObjectName(u"frame_16")
-        self.frame_16.setGeometry(QRect(290, 140, 231, 101))
+        self.frame_16.setGeometry(QRect(280, 140, 231, 101))
         self.frame_16.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_16.setFrameShadow(QFrame.Shadow.Raised)
         self.label_11 = QLabel(self.frame_16)
@@ -524,7 +525,7 @@ class Ui_MainWindow(object):
         self.piece_detail.setFont(font3)
         self.frame_19 = QFrame(self.frame_14)
         self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setGeometry(QRect(290, 250, 231, 101))
+        self.frame_19.setGeometry(QRect(280, 250, 231, 101))
         self.frame_19.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_19.setFrameShadow(QFrame.Shadow.Raised)
         self.label_15 = QLabel(self.frame_19)
@@ -537,7 +538,7 @@ class Ui_MainWindow(object):
         self.nbConteneur_detail.setFont(font3)
         self.frame_20 = QFrame(self.frame_14)
         self.frame_20.setObjectName(u"frame_20")
-        self.frame_20.setGeometry(QRect(290, 360, 261, 101))
+        self.frame_20.setGeometry(QRect(280, 360, 261, 101))
         self.frame_20.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_20.setFrameShadow(QFrame.Shadow.Raised)
         self.label_16 = QLabel(self.frame_20)
@@ -569,7 +570,7 @@ class Ui_MainWindow(object):
         self.description_detail = QTextEdit(self.frame_22)
         self.description_detail.setObjectName(u"description_detail")
         self.description_detail.setEnabled(False)
-        self.description_detail.setGeometry(QRect(10, 30, 491, 61))
+        self.description_detail.setGeometry(QRect(10, 30, 471, 61))
         self.description_detail.setFont(font1)
         self.label_18 = QLabel(self.frame_22)
         self.label_18.setObjectName(u"label_18")
@@ -598,9 +599,9 @@ class Ui_MainWindow(object):
 
         self.profile_container = QCustomSlideMenu(self.centralwidget)
         self.profile_container.setObjectName(u"profile_container")
-        self.horizontalLayout_18 = QHBoxLayout(self.profile_container)
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.horizontalLayout_18.setContentsMargins(-1, 0, 0, 0)
+        self.verticalLayout_9 = QVBoxLayout(self.profile_container)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(-1, 0, 0, 0)
         self.widget_14 = QWidget(self.profile_container)
         self.widget_14.setObjectName(u"widget_14")
         self.verticalLayout_5 = QVBoxLayout(self.widget_14)
@@ -644,7 +645,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.logoutBtn)
 
 
-        self.horizontalLayout_18.addWidget(self.widget_14, 0, Qt.AlignmentFlag.AlignTop)
+        self.verticalLayout_9.addWidget(self.widget_14, 0, Qt.AlignmentFlag.AlignTop)
+
+        self.tableWidget = QTableWidget(self.profile_container)
+        if (self.tableWidget.columnCount() < 1):
+            self.tableWidget.setColumnCount(1)
+        font6 = QFont()
+        font6.setPointSize(9)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setFont(font6);
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setMaximumSize(QSize(120, 16777215))
+        self.tableWidget.setBaseSize(QSize(100, 0))
+
+        self.verticalLayout_9.addWidget(self.tableWidget, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_3.addWidget(self.profile_container)
@@ -704,5 +719,7 @@ class Ui_MainWindow(object):
         self.label_20.setText("")
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
     # retranslateUi
 

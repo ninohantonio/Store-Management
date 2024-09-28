@@ -695,7 +695,7 @@ QLineEdit, QTextEdit{
                              <widget class="QLabel" name="label_5">
                               <property name="geometry">
                                <rect>
-                                <x>20</x>
+                                <x>10</x>
                                 <y>16</y>
                                 <width>91</width>
                                 <height>20</height>
@@ -713,7 +713,7 @@ QLineEdit, QTextEdit{
                              <widget class="QLineEdit" name="prix_form">
                               <property name="geometry">
                                <rect>
-                                <x>20</x>
+                                <x>10</x>
                                 <y>40</y>
                                 <width>201</width>
                                 <height>31</height>
@@ -736,7 +736,7 @@ QLineEdit, QTextEdit{
                              <widget class="QLabel" name="label_6">
                               <property name="geometry">
                                <rect>
-                                <x>20</x>
+                                <x>10</x>
                                 <y>16</y>
                                 <width>151</width>
                                 <height>20</height>
@@ -754,7 +754,7 @@ QLineEdit, QTextEdit{
                              <widget class="QLineEdit" name="nbConteneur_form">
                               <property name="geometry">
                                <rect>
-                                <x>20</x>
+                                <x>10</x>
                                 <y>40</y>
                                 <width>201</width>
                                 <height>31</height>
@@ -780,7 +780,7 @@ QLineEdit, QTextEdit{
                              <widget class="QLabel" name="label_7">
                               <property name="geometry">
                                <rect>
-                                <x>10</x>
+                                <x>0</x>
                                 <y>20</y>
                                 <width>231</width>
                                 <height>18</height>
@@ -798,7 +798,7 @@ QLineEdit, QTextEdit{
                              <widget class="QLineEdit" name="pieceSupplement_form">
                               <property name="geometry">
                                <rect>
-                                <x>20</x>
+                                <x>10</x>
                                 <y>40</y>
                                 <width>201</width>
                                 <height>31</height>
@@ -878,7 +878,7 @@ QLineEdit, QTextEdit{
                       <widget class="QPushButton" name="resetBtn">
                        <property name="geometry">
                         <rect>
-                         <x>300</x>
+                         <x>290</x>
                          <y>530</y>
                          <width>221</width>
                          <height>41</height>
@@ -975,7 +975,7 @@ QLineEdit, QTextEdit{
                         <widget class="QFrame" name="frame_16">
                          <property name="geometry">
                           <rect>
-                           <x>290</x>
+                           <x>280</x>
                            <y>140</y>
                            <width>231</width>
                            <height>101</height>
@@ -1125,7 +1125,7 @@ QLineEdit, QTextEdit{
                         <widget class="QFrame" name="frame_19">
                          <property name="geometry">
                           <rect>
-                           <x>290</x>
+                           <x>280</x>
                            <y>250</y>
                            <width>231</width>
                            <height>101</height>
@@ -1174,7 +1174,7 @@ QLineEdit, QTextEdit{
                         <widget class="QFrame" name="frame_20">
                          <property name="geometry">
                           <rect>
-                           <x>290</x>
+                           <x>280</x>
                            <y>360</y>
                            <width>261</width>
                            <height>101</height>
@@ -1279,7 +1279,7 @@ QLineEdit, QTextEdit{
                            <rect>
                             <x>10</x>
                             <y>30</y>
-                            <width>491</width>
+                            <width>471</width>
                             <height>61</height>
                            </rect>
                           </property>
@@ -1326,7 +1326,7 @@ QLineEdit, QTextEdit{
     </item>
     <item>
      <widget class="QCustomSlideMenu" name="profile_container" native="true">
-      <layout class="QHBoxLayout" name="horizontalLayout_18">
+      <layout class="QVBoxLayout" name="verticalLayout_9">
        <property name="topMargin">
         <number>0</number>
        </property>
@@ -1415,6 +1415,32 @@ QLineEdit, QTextEdit{
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignmentFlag::AlignHCenter">
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="maximumSize">
+          <size>
+           <width>120</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Articles recherher</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>
