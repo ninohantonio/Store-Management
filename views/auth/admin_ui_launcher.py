@@ -30,6 +30,9 @@ class AdminWindow(QMainWindow):
         self.ui.radioButton.clicked.connect(self.manage_radio_checked)
         self.ui.radioButton_2.clicked.connect(self.manage_radio_checked)
 
+        self.ui.search_view.cellDoubleClicked.connect(self.print_search_view_item_clicked)
+        self.ui.search_view.setColumnHidden(1, True)
+
         self.numero_to_insert = ""
         self.alert_label = QLabel()
 
@@ -200,3 +203,10 @@ class AdminWindow(QMainWindow):
         libelle = self.ui.search_field.text()
         articles = get_article_by_name(libelle)
         refresh_search_view_value(self.ui.search_view, articles)
+
+    def print_search_view_item_clicked(self, row, column):
+
+        numero = self.ui.search_view.item(row, 1).text()
+        self.show_detail_article(numero)
+        print(f"numero = {numero}")
+        return

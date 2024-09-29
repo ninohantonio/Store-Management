@@ -26,3 +26,4 @@ def refresh_search_view_value(table_widtget, data: list[Article]):
     for i, row in enumerate(data):
         table_widtget.insertRow(i)
         table_widtget.setItem(i, 0, QTableWidgetItem(str(row.libelle)))
+        table_widtget.setItem(i, 1, QTableWidgetItem(str(row.numeroArticle)))

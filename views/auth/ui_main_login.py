@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_loginEYufsC.ui'
+## Form generated from reading UI file 'main_logincRbsje.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -648,13 +648,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.widget_14, 0, Qt.AlignmentFlag.AlignTop)
 
         self.search_view = QTableWidget(self.profile_container)
-        if (self.search_view.columnCount() < 1):
-            self.search_view.setColumnCount(1)
+        if (self.search_view.columnCount() < 2):
+            self.search_view.setColumnCount(2)
         font6 = QFont()
         font6.setPointSize(9)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font6);
         self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.search_view.setObjectName(u"search_view")
         self.search_view.setEnabled(True)
         self.search_view.setMaximumSize(QSize(120, 16777215))
@@ -723,5 +725,7 @@ class Ui_MainWindow(object):
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
         ___qtablewidgetitem = self.search_view.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
+        ___qtablewidgetitem1 = self.search_view.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"numero", None));
     # retranslateUi
 

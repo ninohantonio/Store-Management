@@ -1447,6 +1447,11 @@ QLineEdit, QTextEdit{
            </font>
           </property>
          </column>
+         <column>
+          <property name="text">
+           <string>numero</string>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>
