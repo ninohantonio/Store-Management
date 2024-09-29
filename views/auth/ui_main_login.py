@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_loginavhBEO.ui'
+## Form generated from reading UI file 'main_loginEYufsC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QRadioButton, QSizePolicy, QSpacerItem, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QTextEdit, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QRadioButton, QSizePolicy, QSpacerItem,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
 import views.resources_rc
@@ -647,19 +647,21 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.widget_14, 0, Qt.AlignmentFlag.AlignTop)
 
-        self.tableWidget = QTableWidget(self.profile_container)
-        if (self.tableWidget.columnCount() < 1):
-            self.tableWidget.setColumnCount(1)
+        self.search_view = QTableWidget(self.profile_container)
+        if (self.search_view.columnCount() < 1):
+            self.search_view.setColumnCount(1)
         font6 = QFont()
         font6.setPointSize(9)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font6);
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setMaximumSize(QSize(120, 16777215))
-        self.tableWidget.setBaseSize(QSize(100, 0))
+        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.search_view.setObjectName(u"search_view")
+        self.search_view.setEnabled(True)
+        self.search_view.setMaximumSize(QSize(120, 16777215))
+        self.search_view.setBaseSize(QSize(100, 0))
+        self.search_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
 
-        self.verticalLayout_9.addWidget(self.tableWidget, 0, Qt.AlignmentFlag.AlignHCenter)
+        self.verticalLayout_9.addWidget(self.search_view, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_3.addWidget(self.profile_container)
@@ -719,7 +721,7 @@ class Ui_MainWindow(object):
         self.label_20.setText("")
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.search_view.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
     # retranslateUi
 

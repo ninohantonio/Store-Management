@@ -1418,7 +1418,10 @@ QLineEdit, QTextEdit{
         </widget>
        </item>
        <item alignment="Qt::AlignmentFlag::AlignHCenter">
-        <widget class="QTableWidget" name="tableWidget">
+        <widget class="QTableWidget" name="search_view">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="maximumSize">
           <size>
            <width>120</width>
@@ -1430,6 +1433,9 @@ QLineEdit, QTextEdit{
            <width>100</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
          </property>
          <column>
           <property name="text">

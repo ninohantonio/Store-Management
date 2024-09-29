@@ -6,10 +6,13 @@ from Custom_Widgets.QCustomQDialog import QCustomQDialog
 
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article
-from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article
+from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name
 from views.auth.ui_main_login import Ui_MainWindow
 
 from PySide6.QtWidgets import QApplication
+
+from views.states.stock_state import refresh_search_view_value
+
 
 class AdminWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -19,7 +22,8 @@ class AdminWindow(QMainWindow):
         loadJsonStyle(self, self.ui, jsonFiles=["views/auth/style.json"])
         self.ui.resetBtn.clicked.connect(self.reset_form)
         if self.ui.mainNavigationScreen.currentIndex() == 0:
-            self.ui.search_field.returnPressed.connect(self.print_search_value)
+            self.ui.search_field.returnPressed.connect(self.manage_search_value_input)
+            self.ui.search_field.textChanged.connect(self.manage_search_value_input)
             self.ui.search_field.setFocus()
             pass
 
@@ -28,6 +32,13 @@ class AdminWindow(QMainWindow):
 
         self.numero_to_insert = ""
         self.alert_label = QLabel()
+
+    def manage_search_value_input(self):
+        search_value = self.ui.search_field.text()
+        if len(search_value) == 13 and search_value.isnumeric():
+            self.print_search_value()
+        else:
+            self.refresh_search_view()
 
     def print_search_value(self):
         search_value = self.ui.search_field.text()
@@ -184,3 +195,8 @@ class AdminWindow(QMainWindow):
 
         stock_error_dialog.show()
         stock_error_dialog.accepted.connect(lambda : stock_error_dialog.close())  # yes button clicked
+
+    def refresh_search_view(self):
+        libelle = self.ui.search_field.text()
+        articles = get_article_by_name(libelle)
+        refresh_search_view_value(self.ui.search_view, articles)
