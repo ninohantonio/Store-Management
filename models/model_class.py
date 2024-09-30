@@ -79,5 +79,11 @@ class Notification(Base):
     contenu = Column(String(100))
     numeroArticle: Mapped[str_13]
 
+class User(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True)
+    username = Column(String, unique=True, nullable=False)
+    password_hash = Column(String, nullable=False)
+
 
 Base.metadata.create_all(engine)
