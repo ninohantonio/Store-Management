@@ -80,9 +80,10 @@ class Notification(Base):
     numeroArticle: Mapped[str_13]
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = 'user'
+
     id = Column(Integer, primary_key=True)
-    username = Column(String, unique=True, nullable=False)
+    email = Column(String, unique=True, nullable=False)
     password_hash = Column(String, nullable=False)
 
 
