@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'auth_uiOtnbCM.ui'
+## Form generated from reading UI file 'auth_uijmBUAX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -163,20 +163,18 @@ class Ui_Form(object):
         self.right.setObjectName(u"right")
         self.right.setFrameShape(QFrame.Shape.StyledPanel)
         self.right.setFrameShadow(QFrame.Shadow.Raised)
-        self.pushButton = QPushButton(self.right)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(90, 70, 331, 281))
-        icon = QIcon()
-        icon.addFile(u":/images/LOGO IRINA SERVICE.jpg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton.setIcon(icon)
-        self.pushButton.setIconSize(QSize(300, 300))
         self.label = QLabel(self.right)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(180, 390, 191, 16))
+        self.label.setGeometry(QRect(160, 390, 191, 16))
         font3 = QFont()
         font3.setFamilies([u"Arial"])
         font3.setPointSize(12)
         self.label.setFont(font3)
+        self.label_2 = QLabel(self.right)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(90, 80, 321, 261))
+        self.label_2.setPixmap(QPixmap(u":/icons/icons/irina-service.jpg"))
+        self.label_2.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.right)
 
@@ -196,7 +194,7 @@ class Ui_Form(object):
         self.password_label.setText(QCoreApplication.translate("Form", u"Mot de passe", None))
         self.forgot.setText(QCoreApplication.translate("Form", u"Mot de passe oublie ?", None))
         self.login_btn.setText(QCoreApplication.translate("Form", u"Se connecter", None))
-        self.pushButton.setText("")
         self.label.setText(QCoreApplication.translate("Form", u"<< La qualite avant tous >>", None))
+        self.label_2.setText("")
     # retranslateUi
 

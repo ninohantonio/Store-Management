@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="icons">
     <file>icons/filter.png</file>
+    <file>icons/irina-service.jpg</file>
     <file>icons/about.png</file>
     <file>icons/info.png</file>
     <file>icons/setting.png</file>
@@ -16,8 +17,5 @@
     <file>icons/avatar.png</file>
     <file>icons/burger-menu.png</file>
     <file>icons/search.png</file>
-  </qresource>
-  <qresource prefix="images">
-    <file>LOGO IRINA SERVICE.jpg</file>
   </qresource>
 </RCC>
