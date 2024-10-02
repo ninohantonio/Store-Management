@@ -83,8 +83,8 @@ class User(Base):
     __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True)
-    email = Column(String, unique=True, nullable=False)
-    password_hash = Column(String, nullable=False)
+    email = Column(String(60), unique=True, nullable=False)
+    password_hash = Column(String(255), nullable=False)
 
 
 Base.metadata.create_all(engine)
