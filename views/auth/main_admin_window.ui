@@ -548,7 +548,7 @@ QLineEdit, QTextEdit{
                                </font>
                               </property>
                               <property name="text">
-                               <string>Libelle</string>
+                               <string>Libelle *</string>
                               </property>
                              </widget>
                              <widget class="QLineEdit" name="libelle_form">
@@ -602,7 +602,7 @@ QLineEdit, QTextEdit{
                                </font>
                               </property>
                               <property name="text">
-                               <string>Conteneur</string>
+                               <string>Conteneur *</string>
                               </property>
                              </widget>
                              <widget class="QRadioButton" name="radioButton">
@@ -656,7 +656,7 @@ QLineEdit, QTextEdit{
                                </font>
                               </property>
                               <property name="text">
-                               <string>Nombre dans un conteneur</string>
+                               <string>Nombre dans un conteneur *</string>
                               </property>
                              </widget>
                              <widget class="QLineEdit" name="pieceParConteneur">
@@ -709,7 +709,7 @@ QLineEdit, QTextEdit{
                                </font>
                               </property>
                               <property name="text">
-                               <string>Prix unitaire</string>
+                               <string>Prix unitaire *</string>
                               </property>
                              </widget>
                              <widget class="QLineEdit" name="prix_form">
@@ -750,7 +750,7 @@ QLineEdit, QTextEdit{
                                </font>
                               </property>
                               <property name="text">
-                               <string>Nombre de conteneur</string>
+                               <string>Nombre de conteneur *</string>
                               </property>
                              </widget>
                              <widget class="QLineEdit" name="nbConteneur_form">
@@ -794,7 +794,7 @@ QLineEdit, QTextEdit{
                                </font>
                               </property>
                               <property name="text">
-                               <string>Nombre de piece supplementaire</string>
+                               <string>Nombre de piece supplementaire *</string>
                               </property>
                              </widget>
                              <widget class="QLineEdit" name="pieceSupplement_form">
@@ -841,7 +841,7 @@ QLineEdit, QTextEdit{
                            </font>
                           </property>
                           <property name="text">
-                           <string>Description</string>
+                           <string>Description *</string>
                           </property>
                          </widget>
                         </item>

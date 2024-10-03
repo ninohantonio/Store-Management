@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_loginIqJTXK.ui'
+## Form generated from reading UI file 'main_admin_windowHVxVBN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -691,22 +691,22 @@ class Ui_MainWindow(object):
         self.search_field.setText("")
         self.search_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Rechercher ici . . .", None))
         self.accountBtn_2.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Libelle", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Libelle *", None))
         self.libelle_form.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nom de l'article", None))
         self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nom de l'article", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Conteneur", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Conteneur *", None))
         self.radioButton.setText(QCoreApplication.translate("MainWindow", u"Paquet", None))
         self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"Boite", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Nombre dans un conteneur", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Nombre dans un conteneur *", None))
         self.pieceParConteneur.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nombre de piece par conteneur", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Prix unitaire", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Prix unitaire *", None))
         self.prix_form.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prix unitaire en Ariary", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Nombre de conteneur", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Nombre de conteneur *", None))
         self.nbConteneur_form.setText("")
         self.nbConteneur_form.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Conteneur a ajouter", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Nombre de piece supplementaire", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Nombre de piece supplementaire *", None))
         self.pieceSupplement_form.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Piece supplementaire a ajouter", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Description", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Description *", None))
         self.description_form.setText("")
         self.description_form.setPlaceholderText(QCoreApplication.translate("MainWindow", u"description de l'article", None))
         self.submitBtn.setText(QCoreApplication.translate("MainWindow", u"Enregistrer modification", None))

@@ -27,3 +27,10 @@ def verify_password(email, provided_password):
             password_hash_bytes = user.password_hash.encode('utf-8')
             return bcrypt.checkpw(provided_password.encode('utf-8'), password_hash_bytes)
     return False
+
+def confirm_by_email(email):
+
+    pass
+
+def change_password(email):
+    pass

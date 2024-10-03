@@ -40,8 +40,10 @@ class AdminWindow(QMainWindow):
         search_value = self.ui.search_field.text()
         if len(search_value) == 13 and search_value.isnumeric():
             self.print_search_value()
+            return True
         else:
             self.refresh_search_view()
+            return False
 
     def print_search_value(self):
         search_value = self.ui.search_field.text()
@@ -89,17 +91,22 @@ class AdminWindow(QMainWindow):
     def show_message_to_add(self):
         self.ui.article_name.setText("Article Non Trouver")
 
+    def controll_provided_data(self) -> bool:
+        if self.ui.prix_form.text().strip() != "" and self.ui.description_form.text().strip() != "" and self.ui.nbConteneur_form.text().strip() != "" and self.ui.pieceSupplement_form.text().strip() != "" and self.ui.pieceParConteneur.text().strip() != "":
+            return True
+        return False
 
     def insert_new_article(self):
         print("submit")
 
+        if not self.manage_search_value_input():
+            print("Veuillez scanner ou renseigner un numero de serie d'article valide")
+            return
+        elif not self.controll_provided_data():
+            print("Veuillez remplir tous les champs")
+            return
 
-        # print(f"numero = {article.numeroArticle}")
-        # print(f"type = {article.typeConteneur}")
-        # print(f"par packet = {article.pieceParPaquet}")
-        # print(article.pieceParBoite)
-        # print(article.pieceEnStock)
-        # print(article.dateEntrer)
+
         stock_error_dialog = QCustomQDialog(
             title="Validation de l'ajout de l'article !",
             description="Voulez vous ajouter cette nouvelle article ?",

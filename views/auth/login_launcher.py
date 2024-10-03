@@ -11,11 +11,19 @@ class LoginWindow(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
+        self.ui.wrong_label.setHidden(True)
         self.ui.show_password.clicked.connect(self.show_password)
         self.ui.hide_password.clicked.connect(self.hide_password)
 
+        self.ui.password.textChanged.connect(self.hidde_wrong_password)
+        self.ui.email.textChanged.connect(self.hidde_wrong_password)
+
         self.ui.password.setEchoMode(QLineEdit.Password)
         self.ui.login_btn.clicked.connect(self.handle_login)
+
+
+    def hidde_wrong_password(self):
+        self.ui.wrong_label.setHidden(True)
 
     def show_password(self):
         self.ui.password.setEchoMode(QLineEdit.Normal)
@@ -42,4 +50,5 @@ class LoginWindow(QWidget):
             self.redirect_to_admin_window()
             return
         else:
+            self.ui.wrong_label.setHidden(False)
             return
