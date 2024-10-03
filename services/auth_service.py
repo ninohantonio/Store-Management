@@ -7,7 +7,7 @@ from services.article_service import session
 def hash_password(password):
     salt = bcrypt.gensalt()
     hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
-    return hashed
+    return hashed.decode('utf-8')  # Convertir les octets en chaîne de caractères
 
 def create_user(email, password):
     if session.query(User).filter_by(email=email).first():
@@ -22,6 +22,8 @@ def create_user(email, password):
 def verify_password(email, provided_password):
     user = session.query(User).filter_by(email=email).first()
     session.close()
-    if user and bcrypt.checkpw(provided_password.encode('utf-8'), user.password_hash):
-        return True
+    if user:
+        if isinstance(user.password_hash, str):
+            password_hash_bytes = user.password_hash.encode('utf-8')
+            return bcrypt.checkpw(provided_password.encode('utf-8'), password_hash_bytes)
     return False
