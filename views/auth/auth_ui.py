@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'auth_uijmBUAX.ui'
+## Form generated from reading UI file 'auth_uiBzGnAV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -57,6 +57,11 @@ class Ui_Form(object):
 "\n"
 "#irina_label{\n"
 "	color: rgb(0, 85, 255);\n"
+"}\n"
+"\n"
+"#hide_password, #show_password{\n"
+"	background-color: #fefeff;\n"
+"	border: none;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(Form)
         self.horizontalLayout.setSpacing(0)
@@ -150,6 +155,28 @@ class Ui_Form(object):
         self.login_btn.setObjectName(u"login_btn")
         self.login_btn.setGeometry(QRect(40, 280, 291, 41))
         self.login_btn.setFont(font2)
+        self.show_password = QPushButton(self.frame_6)
+        self.show_password.setObjectName(u"show_password")
+        self.show_password.setGeometry(QRect(290, 190, 31, 24))
+        self.show_password.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon = QIcon()
+        icon.addFile(u":/icons/icons/visible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.show_password.setIcon(icon)
+        self.hide_password = QPushButton(self.frame_6)
+        self.hide_password.setObjectName(u"hide_password")
+        self.hide_password.setGeometry(QRect(290, 190, 31, 24))
+        self.hide_password.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/icons/invisible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.hide_password.setIcon(icon1)
+        self.email_label.raise_()
+        self.email.raise_()
+        self.password.raise_()
+        self.password_label.raise_()
+        self.forgot.raise_()
+        self.login_btn.raise_()
+        self.hide_password.raise_()
+        self.show_password.raise_()
 
         self.verticalLayout_2.addWidget(self.frame_6)
 
@@ -194,6 +221,8 @@ class Ui_Form(object):
         self.password_label.setText(QCoreApplication.translate("Form", u"Mot de passe", None))
         self.forgot.setText(QCoreApplication.translate("Form", u"Mot de passe oublie ?", None))
         self.login_btn.setText(QCoreApplication.translate("Form", u"Se connecter", None))
+        self.show_password.setText("")
+        self.hide_password.setText("")
         self.label.setText(QCoreApplication.translate("Form", u"<< La qualite avant tous >>", None))
         self.label_2.setText("")
     # retranslateUi

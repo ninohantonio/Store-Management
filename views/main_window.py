@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowuHSrcu.ui'
+## Form generated from reading UI file 'main_windowXSeaUM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
 "	border: none;\n"
 "}\n"
 "#leftMenu, QCustomSlideMenu{\n"
-"	background-color: #2596be;\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 85, 255), stop:1 rgb(0, 170, 255));\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
@@ -51,11 +51,11 @@ class Ui_MainWindow(object):
 "\n"
 "#searchFrame{\n"
 "	border-radius: 10px;\n"
-"	border: 2px solid #2596be;\n"
+"	border: 2px solid rgb(0, 85, 255);\n"
 "}\n"
 "\n"
 "#appHeader{\n"
-"	color: #2596be;\n"
+"	color: rgb(0, 170, 255);\n"
 "}\n"
 "\n"
 "#card1, #card2, #card3, #card4{\n"
@@ -82,7 +82,8 @@ class Ui_MainWindow(object):
 "\n"
 "#menuFrame #accueilBtn{\n"
 "	background-color: #fefeff;\n"
-"	border-top-left-radius: 15px;\n"
+"	border-top-left-radius: "
+                        "15px;\n"
 "}\n"
 "\n"
 "#profileContainer{\n"
@@ -90,8 +91,7 @@ class Ui_MainWindow(object):
 "	border-radius: 20px;\n"
 "}\n"
 "\n"
-""
-                        "#logoutBtn{\n"
+"#logoutBtn{\n"
 "	padding: 4px 7px;\n"
 "	border: 1px solid #000;\n"
 "	border-radius: 7px\n"
@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
 "\n"
 "#welcomeLabel, #stock_labele{\n"
 "	text-align: center;\n"
-"	color:  #2596be;\n"
+"	color:  rgb(0, 170, 255);\n"
 "	background-color: #e5e0ff;\n"
 "	padding: 10px 15px;\n"
 "}\n"

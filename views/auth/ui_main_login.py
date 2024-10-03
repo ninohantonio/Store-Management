@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_logincRbsje.ui'
+## Form generated from reading UI file 'main_logineOPjKT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
 "\n"
 "#search_frame{\n"
 "	border-radius: 10px;\n"
-"	border: 2px solid #2596be;\n"
+"	border: 2px solid rgb(0, 85, 255);\n"
 "}\n"
 "\n"
 "#search_field{\n"
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
 "	background: #fefeff;\n"
 "}\n"
 "#affichage1{\n"
-"	background: #2596be;\n"
+"	background-color: rgb(0, 85, 255);\n"
 "	border-radius: 15px;\n"
 "}\n"
 "\n"
@@ -83,14 +83,14 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#affichage1 QLabel{\n"
-"	color: #fefeff;\n"
+"	color: #fefeff;"
+                        "\n"
 "}\n"
 "\n"
-"#formu"
-                        "laire1{\n"
+"#formulaire1{\n"
 "	background: #fefeff;\n"
 "	border-radius: 15px;\n"
-"	border: 2px solid  #2596be;\n"
+"	border: 2px solid rgb(0, 85, 255);\n"
 "}\n"
 "\n"
 "#submitBtn{\n"
@@ -111,6 +111,8 @@ class Ui_MainWindow(object):
 "	text-align: center;\n"
 "}\n"
 "\n"
+"\n"
+"\n"
 "")
         self.horizontalLayout_3 = QHBoxLayout(self.centralwidget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -128,7 +130,7 @@ class Ui_MainWindow(object):
         self.frame = QFrame(self.left_menu)
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"#frame{\n"
-"	background-color:  #2596be;\n"
+"	background-color: rgb(0, 85, 255);\n"
 "}")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
@@ -710,6 +712,7 @@ class Ui_MainWindow(object):
         self.submitBtn.setText(QCoreApplication.translate("MainWindow", u"Enregistrer modification", None))
         self.resetBtn.setText(QCoreApplication.translate("MainWindow", u"Vider les champs", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Prix Unitaire", None))
+        self.prixUnitaire_detail.setText("")
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Nombre de piece dans un conteneur", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Conteneur", None))
         self.conteneur_detail.setText("")

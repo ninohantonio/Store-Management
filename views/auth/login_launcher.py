@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget
+from PySide6.QtWidgets import QWidget, QLineEdit
 
 from views.auth.admin_ui_launcher import AdminWindow
 from views.auth.auth_ui import Ui_Form
@@ -10,8 +10,24 @@ class LoginWindow(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
+        self.ui.show_password.clicked.connect(self.show_password)
+        self.ui.hide_password.clicked.connect(self.hide_password)
+
+        self.ui.password.setEchoMode(QLineEdit.Password)
         self.ui.login_btn.clicked.connect(self.handle_login)
 
+    def show_password(self):
+        self.ui.password.setEchoMode(QLineEdit.Normal)
+        self.ui.hide_password.setHidden(False)
+        self.ui.show_password.setHidden(True)
+        pass
+
+
+    def hide_password(self):
+        self.ui.password.setEchoMode(QLineEdit.Password)
+        self.ui.hide_password.setHidden(True)
+        self.ui.show_password.setHidden(False)
+        pass
 
     def handle_login(self):
         self.admin_window = AdminWindow()
