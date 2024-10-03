@@ -1,7 +1,13 @@
+import os
+
 import bcrypt
 
 from models.model_class import User
 from services.article_service import session
+
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 
 def hash_password(password):
@@ -28,7 +34,14 @@ def verify_password(email, provided_password):
             return bcrypt.checkpw(provided_password.encode('utf-8'), password_hash_bytes)
     return False
 
+def send_email_confirmation_to_admin():
+    pass
+
 def confirm_by_email(email):
+    SMTP_SERVER = 'smtp.gmail.com'
+    SMTP_PORT = 587
+    EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
+    EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
     pass
 
