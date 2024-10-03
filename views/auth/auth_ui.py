@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'auth_uiBzGnAV.ui'
+## Form generated from reading UI file 'auth_uifzMlLl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -62,6 +62,12 @@ class Ui_Form(object):
 "#hide_password, #show_password{\n"
 "	background-color: #fefeff;\n"
 "	border: none;\n"
+"}\n"
+"\n"
+"#wrong_label{\n"
+"	background-color: rgb(255, 85, 0);\n"
+"	padding-left: 10px;\n"
+"	border-radius: 5px;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(Form)
         self.horizontalLayout.setSpacing(0)
@@ -169,6 +175,9 @@ class Ui_Form(object):
         icon1 = QIcon()
         icon1.addFile(u":/icons/icons/invisible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.hide_password.setIcon(icon1)
+        self.wrong_label = QLabel(self.frame_6)
+        self.wrong_label.setObjectName(u"wrong_label")
+        self.wrong_label.setGeometry(QRect(40, 30, 291, 31))
         self.email_label.raise_()
         self.email.raise_()
         self.password.raise_()
@@ -177,6 +186,7 @@ class Ui_Form(object):
         self.login_btn.raise_()
         self.hide_password.raise_()
         self.show_password.raise_()
+        self.wrong_label.raise_()
 
         self.verticalLayout_2.addWidget(self.frame_6)
 
@@ -223,6 +233,7 @@ class Ui_Form(object):
         self.login_btn.setText(QCoreApplication.translate("Form", u"Se connecter", None))
         self.show_password.setText("")
         self.hide_password.setText("")
+        self.wrong_label.setText(QCoreApplication.translate("Form", u"Email ou mot de passe incorrect", None))
         self.label.setText(QCoreApplication.translate("Form", u"<< La qualite avant tous >>", None))
         self.label_2.setText("")
     # retranslateUi

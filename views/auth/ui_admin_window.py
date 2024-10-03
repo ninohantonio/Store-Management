@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_logineOPjKT.ui'
+## Form generated from reading UI file 'main_loginIqJTXK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
 "	background: #fefeff;\n"
 "}\n"
 "#affichage1{\n"
-"	background-color: rgb(0, 85, 255);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 85, 255), stop:1 rgb(0, 170, 255));\n"
 "	border-radius: 15px;\n"
 "}\n"
 "\n"
@@ -78,13 +78,13 @@ class Ui_MainWindow(object):
 "	background-color: transparent;\n"
 "	border-bottom: 2px solid #c4e4db;\n"
 "	color: rgb(255, 171, 25);\n"
-"	font-size: 15px;\n"
+"	font-size: 1"
+                        "5px;\n"
 "	font-family: Arial;\n"
 "}\n"
 "\n"
 "#affichage1 QLabel{\n"
-"	color: #fefeff;"
-                        "\n"
+"	color: #fefeff;\n"
 "}\n"
 "\n"
 "#formulaire1{\n"

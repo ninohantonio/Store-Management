@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QWidget, QLineEdit
 
+from services.auth_service import verify_password
 from views.auth.admin_ui_launcher import AdminWindow
 from views.auth.auth_ui import Ui_Form
 
@@ -29,7 +30,16 @@ class LoginWindow(QWidget):
         self.ui.show_password.setHidden(False)
         pass
 
-    def handle_login(self):
+    def redirect_to_admin_window(self):
         self.admin_window = AdminWindow()
         self.admin_window.show()
         return
+
+    def handle_login(self):
+        password = self.ui.password.text()
+        email = self.ui.email.text()
+        if verify_password(email, password) :
+            self.redirect_to_admin_window()
+            return
+        else:
+            return

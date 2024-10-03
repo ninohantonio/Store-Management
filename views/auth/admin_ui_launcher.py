@@ -7,7 +7,7 @@ from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name
-from views.auth.ui_main_login import Ui_MainWindow
+from views.auth.ui_admin_window import Ui_MainWindow
 
 from PySide6.QtWidgets import QApplication
 
