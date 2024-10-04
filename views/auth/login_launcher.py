@@ -57,6 +57,6 @@ class LoginWindow(QWidget):
             return
 
     def handle_forgot_password(self):
-        self.confirmation_window = ConfirmationWindow()
+        self.confirmation_window = ConfirmationWindow(parent=self)
         self.confirmation_window.show()
         return

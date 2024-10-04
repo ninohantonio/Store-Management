@@ -8,10 +8,12 @@ from views.auth.ui_confirmation import Ui_Form
 
 
 class ConfirmationWindow(QWidget):
-    def __init__(self):
+    def __init__(self, parent: QWidget = None):
         super(ConfirmationWindow, self).__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+
+        self.parent = parent
 
         self.ui.code_field.textChanged.connect(self.handle_code_validation_change)
 
@@ -64,6 +66,7 @@ class ConfirmationWindow(QWidget):
         if self.ui.code_field.text() != "" and len(self.ui.code_field.text()) == 6:
             if str(self.confirmation_code) == self.ui.code_field.text():
                 print("Code de validation correct")
+                self.parent.close()
                 self.close()
                 return
             else:
