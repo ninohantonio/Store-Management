@@ -1,8 +1,9 @@
 from PySide6.QtWidgets import QWidget, QLineEdit
 
-from services.auth_service import verify_password
+from services.auth_service import verify_password, send_email_confirmation_to_admin
 from views.auth.admin_ui_launcher import AdminWindow
 from views.auth.auth_ui import Ui_Form
+from views.auth.confirmation_launcher import ConfirmationWindow
 
 
 class LoginWindow(QWidget):
@@ -17,6 +18,7 @@ class LoginWindow(QWidget):
 
         self.ui.password.textChanged.connect(self.hidde_wrong_password)
         self.ui.email.textChanged.connect(self.hidde_wrong_password)
+        self.ui.forgot.clicked.connect(self.handle_forgot_password)
 
         self.ui.password.setEchoMode(QLineEdit.Password)
         self.ui.login_btn.clicked.connect(self.handle_login)
@@ -41,6 +43,7 @@ class LoginWindow(QWidget):
     def redirect_to_admin_window(self):
         self.admin_window = AdminWindow()
         self.admin_window.show()
+        self.close()
         return
 
     def handle_login(self):
@@ -52,3 +55,8 @@ class LoginWindow(QWidget):
         else:
             self.ui.wrong_label.setHidden(False)
             return
+
+    def handle_forgot_password(self):
+        self.confirmation_window = ConfirmationWindow()
+        self.confirmation_window.show()
+        return

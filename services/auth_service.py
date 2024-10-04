@@ -10,6 +10,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = os.getenv('MAIL_ADDRESS')
+EMAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+
 def hash_password(password):
     salt = bcrypt.gensalt()
     hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
@@ -34,15 +39,11 @@ def verify_password(email, provided_password):
             return bcrypt.checkpw(provided_password.encode('utf-8'), password_hash_bytes)
     return False
 
-def send_email_confirmation_to_admin():
+def send_email_confirmation_to_admin(email, object, message):
+    print(EMAIL_ADDRESS)
     pass
 
 def confirm_by_email(email):
-    SMTP_SERVER = 'smtp.gmail.com'
-    SMTP_PORT = 587
-    EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
-    EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
-
     pass
 
 def change_password(email):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'auth_uifzMlLl.ui'
+## Form generated from reading UI file 'auth_uiraYAbP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -68,6 +68,11 @@ class Ui_Form(object):
 "	background-color: rgb(255, 85, 0);\n"
 "	padding-left: 10px;\n"
 "	border-radius: 5px;\n"
+"}\n"
+"\n"
+"#forgot{\n"
+"	background-color: transparent;\n"
+"	border: none;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(Form)
         self.horizontalLayout.setSpacing(0)
@@ -153,10 +158,6 @@ class Ui_Form(object):
         self.password_label.setObjectName(u"password_label")
         self.password_label.setGeometry(QRect(40, 160, 121, 16))
         self.password_label.setFont(font2)
-        self.forgot = QLabel(self.frame_6)
-        self.forgot.setObjectName(u"forgot")
-        self.forgot.setGeometry(QRect(40, 240, 191, 16))
-        self.forgot.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.login_btn = QPushButton(self.frame_6)
         self.login_btn.setObjectName(u"login_btn")
         self.login_btn.setGeometry(QRect(40, 280, 291, 41))
@@ -178,15 +179,19 @@ class Ui_Form(object):
         self.wrong_label = QLabel(self.frame_6)
         self.wrong_label.setObjectName(u"wrong_label")
         self.wrong_label.setGeometry(QRect(40, 30, 291, 31))
+        self.forgot = QPushButton(self.frame_6)
+        self.forgot.setObjectName(u"forgot")
+        self.forgot.setGeometry(QRect(40, 240, 121, 24))
+        self.forgot.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.email_label.raise_()
         self.email.raise_()
         self.password.raise_()
         self.password_label.raise_()
-        self.forgot.raise_()
         self.login_btn.raise_()
         self.hide_password.raise_()
         self.show_password.raise_()
         self.wrong_label.raise_()
+        self.forgot.raise_()
 
         self.verticalLayout_2.addWidget(self.frame_6)
 
@@ -229,11 +234,11 @@ class Ui_Form(object):
         self.email.setPlaceholderText(QCoreApplication.translate("Form", u"Email", None))
         self.password.setPlaceholderText(QCoreApplication.translate("Form", u"Mot de passe", None))
         self.password_label.setText(QCoreApplication.translate("Form", u"Mot de passe", None))
-        self.forgot.setText(QCoreApplication.translate("Form", u"Mot de passe oublie ?", None))
         self.login_btn.setText(QCoreApplication.translate("Form", u"Se connecter", None))
         self.show_password.setText("")
         self.hide_password.setText("")
         self.wrong_label.setText(QCoreApplication.translate("Form", u"Email ou mot de passe incorrect", None))
+        self.forgot.setText(QCoreApplication.translate("Form", u"Mot de passe oublie ?", None))
         self.label.setText(QCoreApplication.translate("Form", u"<< La qualite avant tous >>", None))
         self.label_2.setText("")
     # retranslateUi
