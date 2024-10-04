@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QWidget, QMessageBox
 from numpy.random import random_integers
 
 from services.auth_service import check_if_mail_is_admin, send_email_confirmation_to_admin
+from views.auth.admin_ui_launcher import AdminWindow
 from views.auth.ui_confirmation import Ui_Form
 
 
@@ -66,6 +67,8 @@ class ConfirmationWindow(QWidget):
         if self.ui.code_field.text() != "" and len(self.ui.code_field.text()) == 6:
             if str(self.confirmation_code) == self.ui.code_field.text():
                 print("Code de validation correct")
+                self.admin_window = AdminWindow()
+                self.admin_window.show()
                 self.parent.close()
                 self.close()
                 return

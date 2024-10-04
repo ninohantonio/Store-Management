@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'confirmation_uiiGiFMJ.ui'
+## Form generated from reading UI file 'confirmation_uiegdgvA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -49,7 +49,7 @@ class Ui_Form(object):
 "}")
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(70, 80, 121, 16))
+        self.label.setGeometry(QRect(70, 80, 141, 16))
         self.email = QLineEdit(Form)
         self.email.setObjectName(u"email")
         self.email.setGeometry(QRect(70, 100, 251, 31))
