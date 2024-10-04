@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'confirmation_uiBELLqg.ui'
+## Form generated from reading UI file 'confirmation_uiiGiFMJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -28,7 +28,7 @@ class Ui_Form(object):
         Form.setBaseSize(QSize(400, 400))
         font = QFont()
         font.setPointSize(10)
-        font.setBold(True)
+        font.setBold(False)
         Form.setFont(font)
         Form.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 10px;\n"

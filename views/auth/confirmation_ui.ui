@@ -31,7 +31,7 @@
   <property name="font">
    <font>
     <pointsize>10</pointsize>
-    <bold>true</bold>
+    <bold>false</bold>
    </font>
   </property>
   <property name="windowTitle">

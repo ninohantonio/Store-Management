@@ -39,9 +39,36 @@ def verify_password(email, provided_password):
             return bcrypt.checkpw(provided_password.encode('utf-8'), password_hash_bytes)
     return False
 
+def check_if_mail_is_admin(email):
+    user = session.query(User).filter_by(email=email).first()
+    return user is not None
+
 def send_email_confirmation_to_admin(email, object, message):
-    print(EMAIL_ADDRESS)
-    pass
+    try:
+        # Création du message
+        msg = MIMEMultipart()
+        msg['From'] = EMAIL_ADDRESS
+        msg['To'] = email
+        msg['Subject'] = object
+
+        msg.attach(MIMEText(message, 'plain'))
+
+        # Connexion au serveur SMTP
+        serveur = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        serveur.starttls()  # Sécuriser la connexion
+        serveur.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+
+        # Envoi de l'email
+        texte = msg.as_string()
+        serveur.sendmail(EMAIL_ADDRESS, email, texte)
+
+        # Fermeture de la connexion
+        serveur.quit()
+
+        return True
+    except Exception as e:
+        print(f"Erreur lors de l'envoi de l'email: {e}")
+        return False
 
 def confirm_by_email(email):
     pass
