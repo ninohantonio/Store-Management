@@ -1,16 +1,13 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
+from Custom_Widgets.Widgets import QMainWindow
 
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price
-from views.auth.admin_ui_launcher import AdminWindow
 from views.auth.login_launcher import LoginWindow
 from views.main_window import *
-from Custom_Widgets.Widgets import QMainWindow
-
 from views.states.commande_card import CardCommande
 from views.states.stock_state import refresh_stock_table_data
-
 
 settings = QSettings()
 
@@ -30,7 +27,6 @@ class MainWindow(QMainWindow):
             self.ui.searchField.setFocus()
             pass
 
-
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
         self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
@@ -47,7 +43,8 @@ class MainWindow(QMainWindow):
         # Effacer le texte pour préparer le prochain scan
         self.ui.searchField.clear()
         print(f"Article existe = {verify_article_by_id(search_value)}")
-        self.add_new_card_commande(search_value) if verify_article_by_id(search_value) else self.show_article_not_found()
+        self.add_new_card_commande(search_value) if verify_article_by_id(
+            search_value) else self.show_article_not_found()
 
     def add_new_card_commande(self, numero):
         if numero in self.commande_item:
@@ -71,7 +68,7 @@ class MainWindow(QMainWindow):
             # Connecter le signal card_removed pour gérer la suppression
             carte.card_removed.connect(self.remove_card)
 
-            self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
+            self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element - 1) % 3)
 
     def find_card_by_numero(self, numero: str):
         for i in range(self.ui.cardContainer.count()):
@@ -194,17 +191,22 @@ class MainWindow(QMainWindow):
             liste_article.append(str_detail)
 
             if card_widget.comboBox.currentText() == "pieces":
-                #traitemment pour destocker piece
+                self.modify_stock_for_type(card_widget.numero_article, int(card_widget.line_edit_quantite.text()), 1)
                 pass
             elif card_widget.comboBox.currentText() == "pacquets":
-                #traitement pour desctocker en packet
+                self.modify_stock_for_type(card_widget.numero_article, int(card_widget.line_edit_quantite.text()), 2)
                 pass
             else:
-                # traitement pour desctocker en boite
+                self.modify_stock_for_type(card_widget.numero_article, int(card_widget.line_edit_quantite.text()), 3)
                 pass
 
         return liste_article
 
-
-
-
+    def modify_stock_for_type(self, numero: str, quantite: int, type: int):
+        if type == 1:
+            pass
+        elif type == 2:
+            pass
+        else:
+            pass
+        return

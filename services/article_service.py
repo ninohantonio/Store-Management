@@ -34,6 +34,7 @@ def update_article(article_id: str, new_article: Article):
     article.pieceEnStock = new_article.pieceEnStock
     article.pieceParPaquet = new_article.pieceParPaquet
     article.pieceParBoite = new_article.pieceParBoite
+
     session.commit()
 
 def delete_article_by_id(article_id: str) -> bool:
