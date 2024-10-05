@@ -30,6 +30,7 @@ class Article(Base):
 
     numeroArticle = Column(String(13), primary_key=True)
     libelle: Mapped[str_20]
+    typeConteneur: Mapped[str_10]
     pieceParPaquet: Mapped[int_small]
     pieceParBoite: Mapped[int_small]
     pieceEnStock: Mapped[int_small]
@@ -77,6 +78,13 @@ class Notification(Base):
     dateEmmission = Column(DateTime)
     contenu = Column(String(100))
     numeroArticle: Mapped[str_13]
+
+class User(Base):
+    __tablename__ = 'user'
+
+    id = Column(Integer, primary_key=True)
+    email = Column(String(60), unique=True, nullable=False)
+    password_hash = Column(String(255), nullable=False)
 
 
 Base.metadata.create_all(engine)

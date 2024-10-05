@@ -4,6 +4,7 @@ from Custom_Widgets.Widgets import *
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price
 from views.auth.admin_ui_launcher import AdminWindow
+from views.auth.login_launcher import LoginWindow
 from views.main_window import *
 from Custom_Widgets.Widgets import QMainWindow
 
@@ -138,8 +139,8 @@ class MainWindow(QMainWindow):
         pass
 
     def redirect_to_admin_window(self):
-        self.admin_window = AdminWindow()
-        self.admin_window.show()
+        self.login_window = LoginWindow()
+        self.login_window.show()
         return
 
     def show_article_not_found(self):
@@ -150,7 +151,7 @@ class MainWindow(QMainWindow):
             margin=60,
             # yesButtonIcon=my_yes_icon,
             # cancelButtonIcon=my_cancel_icon,
-            yesButtonText="Voir stock",
+            yesButtonText="Ajouter",
             cancelButtonText="Annuler",
             animationDuration=500,
             showYesButton=True,

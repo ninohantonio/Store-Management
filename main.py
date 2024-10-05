@@ -2,10 +2,12 @@ import sys
 import os
 
 from PySide6.QtWidgets import QApplication
+from dotenv import load_dotenv
 
 from services.article_service import get_article_by_name
 from views.main_ui_launcher import MainWindow
 
+load_dotenv()
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app = QApplication(sys.argv)

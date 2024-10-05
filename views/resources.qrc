@@ -1,6 +1,9 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/invisible.png</file>
+    <file>icons/visible.png</file>
     <file>icons/filter.png</file>
+    <file>icons/irina-service.jpg</file>
     <file>icons/about.png</file>
     <file>icons/info.png</file>
     <file>icons/setting.png</file>

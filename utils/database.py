@@ -1,9 +1,14 @@
+import os
+
 from sqlalchemy import create_engine, String, SmallInteger, BigInteger
 from sqlalchemy.orm import declarative_base, mapped_column
 from typing_extensions import Annotated
 from typing import Optional
+from dotenv import load_dotenv
 
-db_url = "mysql+pymysql://dev:dev123@192.168.1.110:3306/irinaservice"
+load_dotenv()
+
+db_url = os.getenv('DATABASE_URL')
 
 
 engine = create_engine(db_url)
