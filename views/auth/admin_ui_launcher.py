@@ -20,6 +20,8 @@ class AdminWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/auth/style.json"])
+
+        self.showMaximized()
         self.ui.resetBtn.clicked.connect(self.reset_form)
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.search_field.returnPressed.connect(self.manage_search_value_input)

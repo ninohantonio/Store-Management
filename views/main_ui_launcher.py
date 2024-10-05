@@ -23,6 +23,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
+
+        self.showMaximized()
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
