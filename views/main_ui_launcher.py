@@ -32,6 +32,8 @@ class MainWindow(QMainWindow):
 
 
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
+
+        self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
         # self.ui.searchField.setVisible(False)
         self.show()
 
@@ -173,6 +175,35 @@ class MainWindow(QMainWindow):
         stock_error_dialog.accepted.connect(self.redirect_to_admin_window)  # yes button clicked
         stock_error_dialog.rejected.connect(
             lambda: stock_error_dialog.close())  # cancel button clicked
+
+    def handle_submit_commande_validation(self):
+        #demander confirmation
+        #choisir un client, en creer un
+        #modifier l'etat de stock
+        #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif
+        print(self.extract_info_to_card())
+        #stocker dans Facture
+        #stocker dans journal de vente
+        return
+
+    def extract_info_to_card(self):
+        liste_article: list[str] = []
+        for i in range(self.ui.cardContainer.count()):
+            card_widget = self.ui.cardContainer.itemAt(i).widget()
+            str_detail = f"{card_widget.numero_article}:{card_widget.article.libelle}:{card_widget.sou_total}:{card_widget.comboBox.currentText()}:{card_widget.line_edit_quantite.text()}"
+            liste_article.append(str_detail)
+
+            if card_widget.comboBox.currentText() == "pieces":
+                #traitemment pour destocker piece
+                pass
+            elif card_widget.comboBox.currentText() == "pacquets":
+                #traitement pour desctocker en packet
+                pass
+            else:
+                # traitement pour desctocker en boite
+                pass
+
+        return liste_article
 
 
 

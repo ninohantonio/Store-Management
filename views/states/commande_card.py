@@ -88,8 +88,7 @@ class CardCommande(QWidget):
 
         self.comboBox = QComboBox(self.rightFrame)
         self.comboBox.addItem("pieces")
-        self.comboBox.addItem("pacquets")
-        self.comboBox.addItem("boites")
+        self.comboBox.addItem("pacquets") if article.typeConteneur == "Paquet" else self.comboBox.addItem("boites")
         self.comboBox.setObjectName(u"comboBox")
 
         self.verticalLayout_2.addWidget(self.comboBox)
@@ -121,6 +120,16 @@ class CardCommande(QWidget):
             else:
                 self.labele_stock_error.setText("Stock insuffisant pour cette quantite en packet")
                 self.show_stock_unavailable("packets")
+
+        elif type_quantite == "boites":
+            if quantite <= self.article.boiteEnStock:
+                ancien_sous_total = self.sou_total
+                self.sou_total = quantite * self.article.prixUnitaire * self.article.pieceParBoite
+                self.sous_total_changed.emit(ancien_sous_total, self.sou_total)
+            else:
+                self.labele_stock_error.setText("Stock insuffisant pour cette quantite en boites")
+                self.show_stock_unavailable("boites")
+
         else:
             if quantite <= self.article.pieceEnStock:
                 ancien_sous_total = self.sou_total
@@ -165,6 +174,11 @@ class CardCommande(QWidget):
                 lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # yes button clicked
             stock_error_dialog.rejected.connect(
                 lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # cancel button clicked
+        elif type == "boites":
+            stock_error_dialog.accepted.connect(
+                lambda: self.line_edit_quantite.setText(f"{self.article.boiteEnStock}"))  # yes button clicked
+            stock_error_dialog.rejected.connect(
+                lambda: self.line_edit_quantite.setText(f"{self.article.boiteEnStock}"))  # cancel button clicked
         else:
             stock_error_dialog.accepted.connect(
                 lambda: self.line_edit_quantite.setText(f"{self.article.pieceEnStock}"))  # yes button clicked
