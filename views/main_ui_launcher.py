@@ -204,6 +204,11 @@ class MainWindow(QMainWindow):
 
     def modify_stock_for_type(self, numero: str, quantite: int, type: int):
         if type == 1:
+            article = get_article_by_id(numero)
+            type_quantite = article.typeConteneur
+            stock_actuel = article.pieceEnStock
+            nouveau_stock = stock_actuel - quantite
+            nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
             pass
         elif type == 2:
             pass
