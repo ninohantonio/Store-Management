@@ -209,9 +209,12 @@ class MainWindow(QMainWindow):
             stock_actuel = article.pieceEnStock
             nouveau_stock = stock_actuel - quantite
             nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
-            pass
+            return
+
         elif type == 2:
+
             pass
+
         else:
             pass
         return
