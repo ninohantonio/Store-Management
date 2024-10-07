@@ -182,8 +182,9 @@ class MainWindow(QMainWindow):
             #choisir un client, en creer un
             self.show_client_selection_dialog()
             #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
-            print(self.extract_info_to_card())
+            # print(self.extract_info_to_card())
             #stocker dans Facture
+
             #stocker dans journal de vente
         return
 
@@ -207,40 +208,39 @@ class MainWindow(QMainWindow):
         return liste_article
 
     def modify_stock_for_type(self, numero: str, quantite, type: int):
-        print(quantite)
         quantite = int(quantite)
         article = get_article_by_id(numero)
         type_quantite = article.typeConteneur
-        # if type == 1:
-        #     stock_actuel = article.pieceEnStock
-        #     nouveau_stock = stock_actuel - quantite
-        #     nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
-        #     if type_quantite == "Paquet":
-        #         article.pieceEnStock = nouveau_stock
-        #         article.packetEnStock = nouveau_conteneur
-        #     else:
-        #         article.pieceEnStock = nouveau_stock
-        #         article.boiteEnStock = nouveau_conteneur
-        #     session.commit()
-        #     return
-        #
-        # elif type == 2:
-        #     packet_actuel = article.packetEnStock
-        #     nouveau_packet = packet_actuel - quantite
-        #     nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
-        #     article.pieceEnStock = nouveau_stock
-        #     article.packetEnStock = nouveau_packet
-        #     session.commit()
-        #     return
-        #
-        # else:
-        #     boite_actuel = article.boiteEnStock
-        #     nouveau_boite = boite_actuel - quantite
-        #     nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
-        #     article.pieceEnStock = nouveau_stock
-        #     article.boiteEnStock = nouveau_boite
-        #     session.commit()
-        #     return
+        if type == 1:
+            stock_actuel = article.pieceEnStock
+            nouveau_stock = stock_actuel - quantite
+            nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
+            if type_quantite == "Paquet":
+                article.pieceEnStock = nouveau_stock
+                article.packetEnStock = nouveau_conteneur
+            else:
+                article.pieceEnStock = nouveau_stock
+                article.boiteEnStock = nouveau_conteneur
+            session.commit()
+            return
+
+        elif type == 2:
+            packet_actuel = article.packetEnStock
+            nouveau_packet = packet_actuel - quantite
+            nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
+            article.pieceEnStock = nouveau_stock
+            article.packetEnStock = nouveau_packet
+            session.commit()
+            return
+
+        else:
+            boite_actuel = article.boiteEnStock
+            nouveau_boite = boite_actuel - quantite
+            nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
+            article.pieceEnStock = nouveau_stock
+            article.boiteEnStock = nouveau_boite
+            session.commit()
+            return
 
     def show_confirmation_dialog(self):
         msg_box = QMessageBox()
