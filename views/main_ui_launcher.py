@@ -3,7 +3,7 @@ from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
 
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
-    get_article_by_price
+    get_article_by_price, session
 from views.auth.login_launcher import LoginWindow
 from views.main_window import *
 from views.states.commande_card import CardCommande
@@ -203,18 +203,35 @@ class MainWindow(QMainWindow):
         return liste_article
 
     def modify_stock_for_type(self, numero: str, quantite: int, type: int):
+        article = get_article_by_id(numero)
+        type_quantite = article.typeConteneur
         if type == 1:
-            article = get_article_by_id(numero)
-            type_quantite = article.typeConteneur
             stock_actuel = article.pieceEnStock
             nouveau_stock = stock_actuel - quantite
             nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
+            if type_quantite == "Paquet":
+                article.pieceEnStock = nouveau_stock
+                article.packetEnStock = nouveau_conteneur
+            else:
+                article.pieceEnStock = nouveau_stock
+                article.boiteEnStock = nouveau_conteneur
+            session.commit()
             return
 
         elif type == 2:
-
-            pass
+            packet_actuel = article.packetEnStock
+            nouveau_packet = packet_actuel - quantite
+            nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
+            article.pieceEnStock = nouveau_stock
+            article.packetEnStock = nouveau_packet
+            session.commit()
+            return
 
         else:
-            pass
-        return
+            boite_actuel = article.boiteEnStock
+            nouveau_boite = boite_actuel - quantite
+            nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
+            article.pieceEnStock = nouveau_stock
+            article.boiteEnStock = nouveau_boite
+            session.commit()
+            return
