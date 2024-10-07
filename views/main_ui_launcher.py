@@ -1,11 +1,12 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
-from PySide6.QtWidgets import QMessageBox
+from PySide6.QtWidgets import QMessageBox, QDialog
 
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
 from views.auth.login_launcher import LoginWindow
+from views.client_ui_launcher import ClientList
 from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.stock_state import refresh_stock_table_data
@@ -179,7 +180,7 @@ class MainWindow(QMainWindow):
         response = self.show_confirmation_dialog()
         if response:
             #choisir un client, en creer un
-
+            self.show_client_selection_dialog()
             #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
             print(self.extract_info_to_card())
             #stocker dans Facture
@@ -256,3 +257,16 @@ class MainWindow(QMainWindow):
         else:
             return False  # Si Non, on annule l'action
 
+    def show_client_selection_dialog(self):
+        # Créer un QDialog pour la sélection du client
+        self.dialog = ClientList()
+
+        # Si l'utilisateur a sélectionné un client et cliqué sur OK
+        if self.dialog.exec() == QDialog.Accepted:
+            client_info = self.dialog.get_selected_client()
+            if client_info:
+                print(f"Client sélectionné : {client_info.nom}, Email : {client_info.telephone}")
+            else:
+                print("Aucun client sélectionné.")
+        else:
+            print("Sélection annulée.")
