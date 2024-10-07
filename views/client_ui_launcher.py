@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QDialog, QTableWidgetItem
 
 from models.model_class import Client
-from services.client_service import get_all_client
+from services.client_service import get_all_client, get_client_by_id
 from views.client_list_dialog import Ui_liste_client
 
 
@@ -11,6 +11,8 @@ class ClientList(QDialog):
         self.ui = Ui_liste_client()
         self.ui.setupUi(self)
 
+        self.temporary_client_selected = False
+
         self.selected_client = Client()
 
         clients = get_all_client()
@@ -18,6 +20,8 @@ class ClientList(QDialog):
 
         self.ui.pushButton_2.clicked.connect(self.handle_temporary_client)
         self.ui.tableWidget.setColumnHidden(2, True)
+
+        self.ui.pushButton_2.clicked.connect(self.handle_temporary_client)
 
     def load_table_data(self, data: list[Client]):
         self.ui.tableWidget.setRowCount(0)
@@ -30,9 +34,15 @@ class ClientList(QDialog):
 
 
     def handle_temporary_client(self):
-        self.selected_client.nom = "tmp"
-        self.selected_client.telephone = "tmp"
-        self.selected_client.adresse = "tmp"
+        self.temporary_client_selected = True
+        self.accept()
 
     def get_selected_client(self):
-        return self.selected_client
+        selected_row = self.ui.tableWidget.currentRow()
+
+        if selected_row != -1:
+            # Récupérer les informations du client sélectionné
+            numero = self.ui.tableWidget.item(selected_row, 2).text()
+            return get_client_by_id(numero)
+
+        return None
