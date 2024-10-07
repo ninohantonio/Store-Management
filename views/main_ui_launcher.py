@@ -175,9 +175,9 @@ class MainWindow(QMainWindow):
 
     def handle_submit_commande_validation(self):
         #demander confirmation
+
         #choisir un client, en creer un
-        #modifier l'etat de stock
-        #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif
+        #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
         print(self.extract_info_to_card())
         #stocker dans Facture
         #stocker dans journal de vente
