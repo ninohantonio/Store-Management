@@ -195,50 +195,52 @@ class MainWindow(QMainWindow):
             liste_article.append(str_detail)
 
             if card_widget.comboBox.currentText() == "pieces":
-                self.modify_stock_for_type(card_widget.numero_article, int(card_widget.line_edit_quantite.text()), 1)
+                self.modify_stock_for_type(card_widget.numero_article, card_widget.line_edit_quantite.text(), 1)
                 pass
             elif card_widget.comboBox.currentText() == "pacquets":
-                self.modify_stock_for_type(card_widget.numero_article, int(card_widget.line_edit_quantite.text()), 2)
+                self.modify_stock_for_type(card_widget.numero_article, card_widget.line_edit_quantite.text(), 2)
                 pass
             else:
-                self.modify_stock_for_type(card_widget.numero_article, int(card_widget.line_edit_quantite.text()), 3)
+                self.modify_stock_for_type(card_widget.numero_article, card_widget.line_edit_quantite.text(), 3)
                 pass
 
         return liste_article
 
-    def modify_stock_for_type(self, numero: str, quantite: int, type: int):
+    def modify_stock_for_type(self, numero: str, quantite, type: int):
+        print(quantite)
+        quantite = int(quantite)
         article = get_article_by_id(numero)
         type_quantite = article.typeConteneur
-        if type == 1:
-            stock_actuel = article.pieceEnStock
-            nouveau_stock = stock_actuel - quantite
-            nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
-            if type_quantite == "Paquet":
-                article.pieceEnStock = nouveau_stock
-                article.packetEnStock = nouveau_conteneur
-            else:
-                article.pieceEnStock = nouveau_stock
-                article.boiteEnStock = nouveau_conteneur
-            session.commit()
-            return
-
-        elif type == 2:
-            packet_actuel = article.packetEnStock
-            nouveau_packet = packet_actuel - quantite
-            nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
-            article.pieceEnStock = nouveau_stock
-            article.packetEnStock = nouveau_packet
-            session.commit()
-            return
-
-        else:
-            boite_actuel = article.boiteEnStock
-            nouveau_boite = boite_actuel - quantite
-            nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
-            article.pieceEnStock = nouveau_stock
-            article.boiteEnStock = nouveau_boite
-            session.commit()
-            return
+        # if type == 1:
+        #     stock_actuel = article.pieceEnStock
+        #     nouveau_stock = stock_actuel - quantite
+        #     nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
+        #     if type_quantite == "Paquet":
+        #         article.pieceEnStock = nouveau_stock
+        #         article.packetEnStock = nouveau_conteneur
+        #     else:
+        #         article.pieceEnStock = nouveau_stock
+        #         article.boiteEnStock = nouveau_conteneur
+        #     session.commit()
+        #     return
+        #
+        # elif type == 2:
+        #     packet_actuel = article.packetEnStock
+        #     nouveau_packet = packet_actuel - quantite
+        #     nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
+        #     article.pieceEnStock = nouveau_stock
+        #     article.packetEnStock = nouveau_packet
+        #     session.commit()
+        #     return
+        #
+        # else:
+        #     boite_actuel = article.boiteEnStock
+        #     nouveau_boite = boite_actuel - quantite
+        #     nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
+        #     article.pieceEnStock = nouveau_stock
+        #     article.boiteEnStock = nouveau_boite
+        #     session.commit()
+        #     return
 
     def show_confirmation_dialog(self):
         msg_box = QMessageBox()
@@ -263,10 +265,17 @@ class MainWindow(QMainWindow):
 
         # Si l'utilisateur a sélectionné un client et cliqué sur OK
         if self.dialog.exec() == QDialog.Accepted:
-            client_info = self.dialog.get_selected_client()
-            if client_info:
-                print(f"Client sélectionné : {client_info.nom}, Email : {client_info.telephone}")
+            if self.dialog.temporary_client_selected:
+                print(f"Client sélectionné : temporaire")
             else:
-                print("Aucun client sélectionné.")
+                # Récupérer les informations du client sélectionné dans la table
+                client_info = self.dialog.get_selected_client()
+                if client_info:
+                    # Afficher les informations du client sélectionné ou temporaire
+                    print(f"Client sélectionné : {client_info.nom}, Telephone : {client_info.telephone}")
+                else:
+                    print("Aucun client sélectionné.")
+                    return
+
         else:
             print("Sélection annulée.")
