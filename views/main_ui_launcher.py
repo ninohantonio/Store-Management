@@ -1,6 +1,7 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
+from PySide6.QtWidgets import QMessageBox
 
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
@@ -175,12 +176,14 @@ class MainWindow(QMainWindow):
 
     def handle_submit_commande_validation(self):
         #demander confirmation
+        response = self.show_confirmation_dialog()
+        if response:
+            #choisir un client, en creer un
 
-        #choisir un client, en creer un
-        #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
-        print(self.extract_info_to_card())
-        #stocker dans Facture
-        #stocker dans journal de vente
+            #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
+            print(self.extract_info_to_card())
+            #stocker dans Facture
+            #stocker dans journal de vente
         return
 
     def extract_info_to_card(self):
@@ -235,3 +238,21 @@ class MainWindow(QMainWindow):
             article.boiteEnStock = nouveau_boite
             session.commit()
             return
+
+    def show_confirmation_dialog(self):
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Question)
+        msg_box.setWindowTitle("Confirmation")
+        msg_box.setText("Êtes-vous sûr de vouloir continuer ?")
+        msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        msg_box.setDefaultButton(QMessageBox.No)
+
+        # Afficher le dialogue et récupérer la réponse de l'utilisateur
+        response = msg_box.exec()
+
+        # Vérifier la réponse et agir en conséquence
+        if response == QMessageBox.Yes:
+            return True  # Si Oui, on effectue l'action
+        else:
+            return False  # Si Non, on annule l'action
+
