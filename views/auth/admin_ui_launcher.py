@@ -40,7 +40,7 @@ class AdminWindow(QMainWindow):
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
-        if len(search_value) == 13:
+        if len(search_value) == 13 and search_value.isdigit():
             self.print_search_value()
             return True
         else:
