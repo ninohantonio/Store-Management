@@ -61,6 +61,7 @@ class Facture(Base):
     dateEnregistrement = Column(DateTime)
     listeArticle = Column(JSON)
     statutPayement: Mapped[bool] = mapped_column()
+    avancement: Mapped[int_small] = mapped_column()
     numeroClient = Column(ForeignKey("client.numeroClient"))
 
 class Journal(Base):
@@ -69,6 +70,7 @@ class Journal(Base):
     numeroJournal = Column(Integer, primary_key=True, autoincrement=True)
     dateEnregistrement = Column(DateTime)
     listeArticle = Column(JSON)
+    description = Column(String(150))
     typeAction = Column(String(50))
 
 class Notification(Base):
