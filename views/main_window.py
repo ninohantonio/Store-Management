@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowNRMqrD.ui'
+## Form generated from reading UI file 'main_windowgAhVGz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-import resources_rc
+import views.resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -487,16 +487,16 @@ class Ui_MainWindow(object):
         self.valider_commandeBtn.setIconSize(QSize(30, 30))
         self.tout_payer = QRadioButton(self.homePage)
         self.tout_payer.setObjectName(u"tout_payer")
-        self.tout_payer.setGeometry(QRect(240, 100, 89, 20))
+        self.tout_payer.setGeometry(QRect(250, 100, 89, 20))
         self.non_payer = QRadioButton(self.homePage)
         self.non_payer.setObjectName(u"non_payer")
-        self.non_payer.setGeometry(QRect(370, 100, 89, 20))
+        self.non_payer.setGeometry(QRect(390, 100, 89, 20))
         self.avancement = QRadioButton(self.homePage)
         self.avancement.setObjectName(u"avancement")
-        self.avancement.setGeometry(QRect(490, 100, 89, 20))
+        self.avancement.setGeometry(QRect(520, 100, 89, 20))
         self.avance_field = QLineEdit(self.homePage)
         self.avance_field.setObjectName(u"avance_field")
-        self.avance_field.setGeometry(QRect(510, 100, 113, 22))
+        self.avance_field.setGeometry(QRect(540, 100, 113, 22))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
