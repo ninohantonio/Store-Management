@@ -1,6 +1,7 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
+from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
@@ -41,6 +42,9 @@ class MainWindow(QMainWindow):
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
         self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
+        self.ui.avance_field.setValidator(QIntValidator(0, 999999999))
+
+        self.ui.tout_payer.setChecked(True)
         # self.ui.searchField.setVisible(False)
         self.show()
 
@@ -307,7 +311,9 @@ class MainWindow(QMainWindow):
             insert_new_commande(commande)
 
     def store_data_to_facture(self, liste_article: list[str], numero_client):
-        facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, statutPayement=True, numeroClient=numero_client)
+        statut_payement = self.ui.tout_payer.isChecked()
+        avancement = int(self.ui.avance_field.text())
+        facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, avancement = avancement,statutPayement=statut_payement, numeroClient=numero_client)
         insert_new_facture(facture)
 
     def store_data_to_journal(self, liste_article: list[str]):
