@@ -284,6 +284,7 @@ class MainWindow(QMainWindow):
                 self.selected_client = Client()
                 self.selected_client.nom = "temp"
                 self.selected_client.telephone = "temp"
+                self.selected_client.adresse = "temp"
             else:
                 # Récupérer les informations du client sélectionné dans la table
                 client_info = self.dialog.get_selected_client()
