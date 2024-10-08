@@ -7,8 +7,10 @@ from controllers.commande_controller import get_date_time_to_string, get_date_to
 from models.model_class import Facture, Client, Commande, Journal
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
+from services.client_service import insert_new_client
 from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture
+from services.journal_service import insert_new_journal
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
 from views.main_window import *
@@ -189,13 +191,15 @@ class MainWindow(QMainWindow):
             #choisir un client, en creer un
             self.show_client_selection_dialog()
             client = self.selected_client
+            insert_new_client(client)
             #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
             liste_article = self.extract_info_to_card()
             #boucle pour stocker les informations dans commande
-
+            self.store_data_to_commande(liste_article, client.numeroClient)
             #stocker dans Facture
-
+            self.store_data_to_facture(liste_article, client.numeroClient)
             #stocker dans journal de vente
+            self.store_data_to_journal(liste_article)
         return
 
     def extract_info_to_card(self):
@@ -307,3 +311,4 @@ class MainWindow(QMainWindow):
 
     def store_data_to_journal(self, liste_article: list[str]):
         journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, typeAction="vente d'article")
+        insert_new_journal(journal)
