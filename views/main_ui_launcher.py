@@ -4,7 +4,7 @@ from Custom_Widgets.Widgets import QMainWindow
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
-from models.model_class import Facture, Client, Commande
+from models.model_class import Facture, Client, Commande, Journal
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
 from services.commande_service import insert_new_commande
@@ -305,3 +305,5 @@ class MainWindow(QMainWindow):
         facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, statutPayement=True, numeroClient=numero_client)
         insert_new_facture(facture)
 
+    def store_data_to_journal(self, liste_article: list[str]):
+        journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, typeAction="vente d'article")
