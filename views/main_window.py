@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowGCKTDK.ui'
+## Form generated from reading UI file 'main_windowNRMqrD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,12 +16,13 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit, QPushButton, QRadioButton, QSizePolicy,
+    QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
-import views.resources_rc
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -130,6 +131,11 @@ class Ui_MainWindow(object):
 "	padding: 5px;\n"
 "	border-radius: 10px;\n"
 "	background-color: rgb(255, 220, 219);\n"
+"}\n"
+"\n"
+"#avance_field{\n"
+"	border: 1px solid rgb(0, 85, 255);\n"
+"	padding-left: 5px;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -479,6 +485,18 @@ class Ui_MainWindow(object):
         self.valider_commandeBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.valider_commandeBtn.setIcon(icon2)
         self.valider_commandeBtn.setIconSize(QSize(30, 30))
+        self.tout_payer = QRadioButton(self.homePage)
+        self.tout_payer.setObjectName(u"tout_payer")
+        self.tout_payer.setGeometry(QRect(240, 100, 89, 20))
+        self.non_payer = QRadioButton(self.homePage)
+        self.non_payer.setObjectName(u"non_payer")
+        self.non_payer.setGeometry(QRect(370, 100, 89, 20))
+        self.avancement = QRadioButton(self.homePage)
+        self.avancement.setObjectName(u"avancement")
+        self.avancement.setGeometry(QRect(490, 100, 89, 20))
+        self.avance_field = QLineEdit(self.homePage)
+        self.avance_field.setObjectName(u"avance_field")
+        self.avance_field.setGeometry(QRect(510, 100, 113, 22))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
@@ -666,6 +684,10 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
         self.total_payer.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
         self.valider_commandeBtn.setText(QCoreApplication.translate("MainWindow", u"Valider la commande", None))
+        self.tout_payer.setText(QCoreApplication.translate("MainWindow", u"Tout payer", None))
+        self.non_payer.setText(QCoreApplication.translate("MainWindow", u"Non Payer", None))
+        self.avancement.setText("")
+        self.avance_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Avancement", None))
         self.stock_labele.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
         ___qtablewidgetitem = self.stockTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
