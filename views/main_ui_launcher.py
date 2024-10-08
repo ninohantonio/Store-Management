@@ -8,6 +8,7 @@ from models.model_class import Facture, Client, Commande
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
 from services.commande_service import insert_new_commande
+from services.facture_service import insert_new_facture
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
 from views.main_window import *
@@ -300,5 +301,7 @@ class MainWindow(QMainWindow):
             commande = Commande(dateCommande=get_date_time_to_string(), dateLivraison=get_date_to_string(), quantiteCommande=commande_split[4], type=commande_split[3], numeroClient=numero_client, numeroArticle=commande_split[0])
             insert_new_commande(commande)
 
-    def store_data_to_facture(self, liste_article: list[str]):
-        facture = Facture(numeroFacture=)
+    def store_data_to_facture(self, liste_article: list[str], numero_client):
+        facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, statutPayement=True, numeroClient=numero_client)
+        insert_new_facture(facture)
+
