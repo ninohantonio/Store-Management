@@ -50,6 +50,7 @@ class Commande(Base):
     dateCommande = Column(DateTime)
     dateLivraison = Column(Date)
     quantiteCommande: Mapped[int_small]
+    type = Column(String(10))
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))
     numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
 

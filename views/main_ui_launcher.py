@@ -3,8 +3,11 @@ from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
 from PySide6.QtWidgets import QMessageBox, QDialog
 
+from controllers.commande_controller import get_date_time_to_string, get_date_to_string
+from models.model_class import Facture, Client, Commande
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
+from services.commande_service import insert_new_commande
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
 from views.main_window import *
@@ -24,6 +27,9 @@ class MainWindow(QMainWindow):
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
 
         self.showMaximized()
+
+        self.selected_client = Client()
+
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
@@ -181,8 +187,11 @@ class MainWindow(QMainWindow):
         if response:
             #choisir un client, en creer un
             self.show_client_selection_dialog()
+            client = self.selected_client
             #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
-            # print(self.extract_info_to_card())
+            liste_article = self.extract_info_to_card()
+            #boucle pour stocker les informations dans commande
+
             #stocker dans Facture
 
             #stocker dans journal de vente
@@ -267,11 +276,15 @@ class MainWindow(QMainWindow):
         if self.dialog.exec() == QDialog.Accepted:
             if self.dialog.temporary_client_selected:
                 print(f"Client sélectionné : temporaire")
+                self.selected_client = Client()
+                self.selected_client.nom = "temp"
+                self.selected_client.telephone = "temp"
             else:
                 # Récupérer les informations du client sélectionné dans la table
                 client_info = self.dialog.get_selected_client()
                 if client_info:
                     # Afficher les informations du client sélectionné ou temporaire
+                    self.selected_client = client_info
                     print(f"Client sélectionné : {client_info.nom}, Telephone : {client_info.telephone}")
                 else:
                     print("Aucun client sélectionné.")
@@ -279,3 +292,13 @@ class MainWindow(QMainWindow):
 
         else:
             print("Sélection annulée.")
+
+    def store_data_to_commande(self, liste_article: list[str], numero_client):
+        #numero: libelle:sous - total: desciption:effectif
+        for commande_data in liste_article:
+            commande_split = commande_data.split(':')
+            commande = Commande(dateCommande=get_date_time_to_string(), dateLivraison=get_date_to_string(), quantiteCommande=commande_split[4], type=commande_split[3], numeroClient=numero_client, numeroArticle=commande_split[0])
+            insert_new_commande(commande)
+
+    def store_data_to_facture(self, liste_article: list[str]):
+        facture = Facture(numeroFacture=)

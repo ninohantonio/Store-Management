@@ -65,6 +65,11 @@
      <string>Contact</string>
     </property>
    </column>
+   <column>
+    <property name="text">
+     <string>numero</string>
+    </property>
+   </column>
   </widget>
   <widget class="QLineEdit" name="search_client">
    <property name="geometry">
