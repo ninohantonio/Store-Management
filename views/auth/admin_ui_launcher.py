@@ -39,8 +39,7 @@ class AdminWindow(QMainWindow):
         self.alert_label = QLabel()
 
     def manage_search_value_input(self):
-        search_value = self.ui.search_field.text()
-        if len(search_value) == 13 and search_value.isdigit():
+        if len(self.numero_to_insert) == 13 and self.numero_to_insert.isdigit():
             self.print_search_value()
             return True
         else:
