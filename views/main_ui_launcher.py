@@ -1,6 +1,7 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
+from PySide6.QtCore import QEvent
 from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
@@ -42,11 +43,21 @@ class MainWindow(QMainWindow):
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
         self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
-        self.ui.avance_field.setValidator(QIntValidator(0, 999999999))
+        self.ui.avance_field.setValidator(QIntValidator(0, 9999999))
 
         self.ui.tout_payer.setChecked(True)
-        # self.ui.searchField.setVisible(False)
+
+        self.ui.avance_field.installEventFilter(self)
+
         self.show()
+
+    def eventFilter(self, obj, event):
+        # Vérifier si l'événement est lié au focus entrant dans le QLineEdit
+        if obj == self.ui.avance_field and event.type() == QEvent.FocusIn:
+            # Lorsque le focus entre dans le QLineEdit, cocher un bouton radio
+            self.ui.avancement.setChecked(True)
+            return True
+        return super().eventFilter(obj, event)
 
     def print_search_value(self):
         search_value = self.ui.searchField.text()
