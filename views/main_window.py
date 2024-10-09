@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowXSeaUM.ui'
+## Form generated from reading UI file 'main_windowgAhVGz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit, QPushButton, QRadioButton, QSizePolicy,
+    QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1229, 701)
+        MainWindow.resize(1367, 701)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"#centralwidget{\n"
@@ -43,6 +43,10 @@ class Ui_MainWindow(object):
 "}\n"
 "#leftMenu, QCustomSlideMenu{\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 85, 255), stop:1 rgb(0, 170, 255));\n"
+"}\n"
+"\n"
+"#leftMenu{\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
@@ -81,9 +85,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#menuFrame #accueilBtn{\n"
-"	background-color: #fefeff;\n"
-"	border-top-left-radius: "
-                        "15px;\n"
+"	background-"
+                        "color: #fefeff;\n"
+"	border-top-left-radius: 15px;\n"
 "}\n"
 "\n"
 "#profileContainer{\n"
@@ -127,6 +131,11 @@ class Ui_MainWindow(object):
 "	padding: 5px;\n"
 "	border-radius: 10px;\n"
 "	background-color: rgb(255, 220, 219);\n"
+"}\n"
+"\n"
+"#avance_field{\n"
+"	border: 1px solid rgb(0, 85, 255);\n"
+"	padding-left: 5px;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -216,25 +225,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.stockBtn)
 
-        self.clientBtn = QPushButton(self.menuFrame)
-        self.clientBtn.setObjectName(u"clientBtn")
-        self.clientBtn.setFont(font2)
-        self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/people.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.clientBtn.setIcon(icon2)
-        self.clientBtn.setIconSize(QSize(22, 22))
-
-        self.verticalLayout_9.addWidget(self.clientBtn)
-
         self.factureBtn = QPushButton(self.menuFrame)
         self.factureBtn.setObjectName(u"factureBtn")
         self.factureBtn.setFont(font2)
         self.factureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/icons/facture.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.factureBtn.setIcon(icon3)
-        self.factureBtn.setIconSize(QSize(19, 19))
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/icons/caddie.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.factureBtn.setIcon(icon2)
+        self.factureBtn.setIconSize(QSize(27, 27))
 
         self.verticalLayout_9.addWidget(self.factureBtn)
 
@@ -242,10 +240,23 @@ class Ui_MainWindow(object):
         self.journalBtn.setObjectName(u"journalBtn")
         self.journalBtn.setFont(font2)
         self.journalBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/icons/facture.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.journalBtn.setIcon(icon3)
         self.journalBtn.setIconSize(QSize(19, 19))
 
         self.verticalLayout_9.addWidget(self.journalBtn)
+
+        self.clientBtn = QPushButton(self.menuFrame)
+        self.clientBtn.setObjectName(u"clientBtn")
+        self.clientBtn.setFont(font2)
+        self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/icons/people.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.clientBtn.setIcon(icon4)
+        self.clientBtn.setIconSize(QSize(22, 22))
+
+        self.verticalLayout_9.addWidget(self.clientBtn)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -263,9 +274,9 @@ class Ui_MainWindow(object):
         self.settingBtn.setObjectName(u"settingBtn")
         self.settingBtn.setFont(font2)
         self.settingBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.settingBtn.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.settingBtn.setIcon(icon5)
         self.settingBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_2.addWidget(self.settingBtn)
@@ -274,9 +285,9 @@ class Ui_MainWindow(object):
         self.helpBtn.setObjectName(u"helpBtn")
         self.helpBtn.setFont(font2)
         self.helpBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/icons/about.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.helpBtn.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/icons/about.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.helpBtn.setIcon(icon6)
         self.helpBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_2.addWidget(self.helpBtn)
@@ -285,9 +296,9 @@ class Ui_MainWindow(object):
         self.aboutBtn.setObjectName(u"aboutBtn")
         self.aboutBtn.setFont(font2)
         self.aboutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.aboutBtn.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.aboutBtn.setIcon(icon7)
         self.aboutBtn.setIconSize(QSize(22, 22))
 
         self.verticalLayout_2.addWidget(self.aboutBtn)
@@ -331,9 +342,9 @@ class Ui_MainWindow(object):
         self.menuBtn = QPushButton(self.widget)
         self.menuBtn.setObjectName(u"menuBtn")
         self.menuBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.menuBtn.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.menuBtn.setIcon(icon8)
         self.menuBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_3.addWidget(self.menuBtn)
@@ -390,9 +401,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.accountBtn = QPushButton(self.widget_3)
         self.accountBtn.setObjectName(u"accountBtn")
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.accountBtn.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.accountBtn.setIcon(icon9)
         self.accountBtn.setIconSize(QSize(30, 30))
 
         self.horizontalLayout_6.addWidget(self.accountBtn)
@@ -472,10 +483,20 @@ class Ui_MainWindow(object):
         font7.setBold(False)
         self.valider_commandeBtn.setFont(font7)
         self.valider_commandeBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/icons/caddie.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.valider_commandeBtn.setIcon(icon9)
+        self.valider_commandeBtn.setIcon(icon2)
         self.valider_commandeBtn.setIconSize(QSize(30, 30))
+        self.tout_payer = QRadioButton(self.homePage)
+        self.tout_payer.setObjectName(u"tout_payer")
+        self.tout_payer.setGeometry(QRect(250, 100, 89, 20))
+        self.non_payer = QRadioButton(self.homePage)
+        self.non_payer.setObjectName(u"non_payer")
+        self.non_payer.setGeometry(QRect(390, 100, 89, 20))
+        self.avancement = QRadioButton(self.homePage)
+        self.avancement.setObjectName(u"avancement")
+        self.avancement.setGeometry(QRect(520, 100, 89, 20))
+        self.avance_field = QLineEdit(self.homePage)
+        self.avance_field.setObjectName(u"avance_field")
+        self.avance_field.setGeometry(QRect(540, 100, 113, 22))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
@@ -487,7 +508,7 @@ class Ui_MainWindow(object):
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.stock_labele = QLabel(self.frame_2)
         self.stock_labele.setObjectName(u"stock_labele")
-        self.stock_labele.setGeometry(QRect(20, 20, 841, 51))
+        self.stock_labele.setGeometry(QRect(20, 20, 601, 51))
         self.stock_labele.setFont(font4)
         self.stockTable = QTableWidget(self.frame_2)
         if (self.stockTable.columnCount() < 9):
@@ -511,7 +532,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem8 = QTableWidgetItem()
         self.stockTable.setHorizontalHeaderItem(8, __qtablewidgetitem8)
         self.stockTable.setObjectName(u"stockTable")
-        self.stockTable.setGeometry(QRect(20, 130, 841, 431))
+        self.stockTable.setGeometry(QRect(20, 130, 951, 431))
         self.filter_labele = QLabel(self.frame_2)
         self.filter_labele.setObjectName(u"filter_labele")
         self.filter_labele.setGeometry(QRect(70, 80, 111, 31))
@@ -617,6 +638,7 @@ class Ui_MainWindow(object):
 
         self.logoutBtn = QPushButton(self.profileMenu)
         self.logoutBtn.setObjectName(u"logoutBtn")
+        self.logoutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon10 = QIcon()
         icon10.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.logoutBtn.setIcon(icon10)
@@ -645,9 +667,9 @@ class Ui_MainWindow(object):
         self.irinaServiceLabel.setText(QCoreApplication.translate("MainWindow", u"IrinaService", None))
         self.accueilBtn.setText(QCoreApplication.translate("MainWindow", u"Accueil", None))
         self.stockBtn.setText(QCoreApplication.translate("MainWindow", u"Etat de Stock", None))
-        self.clientBtn.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.factureBtn.setText(QCoreApplication.translate("MainWindow", u"Consulter facture", None))
         self.journalBtn.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
+        self.clientBtn.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.settingBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About", None))
@@ -662,6 +684,10 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
         self.total_payer.setText(QCoreApplication.translate("MainWindow", u"0 Ar", None))
         self.valider_commandeBtn.setText(QCoreApplication.translate("MainWindow", u"Valider la commande", None))
+        self.tout_payer.setText(QCoreApplication.translate("MainWindow", u"Tout payer", None))
+        self.non_payer.setText(QCoreApplication.translate("MainWindow", u"Non Payer", None))
+        self.avancement.setText("")
+        self.avance_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Avancement", None))
         self.stock_labele.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
         ___qtablewidgetitem = self.stockTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
@@ -688,11 +714,11 @@ class Ui_MainWindow(object):
         self.filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Prix Unitaire", None))
         self.filterCombo.setItemText(3, QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None))
 
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))

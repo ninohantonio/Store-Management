@@ -20,12 +20,16 @@ class AdminWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/auth/style.json"])
+
+        self.showMaximized()
         self.ui.resetBtn.clicked.connect(self.reset_form)
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.search_field.returnPressed.connect(self.manage_search_value_input)
             self.ui.search_field.textChanged.connect(self.manage_search_value_input)
             self.ui.search_field.setFocus()
             pass
+
+        self.numero_is_valid = False
 
         self.ui.radioButton.clicked.connect(self.manage_radio_checked)
         self.ui.radioButton_2.clicked.connect(self.manage_radio_checked)
@@ -38,7 +42,7 @@ class AdminWindow(QMainWindow):
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
-        if len(search_value) == 13 and search_value.isnumeric():
+        if len(search_value) == 13 and search_value.isdigit():
             self.print_search_value()
             return True
         else:
@@ -99,7 +103,7 @@ class AdminWindow(QMainWindow):
     def insert_new_article(self):
         print("submit")
 
-        if not self.manage_search_value_input():
+        if not self.numero_to_insert.isdigit() and not len(self.numero_to_insert) == 13:
             print("Veuillez scanner ou renseigner un numero de serie d'article valide")
             return
         elif not self.controll_provided_data():

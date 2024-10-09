@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, ForeignKey, String, DateTime, Date
+from sqlalchemy import Column, Integer, ForeignKey, String, DateTime, Date, JSON
 from sqlalchemy.orm import Mapped, relationship, mapped_column
 
 from utils.database import Base, engine, str_50, str_10, str_date, str_date_time, int_small, str_20, str_30_optional, \
@@ -50,6 +50,7 @@ class Commande(Base):
     dateCommande = Column(DateTime)
     dateLivraison = Column(Date)
     quantiteCommande: Mapped[int_small]
+    type = Column(String(10))
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))
     numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
 
@@ -58,8 +59,9 @@ class Facture(Base):
 
     numeroFacture = Column(String(10), primary_key=True, unique=True)
     dateEnregistrement = Column(DateTime)
-    listeArticle = Column(String(255))
+    listeArticle = Column(JSON)
     statutPayement: Mapped[bool] = mapped_column()
+    avancement: Mapped[int_small] = mapped_column()
     numeroClient = Column(ForeignKey("client.numeroClient"))
 
 class Journal(Base):
@@ -67,7 +69,8 @@ class Journal(Base):
 
     numeroJournal = Column(Integer, primary_key=True, autoincrement=True)
     dateEnregistrement = Column(DateTime)
-    listeArticle = Column(String(255))
+    listeArticle = Column(JSON)
+    description = Column(String(150))
     typeAction = Column(String(50))
 
 class Notification(Base):

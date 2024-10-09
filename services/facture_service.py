@@ -25,6 +25,7 @@ def get_client_by_facture(facture_id: int):
     return session.query(Client).join(Facture, Facture.numeroFacture == facture_id, full=True).first()
 
 def insert_new_facture(facture: Facture):
+    facture.numeroFacture = get_next_facture_number()
     session.add(facture)
     session.commit()
 
@@ -37,3 +38,17 @@ def update_facture_by_id(facture_id: int, new_facture: Facture):
 def delete_facture_by_id(facture_id: int):
     session.delete(get_facture_by_id(facture_id))
     session.commit()
+
+
+def get_next_facture_number():
+    # Récupérer la dernière facture enregistrée
+    last_facture = session.query(Facture).order_by(Facture.numeroFacture.desc()).first()
+
+    if last_facture:
+        # Incrémenter le numéro de facture
+        next_number = str(int(last_facture.numeroFacture) + 1).zfill(10)
+    else:
+        # Si aucune facture n'existe encore, commencer à 00000001
+        next_number = '0000000001'
+
+    return next_number

@@ -1,16 +1,23 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
-
-from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
-    get_article_by_price
-from views.auth.admin_ui_launcher import AdminWindow
-from views.auth.login_launcher import LoginWindow
-from views.main_window import *
 from Custom_Widgets.Widgets import QMainWindow
+from PySide6.QtCore import QEvent
+from PySide6.QtGui import QIntValidator
+from PySide6.QtWidgets import QMessageBox, QDialog
 
+from controllers.commande_controller import get_date_time_to_string, get_date_to_string
+from models.model_class import Facture, Client, Commande, Journal
+from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
+    get_article_by_price, session
+from services.client_service import insert_new_client
+from services.commande_service import insert_new_commande
+from services.facture_service import insert_new_facture
+from services.journal_service import insert_new_journal
+from views.auth.login_launcher import LoginWindow
+from views.client_ui_launcher import ClientList
+from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.stock_state import refresh_stock_table_data
-
 
 settings = QSettings()
 
@@ -23,15 +30,34 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
+
+        self.showMaximized()
+
+        self.selected_client = Client()
+
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
             pass
 
-
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
-        # self.ui.searchField.setVisible(False)
+
+        self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
+        self.ui.avance_field.setValidator(QIntValidator(0, 9999999))
+
+        self.ui.tout_payer.setChecked(True)
+
+        self.ui.avance_field.installEventFilter(self)
+
         self.show()
+
+    def eventFilter(self, obj, event):
+        # Vérifier si l'événement est lié au focus entrant dans le QLineEdit
+        if obj == self.ui.avance_field and event.type() == QEvent.FocusIn:
+            # Lorsque le focus entre dans le QLineEdit, cocher un bouton radio
+            self.ui.avancement.setChecked(True)
+            return True
+        return super().eventFilter(obj, event)
 
     def print_search_value(self):
         search_value = self.ui.searchField.text()
@@ -43,7 +69,8 @@ class MainWindow(QMainWindow):
         # Effacer le texte pour préparer le prochain scan
         self.ui.searchField.clear()
         print(f"Article existe = {verify_article_by_id(search_value)}")
-        self.add_new_card_commande(search_value) if verify_article_by_id(search_value) else self.show_article_not_found()
+        self.add_new_card_commande(search_value) if verify_article_by_id(
+            search_value) else self.show_article_not_found()
 
     def add_new_card_commande(self, numero):
         if numero in self.commande_item:
@@ -67,7 +94,7 @@ class MainWindow(QMainWindow):
             # Connecter le signal card_removed pour gérer la suppression
             carte.card_removed.connect(self.remove_card)
 
-            self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element -1 ) % 3)
+            self.ui.cardContainer.addWidget(carte, (element - 1) // 3, (element - 1) % 3)
 
     def find_card_by_numero(self, numero: str):
         for i in range(self.ui.cardContainer.count()):
@@ -172,6 +199,137 @@ class MainWindow(QMainWindow):
         stock_error_dialog.rejected.connect(
             lambda: stock_error_dialog.close())  # cancel button clicked
 
+    def handle_submit_commande_validation(self):
+        #demander confirmation
+        response = self.show_confirmation_dialog()
+        if response:
+            #choisir un client, en creer un
+            self.show_client_selection_dialog()
+            client = self.selected_client
+            insert_new_client(client)
+            #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
+            liste_article = self.extract_info_to_card()
+            #boucle pour stocker les informations dans commande
+            self.store_data_to_commande(liste_article, client.numeroClient)
+            #stocker dans Facture
+            self.store_data_to_facture(liste_article, client.numeroClient)
+            #stocker dans journal de vente
+            self.store_data_to_journal(liste_article)
+        return
 
+    def extract_info_to_card(self):
+        liste_article: list[str] = []
+        for i in range(self.ui.cardContainer.count()):
+            card_widget = self.ui.cardContainer.itemAt(i).widget()
+            str_detail = f"{card_widget.numero_article}:{card_widget.article.libelle}:{card_widget.sou_total}:{card_widget.comboBox.currentText()}:{card_widget.line_edit_quantite.text()}"
+            liste_article.append(str_detail)
 
+            if card_widget.comboBox.currentText() == "pieces":
+                self.modify_stock_for_type(card_widget.numero_article, card_widget.line_edit_quantite.text(), 1)
+                pass
+            elif card_widget.comboBox.currentText() == "pacquets":
+                self.modify_stock_for_type(card_widget.numero_article, card_widget.line_edit_quantite.text(), 2)
+                pass
+            else:
+                self.modify_stock_for_type(card_widget.numero_article, card_widget.line_edit_quantite.text(), 3)
+                pass
 
+        return liste_article
+
+    def modify_stock_for_type(self, numero: str, quantite, type: int):
+        quantite = int(quantite)
+        article = get_article_by_id(numero)
+        type_quantite = article.typeConteneur
+        if type == 1:
+            stock_actuel = article.pieceEnStock
+            nouveau_stock = stock_actuel - quantite
+            nouveau_conteneur = nouveau_stock // article.pieceParPaquet if type_quantite == "Paquet" else nouveau_stock // article.pieceParBoite
+            if type_quantite == "Paquet":
+                article.pieceEnStock = nouveau_stock
+                article.packetEnStock = nouveau_conteneur
+            else:
+                article.pieceEnStock = nouveau_stock
+                article.boiteEnStock = nouveau_conteneur
+            session.commit()
+            return
+
+        elif type == 2:
+            packet_actuel = article.packetEnStock
+            nouveau_packet = packet_actuel - quantite
+            nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
+            article.pieceEnStock = nouveau_stock
+            article.packetEnStock = nouveau_packet
+            session.commit()
+            return
+
+        else:
+            boite_actuel = article.boiteEnStock
+            nouveau_boite = boite_actuel - quantite
+            nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
+            article.pieceEnStock = nouveau_stock
+            article.boiteEnStock = nouveau_boite
+            session.commit()
+            return
+
+    def show_confirmation_dialog(self):
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Question)
+        msg_box.setWindowTitle("Confirmation")
+        msg_box.setText("Êtes-vous sûr de vouloir continuer ?")
+        msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        msg_box.setDefaultButton(QMessageBox.No)
+
+        # Afficher le dialogue et récupérer la réponse de l'utilisateur
+        response = msg_box.exec()
+
+        # Vérifier la réponse et agir en conséquence
+        if response == QMessageBox.Yes:
+            return True  # Si Oui, on effectue l'action
+        else:
+            return False  # Si Non, on annule l'action
+
+    def show_client_selection_dialog(self):
+        # Créer un QDialog pour la sélection du client
+        self.dialog = ClientList()
+
+        # Si l'utilisateur a sélectionné un client et cliqué sur OK
+        if self.dialog.exec() == QDialog.Accepted:
+            if self.dialog.temporary_client_selected:
+                print(f"Client sélectionné : temporaire")
+                self.selected_client = Client()
+                self.selected_client.nom = "temp"
+                self.selected_client.telephone = "temp"
+                self.selected_client.adresse = "temp"
+            else:
+                # Récupérer les informations du client sélectionné dans la table
+                client_info = self.dialog.get_selected_client()
+                if client_info:
+                    # Afficher les informations du client sélectionné ou temporaire
+                    self.selected_client = client_info
+                    print(f"Client sélectionné : {client_info.nom}, Telephone : {client_info.telephone}")
+                else:
+                    print("Aucun client sélectionné.")
+                    return
+
+        else:
+            print("Sélection annulée.")
+
+    def store_data_to_commande(self, liste_article: list[str], numero_client):
+        #numero: libelle:sous - total: desciption:effectif
+        for commande_data in liste_article:
+            commande_split = commande_data.split(':')
+            commande = Commande(dateCommande=get_date_time_to_string(), dateLivraison=get_date_to_string(), quantiteCommande=commande_split[4], type=commande_split[3], numeroClient=numero_client, numeroArticle=commande_split[0])
+            insert_new_commande(commande)
+
+    def store_data_to_facture(self, liste_article: list[str], numero_client):
+        statut_payement = self.ui.tout_payer.isChecked()
+        try:
+            avancement = int(self.ui.avance_field.text())
+        except ValueError:
+            avancement = 0  # Si la quantité est vide ou invalide
+        facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, avancement = avancement,statutPayement=statut_payement, numeroClient=numero_client)
+        insert_new_facture(facture)
+
+    def store_data_to_journal(self, liste_article: list[str]):
+        journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, typeAction="vente d'article")
+        insert_new_journal(journal)
