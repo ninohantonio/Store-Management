@@ -206,15 +206,22 @@ class MainWindow(QMainWindow):
             #choisir un client, en creer un
             self.show_client_selection_dialog()
             client = self.selected_client
-            insert_new_client(client)
-            #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
-            liste_article = self.extract_info_to_card()
-            #boucle pour stocker les informations dans commande
-            self.store_data_to_commande(liste_article, client.numeroClient)
-            #stocker dans Facture
-            self.store_data_to_facture(liste_article, client.numeroClient)
-            #stocker dans journal de vente
-            self.store_data_to_journal(liste_article)
+            if client is not None:
+                insert_new_client(client)
+                #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
+                liste_article = self.extract_info_to_card()
+                #boucle pour stocker les informations dans commande
+                self.store_data_to_commande(liste_article, client.numeroClient)
+                #stocker dans Facture
+                self.store_data_to_facture(liste_article, client.numeroClient)
+                #stocker dans journal de vente
+                self.store_data_to_journal(liste_article)
+                #afficher dialog avec facture
+
+                #nettoyer carte
+                self.reset_card_container()
+            else:
+                self.show_alert_message("Acun client selectionnee!! Veuillez reessayer!")
         return
 
     def extract_info_to_card(self):
@@ -271,6 +278,17 @@ class MainWindow(QMainWindow):
             session.commit()
             return
 
+    def show_alert_message(self, message: str):
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Information)
+        msg_box.setWindowTitle("Info")
+        msg_box.setText(message)
+        msg_box.setStandardButtons(QMessageBox.Ok)
+        msg_box.setDefaultButton(QMessageBox.Ok)
+
+        # Afficher le dialogue et récupérer la réponse de l'utilisateur
+        msg_box.exec()
+
     def show_confirmation_dialog(self):
         msg_box = QMessageBox()
         msg_box.setIcon(QMessageBox.Question)
@@ -309,6 +327,7 @@ class MainWindow(QMainWindow):
                     print(f"Client sélectionné : {client_info.nom}, Telephone : {client_info.telephone}")
                 else:
                     print("Aucun client sélectionné.")
+                    self.selected_client = None
                     return
 
         else:
@@ -333,3 +352,9 @@ class MainWindow(QMainWindow):
     def store_data_to_journal(self, liste_article: list[str]):
         journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, typeAction="vente d'article")
         insert_new_journal(journal)
+
+    def reset_card_container(self):
+        for i in range(self.ui.cardContainer.count()):
+            card_widget = self.ui.cardContainer.itemAt(i).widget()
+            card_widget.setParent(None)
+            card_widget.deleteLater()

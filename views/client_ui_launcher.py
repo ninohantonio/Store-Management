@@ -21,7 +21,6 @@ class ClientList(QDialog):
         self.ui.pushButton_2.clicked.connect(self.handle_temporary_client)
         self.ui.tableWidget.setColumnHidden(2, True)
 
-        self.ui.pushButton_2.clicked.connect(self.handle_temporary_client)
 
     def load_table_data(self, data: list[Client]):
         self.ui.tableWidget.setRowCount(0)
