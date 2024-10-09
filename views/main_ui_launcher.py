@@ -206,15 +206,15 @@ class MainWindow(QMainWindow):
             #choisir un client, en creer un
             self.show_client_selection_dialog()
             client = self.selected_client
-            insert_new_client(client)
-            #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
-            liste_article = self.extract_info_to_card()
-            #boucle pour stocker les informations dans commande
-            self.store_data_to_commande(liste_article, client.numeroClient)
-            #stocker dans Facture
-            self.store_data_to_facture(liste_article, client.numeroClient)
-            #stocker dans journal de vente
-            self.store_data_to_journal(liste_article)
+            # insert_new_client(client)
+            # #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
+            # liste_article = self.extract_info_to_card()
+            # #boucle pour stocker les informations dans commande
+            # self.store_data_to_commande(liste_article, client.numeroClient)
+            # #stocker dans Facture
+            # self.store_data_to_facture(liste_article, client.numeroClient)
+            # #stocker dans journal de vente
+            # self.store_data_to_journal(liste_article)
         return
 
     def extract_info_to_card(self):

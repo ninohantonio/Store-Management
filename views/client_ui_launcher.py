@@ -39,7 +39,7 @@ class ClientList(QDialog):
 
     def get_selected_client(self):
         selected_row = self.ui.tableWidget.currentRow()
-
+        print(f"selected row = {selected_row}")
         if selected_row != -1:
             # Récupérer les informations du client sélectionné
             numero = self.ui.tableWidget.item(selected_row, 2).text()
