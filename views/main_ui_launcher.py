@@ -323,7 +323,10 @@ class MainWindow(QMainWindow):
 
     def store_data_to_facture(self, liste_article: list[str], numero_client):
         statut_payement = self.ui.tout_payer.isChecked()
-        avancement = int(self.ui.avance_field.text())
+        try:
+            avancement = int(self.line_edit_quantite.text())
+        except ValueError:
+            avancement = 0  # Si la quantité est vide ou invalide
         facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, avancement = avancement,statutPayement=statut_payement, numeroClient=numero_client)
         insert_new_facture(facture)
 
