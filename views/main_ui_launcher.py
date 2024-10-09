@@ -200,6 +200,9 @@ class MainWindow(QMainWindow):
             lambda: stock_error_dialog.close())  # cancel button clicked
 
     def handle_submit_commande_validation(self):
+        if self.check_if_card_container_empty():
+            self.show_alert_message("Le panier de commande est vide!!")
+            return
         #demander confirmation
         response = self.show_confirmation_dialog()
         if response:
@@ -220,6 +223,7 @@ class MainWindow(QMainWindow):
 
                 #nettoyer carte
                 self.reset_card_container()
+                return
             else:
                 self.show_alert_message("Acun client selectionnee!! Veuillez reessayer!")
         return
@@ -305,6 +309,9 @@ class MainWindow(QMainWindow):
             return True  # Si Oui, on effectue l'action
         else:
             return False  # Si Non, on annule l'action
+
+    def check_if_card_container_empty(self):
+        return self.ui.cardContainer.count()< 1
 
     def show_client_selection_dialog(self):
         # Créer un QDialog pour la sélection du client
