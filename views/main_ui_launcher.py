@@ -11,12 +11,13 @@ from services.article_service import verify_article_by_id, get_article_by_id, ge
     get_article_by_price, session
 from services.client_service import insert_new_client
 from services.commande_service import insert_new_commande
-from services.facture_service import insert_new_facture
+from services.facture_service import insert_new_facture, get_facture_by_id
 from services.journal_service import insert_new_journal
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
 from views.main_window import *
 from views.states.commande_card import CardCommande
+from views.states.facture_dialog_launcher import FactureDialog
 from views.states.stock_state import refresh_stock_table_data
 
 settings = QSettings()
@@ -203,6 +204,7 @@ class MainWindow(QMainWindow):
         if self.check_if_card_container_empty():
             self.show_alert_message("Le panier de commande est vide!!")
             return
+
         #demander confirmation
         response = self.show_confirmation_dialog()
         if response:
@@ -216,11 +218,12 @@ class MainWindow(QMainWindow):
                 #boucle pour stocker les informations dans commande
                 self.store_data_to_commande(liste_article, client.numeroClient)
                 #stocker dans Facture
-                self.store_data_to_facture(liste_article, client.numeroClient)
+                facture = self.store_data_to_facture(liste_article, client.numeroClient)
                 #stocker dans journal de vente
                 self.store_data_to_journal(liste_article)
                 #afficher dialog avec facture
-
+                self.facture_dialog = FactureDialog(facture)
+                self.facture_dialog.show()
                 #nettoyer carte
                 self.reset_card_container()
                 return
@@ -355,6 +358,7 @@ class MainWindow(QMainWindow):
             avancement = 0  # Si la quantité est vide ou invalide
         facture = Facture(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, avancement = avancement,statutPayement=statut_payement, numeroClient=numero_client)
         insert_new_facture(facture)
+        return facture
 
     def store_data_to_journal(self, liste_article: list[str]):
         journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, typeAction="vente d'article")

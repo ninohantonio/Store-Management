@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_dialogCJaqQu.ui'
+## Form generated from reading UI file 'facture_dialogdfiqMe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QSizePolicy, QTableWidget,
-    QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QDialog, QFrame,
+    QHBoxLayout, QHeaderView, QLabel, QSizePolicy,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -38,6 +38,14 @@ class Ui_Dialog(object):
 "	color: white;\n"
 "	padding-left: 10px;\n"
 "	border-radius: 5px;\n"
+"}\n"
+"\n"
+"#reste_payer{\n"
+"	color:  rgb(255, 85, 0);\n"
+"}\n"
+"\n"
+"#avance{\n"
+"	color: rgb(0, 85, 255);\n"
 "}")
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
@@ -119,7 +127,7 @@ class Ui_Dialog(object):
         self.adresse_client.setFont(font5)
         self.frame = QFrame(Dialog)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(10, 200, 721, 451))
+        self.frame.setGeometry(QRect(10, 180, 721, 451))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)
@@ -128,18 +136,54 @@ class Ui_Dialog(object):
         if (self.tableWidget.columnCount() < 4):
             self.tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setFont(font4);
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
+        __qtablewidgetitem1.setFont(font4);
         self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
+        __qtablewidgetitem2.setFont(font4);
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
+        __qtablewidgetitem3.setFont(font4);
         self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setMaximumSize(QSize(701, 16777215))
         self.tableWidget.setLineWidth(1)
+        self.tableWidget.setEditTriggers(QAbstractItemView.EditTrigger.AnyKeyPressed|QAbstractItemView.EditTrigger.EditKeyPressed)
+        self.tableWidget.horizontalHeader().setMinimumSectionSize(40)
+        self.tableWidget.verticalHeader().setDefaultSectionSize(35)
 
         self.horizontalLayout.addWidget(self.tableWidget)
 
+        self.label_5 = QLabel(Dialog)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(490, 660, 101, 21))
+        self.label_5.setFont(font4)
+        self.reste_payer = QLabel(Dialog)
+        self.reste_payer.setObjectName(u"reste_payer")
+        self.reste_payer.setGeometry(QRect(600, 660, 131, 21))
+        font6 = QFont()
+        font6.setFamilies([u"Arial"])
+        font6.setPointSize(15)
+        font6.setBold(True)
+        self.reste_payer.setFont(font6)
+        self.label_10 = QLabel(Dialog)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(280, 660, 61, 21))
+        self.label_10.setFont(font4)
+        self.avance = QLabel(Dialog)
+        self.avance.setObjectName(u"avance")
+        self.avance.setGeometry(QRect(340, 660, 131, 21))
+        self.avance.setFont(font6)
+        self.total = QLabel(Dialog)
+        self.total.setObjectName(u"total")
+        self.total.setGeometry(QRect(80, 660, 131, 21))
+        self.total.setFont(font6)
+        self.label_11 = QLabel(Dialog)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(20, 660, 61, 21))
+        self.label_11.setFont(font4)
 
         self.retranslateUi(Dialog)
 
@@ -170,5 +214,11 @@ class Ui_Dialog(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("Dialog", u"Conteneur", None));
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("Dialog", u"Sous-total", None));
+        self.label_5.setText(QCoreApplication.translate("Dialog", u"Reste a payer :", None))
+        self.reste_payer.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
+        self.label_10.setText(QCoreApplication.translate("Dialog", u"Avance :", None))
+        self.avance.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
+        self.total.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
+        self.label_11.setText(QCoreApplication.translate("Dialog", u"Total :", None))
     # retranslateUi
 
