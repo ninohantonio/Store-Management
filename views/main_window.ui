@@ -719,7 +719,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1106,6 +1106,9 @@ QLineEdit{
                 <width>881</width>
                 <height>471</height>
                </rect>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::EditKeyPressed</set>
               </property>
               <column>
                <property name="text">

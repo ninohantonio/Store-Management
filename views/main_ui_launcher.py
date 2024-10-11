@@ -12,7 +12,7 @@ from services.article_service import verify_article_by_id, get_article_by_id, ge
 from services.client_service import insert_new_client
 from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, \
-    get_facture_by_date_enregistrement
+    get_facture_by_date_enregistrement, search_factures_by_date_range
 from services.journal_service import insert_new_journal
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -50,6 +50,11 @@ class MainWindow(QMainWindow):
         self.ui.tout_payer.setChecked(True)
 
         self.ui.avance_field.installEventFilter(self)
+
+        # Connecter les signaux dateChanged
+        self.ui.dateEdit.dateChanged.connect(self.on_date_changed)
+        self.ui.dateEdit_2.dateChanged.connect(self.on_date_changed)
+
 
         self.show()
 
@@ -392,3 +397,13 @@ class MainWindow(QMainWindow):
         factures = get_all_facture()
         refresh_facture_table_data(self.ui.facture_table, factures)
         return
+
+    def on_date_changed(self):
+        # Obtenir les dates sélectionnées par l'utilisateur
+        start_date = self.ui.dateEdit.date().toPython()
+        end_date = self.ui.dateEdit_2.date().toPython()
+
+        # Appeler la fonction de recherche
+        factures = search_factures_by_date_range(session, start_date, end_date)
+
+        refresh_facture_table_data(self.ui.facture_table, factures)
