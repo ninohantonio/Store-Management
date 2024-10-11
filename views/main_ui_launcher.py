@@ -9,10 +9,9 @@ from controllers.commande_controller import get_date_time_to_string, get_date_to
 from models.model_class import Facture, Client, Commande, Journal
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
-from services.client_service import insert_new_client
+from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
-from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, \
-    get_facture_by_date_enregistrement, search_factures_by_date_range
+from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
 from services.journal_service import insert_new_journal
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -55,6 +54,7 @@ class MainWindow(QMainWindow):
         self.ui.dateEdit.dateChanged.connect(self.on_date_changed)
         self.ui.dateEdit_2.dateChanged.connect(self.on_date_changed)
 
+        self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
 
         self.show()
 
@@ -407,3 +407,12 @@ class MainWindow(QMainWindow):
         factures = search_factures_by_date_range(session, start_date, end_date)
 
         refresh_facture_table_data(self.ui.facture_table, factures)
+
+    def manage_double_click_facture_item(self, row, column):
+
+        numero = self.ui.facture_table.item(row, 0).text()
+        facture = get_facture_by_id(int(numero))
+
+        self.facture_dialog = FactureDialog(facture)
+        self.facture_dialog.show()
+        return

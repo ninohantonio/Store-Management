@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowbAiNsP.ui'
+## Form generated from reading UI file 'main_windowqWSRQK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
-    QDateEdit, QFrame, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit,
-    QPushButton, QRadioButton, QSizePolicy, QSpacerItem,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
+    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QPushButton,
+    QRadioButton, QSizePolicy, QSpacerItem, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -602,10 +602,6 @@ class Ui_MainWindow(object):
         self.dateEdit_2 = QDateEdit(self.frame_3)
         self.dateEdit_2.setObjectName(u"dateEdit_2")
         self.dateEdit_2.setGeometry(QRect(430, 90, 121, 31))
-        self.dateCheck = QCheckBox(self.frame_3)
-        self.dateCheck.setObjectName(u"dateCheck")
-        self.dateCheck.setGeometry(QRect(590, 89, 161, 31))
-        self.dateCheck.setFont(font9)
 
         self.verticalLayout_5.addWidget(self.frame_3)
 
@@ -770,7 +766,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Identifiant client", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Filtre de date :", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"jusqu'au", None))
-        self.dateCheck.setText(QCoreApplication.translate("MainWindow", u"n'utiliser qu'une date", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
