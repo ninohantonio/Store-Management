@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_dialogdfiqMe.ui'
+## Form generated from reading UI file 'facture_dialogCEWRKY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QDialog, QFrame,
-    QHBoxLayout, QHeaderView, QLabel, QSizePolicy,
-    QTableWidget, QTableWidgetItem, QWidget)
+    QHBoxLayout, QHeaderView, QLabel, QPushButton,
+    QSizePolicy, QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -46,6 +46,13 @@ class Ui_Dialog(object):
 "\n"
 "#avance{\n"
 "	color: rgb(0, 85, 255);\n"
+"}\n"
+"\n"
+"#change_state_btn{\n"
+"	background-color: rgb(0, 170, 255);\n"
+"	border-radius: 10px;\n"
+"	cursor: pointer;\n"
+"	color: white;\n"
 "}")
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
@@ -78,7 +85,7 @@ class Ui_Dialog(object):
         self.label_3.setFont(font)
         self.statut_facture = QLabel(Dialog)
         self.statut_facture.setObjectName(u"statut_facture")
-        self.statut_facture.setGeometry(QRect(180, 100, 171, 16))
+        self.statut_facture.setGeometry(QRect(160, 100, 111, 16))
         self.statut_facture.setFont(font2)
         self.label_4 = QLabel(Dialog)
         self.label_4.setObjectName(u"label_4")
@@ -184,6 +191,9 @@ class Ui_Dialog(object):
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(20, 660, 61, 21))
         self.label_11.setFont(font4)
+        self.change_state_btn = QPushButton(Dialog)
+        self.change_state_btn.setObjectName(u"change_state_btn")
+        self.change_state_btn.setGeometry(QRect(280, 90, 91, 31))
 
         self.retranslateUi(Dialog)
 
@@ -220,5 +230,6 @@ class Ui_Dialog(object):
         self.avance.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
         self.total.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
         self.label_11.setText(QCoreApplication.translate("Dialog", u"Total :", None))
+        self.change_state_btn.setText(QCoreApplication.translate("Dialog", u"changer", None))
     # retranslateUi
 
