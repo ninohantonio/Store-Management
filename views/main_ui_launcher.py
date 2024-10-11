@@ -11,14 +11,14 @@ from services.article_service import verify_article_by_id, get_article_by_id, ge
     get_article_by_price, session
 from services.client_service import insert_new_client
 from services.commande_service import insert_new_commande
-from services.facture_service import insert_new_facture, get_facture_by_id
+from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture
 from services.journal_service import insert_new_journal
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
 from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.facture_dialog_launcher import FactureDialog
-from views.states.stock_state import refresh_stock_table_data
+from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data
 
 settings = QSettings()
 
@@ -123,6 +123,9 @@ class MainWindow(QMainWindow):
             self.ui.searchField.returnPressed.disconnect()
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
+        elif index == 2:
+            self.ui.searchField.returnPressed.disconnect()
+            self.ui.searchField.returnPressed.connect(lambda : self.fill_facture_data_to_table(self.ui.searchField.text()))
         pass
 
     def refresh_stock_screen(self):
@@ -369,3 +372,19 @@ class MainWindow(QMainWindow):
         for i in range(self.ui.cardContainer.count()):
             card_widget = self.ui.cardContainer.itemAt(i).widget()
             card_widget.deleteLater()
+
+
+    def fill_facture_data_to_table(self, search_value: str):
+        if search_value.strip() == "":
+            self.refresh_facture_data_table()
+        else:
+            articles = []
+            if self.ui.filter_facture_combo.currentIndex() == 0:
+
+
+        print(f"facture search = {search_value}")
+
+    def refresh_facture_data_table(self):
+        factures = get_all_facture()
+        refresh_facture_table_data(self.ui.facture_table, factures)
+        return

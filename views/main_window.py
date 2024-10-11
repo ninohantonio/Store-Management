@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowgAhVGz.ui'
+## Form generated from reading UI file 'main_windowaiAUWz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -102,7 +102,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"#welcomeLabel, #stock_labele{\n"
+"#welcomeLabel, #stock_labele, #facture_title{\n"
 "	text-align: center;\n"
 "	color:  rgb(0, 170, 255);\n"
 "	background-color: #e5e0ff;\n"
@@ -127,7 +127,7 @@ class Ui_MainWindow(object):
 "	padding: 5px;\n"
 "}\n"
 "\n"
-"#filterCombo{\n"
+"#filterCombo, #filter_facture_combo{\n"
 "	padding: 5px;\n"
 "	border-radius: 10px;\n"
 "	background-color: rgb(255, 220, 219);\n"
@@ -535,7 +535,7 @@ class Ui_MainWindow(object):
         self.stockTable.setGeometry(QRect(20, 130, 951, 431))
         self.filter_labele = QLabel(self.frame_2)
         self.filter_labele.setObjectName(u"filter_labele")
-        self.filter_labele.setGeometry(QRect(70, 80, 111, 31))
+        self.filter_labele.setGeometry(QRect(70, 80, 151, 31))
         font8 = QFont()
         font8.setPointSize(13)
         self.filter_labele.setFont(font8)
@@ -550,22 +550,62 @@ class Ui_MainWindow(object):
         self.filterCombo.addItem("")
         self.filterCombo.addItem("")
         self.filterCombo.setObjectName(u"filterCombo")
-        self.filterCombo.setGeometry(QRect(180, 81, 161, 31))
+        self.filterCombo.setGeometry(QRect(220, 81, 161, 31))
 
         self.verticalLayout_4.addWidget(self.frame_2)
 
         self.mainNavigationScreen.addWidget(self.stockPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
+        self.verticalLayout_5 = QVBoxLayout(self.clientPage)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.frame_3 = QFrame(self.clientPage)
         self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setGeometry(QRect(40, 30, 401, 80))
         self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
+        self.facture_title = QLabel(self.frame_3)
+        self.facture_title.setObjectName(u"facture_title")
+        self.facture_title.setGeometry(QRect(10, 20, 631, 51))
+        self.facture_title.setFont(font4)
         self.label_4 = QLabel(self.frame_3)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(60, 20, 141, 31))
-        self.label_4.setFont(font4)
+        self.label_4.setGeometry(QRect(50, 90, 121, 20))
+        font9 = QFont()
+        font9.setFamilies([u"Arial"])
+        font9.setPointSize(11)
+        self.label_4.setFont(font9)
+        self.label_8 = QLabel(self.frame_3)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(10, 90, 31, 21))
+        self.label_8.setPixmap(QPixmap(u":/icons/icons/filter.png"))
+        self.label_8.setScaledContents(True)
+        self.filter_facture_combo = QComboBox(self.frame_3)
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.setObjectName(u"filter_facture_combo")
+        self.filter_facture_combo.setGeometry(QRect(170, 80, 171, 41))
+        font10 = QFont()
+        font10.setPointSize(11)
+        self.filter_facture_combo.setFont(font10)
+        self.facture_table = QTableWidget(self.frame_3)
+        if (self.facture_table.columnCount() < 5):
+            self.facture_table.setColumnCount(5)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.facture_table.setHorizontalHeaderItem(0, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.facture_table.setHorizontalHeaderItem(1, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.facture_table.setHorizontalHeaderItem(2, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.facture_table.setHorizontalHeaderItem(3, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.facture_table.setHorizontalHeaderItem(4, __qtablewidgetitem13)
+        self.facture_table.setObjectName(u"facture_table")
+        self.facture_table.setGeometry(QRect(10, 130, 881, 471))
+
+        self.verticalLayout_5.addWidget(self.frame_3)
+
         self.mainNavigationScreen.addWidget(self.clientPage)
         self.facturePage = QWidget()
         self.facturePage.setObjectName(u"facturePage")
@@ -610,10 +650,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font9 = QFont()
-        font9.setPointSize(12)
-        font9.setBold(True)
-        self.label_18.setFont(font9)
+        font11 = QFont()
+        font11.setPointSize(12)
+        font11.setBold(True)
+        self.label_18.setFont(font11)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18, 0, Qt.AlignmentFlag.AlignTop)
@@ -656,7 +696,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -707,14 +747,30 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Boites en stock", None));
         ___qtablewidgetitem8 = self.stockTable.horizontalHeaderItem(8)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None));
-        self.filter_labele.setText(QCoreApplication.translate("MainWindow", u"Filtrer par :", None))
+        self.filter_labele.setText(QCoreApplication.translate("MainWindow", u"Rechecrcher par :", None))
         self.label_3.setText("")
         self.filterCombo.setItemText(0, QCoreApplication.translate("MainWindow", u"Libelle", None))
         self.filterCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"Quantite en stock", None))
         self.filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Prix Unitaire", None))
         self.filterCombo.setItemText(3, QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None))
 
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Facture", None))
+        self.facture_title.setText(QCoreApplication.translate("MainWindow", u"Liste des factures", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Rechercher par :", None))
+        self.label_8.setText("")
+        self.filter_facture_combo.setItemText(0, QCoreApplication.translate("MainWindow", u"numero de facture", None))
+        self.filter_facture_combo.setItemText(1, QCoreApplication.translate("MainWindow", u"date enregistrement", None))
+        self.filter_facture_combo.setItemText(2, QCoreApplication.translate("MainWindow", u"liste generale", None))
+
+        ___qtablewidgetitem9 = self.facture_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Numero de facture", None));
+        ___qtablewidgetitem10 = self.facture_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Date enregistrement", None));
+        ___qtablewidgetitem11 = self.facture_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Statut de payement", None));
+        ___qtablewidgetitem12 = self.facture_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Aavancement", None));
+        ___qtablewidgetitem13 = self.facture_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Identifiant client", None));
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))

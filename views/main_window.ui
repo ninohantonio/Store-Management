@@ -1166,7 +1166,7 @@ QLineEdit{
                </property>
               </item>
              </widget>
-             <widget class="QTableWidget" name="tableWidget">
+             <widget class="QTableWidget" name="facture_table">
               <property name="geometry">
                <rect>
                 <x>10</x>
@@ -1177,27 +1177,27 @@ QLineEdit{
               </property>
               <column>
                <property name="text">
-                <string>numero de facture</string>
+                <string>Numero de facture</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>date enregistrement</string>
+                <string>Date enregistrement</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>statut de payement</string>
+                <string>Statut de payement</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>avancement</string>
+                <string>Aavancement</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>identifiant client</string>
+                <string>Identifiant client</string>
                </property>
               </column>
              </widget>
