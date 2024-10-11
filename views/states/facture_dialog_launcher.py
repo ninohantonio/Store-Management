@@ -70,7 +70,8 @@ class FactureDialog(QDialog):
             self.facture.statutPayement = True
             self.ui.statut_facture.setText("Tout payer")
         session.commit()
-
+        session.close()
+        self.display_facture_detail(self.facture)
         return
 
 
