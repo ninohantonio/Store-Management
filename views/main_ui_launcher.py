@@ -413,6 +413,6 @@ class MainWindow(QMainWindow):
         numero = self.ui.facture_table.item(row, 0).text()
         facture = get_facture_by_id(int(numero))
 
-        self.facture_dialog = FactureDialog(facture)
+        self.facture_dialog = FactureDialog(facture, can_change_state=True)
         self.facture_dialog.show()
         return
