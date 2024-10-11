@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowaiAUWz.ui'
+## Form generated from reading UI file 'main_windowoaXRyP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -555,11 +555,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.frame_2)
 
         self.mainNavigationScreen.addWidget(self.stockPage)
-        self.clientPage = QWidget()
-        self.clientPage.setObjectName(u"clientPage")
-        self.verticalLayout_5 = QVBoxLayout(self.clientPage)
+        self.facturePage = QWidget()
+        self.facturePage.setObjectName(u"facturePage")
+        self.verticalLayout_5 = QVBoxLayout(self.facturePage)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.frame_3 = QFrame(self.clientPage)
+        self.frame_3 = QFrame(self.facturePage)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
@@ -606,10 +606,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.frame_3)
 
-        self.mainNavigationScreen.addWidget(self.clientPage)
-        self.facturePage = QWidget()
-        self.facturePage.setObjectName(u"facturePage")
-        self.frame_4 = QFrame(self.facturePage)
+        self.mainNavigationScreen.addWidget(self.facturePage)
+        self.journalPage = QWidget()
+        self.journalPage.setObjectName(u"journalPage")
+        self.frame_4 = QFrame(self.journalPage)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setGeometry(QRect(40, 30, 401, 80))
         self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
@@ -618,10 +618,10 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(60, 20, 141, 31))
         self.label_5.setFont(font4)
-        self.mainNavigationScreen.addWidget(self.facturePage)
-        self.journalPage = QWidget()
-        self.journalPage.setObjectName(u"journalPage")
-        self.frame_5 = QFrame(self.journalPage)
+        self.mainNavigationScreen.addWidget(self.journalPage)
+        self.clientPage = QWidget()
+        self.clientPage.setObjectName(u"clientPage")
+        self.frame_5 = QFrame(self.clientPage)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setGeometry(QRect(30, 30, 401, 80))
         self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
@@ -630,7 +630,7 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(80, 20, 141, 31))
         self.label_6.setFont(font4)
-        self.mainNavigationScreen.addWidget(self.journalPage)
+        self.mainNavigationScreen.addWidget(self.clientPage)
 
         self.verticalLayout.addWidget(self.mainNavigationScreen)
 
@@ -696,7 +696,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(2)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

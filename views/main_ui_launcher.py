@@ -126,6 +126,7 @@ class MainWindow(QMainWindow):
             self.ui.searchField.setFocus()
         elif index == 2:
             self.ui.searchField.returnPressed.disconnect()
+            self.refresh_facture_data_table()
             self.ui.searchField.returnPressed.connect(lambda : self.fill_facture_data_to_table(self.ui.searchField.text()))
         pass
 
@@ -387,7 +388,7 @@ class MainWindow(QMainWindow):
             else:
                 self.refresh_data_search()
                 return
-            refresh_facture_table_data(articles)
+            refresh_facture_table_data(self.ui.facture_table, articles)
         print(f"facture search = {search_value}")
 
     def refresh_facture_data_table(self):
