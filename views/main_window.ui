@@ -85,7 +85,7 @@ QLineEdit{
 }
 
 
-#welcomeLabel, #stock_labele{
+#welcomeLabel, #stock_labele, #facture_title{
 	text-align: center;
 	color:  rgb(0, 170, 255);
 	background-color: #e5e0ff;
@@ -110,7 +110,7 @@ QLineEdit{
 	padding: 5px;
 }
 
-#filterCombo{
+#filterCombo, #filter_facture_combo{
 	padding: 5px;
 	border-radius: 10px;
 	background-color: rgb(255, 220, 219);
@@ -719,7 +719,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1004,7 +1004,7 @@ QLineEdit{
                <rect>
                 <x>70</x>
                 <y>80</y>
-                <width>111</width>
+                <width>151</width>
                 <height>31</height>
                </rect>
               </property>
@@ -1014,7 +1014,7 @@ QLineEdit{
                </font>
               </property>
               <property name="text">
-               <string>Filtrer par :</string>
+               <string>Rechecrcher par :</string>
               </property>
              </widget>
              <widget class="QLabel" name="label_3">
@@ -1039,7 +1039,7 @@ QLineEdit{
              <widget class="QComboBox" name="filterCombo">
               <property name="geometry">
                <rect>
-                <x>180</x>
+                <x>220</x>
                 <y>81</y>
                 <width>161</width>
                 <height>31</height>
@@ -1071,40 +1071,139 @@ QLineEdit{
           </layout>
          </widget>
          <widget class="QWidget" name="clientPage">
-          <widget class="QFrame" name="frame_3">
-           <property name="geometry">
-            <rect>
-             <x>40</x>
-             <y>30</y>
-             <width>401</width>
-             <height>80</height>
-            </rect>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Shape::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Shadow::Raised</enum>
-           </property>
-           <widget class="QLabel" name="label_4">
-            <property name="geometry">
-             <rect>
-              <x>60</x>
-              <y>20</y>
-              <width>141</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>15</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Facture</string>
-            </property>
-           </widget>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <widget class="QLabel" name="facture_title">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>20</y>
+                <width>631</width>
+                <height>51</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Liste des factures</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_4">
+              <property name="geometry">
+               <rect>
+                <x>50</x>
+                <y>90</y>
+                <width>121</width>
+                <height>20</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <family>Arial</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rechercher par :</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_8">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>90</y>
+                <width>31</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="resources.qrc">:/icons/icons/filter.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+             <widget class="QComboBox" name="filter_facture_combo">
+              <property name="geometry">
+               <rect>
+                <x>170</x>
+                <y>80</y>
+                <width>171</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>numero de facture</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>date enregistrement</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>liste generale</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QTableWidget" name="tableWidget">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>130</y>
+                <width>881</width>
+                <height>471</height>
+               </rect>
+              </property>
+              <column>
+               <property name="text">
+                <string>numero de facture</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>date enregistrement</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>statut de payement</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>avancement</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>identifiant client</string>
+               </property>
+              </column>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="facturePage">
           <widget class="QFrame" name="frame_4">

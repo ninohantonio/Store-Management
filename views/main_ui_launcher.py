@@ -365,7 +365,7 @@ class MainWindow(QMainWindow):
         insert_new_journal(journal)
 
     def reset_card_container(self):
+        self.ui.total_payer.setText(f"0 Ar")
         for i in range(self.ui.cardContainer.count()):
             card_widget = self.ui.cardContainer.itemAt(i).widget()
-            card_widget.setParent(None)
             card_widget.deleteLater()
