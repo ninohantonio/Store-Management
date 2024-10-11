@@ -19,6 +19,7 @@ class FactureDialog(QDialog):
 
         if can_change_state :
             self.ui.change_state_btn.setHidden(False)
+            self.ui.change_state_btn.clicked.connect(self.change_facture_state)
         else:
             self.ui.change_state_btn.setHidden(True)
 
@@ -45,6 +46,7 @@ class FactureDialog(QDialog):
 
     def display_facture_detail(self, facture: Facture):
         self.ui.tableWidget.setRowCount(0)
+        self.total_a_payer = 0
 
         liste_article = facture.listeArticle
         for i, row in enumerate(liste_article):
@@ -65,12 +67,13 @@ class FactureDialog(QDialog):
     def change_facture_state(self):
         if self.statut_payement:
             self.facture.statutPayement = False
+            self.statut_payement = False
             self.ui.statut_facture.setText("Non payer")
         else:
             self.facture.statutPayement = True
+            self.statut_payement = True
             self.ui.statut_facture.setText("Tout payer")
         session.commit()
-        session.close()
         self.display_facture_detail(self.facture)
         return
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_dialogCEWRKY.ui'
+## Form generated from reading UI file 'facture_dialogEBZfSz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -194,6 +194,7 @@ class Ui_Dialog(object):
         self.change_state_btn = QPushButton(Dialog)
         self.change_state_btn.setObjectName(u"change_state_btn")
         self.change_state_btn.setGeometry(QRect(280, 90, 91, 31))
+        self.change_state_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.retranslateUi(Dialog)
 
