@@ -380,16 +380,13 @@ class MainWindow(QMainWindow):
         if search_value.strip() == "":
             self.refresh_facture_data_table()
         else:
-            articles = []
-            if self.ui.filter_facture_combo.currentIndex() == 0:
-                articles = get_article_by_id(search_value)
-            elif self.ui.filter_facture_combo.currentIndex() == 1:
-                articles = get_facture_by_date_enregistrement(search_value)
-            else:
-                self.refresh_data_search()
-                return
-            refresh_facture_table_data(self.ui.facture_table, articles)
+            factures = get_facture_by_id(int(search_value))
+            refresh_facture_table_data(self.ui.facture_table, [factures])
+            return
+
         print(f"facture search = {search_value}")
+
+
 
     def refresh_facture_data_table(self):
         factures = get_all_facture()

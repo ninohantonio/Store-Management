@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from sqlalchemy.orm import sessionmaker
 
 from models.model_class import Facture, Client
@@ -52,3 +54,31 @@ def get_next_facture_number():
         next_number = '0000000001'
 
     return next_number
+
+
+def search_factures_by_date_range(session: Session, start_date: datetime, end_date: datetime):
+    # Ajuster la date de fin pour inclure toute la journée
+    end_date_adjusted = end_date + timedelta(days=1)
+
+    # Filtrer les factures entre deux dates
+    result = session.query(Facture).filter(
+        Facture.dateEnregistrement >= start_date,
+        Facture.dateEnregistrement < end_date_adjusted
+    ).all()
+
+    return result
+
+
+def search_factures_by_date(session: Session, search_date: datetime):
+    # Obtenir la date de début et de fin de la journée
+    start_of_day = datetime(search_date.year, search_date.month, search_date.day)
+    end_of_day = start_of_day + timedelta(days=1)
+
+    # Filtrer les factures enregistrées ce jour-là
+    result = session.query(Facture).filter(
+        Facture.dateEnregistrement >= start_of_day,
+        Facture.dateEnregistrement < end_of_day
+    ).all()
+
+    return result
+
