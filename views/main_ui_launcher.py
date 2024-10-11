@@ -11,7 +11,8 @@ from services.article_service import verify_article_by_id, get_article_by_id, ge
     get_article_by_price, session
 from services.client_service import insert_new_client
 from services.commande_service import insert_new_commande
-from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture
+from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, \
+    get_facture_by_date_enregistrement
 from services.journal_service import insert_new_journal
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -380,8 +381,13 @@ class MainWindow(QMainWindow):
         else:
             articles = []
             if self.ui.filter_facture_combo.currentIndex() == 0:
-
-
+                articles = get_article_by_id(search_value)
+            elif self.ui.filter_facture_combo.currentIndex() == 1:
+                articles = get_facture_by_date_enregistrement(search_value)
+            else:
+                self.refresh_data_search()
+                return
+            refresh_facture_table_data(articles)
         print(f"facture search = {search_value}")
 
     def refresh_facture_data_table(self):
