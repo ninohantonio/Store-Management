@@ -37,7 +37,7 @@ class AdminWindow(QMainWindow):
         self.ui.search_view.cellDoubleClicked.connect(self.print_search_view_item_clicked)
         self.ui.search_view.setColumnHidden(1, True)
 
-        self.numero_to_insert = ""
+        self.numero_to_insert = None
         self.numero_article_to_modify = None
         self.alert_label = QLabel()
 
@@ -190,7 +190,71 @@ class AdminWindow(QMainWindow):
 
     def update_article(self):
         print("update")
+
+        if not self.controll_provided_data():
+            print("remplir tout les donnee")
+            return
+
+        stock_error_dialog = QCustomQDialog(
+            title="Validation de l'ajout de l'article !",
+            description="Voulez vous ajouter cette nouvelle article ?",
+            padding=20,
+            margin=60,
+            yesButtonText="Ajouter",
+            cancelButtonText="Annuler",
+            animationDuration=500,
+            showYesButton=True,
+            showCancelButton=True,
+            setModal=True,
+            frameless=True,
+            windowMovable=True,
+            parent=self,
+            # addWidget=self.labele_stock_error  # append another widget or widget container to the dialog
+        )
+
+        stock_error_dialog.show()
+        stock_error_dialog.accepted.connect(lambda: self.submit_insert_article())  # yes button clicked
+        stock_error_dialog.rejected.connect(
+            lambda: stock_error_dialog.close())  # cancel button clicked
+
         pass
+
+    def submit_update_article(self):
+        nbPacket = 0
+        pieceParPaquet = 0
+        nbBoite = 0
+        pieceParBoite = 0
+        pieceEnStock = 0
+        if self.ui.radioButton.isChecked():
+            nbPacket = int(self.ui.nbConteneur_form.text())
+            pieceParPaquet = int(self.ui.pieceParConteneur.text())
+            pieceEnStock = int(self.ui.pieceSupplement_form.text()) + (
+                    int(self.ui.nbConteneur_form.text()) * pieceParPaquet)
+
+        else:
+            nbBoite = int(self.ui.nbConteneur_form.text())
+            pieceParBoite = int(self.ui.pieceParConteneur.text())
+            pieceEnStock = int(self.ui.pieceSupplement_form.text()) + (
+                    int(self.ui.nbConteneur_form.text()) * pieceParBoite)
+
+        article = Article(
+            libelle=self.ui.libelle_form.text(),
+            prixUnitaire=self.ui.prix_form.text(),
+            typeConteneur=self.ui.radioButton.text() if self.ui.radioButton.isChecked() else self.ui.radioButton_2.text(),
+            pieceParPaquet=pieceParPaquet,
+            pieceParBoite=pieceParBoite,
+            pieceEnStock=pieceEnStock,
+            packetEnStock=nbPacket,
+            boiteEnStock=nbBoite,
+            description=self.ui.description_form.text(),
+            dateEntrer=get_date_to_string(),
+            numeroArticle=self.numero_article_to_modify,
+        )
+
+        insert_new_article(article)
+        print("submit success")
+        self.reset_form()
+        self.show_dialog_success()
 
     def reset_form(self):
         self.ui.nbConteneur_form.clear()
@@ -199,6 +263,16 @@ class AdminWindow(QMainWindow):
         self.ui.libelle_form.clear()
         self.ui.pieceSupplement_form.clear()
         self.ui.pieceParConteneur.clear()
+
+        self.ui.article_name.setText("Nom de l'article")
+        self.ui.prixUnitaire_detail.clear()
+        self.ui.pieceParConteneur_detail.clear()
+        self.ui.conteneur_detail.clear()
+        self.ui.nbConteneur_detail.clear()
+        self.ui.piece_detail.clear()
+        self.ui.dateEntrer_detail.clear()
+        self.ui.description_detail.clear()
+        self.numero_article_to_modify = None
         print("reset")
 
     def show_dialog_success(self):
