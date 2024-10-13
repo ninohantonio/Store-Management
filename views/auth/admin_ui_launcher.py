@@ -108,6 +108,10 @@ class AdminWindow(QMainWindow):
         self.ui.description_form.setText(article.description)
         self.ui.pieceSupplement_form.setText(str(article.pieceEnStock - int(self.ui.nbConteneur_form.text()) * int(self.ui.pieceParConteneur.text())))
 
+        self.ui.submitBtn.clicked.disconnect()
+        self.ui.submitBtn.clicked.connect(self.update_article)
+        pass
+
     def show_message_to_add(self):
         self.ui.article_name.setText("Article Non Trouver")
 
@@ -192,13 +196,18 @@ class AdminWindow(QMainWindow):
     def update_article(self):
         print("update")
 
-        if not self.controll_provided_data():
+        if self.numero_article_to_modify is None:
+            self.show_info_message("Veuillez selectionner ou scanner un article!!")
+            return
+
+        elif not self.controll_provided_data():
             self.show_info_message("Veuillez remplir toutes les champs !!")
             return
 
+
         stock_error_dialog = QCustomQDialog(
-            title="Validation de l'ajout de l'article !",
-            description="Voulez vous ajouter cette nouvelle article ?",
+            title="Validation de la modification de l'article !",
+            description="Voulez vous enregistrer ce(s) modification(s) ?",
             padding=20,
             margin=60,
             yesButtonText="Ajouter",
@@ -214,7 +223,7 @@ class AdminWindow(QMainWindow):
         )
 
         stock_error_dialog.show()
-        stock_error_dialog.accepted.connect(lambda: self.submit_insert_article())  # yes button clicked
+        stock_error_dialog.accepted.connect(lambda: self.submit_update_article())  # yes button clicked
         stock_error_dialog.rejected.connect(
             lambda: stock_error_dialog.close())  # cancel button clicked
 
