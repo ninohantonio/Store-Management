@@ -38,6 +38,7 @@ class AdminWindow(QMainWindow):
         self.ui.search_view.setColumnHidden(1, True)
 
         self.numero_to_insert = ""
+        self.numero_article_to_modify = None
         self.alert_label = QLabel()
 
     def manage_search_value_input(self):
@@ -80,6 +81,7 @@ class AdminWindow(QMainWindow):
 
     def show_detail_article(self, numeroArticle):
         article = get_article_by_id(numeroArticle)
+        self.numero_article_to_modify = numeroArticle
 
         ##   ET ALL DATA FOR DETAIL
         self.ui.article_name.setText(article.libelle)
@@ -91,6 +93,19 @@ class AdminWindow(QMainWindow):
         self.ui.dateEntrer_detail.setText(str(article.dateEntrer))
         self.ui.description_detail.setText(article.description)
 
+        ##  SET ALL DATA FOR FORM
+        self.ui.libelle_form.setText(article.libelle)
+        self.ui.prix_form.setText(str(article.prixUnitaire))
+        self.ui.pieceParConteneur.setText(
+            str(article.pieceParPaquet)) if article.typeConteneur == "Paquet" else self.ui.pieceParConteneur_detail.setText(
+            str(article.pieceParBoite))
+        self.ui.radioButton.setChecked(True) if article.typeConteneur == "Paquet" else self.ui.radioButton_2.setChecked(True)
+        self.ui.nbConteneur_form.setText(
+            str(article.packetEnStock)) if article.typeConteneur == "Paquet" else self.ui.nbConteneur_detail.setText(
+            str(article.boiteEnStock))
+        self.manage_radio_checked()
+        self.ui.description_form.setText(article.description)
+        self.ui.pieceSupplement_form.setText(str(article.pieceEnStock - int(self.ui.nbConteneur_form.text()) * int(self.ui.pieceParConteneur.text())))
 
     def show_message_to_add(self):
         self.ui.article_name.setText("Article Non Trouver")
