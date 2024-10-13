@@ -3,6 +3,7 @@ import sys
 from Custom_Widgets import *
 from Custom_Widgets import QMainWindow
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
+from PySide6.QtGui import QIntValidator
 
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article
@@ -41,6 +42,11 @@ class AdminWindow(QMainWindow):
         self.numero_to_insert = None
         self.numero_article_to_modify = None
         self.alert_label = QLabel()
+
+        self.ui.prix_form.setValidator(QIntValidator(0, 9999999))
+        self.ui.nbConteneur_form(QIntValidator(0, 999))
+        self.ui.pieceParConteneur(QIntValidator(0, 9999))
+        self.ui.pieceSupplement_form(QIntValidator(0, 9999))
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
