@@ -29,11 +29,13 @@ def update_article(article_id: str, new_article: Article):
     article = get_article_by_id(article_id)
     article.description = new_article.description
     article.libelle = new_article.libelle
-    article.dateEntrer = new_article.dateEntrer
     article.prixUnitaire = new_article.prixUnitaire
     article.pieceEnStock = new_article.pieceEnStock
     article.pieceParPaquet = new_article.pieceParPaquet
     article.pieceParBoite = new_article.pieceParBoite
+    article.typeConteneur = new_article.typeConteneur
+    article.packetEnStock = new_article.packetEnStock
+    article.boiteEnStock = new_article.boiteEnStock
     session.commit()
 
 def delete_article_by_id(article_id: str) -> bool:

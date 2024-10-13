@@ -6,10 +6,11 @@ from Custom_Widgets.QCustomQDialog import QCustomQDialog
 
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article
-from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name
+from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
+    update_article
 from views.auth.ui_admin_window import Ui_MainWindow
 
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QMessageBox
 
 from views.states.stock_state import refresh_search_view_value
 
@@ -119,10 +120,10 @@ class AdminWindow(QMainWindow):
         print("submit")
 
         if not self.numero_to_insert.isdigit() and not len(self.numero_to_insert) == 13:
-            print("Veuillez scanner ou renseigner un numero de serie d'article valide")
+            self.show_info_message("Veuillez scanner ou renseigner un numero de serie d'article valide pour inserer")
             return
         elif not self.controll_provided_data():
-            print("Veuillez remplir tous les champs")
+            self.show_info_message("Veuillez remplir toutes les champs!!")
             return
 
 
@@ -192,7 +193,7 @@ class AdminWindow(QMainWindow):
         print("update")
 
         if not self.controll_provided_data():
-            print("remplir tout les donnee")
+            self.show_info_message("Veuillez remplir toutes les champs !!")
             return
 
         stock_error_dialog = QCustomQDialog(
@@ -248,10 +249,9 @@ class AdminWindow(QMainWindow):
             boiteEnStock=nbBoite,
             description=self.ui.description_form.text(),
             dateEntrer=get_date_to_string(),
-            numeroArticle=self.numero_article_to_modify,
         )
 
-        insert_new_article(article)
+        update_article(self.numero_article_to_modify, article)
         print("submit success")
         self.reset_form()
         self.show_dialog_success()
@@ -310,3 +310,15 @@ class AdminWindow(QMainWindow):
         self.show_detail_article(numero)
         print(f"numero = {numero}")
         return
+
+
+    def show_info_message(self, message: str):
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Information)
+        msg_box.setWindowTitle("Info")
+        msg_box.setText(message)
+        msg_box.setStandardButtons(QMessageBox.Ok)
+        msg_box.setDefaultButton(QMessageBox.Ok)
+
+        # Afficher le dialogue et récupérer la réponse de l'utilisateur
+        msg_box.exec()
