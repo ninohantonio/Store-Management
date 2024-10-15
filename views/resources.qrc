@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/add.png</file>
+    <file>icons/valide.png</file>
     <file>icons/invisible.png</file>
     <file>icons/visible.png</file>
     <file>icons/filter.png</file>

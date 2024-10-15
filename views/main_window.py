@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowqWSRQK.ui'
+## Form generated from reading UI file 'main_windowtkGugm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -18,8 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
     QFrame, QGridLayout, QHBoxLayout, QHeaderView,
     QLabel, QLineEdit, QPushButton,
-    QRadioButton, QSizePolicy, QSpacerItem, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
+    QRadioButton, QSizePolicy, QSpacerItem, QSpinBox,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -137,6 +137,26 @@ class Ui_MainWindow(object):
 "#avance_field{\n"
 "	border: 1px solid rgb(0, 85, 255);\n"
 "	padding-left: 5px;\n"
+"}\n"
+"\n"
+"#selection_rapide_combo, #quantite_spinBox{\n"
+"	padding-left: 5px;\n"
+""
+                        "	border: 1px solid rgb(0, 85, 255);\n"
+"}\n"
+"\n"
+"#add_selection_rapideBtn{\n"
+"	border: 2px solid rgb(0, 170, 255);\n"
+"	border-radius: 7px;\n"
+"	padding: 2px;\n"
+"	cursor: pointer;\n"
+"}\n"
+"\n"
+"#submit_section_rapideBtn{\n"
+"	border: 2px solid rgb(0, 255, 127);\n"
+"	border-radius: 7px;\n"
+"	padding: 2px;\n"
+"	cursor: pointer;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -498,6 +518,34 @@ class Ui_MainWindow(object):
         self.avance_field = QLineEdit(self.homePage)
         self.avance_field.setObjectName(u"avance_field")
         self.avance_field.setGeometry(QRect(540, 100, 113, 22))
+        self.label_9 = QLabel(self.homePage)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(680, 50, 111, 16))
+        font8 = QFont()
+        font8.setPointSize(10)
+        self.label_9.setFont(font8)
+        self.selection_rapide_combo = QComboBox(self.homePage)
+        self.selection_rapide_combo.addItem("")
+        self.selection_rapide_combo.setObjectName(u"selection_rapide_combo")
+        self.selection_rapide_combo.setGeometry(QRect(790, 50, 141, 22))
+        self.quantite_spinBox = QSpinBox(self.homePage)
+        self.quantite_spinBox.setObjectName(u"quantite_spinBox")
+        self.quantite_spinBox.setGeometry(QRect(940, 50, 61, 22))
+        self.add_selection_rapideBtn = QPushButton(self.homePage)
+        self.add_selection_rapideBtn.setObjectName(u"add_selection_rapideBtn")
+        self.add_selection_rapideBtn.setGeometry(QRect(800, 90, 81, 31))
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.add_selection_rapideBtn.setIcon(icon10)
+        self.add_selection_rapideBtn.setIconSize(QSize(26, 26))
+        self.submit_section_rapideBtn = QPushButton(self.homePage)
+        self.submit_section_rapideBtn.setObjectName(u"submit_section_rapideBtn")
+        self.submit_section_rapideBtn.setGeometry(QRect(924, 90, 81, 31))
+        self.submit_section_rapideBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/icons/valide.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.submit_section_rapideBtn.setIcon(icon11)
+        self.submit_section_rapideBtn.setIconSize(QSize(26, 26))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
@@ -537,9 +585,9 @@ class Ui_MainWindow(object):
         self.filter_labele = QLabel(self.frame_2)
         self.filter_labele.setObjectName(u"filter_labele")
         self.filter_labele.setGeometry(QRect(70, 80, 151, 31))
-        font8 = QFont()
-        font8.setPointSize(13)
-        self.filter_labele.setFont(font8)
+        font9 = QFont()
+        font9.setPointSize(13)
+        self.filter_labele.setFont(font9)
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(30, 80, 31, 31))
@@ -590,15 +638,13 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.frame_3)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(80, 90, 101, 31))
-        font9 = QFont()
-        font9.setPointSize(11)
-        self.label_4.setFont(font9)
+        font10 = QFont()
+        font10.setPointSize(11)
+        self.label_4.setFont(font10)
         self.label_8 = QLabel(self.frame_3)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(360, 95, 61, 21))
-        font10 = QFont()
-        font10.setPointSize(10)
-        self.label_8.setFont(font10)
+        self.label_8.setFont(font8)
         self.dateEdit_2 = QDateEdit(self.frame_3)
         self.dateEdit_2.setObjectName(u"dateEdit_2")
         self.dateEdit_2.setGeometry(QRect(430, 90, 121, 31))
@@ -678,9 +724,9 @@ class Ui_MainWindow(object):
         self.logoutBtn = QPushButton(self.profileMenu)
         self.logoutBtn.setObjectName(u"logoutBtn")
         self.logoutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon10 = QIcon()
-        icon10.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon10)
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon12)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_12.addWidget(self.logoutBtn, 0, Qt.AlignmentFlag.AlignTop)
@@ -727,6 +773,11 @@ class Ui_MainWindow(object):
         self.non_payer.setText(QCoreApplication.translate("MainWindow", u"Non Payer", None))
         self.avancement.setText("")
         self.avance_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Avancement", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Selection rapide :", None))
+        self.selection_rapide_combo.setItemText(0, QCoreApplication.translate("MainWindow", u"papier velin", None))
+
+        self.add_selection_rapideBtn.setText(QCoreApplication.translate("MainWindow", u"ajouter", None))
+        self.submit_section_rapideBtn.setText(QCoreApplication.translate("MainWindow", u"Valider", None))
         self.stock_labele.setText(QCoreApplication.translate("MainWindow", u"Etat de stock", None))
         ___qtablewidgetitem = self.stockTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Libelle", None));
