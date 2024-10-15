@@ -9,6 +9,7 @@ from controllers.article_controller import get_date_to_string
 from models.model_class import Article
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
+from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
 from PySide6.QtWidgets import QApplication, QMessageBox
@@ -194,6 +195,8 @@ class AdminWindow(QMainWindow):
 
         insert_new_article(article)
         print("submit success")
+        self.appro_dialog = ApprovisionnementDialog(article)
+        self.appro_dialog.show()
         self.reset_form()
         self.show_dialog_success()
 

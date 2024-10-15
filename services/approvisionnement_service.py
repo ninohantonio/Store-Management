@@ -7,7 +7,7 @@ from utils.database import engine
 Session = sessionmaker(bind=engine)
 session = Session()
 
-def add_new_approvisionnement(appro: Approvisionnement):
+def insert_new_approvisionnement(appro: Approvisionnement):
     session.add(appro)
     session.commit()
 
