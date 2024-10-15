@@ -14,6 +14,7 @@ def insert_new_approvisionnement(appro: Approvisionnement):
 def get_all_approvisionnement():
     return session.query(Approvisionnement).all()
 
+
 def verify_if_approvisionnement_low(appro: Approvisionnement):
     article = get_article_by_id(appro.numeroArticle)
     if appro.typeQuantite == "Paquet":
@@ -30,3 +31,13 @@ def get_article_in_limite() -> list[str]:
             articles.append(appro.numeroArticle)
 
     return articles
+
+def get_appro_by_article_id(article_id):
+    return session.query(Approvisionnement).filter_by(numeroArticle=article_id).first()
+
+def update_appro(appro_id, new_appro: Approvisionnement):
+    appro = session.query(Approvisionnement).filter_by(numeroApprovisionnement=appro_id).first()
+    if appro:
+        appro.quantiteLimite = new_appro.quantiteLimite
+        appro.typeQuantite = new_appro.typeQuantite
+    session.commit()

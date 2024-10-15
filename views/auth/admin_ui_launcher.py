@@ -6,7 +6,8 @@ from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from PySide6.QtGui import QIntValidator
 
 from controllers.article_controller import get_date_to_string
-from models.model_class import Article
+from models.model_class import Article, Approvisionnement
+from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
@@ -49,6 +50,10 @@ class AdminWindow(QMainWindow):
         self.ui.pieceParConteneur.setValidator(QIntValidator(0, 9999))
         self.ui.pieceSupplement_form.setValidator(QIntValidator(0, 9999))
 
+        self.ui.appro_detail.setVisible(False)
+        self.ui.appro_detail.clicked.connect(lambda : self.show_appro_dialog(self.numero_article_to_modify))
+
+
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
         if len(search_value) == 13 and search_value.isdigit():
@@ -71,10 +76,12 @@ class AdminWindow(QMainWindow):
         print(f"Article existe = {verify_article_by_id(search_value)}")
         if verify_article_by_id(search_value):
             self.show_detail_article(search_value)
+            self.ui.appro_detail.setVisible(True)
             self.ui.submitBtn.clicked.disconnect()
             self.ui.submitBtn.clicked.connect(self.update_article)
         else:
             self.show_message_to_add()
+            self.ui.appro_detail.setVisible(False)
             self.ui.submitBtn.clicked.disconnect()
             self.ui.submitBtn.clicked.connect(self.insert_new_article)
 
@@ -340,3 +347,11 @@ class AdminWindow(QMainWindow):
 
         # Afficher le dialogue et récupérer la réponse de l'utilisateur
         msg_box.exec()
+
+
+    def show_appro_dialog(self, article_id):
+        appro = get_appro_by_article_id(article_id)
+        if appro:
+            self.appro_dialog = ApprovisionnementDialog(article=article_id, appro=appro, modification=True)
+            self.appro_dialog.show()
+

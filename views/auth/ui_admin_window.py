@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowHVxVBN.ui'
+## Form generated from reading UI file 'main_admin_windowEUsqOS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,7 +16,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QHeaderView, QLabel, QLineEdit,
     QPushButton, QRadioButton, QSizePolicy, QSpacerItem,
     QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
     QVBoxLayout, QWidget)
@@ -109,6 +109,11 @@ class Ui_MainWindow(object):
 "	color: #fff;\n"
 "	font-weight: bold;\n"
 "	text-align: center;\n"
+"}\n"
+"\n"
+"#appro_detail{\n"
+"	background-color: white;\n"
+"	border-radius: 10px;\n"
 "}\n"
 "\n"
 "\n"
@@ -467,7 +472,7 @@ class Ui_MainWindow(object):
         self.widget_6.setGeometry(QRect(10, 10, 521, 591))
         self.frame_14 = QFrame(self.widget_6)
         self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setGeometry(QRect(10, -40, 521, 621))
+        self.frame_14.setGeometry(QRect(10, -40, 521, 631))
         self.frame_14.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_14.setFrameShadow(QFrame.Shadow.Raised)
         self.frame_15 = QFrame(self.frame_14)
@@ -577,6 +582,10 @@ class Ui_MainWindow(object):
         self.label_18 = QLabel(self.frame_22)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setGeometry(QRect(30, 10, 121, 16))
+        self.appro_detail = QPushButton(self.frame_14)
+        self.appro_detail.setObjectName(u"appro_detail")
+        self.appro_detail.setGeometry(QRect(150, 600, 231, 31))
+        self.appro_detail.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_7.addWidget(self.affichage1)
 
@@ -721,6 +730,7 @@ class Ui_MainWindow(object):
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"Date d'entrer en stock", None))
         self.article_name.setText(QCoreApplication.translate("MainWindow", u"Nom de l'article", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Description", None))
+        self.appro_detail.setText(QCoreApplication.translate("MainWindow", u"Details d'approvisionnement", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")

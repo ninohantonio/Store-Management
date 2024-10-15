@@ -98,7 +98,8 @@
 			"journalBtn",
 			"settingBtn",
 			"aboutBtn",
-			"helpBtn"
+			"helpBtn",
+			"notificationBtn"
 		],
 		"Style": [{
 			"Active": "background-color: #fefeff;border-top-left-radius: 15px;",
@@ -139,7 +140,8 @@
 							"stockBtn": "stockPage",
 							"clientBtn": "clientPage",
 							"factureBtn": "facturePage",
-							"journalBtn": "journalPage"
+							"journalBtn": "journalPage",
+							"notificationBtn": "notificationPage"
 						}
 					]
 				}

@@ -7,6 +7,7 @@ from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
 from models.model_class import Facture, Client, Commande, Journal
+from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
 from services.client_service import insert_new_client, get_client_by_id
@@ -416,3 +417,10 @@ class MainWindow(QMainWindow):
         self.facture_dialog = FactureDialog(facture, can_change_state=True)
         self.facture_dialog.show()
         return
+
+
+    # def load_notification_for_user(self):
+    #     articles = get_article_in_limite()
+    #
+    #     for article in articles:
+    #         pass

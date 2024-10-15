@@ -85,7 +85,7 @@ QLineEdit{
 }
 
 
-#welcomeLabel, #stock_labele, #facture_title{
+#welcomeLabel, #stock_labele, #facture_title, #notif_label{
 	text-align: center;
 	color:  rgb(0, 170, 255);
 	background-color: #e5e0ff;
@@ -418,6 +418,31 @@ QLineEdit{
                  </widget>
                 </item>
                 <item>
+                 <widget class="QPushButton" name="notificationBtn">
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string>Notifications</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/icons/icons/bell.png</normaloff>:/icons/icons/bell.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>26</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <spacer name="verticalSpacer">
                   <property name="orientation">
                    <enum>Qt::Orientation::Vertical</enum>
@@ -740,7 +765,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1026,6 +1051,37 @@ QLineEdit{
              <width>26</width>
              <height>26</height>
             </size>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="notificationPage">
+          <widget class="QWidget" name="gridLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>90</y>
+             <width>641</width>
+             <height>491</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="notifContainer"/>
+          </widget>
+          <widget class="QLabel" name="notif_label">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>641</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Notifications</string>
            </property>
           </widget>
          </widget>
@@ -1386,7 +1442,7 @@ QLineEdit{
       </layout>
      </widget>
     </item>
-    <item alignment="Qt::AlignmentFlag::AlignTop">
+    <item>
      <widget class="QWidget" name="profileContainer" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_11">
        <property name="spacing">
@@ -1404,7 +1460,7 @@ QLineEdit{
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
+       <item alignment="Qt::AlignmentFlag::AlignTop">
         <widget class="QCustomSlideMenu" name="profileMenu" native="true">
          <property name="minimumSize">
           <size>
@@ -1413,7 +1469,7 @@ QLineEdit{
           </size>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
-          <item alignment="Qt::AlignmentFlag::AlignTop">
+          <item>
            <widget class="QLabel" name="label_18">
             <property name="font">
              <font>
@@ -1429,7 +1485,7 @@ QLineEdit{
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignmentFlag::AlignTop">
+          <item>
            <widget class="QLabel" name="label_17">
             <property name="text">
              <string>Vendeur</string>
@@ -1439,7 +1495,7 @@ QLineEdit{
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop">
+          <item>
            <widget class="QLabel" name="label_16">
             <property name="text">
              <string/>
@@ -1452,14 +1508,14 @@ QLineEdit{
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignmentFlag::AlignTop">
+          <item>
            <widget class="QPushButton" name="pushButton">
             <property name="text">
              <string>Mon Profile</string>
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignmentFlag::AlignTop">
+          <item>
            <widget class="QPushButton" name="logoutBtn">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
