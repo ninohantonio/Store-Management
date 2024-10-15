@@ -765,7 +765,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1055,17 +1055,6 @@ QLineEdit{
           </widget>
          </widget>
          <widget class="QWidget" name="notificationPage">
-          <widget class="QWidget" name="gridLayoutWidget_2">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>90</y>
-             <width>641</width>
-             <height>491</height>
-            </rect>
-           </property>
-           <layout class="QGridLayout" name="notifContainer"/>
-          </widget>
           <widget class="QLabel" name="notif_label">
            <property name="geometry">
             <rect>
@@ -1083,6 +1072,29 @@ QLineEdit{
            <property name="text">
             <string>Notifications</string>
            </property>
+          </widget>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>90</y>
+             <width>641</width>
+             <height>491</height>
+            </rect>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>641</width>
+              <height>491</height>
+             </rect>
+            </property>
+           </widget>
           </widget>
          </widget>
          <widget class="QWidget" name="stockPage">

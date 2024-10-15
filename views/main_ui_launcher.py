@@ -6,7 +6,7 @@ from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
-from models.model_class import Facture, Client, Commande, Journal
+from models.model_class import Facture, Client, Commande, Journal, Notification
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
@@ -19,6 +19,7 @@ from views.client_ui_launcher import ClientList
 from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.facture_dialog_launcher import FactureDialog
+from views.states.notification_card import NotificationCard
 from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data
 
 settings = QSettings()
@@ -56,6 +57,8 @@ class MainWindow(QMainWindow):
         self.ui.dateEdit_2.dateChanged.connect(self.on_date_changed)
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
+
+        self.load_notification_for_user()
 
         self.show()
 
@@ -419,8 +422,21 @@ class MainWindow(QMainWindow):
         return
 
 
-    # def load_notification_for_user(self):
-    #     articles = get_article_in_limite()
-    #
-    #     for article in articles:
-    #         pass
+    def load_notification_for_user(self):
+        articles = get_article_in_limite()
+        self.ui.notificationBtn.setText(f"Notifications ({len(articles)})")
+        # articles = ["3210330054346", "8991389783085", "8991389783085", "3210330054346", "3210330054346", "3210330054346"]
+        self.container = QWidget()
+        self.layout = QVBoxLayout(self.container)
+
+        for article in articles:
+            notification = Notification()
+            notification.numeroArticle = article
+            notification.titre = "Marge d'approvisionnement atteint"
+            notification.contenu = f"Veuillez approvisionner le stock portant le numero Bar : {article}"
+            notification.dateEmmission = get_date_time_to_string()
+
+            card = NotificationCard(notification)
+            self.layout.addWidget(card)
+
+        self.ui.scrollArea.setWidget(self.container)

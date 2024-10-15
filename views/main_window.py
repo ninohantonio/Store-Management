@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowGapXiY.ui'
+## Form generated from reading UI file 'main_windowXxrPXK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -18,8 +18,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
     QFrame, QGridLayout, QHBoxLayout, QHeaderView,
     QLabel, QLineEdit, QPushButton,
-    QRadioButton, QSizePolicy, QSpacerItem, QSpinBox,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QRadioButton, QScrollArea, QSizePolicy, QSpacerItem,
+    QSpinBox, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -562,16 +563,18 @@ class Ui_MainWindow(object):
         self.mainNavigationScreen.addWidget(self.homePage)
         self.notificationPage = QWidget()
         self.notificationPage.setObjectName(u"notificationPage")
-        self.gridLayoutWidget_2 = QWidget(self.notificationPage)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(20, 90, 641, 491))
-        self.notifContainer = QGridLayout(self.gridLayoutWidget_2)
-        self.notifContainer.setObjectName(u"notifContainer")
-        self.notifContainer.setContentsMargins(0, 0, 0, 0)
         self.notif_label = QLabel(self.notificationPage)
         self.notif_label.setObjectName(u"notif_label")
         self.notif_label.setGeometry(QRect(20, 20, 641, 51))
         self.notif_label.setFont(font4)
+        self.scrollArea = QScrollArea(self.notificationPage)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setGeometry(QRect(20, 90, 641, 491))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 641, 491))
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.mainNavigationScreen.addWidget(self.notificationPage)
         self.stockPage = QWidget()
         self.stockPage.setObjectName(u"stockPage")
@@ -767,7 +770,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(1)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
