@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowtkGugm.ui'
+## Form generated from reading UI file 'main_windowsCLnbO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -137,12 +137,14 @@ class Ui_MainWindow(object):
 "#avance_field{\n"
 "	border: 1px solid rgb(0, 85, 255);\n"
 "	padding-left: 5px;\n"
+"	border-radius: 5px;\n"
 "}\n"
 "\n"
 "#selection_rapide_combo, #quantite_spinBox{\n"
-"	padding-left: 5px;\n"
 ""
-                        "	border: 1px solid rgb(0, 85, 255);\n"
+                        "	padding-left: 5px;\n"
+"	border: 1px solid rgb(0, 85, 255);\n"
+"	border-radius: 5px;\n"
 "}\n"
 "\n"
 "#add_selection_rapideBtn{\n"
@@ -441,7 +443,7 @@ class Ui_MainWindow(object):
         self.homePage.setObjectName(u"homePage")
         self.frame = QFrame(self.homePage)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(0, 20, 661, 71))
+        self.frame.setGeometry(QRect(0, 20, 611, 71))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame)
@@ -508,39 +510,39 @@ class Ui_MainWindow(object):
         self.valider_commandeBtn.setIconSize(QSize(30, 30))
         self.tout_payer = QRadioButton(self.homePage)
         self.tout_payer.setObjectName(u"tout_payer")
-        self.tout_payer.setGeometry(QRect(250, 100, 89, 20))
+        self.tout_payer.setGeometry(QRect(230, 100, 89, 20))
         self.non_payer = QRadioButton(self.homePage)
         self.non_payer.setObjectName(u"non_payer")
-        self.non_payer.setGeometry(QRect(390, 100, 89, 20))
+        self.non_payer.setGeometry(QRect(350, 100, 89, 20))
         self.avancement = QRadioButton(self.homePage)
         self.avancement.setObjectName(u"avancement")
-        self.avancement.setGeometry(QRect(520, 100, 89, 20))
+        self.avancement.setGeometry(QRect(470, 100, 89, 20))
         self.avance_field = QLineEdit(self.homePage)
         self.avance_field.setObjectName(u"avance_field")
-        self.avance_field.setGeometry(QRect(540, 100, 113, 22))
+        self.avance_field.setGeometry(QRect(490, 100, 113, 22))
         self.label_9 = QLabel(self.homePage)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(680, 50, 111, 16))
+        self.label_9.setGeometry(QRect(630, 50, 111, 16))
         font8 = QFont()
         font8.setPointSize(10)
         self.label_9.setFont(font8)
         self.selection_rapide_combo = QComboBox(self.homePage)
         self.selection_rapide_combo.addItem("")
         self.selection_rapide_combo.setObjectName(u"selection_rapide_combo")
-        self.selection_rapide_combo.setGeometry(QRect(790, 50, 141, 22))
+        self.selection_rapide_combo.setGeometry(QRect(740, 50, 121, 22))
         self.quantite_spinBox = QSpinBox(self.homePage)
         self.quantite_spinBox.setObjectName(u"quantite_spinBox")
-        self.quantite_spinBox.setGeometry(QRect(940, 50, 61, 22))
+        self.quantite_spinBox.setGeometry(QRect(870, 50, 61, 22))
         self.add_selection_rapideBtn = QPushButton(self.homePage)
         self.add_selection_rapideBtn.setObjectName(u"add_selection_rapideBtn")
-        self.add_selection_rapideBtn.setGeometry(QRect(800, 90, 81, 31))
+        self.add_selection_rapideBtn.setGeometry(QRect(740, 90, 81, 31))
         icon10 = QIcon()
         icon10.addFile(u":/icons/icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.add_selection_rapideBtn.setIcon(icon10)
         self.add_selection_rapideBtn.setIconSize(QSize(26, 26))
         self.submit_section_rapideBtn = QPushButton(self.homePage)
         self.submit_section_rapideBtn.setObjectName(u"submit_section_rapideBtn")
-        self.submit_section_rapideBtn.setGeometry(QRect(924, 90, 81, 31))
+        self.submit_section_rapideBtn.setGeometry(QRect(850, 90, 81, 31))
         self.submit_section_rapideBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon11 = QIcon()
         icon11.addFile(u":/icons/icons/valide.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
