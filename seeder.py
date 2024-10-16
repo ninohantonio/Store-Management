@@ -1,8 +1,9 @@
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article
+from services.article_service import get_article_for_articlerapide
 from services.auth_service import create_user, verify_password
 
-create_user("ninohantonio@gmail.com", "ninokely123")
+# create_user("ninohantonio@gmail.com", "ninokely123")
 # verify = verify_password("ninohantonio@gmail.com", "ninokely123")
 # print(verify)
 # article = Article(
@@ -22,3 +23,7 @@ create_user("ninohantonio@gmail.com", "ninokely123")
 #afficher la facture avec options pdf
 #gerer le screen facture (affichage et recherche)
 #gerer le screen journal (affichage et recherche)
+
+print(get_article_for_articlerapide())
+for i in get_article_for_articlerapide():
+    print(i.numeroArticle)

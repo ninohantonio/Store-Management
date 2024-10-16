@@ -41,6 +41,7 @@ class Article(Base):
     description: Mapped[str_30_optional]
     commandes: Mapped[list["Commande"]] = relationship()
     approvisionnement: Mapped["Approvisionnement"] = relationship()
+    articlerapides: Mapped["Articlerapide"] = relationship()
 
 
 class Commande(Base):

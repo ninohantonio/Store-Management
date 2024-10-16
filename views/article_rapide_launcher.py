@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QDialog, QWidget, QVBoxLayout
 
-from services.article_service import get_all_article
+from services.article_service import get_all_article, get_article_for_articlerapide
 from views.states.article_rapide_card import ArticleRapideCard
 from views.ui_article_rapide_dialog import Ui_Dialog
 
@@ -16,7 +16,7 @@ class ArticleRapideDialog(QDialog):
         self.load_article_list()
 
     def load_article_list(self):
-        articles = get_all_article()
+        articles = get_article_for_articlerapide()
 
         for article in articles:
             card = ArticleRapideCard(article)

@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-from models.model_class import Article
+from models.model_class import Article, Articlerapide
 from utils.database import engine
 
 Session = sessionmaker(bind=engine)
@@ -62,5 +62,9 @@ def get_article_by_price(article_price):
 
 def verify_article_by_id(article_id):
     return session.query(Article).filter_by(numeroArticle=article_id).first() is not None
+
+def get_article_for_articlerapide():
+    articles = session.query(Article).outerjoin(Articlerapide).filter(~Article.articlerapides.has()).all()
+    return articles
 
 
