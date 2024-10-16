@@ -14,6 +14,7 @@ from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
 from services.journal_service import insert_new_journal
+from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
 from views.main_window import *
@@ -55,6 +56,8 @@ class MainWindow(QMainWindow):
         # Connecter les signaux dateChanged
         self.ui.dateEdit.dateChanged.connect(self.on_date_changed)
         self.ui.dateEdit_2.dateChanged.connect(self.on_date_changed)
+
+        self.ui.add_selection_rapideBtn.clicked.connect(self.show_article_rapide_dialog)
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
 
@@ -125,7 +128,7 @@ class MainWindow(QMainWindow):
             self.update_total_payer(0, sous_total * -1)
 
     def manage_navigation(self, index):
-        if index == 1:
+        if index == 2:
             self.refresh_stock_screen()
             self.ui.searchField.returnPressed.disconnect()
             self.ui.searchField.returnPressed.connect(self.refresh_data_search)
@@ -133,7 +136,7 @@ class MainWindow(QMainWindow):
             self.ui.searchField.returnPressed.disconnect()
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
-        elif index == 2:
+        elif index == 3:
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_facture_data_table()
             self.ui.searchField.returnPressed.connect(lambda : self.fill_facture_data_to_table(self.ui.searchField.text()))
@@ -440,3 +443,18 @@ class MainWindow(QMainWindow):
             self.layout.addWidget(card)
 
         self.ui.scrollArea.setWidget(self.container)
+
+
+    def show_article_rapide_dialog(self):
+        self.articleDialog = ArticleRapideDialog()
+        container = self.articleDialog.layout
+        if self.articleDialog.exec() == QDialog.Accepted:
+            article_rapides = []
+            for i in range(container.count()):
+                card_widget = container.itemAt(i).widget()
+                if card_widget.is_checked:
+                    article_rapides.append(card_widget.numeroArticle)
+
+            print(article_rapides)
+        else:
+            return

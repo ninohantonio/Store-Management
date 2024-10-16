@@ -89,5 +89,12 @@ class User(Base):
     email = Column(String(60), unique=True, nullable=False)
     password_hash = Column(String(255), nullable=False)
 
+class Articlerapide(Base):
+    __tablename__ = 'articlerapide'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
+
+
 
 Base.metadata.create_all(engine)

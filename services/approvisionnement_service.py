@@ -26,7 +26,8 @@ def verify_if_approvisionnement_low(appro: Approvisionnement):
 
 def get_article_in_limite() -> list[str]:
     articles = []
-    for appro in get_all_approvisionnement():
+    appros = get_all_approvisionnement()
+    for appro in appros:
         if verify_if_approvisionnement_low(appro):
             articles.append(appro.numeroArticle)
 
