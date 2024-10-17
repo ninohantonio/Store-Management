@@ -6,10 +6,11 @@ from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
-from models.model_class import Facture, Client, Commande, Journal, Notification
+from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
+from services.articlerapide_service import insert_new_article_rapide, get_all_articlerapide
 from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
@@ -62,6 +63,8 @@ class MainWindow(QMainWindow):
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
 
         self.load_notification_for_user()
+
+        self.load_article_rapide_combo_list()
 
         self.show()
 
@@ -454,7 +457,18 @@ class MainWindow(QMainWindow):
                 card_widget = container.itemAt(i).widget()
                 if card_widget.is_checked:
                     article_rapides.append(card_widget.numeroArticle)
-
+                    article_rapide = Articlerapide()
+                    article_rapide.numeroArticle = card_widget.numeroArticle
+                    insert_new_article_rapide(article_rapide)
+            self.load_article_rapide_combo_list()
             print(article_rapides)
         else:
             return
+
+    def load_article_rapide_combo_list(self):
+        article_rapides = get_all_articlerapide()
+        self.ui.selection_rapide_combo.clear()
+
+        for i in article_rapides:
+            article = get_article_by_id(i.numeroArticle)
+            self.ui.selection_rapide_combo.addItem(article.libelle, article.numeroArticle)

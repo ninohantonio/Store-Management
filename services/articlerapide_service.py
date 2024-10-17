@@ -11,6 +11,6 @@ def get_all_articlerapide():
 
 
 def insert_new_article_rapide(article_rpd: Articlerapide):
-    session.add(Articlerapide)
+    session.add(article_rpd)
     session.commit()
 
