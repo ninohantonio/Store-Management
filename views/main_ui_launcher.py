@@ -6,7 +6,7 @@ from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
-from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide
+from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide, Article
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
@@ -34,6 +34,7 @@ class MainWindow(QMainWindow):
         self.commande_item = {}
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.article_rapide_selection: Article = None
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
 
         self.showMaximized()
@@ -61,6 +62,9 @@ class MainWindow(QMainWindow):
         self.ui.add_selection_rapideBtn.clicked.connect(self.show_article_rapide_dialog)
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
+
+        self.ui.selection_rapide_combo.currentIndexChanged.connect(self.manage_article_rapide_selection_change)
+        self.ui.quantite_spinBox.setMinimum(0)
 
         self.load_notification_for_user()
 
@@ -472,4 +476,25 @@ class MainWindow(QMainWindow):
 
         for i in article_rapides:
             article = get_article_by_id(i.numeroArticle)
-            self.ui.selection_rapide_combo.addItem(article.libelle, article.numeroArticle)
+            self.ui.selection_rapide_combo.addItem(article.libelle, article)
+
+    def manage_article_rapide_selection_change(self, index):
+        article: Article = self.ui.selection_rapide_combo.itemData(index)
+        self.article_rapide_selection = article
+
+    def manage_submit_article_rapide_selection(self):
+        quantite = int(self.ui.quantite_spinBox.text())
+        if quantite > 0:
+            detail_article = f"{self.article_rapide_selection.numeroArticle}:{self.article_rapide_selection.libelle}:{self.article_rapide_selection.prixUnitaire * quantite}:Piece:{quantite}"
+            # modifier stock
+            self.modify_stock_for_type(self.article_rapide_selection.numeroArticle, quantite, 1)
+            # ajouter au facture
+            facture = self.store_data_to_facture([detail_article], 1)
+            # ajouter au journal
+            self.store_data_to_journal([detail_article])
+            # refresh notifications
+            print(f"facture rapide : {facture}")
+            self.ui.quantite_spinBox.clear()
+            return
+
+
