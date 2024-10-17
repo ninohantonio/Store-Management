@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windoweopISf.ui'
+## Form generated from reading UI file 'main_windowhSLbee.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -786,7 +786,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(4)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

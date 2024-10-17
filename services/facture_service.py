@@ -56,7 +56,7 @@ def get_next_facture_number():
     return next_number
 
 
-def search_factures_by_date_range(session: Session, start_date: datetime, end_date: datetime):
+def search_factures_by_date_range(start_date: datetime, end_date: datetime):
     # Ajuster la date de fin pour inclure toute la journée
     end_date_adjusted = end_date + timedelta(days=1)
 
@@ -69,7 +69,7 @@ def search_factures_by_date_range(session: Session, start_date: datetime, end_da
     return result
 
 
-def search_factures_by_date(session: Session, search_date: datetime):
+def search_factures_by_date(search_date: datetime):
     # Obtenir la date de début et de fin de la journée
     start_of_day = datetime(search_date.year, search_date.month, search_date.day)
     end_of_day = start_of_day + timedelta(days=1)

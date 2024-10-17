@@ -14,7 +14,8 @@ from services.articlerapide_service import insert_new_article_rapide, get_all_ar
 from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
-from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action
+from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
+    search_journals_by_date
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -66,6 +67,8 @@ class MainWindow(QMainWindow):
         self.ui.selection_rapide_combo.currentIndexChanged.connect(self.manage_article_rapide_selection_change)
         self.ui.quantite_spinBox.setMinimum(0)
         self.ui.submit_section_rapideBtn.clicked.connect(self.manage_submit_article_rapide_selection)
+
+        self.ui.journal_dateEdit.dateChanged.connect(self.manage_journal_date_change)
 
         self.load_notification_for_user()
 
@@ -424,7 +427,7 @@ class MainWindow(QMainWindow):
         end_date = self.ui.dateEdit_2.date().toPython()
 
         # Appeler la fonction de recherche
-        factures = search_factures_by_date_range(session, start_date, end_date)
+        factures = search_factures_by_date_range(start_date, end_date)
 
         refresh_facture_table_data(self.ui.facture_table, factures)
 
@@ -516,6 +519,12 @@ class MainWindow(QMainWindow):
         journals = get_journal_by_type_action(action)
         refresh_journal_table_data(self.ui.journal_tableWidget, journals)
         return
+
+    def manage_journal_date_change(self):
+        search_date = self.ui.journal_dateEdit.date().toPython()
+
+        journals = search_journals_by_date(search_date)
+        refresh_journal_table_data(self.ui.journal_tableWidget, journals)
 
 
 
