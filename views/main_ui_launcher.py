@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
             if carte:
                 current_quantity = int(carte.line_edit_quantite.text() or 0)
                 new_quantity = current_quantity + 1  # Incrémenter la quantité de 1
-                carte.line_edit_quantite.setText(str(new_quantity))  # Mettre à jour l'affichage
+                carte.line_edit_quantite.setValue(new_quantity)  # Mettre à jour l'affichage
                 carte.update_sous_total()
 
         else:
@@ -107,7 +107,8 @@ class MainWindow(QMainWindow):
             carte = CardCommande(article, numero_article=article.numeroArticle, parent=self)
 
             carte.sous_total_changed.connect(self.update_total_payer)
-
+            self.total_a_payer += article.prixUnitaire
+            self.ui.total_payer.setText(f"{self.total_a_payer} Ar")
             # Connecter le signal card_removed pour gérer la suppression
             carte.card_removed.connect(self.remove_card)
 

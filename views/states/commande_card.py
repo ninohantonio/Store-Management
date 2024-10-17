@@ -1,7 +1,8 @@
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from PySide6.QtCore import QSize, QRect, Signal
 from PySide6.QtGui import QIntValidator
-from PySide6.QtWidgets import QWidget, QFrame, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox
+from PySide6.QtWidgets import QWidget, QFrame, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox, \
+    QSpinBox
 
 from models.model_class import Article
 
@@ -16,7 +17,7 @@ class CardCommande(QWidget):
         self.parent = parent
         self.article = article
         self.numero_article = numero_article
-        self.sou_total = 0
+        self.sou_total = article.prixUnitaire
         self.quantite = 1  # Quantité par défaut
         self.type_quantite = "pieces"  # Type par défaut
         # Création du cadre (carte)
@@ -78,9 +79,10 @@ class CardCommande(QWidget):
         self.verticalLayout_2.addWidget(self.btn_remove)
 
         # Champ pour entrer la quantité, uniquement numérique
-        self.line_edit_quantite = QLineEdit(self.rightFrame)
-        self.line_edit_quantite.setValidator(QIntValidator(0, article.pieceEnStock))  # Limite numérique (ex: entre 0 et 10000)
-        self.line_edit_quantite.setPlaceholderText("Entrez la quantité")
+        self.line_edit_quantite = QSpinBox(self.rightFrame)
+        self.line_edit_quantite.setMinimum(1)
+        # self.line_edit_quantite.setValidator(QIntValidator(0, article.pieceEnStock))  # Limite numérique (ex: entre 0 et 10000)
+        # self.line_edit_quantite.setPlaceholderText("Entrez la quantité")
         self.line_edit_quantite.setStyleSheet("padding: 3px; border: 1px solid #000; border-radius: 3px;")
         self.verticalLayout_2.addWidget(self.line_edit_quantite)
 
@@ -171,19 +173,19 @@ class CardCommande(QWidget):
 
         if type == "packets":
             stock_error_dialog.accepted.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # yes button clicked
+                lambda: self.line_edit_quantite.setValue(self.article.packetEnStock))  # yes button clicked
             stock_error_dialog.rejected.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.packetEnStock}"))  # cancel button clicked
+                lambda: self.line_edit_quantite.setValue(self.article.packetEnStock))  # cancel button clicked
         elif type == "boites":
             stock_error_dialog.accepted.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.boiteEnStock}"))  # yes button clicked
+                lambda: self.line_edit_quantite.setValue(self.article.boiteEnStock))  # yes button clicked
             stock_error_dialog.rejected.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.boiteEnStock}"))  # cancel button clicked
+                lambda: self.line_edit_quantite.setValue(self.article.boiteEnStock))  # cancel button clicked
         else:
             stock_error_dialog.accepted.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.pieceEnStock}"))  # yes button clicked
+                lambda: self.line_edit_quantite.setValue(self.article.pieceEnStock))  # yes button clicked
             stock_error_dialog.rejected.connect(
-                lambda: self.line_edit_quantite.setText(f"{self.article.pieceEnStock}"))  # cancel button clicked,
+                lambda: self.line_edit_quantite.setValue(self.article.pieceEnStock))  # cancel button clicked,
 
     def remove_card(self):
         """Supprime la carte de l'affichage."""

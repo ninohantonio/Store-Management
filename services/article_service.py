@@ -64,7 +64,12 @@ def verify_article_by_id(article_id):
     return session.query(Article).filter_by(numeroArticle=article_id).first() is not None
 
 def get_article_for_articlerapide():
-    articles = session.query(Article).outerjoin(Articlerapide).filter(~Article.articlerapides.has()).all()
+    articles = (
+        session.query(Article)
+        .outerjoin(Articlerapide)
+        .filter(Articlerapide.id == None)  # Vérifier les articles sans correspondance
+        .all()
+    )
     return articles
 
 
