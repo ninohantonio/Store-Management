@@ -12,3 +12,6 @@ def get_journal_by_type_action(action: str):
 def insert_new_journal(journal: Journal):
     session.add(journal)
     session.commit()
+
+def get_all_journal():
+    return session.query(Journal).all()

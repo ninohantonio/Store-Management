@@ -85,7 +85,7 @@ QLineEdit{
 }
 
 
-#welcomeLabel, #stock_labele, #facture_title, #notif_label{
+#welcomeLabel, #stock_labele, #facture_title, #notif_label, #journal_label{
 	text-align: center;
 	color:  rgb(0, 170, 255);
 	background-color: #e5e0ff;
@@ -765,7 +765,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -965,9 +965,9 @@ QLineEdit{
            <property name="geometry">
             <rect>
              <x>630</x>
-             <y>50</y>
+             <y>45</y>
              <width>111</width>
-             <height>16</height>
+             <height>21</height>
             </rect>
            </property>
            <property name="font">
@@ -983,9 +983,9 @@ QLineEdit{
            <property name="geometry">
             <rect>
              <x>740</x>
-             <y>50</y>
+             <y>41</y>
              <width>121</width>
-             <height>22</height>
+             <height>31</height>
             </rect>
            </property>
            <item>
@@ -998,9 +998,9 @@ QLineEdit{
            <property name="geometry">
             <rect>
              <x>870</x>
-             <y>50</y>
+             <y>41</y>
              <width>61</width>
-             <height>22</height>
+             <height>31</height>
             </rect>
            </property>
           </widget>
@@ -1378,39 +1378,77 @@ QLineEdit{
           </layout>
          </widget>
          <widget class="QWidget" name="journalPage">
-          <widget class="QFrame" name="frame_4">
+          <widget class="QLabel" name="journal_label">
            <property name="geometry">
             <rect>
-             <x>40</x>
+             <x>10</x>
              <y>30</y>
-             <width>401</width>
-             <height>80</height>
+             <width>631</width>
+             <height>61</height>
             </rect>
            </property>
-           <property name="frameShape">
-            <enum>QFrame::Shape::StyledPanel</enum>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
            </property>
-           <property name="frameShadow">
-            <enum>QFrame::Shadow::Raised</enum>
+           <property name="text">
+            <string>Journal des actions</string>
            </property>
-           <widget class="QLabel" name="label_5">
-            <property name="geometry">
-             <rect>
-              <x>60</x>
-              <y>20</y>
-              <width>141</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>15</pointsize>
-             </font>
-            </property>
+          </widget>
+          <widget class="QTableWidget" name="journal_tableWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>150</y>
+             <width>821</width>
+             <height>421</height>
+            </rect>
+           </property>
+           <column>
             <property name="text">
-             <string>Journal</string>
+             <string>Action</string>
             </property>
-           </widget>
+           </column>
+           <column>
+            <property name="text">
+             <string>Description</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date d'enregistrement</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>111</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Journal du :</string>
+           </property>
+          </widget>
+          <widget class="QDateEdit" name="journal_dateEdit">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>100</y>
+             <width>141</width>
+             <height>31</height>
+            </rect>
+           </property>
           </widget>
          </widget>
          <widget class="QWidget" name="clientPage">

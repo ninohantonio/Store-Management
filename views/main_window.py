@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowXxrPXK.ui'
+## Form generated from reading UI file 'main_windoweopISf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"#welcomeLabel, #stock_labele, #facture_title, #notif_label{\n"
+"#welcomeLabel, #stock_labele, #facture_title, #notif_label, #journal_label{\n"
 "	text-align: center;\n"
 "	color:  rgb(0, 170, 255);\n"
 "	background-color: #e5e0ff;\n"
@@ -141,8 +141,8 @@ class Ui_MainWindow(object):
 "	border-radius: 5px;\n"
 "}\n"
 "\n"
-"#selection_rapide_combo, #quantit"
-                        "e_spinBox{\n"
+"#selection_rapide"
+                        "_combo, #quantite_spinBox{\n"
 "	padding-left: 5px;\n"
 "	border: 1px solid rgb(0, 85, 255);\n"
 "	border-radius: 5px;\n"
@@ -534,17 +534,17 @@ class Ui_MainWindow(object):
         self.avance_field.setGeometry(QRect(490, 100, 113, 22))
         self.label_9 = QLabel(self.homePage)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(630, 50, 111, 16))
+        self.label_9.setGeometry(QRect(630, 45, 111, 21))
         font8 = QFont()
         font8.setPointSize(10)
         self.label_9.setFont(font8)
         self.selection_rapide_combo = QComboBox(self.homePage)
         self.selection_rapide_combo.addItem("")
         self.selection_rapide_combo.setObjectName(u"selection_rapide_combo")
-        self.selection_rapide_combo.setGeometry(QRect(740, 50, 121, 22))
+        self.selection_rapide_combo.setGeometry(QRect(740, 41, 121, 31))
         self.quantite_spinBox = QSpinBox(self.homePage)
         self.quantite_spinBox.setObjectName(u"quantite_spinBox")
-        self.quantite_spinBox.setGeometry(QRect(870, 50, 61, 22))
+        self.quantite_spinBox.setGeometry(QRect(870, 41, 61, 31))
         self.add_selection_rapideBtn = QPushButton(self.homePage)
         self.add_selection_rapideBtn.setObjectName(u"add_selection_rapideBtn")
         self.add_selection_rapideBtn.setGeometry(QRect(740, 90, 81, 31))
@@ -683,15 +683,31 @@ class Ui_MainWindow(object):
         self.mainNavigationScreen.addWidget(self.facturePage)
         self.journalPage = QWidget()
         self.journalPage.setObjectName(u"journalPage")
-        self.frame_4 = QFrame(self.journalPage)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setGeometry(QRect(40, 30, 401, 80))
-        self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
-        self.label_5 = QLabel(self.frame_4)
+        self.journal_label = QLabel(self.journalPage)
+        self.journal_label.setObjectName(u"journal_label")
+        self.journal_label.setGeometry(QRect(10, 30, 631, 61))
+        self.journal_label.setFont(font4)
+        self.journal_tableWidget = QTableWidget(self.journalPage)
+        if (self.journal_tableWidget.columnCount() < 3):
+            self.journal_tableWidget.setColumnCount(3)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.journal_tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.journal_tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.journal_tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem16)
+        self.journal_tableWidget.setObjectName(u"journal_tableWidget")
+        self.journal_tableWidget.setGeometry(QRect(10, 150, 821, 421))
+        self.label_5 = QLabel(self.journalPage)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(60, 20, 141, 31))
-        self.label_5.setFont(font4)
+        self.label_5.setGeometry(QRect(10, 110, 111, 21))
+        font11 = QFont()
+        font11.setFamilies([u"Arial"])
+        font11.setPointSize(12)
+        self.label_5.setFont(font11)
+        self.journal_dateEdit = QDateEdit(self.journalPage)
+        self.journal_dateEdit.setObjectName(u"journal_dateEdit")
+        self.journal_dateEdit.setGeometry(QRect(120, 100, 141, 31))
         self.mainNavigationScreen.addWidget(self.journalPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -724,10 +740,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font11 = QFont()
-        font11.setPointSize(12)
-        font11.setBold(True)
-        self.label_18.setFont(font11)
+        font12 = QFont()
+        font12.setPointSize(12)
+        font12.setBold(True)
+        self.label_18.setFont(font12)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18)
@@ -770,7 +786,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -848,7 +864,14 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Identifiant client", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Filtre de date :", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"jusqu'au", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
+        self.journal_label.setText(QCoreApplication.translate("MainWindow", u"Journal des actions", None))
+        ___qtablewidgetitem14 = self.journal_tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Action", None));
+        ___qtablewidgetitem15 = self.journal_tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem16 = self.journal_tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Date d'enregistrement", None));
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal du :", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))

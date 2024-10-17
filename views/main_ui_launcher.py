@@ -14,7 +14,7 @@ from services.articlerapide_service import insert_new_article_rapide, get_all_ar
 from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
-from services.journal_service import insert_new_journal
+from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -22,7 +22,7 @@ from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.facture_dialog_launcher import FactureDialog
 from views.states.notification_card import NotificationCard
-from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data
+from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data, refresh_journal_table_data
 
 settings = QSettings()
 
@@ -149,6 +149,10 @@ class MainWindow(QMainWindow):
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_facture_data_table()
             self.ui.searchField.returnPressed.connect(lambda : self.fill_facture_data_to_table(self.ui.searchField.text()))
+        elif index == 4:
+            self.ui.searchField.returnPressed.disconnect()
+            self.refresh_journal_table_data()
+            self.ui.searchField.returnPressed.connect(lambda : self.get_journal_by_typeaction(self.ui.searchField.text()))
         pass
 
     def refresh_stock_screen(self):
@@ -498,5 +502,21 @@ class MainWindow(QMainWindow):
             print(f"facture rapide : {facture}")
             self.ui.quantite_spinBox.clear()
             return
+
+
+    def refresh_journal_table_data(self):
+        journals = get_all_journal()
+        refresh_journal_table_data(self.ui.journal_tableWidget, journals)
+        return
+
+    def get_journal_by_typeaction(self, action: str):
+        if action.strip() == "":
+            self.refresh_journal_table_data()
+            return
+        journals = get_journal_by_type_action(action)
+        refresh_journal_table_data(self.ui.journal_tableWidget, journals)
+        return
+
+
 
 
