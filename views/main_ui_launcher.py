@@ -65,6 +65,7 @@ class MainWindow(QMainWindow):
 
         self.ui.selection_rapide_combo.currentIndexChanged.connect(self.manage_article_rapide_selection_change)
         self.ui.quantite_spinBox.setMinimum(0)
+        self.ui.submit_section_rapideBtn.clicked.connect(self.manage_submit_article_rapide_selection)
 
         self.load_notification_for_user()
 
@@ -481,6 +482,7 @@ class MainWindow(QMainWindow):
     def manage_article_rapide_selection_change(self, index):
         article: Article = self.ui.selection_rapide_combo.itemData(index)
         self.article_rapide_selection = article
+        self.ui.quantite_spinBox.setMaximum(article.pieceEnStock)
 
     def manage_submit_article_rapide_selection(self):
         quantite = int(self.ui.quantite_spinBox.text())
