@@ -68,6 +68,8 @@ class MainWindow(QMainWindow):
         self.ui.quantite_spinBox.setMinimum(0)
         self.ui.submit_section_rapideBtn.clicked.connect(self.manage_submit_article_rapide_selection)
 
+        self.ui.logoutBtn.clicked.connect(self.manage_logout)
+
         self.ui.journal_dateEdit.dateChanged.connect(self.manage_journal_date_change)
 
         self.load_notification_for_user()
@@ -239,7 +241,7 @@ class MainWindow(QMainWindow):
             return
 
         #demander confirmation
-        response = self.show_confirmation_dialog()
+        response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir continuer ?")
         if response:
             #choisir un client, en creer un
             self.show_client_selection_dialog()
@@ -328,11 +330,11 @@ class MainWindow(QMainWindow):
         # Afficher le dialogue et récupérer la réponse de l'utilisateur
         msg_box.exec()
 
-    def show_confirmation_dialog(self):
+    def show_confirmation_dialog(self, message: str):
         msg_box = QMessageBox()
         msg_box.setIcon(QMessageBox.Question)
         msg_box.setWindowTitle("Confirmation")
-        msg_box.setText("Êtes-vous sûr de vouloir continuer ?")
+        msg_box.setText(message)
         msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         msg_box.setDefaultButton(QMessageBox.No)
 
@@ -527,6 +529,14 @@ class MainWindow(QMainWindow):
 
         journals = search_journals_by_date(search_date)
         refresh_journal_table_data(self.ui.journal_tableWidget, journals)
+
+
+    def manage_logout(self):
+        response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir basculer de compte")
+        if response:
+            self.login_window = LoginWindow()
+            self.login_window.show()
+        return
 
 
 
