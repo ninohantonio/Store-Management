@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
 
         self.showMaximized()
 
-        self.selected_client = Client()
+        self.selected_client = None
 
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.searchField.returnPressed.connect(self.print_search_value)
@@ -245,7 +245,6 @@ class MainWindow(QMainWindow):
             self.show_client_selection_dialog()
             client = self.selected_client
             if client is not None:
-                insert_new_client(client)
                 #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
                 liste_article = self.extract_info_to_card()
                 #boucle pour stocker les informations dans commande
@@ -357,10 +356,12 @@ class MainWindow(QMainWindow):
         if self.dialog.exec() == QDialog.Accepted:
             if self.dialog.temporary_client_selected:
                 print(f"Client sélectionné : temporaire")
-                self.selected_client = Client()
-                self.selected_client.nom = "temp"
-                self.selected_client.telephone = "temp"
-                self.selected_client.adresse = "temp"
+                newclient_tmp = Client()
+                newclient_tmp.nom = "tmp"
+                newclient_tmp.telephone = "tmp"
+                newclient_tmp.adresse = "tmp"
+                insert_new_client(newclient_tmp)
+                self.selected_client = newclient_tmp
             else:
                 # Récupérer les informations du client sélectionné dans la table
                 client_info = self.dialog.get_selected_client()
@@ -402,6 +403,7 @@ class MainWindow(QMainWindow):
         for i in range(self.ui.cardContainer.count()):
             card_widget = self.ui.cardContainer.itemAt(i).widget()
             card_widget.deleteLater()
+        self.commande_item = {}
 
 
     def fill_facture_data_to_table(self, search_value: str):

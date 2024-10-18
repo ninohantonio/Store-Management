@@ -12,7 +12,10 @@ class ClientFormDialog(QDialog):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
 
-        self.ui.telephone_client.setValidator(QIntValidator(0, 9999999999))
+        self.ui.telephone_client.setValidator(QIntValidator(0, 1111111111))
+
+        self.ui.submit_client.clicked.connect(self.handle_submit_client)
+        self.ui.reset_client.clicked.connect(lambda : self.close())
 
 
     def handle_submit_client(self):
@@ -22,13 +25,10 @@ class ClientFormDialog(QDialog):
                 client.nom = self.ui.nom_client.text()
                 client.telephone = self.ui.telephone_client.text()
                 client.adresse = self.ui.adresse_client.text()
-                try:
-                    insert_new_client(client)
-                    self.show_success_message("Votre client a ete bien inserer")
-                    self.close()
-                    return
-                except:
-                    self.show_alert_message("Une erreur s'est produit, veuillez recommencer!")
+                insert_new_client(client)
+                self.show_success_message("Votre client a ete bien inserer")
+                self.close()
+                return
             else:
                 self.show_alert_message("Le numero telephone est invalide")
         else:
