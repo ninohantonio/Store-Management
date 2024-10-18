@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowhSLbee.ui'
+## Form generated from reading UI file 'main_windowZurkNL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -877,6 +877,6 @@ class Ui_MainWindow(object):
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
-        self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
+        self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Basculer", None))
     # retranslateUi
 

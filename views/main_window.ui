@@ -1571,7 +1571,7 @@ QLineEdit{
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
-             <string>Se deconnecter</string>
+             <string>Basculer</string>
             </property>
             <property name="icon">
              <iconset resource="resources.qrc">
