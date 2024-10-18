@@ -25,7 +25,7 @@ class ClientList(QDialog):
         self.ui.search_client.textChanged.connect(self.get_client_by_search)
         self.ui.search_client.returnPressed.connect(self.get_client_by_search)
 
-        # self.ui.pushButton.clicked.connect(self.show_add_new_client_form)
+        self.ui.pushButton.clicked.connect(self.show_add_new_client_form)
 
 
     def load_table_data(self, data: list[Client]):
@@ -62,7 +62,7 @@ class ClientList(QDialog):
 
         self.client_form.finished.connect(self.refresh_table_client)
 
-        self.client_form.show()
+        self.client_form.exec()
 
     def get_client_by_search(self):
         search = self.ui.search_client.text()

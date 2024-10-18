@@ -41,6 +41,7 @@ class ClientFormDialog(QDialog):
         msg_box.setText(message)
         msg_box.setStandardButtons(QMessageBox.Ok)
         msg_box.setDefaultButton(QMessageBox.Ok)
+        msg_box.exec()
 
     def show_success_message(self, message: str):
         msg_box = QMessageBox()
@@ -49,6 +50,7 @@ class ClientFormDialog(QDialog):
         msg_box.setText(message)
         msg_box.setStandardButtons(QMessageBox.Ok)
         msg_box.setDefaultButton(QMessageBox.Ok)
+        msg_box.exec()
 
     def reset_form(self):
         self.ui.nom_client.clear()
@@ -57,4 +59,4 @@ class ClientFormDialog(QDialog):
 
     def is_valide_numero(self, numero: str):
         valide_start = ("032", "033", "034", "037", "038")
-        return numero.startswith(valide_start)
+        return numero.startswith(valide_start) and len(numero) == 10

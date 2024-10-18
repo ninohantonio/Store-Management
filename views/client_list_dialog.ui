@@ -55,6 +55,9 @@
      <height>381</height>
     </rect>
    </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+   </property>
    <column>
     <property name="text">
      <string>Nom et prenom</string>
