@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowEzOrAz.ui'
+## Form generated from reading UI file 'main_admin_windowxKMCQz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -162,6 +162,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.formulaireBtn = QPushButton(self.frame_2)
         self.formulaireBtn.setObjectName(u"formulaireBtn")
+        self.formulaireBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon = QIcon()
         icon.addFile(u":/icons/icons/caddie.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.formulaireBtn.setIcon(icon)
@@ -171,6 +172,7 @@ class Ui_MainWindow(object):
 
         self.dashboardBtn = QPushButton(self.frame_2)
         self.dashboardBtn.setObjectName(u"dashboardBtn")
+        self.dashboardBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon1 = QIcon()
         icon1.addFile(u":/icons/icons/stock.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.dashboardBtn.setIcon(icon1)
@@ -180,6 +182,7 @@ class Ui_MainWindow(object):
 
         self.clientBtn = QPushButton(self.frame_2)
         self.clientBtn.setObjectName(u"clientBtn")
+        self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon2 = QIcon()
         icon2.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.clientBtn.setIcon(icon2)

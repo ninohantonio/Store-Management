@@ -22,8 +22,8 @@
 			"clientBtn"
 		],
 		"Style": [{
-			"Active": "background-color: #fefeff;border-top-left-radius: 15px;",
-			"NotActive": "background-color: transparent;"
+			"Active": "background-color: #fefeff;border-radius: 10px;padding: 10px;",
+			"NotActive": "background-color: rgb(47, 109, 255); border-radius: 10px;padding: 10px;"
 		}]
 
 	}],

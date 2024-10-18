@@ -196,6 +196,9 @@ QLineEdit, QTextEdit{
                <layout class="QVBoxLayout" name="verticalLayout">
                 <item>
                  <widget class="QPushButton" name="formulaireBtn">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -213,6 +216,9 @@ QLineEdit, QTextEdit{
                 </item>
                 <item>
                  <widget class="QPushButton" name="dashboardBtn">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -230,6 +236,9 @@ QLineEdit, QTextEdit{
                 </item>
                 <item>
                  <widget class="QPushButton" name="clientBtn">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
