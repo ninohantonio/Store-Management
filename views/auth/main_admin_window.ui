@@ -176,7 +176,13 @@ QLineEdit, QTextEdit{
               <widget class="QFrame" name="frame_2">
                <property name="styleSheet">
                 <string notr="true">QPushButton{
-	background-color: white;
+	background-color: rgb(47, 109, 255);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#formulaireBtn{
+	background-color: #fefeff;
 	border-radius: 10px;
 	padding: 10px;
 }</string>
@@ -189,7 +195,7 @@ QLineEdit, QTextEdit{
                </property>
                <layout class="QVBoxLayout" name="verticalLayout">
                 <item>
-                 <widget class="QPushButton" name="pushButton_2">
+                 <widget class="QPushButton" name="formulaireBtn">
                   <property name="text">
                    <string/>
                   </property>
@@ -206,7 +212,7 @@ QLineEdit, QTextEdit{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_3">
+                 <widget class="QPushButton" name="dashboardBtn">
                   <property name="text">
                    <string/>
                   </property>
@@ -223,7 +229,7 @@ QLineEdit, QTextEdit{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_4">
+                 <widget class="QPushButton" name="clientBtn">
                   <property name="text">
                    <string/>
                   </property>
@@ -436,6 +442,9 @@ QLineEdit, QTextEdit{
                 </property>
                 <item alignment="Qt::AlignmentFlag::AlignRight">
                  <widget class="QPushButton" name="accountBtn_2">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -479,7 +488,7 @@ QLineEdit, QTextEdit{
               <number>0</number>
              </property>
              <item>
-              <widget class="QStackedWidget" name="mainNavigationScreen">
+              <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
                <property name="currentIndex">
                 <number>0</number>
                </property>
@@ -1338,7 +1347,46 @@ QLineEdit, QTextEdit{
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_2"/>
+               <widget class="QWidget" name="dashboardPage">
+                <widget class="QLabel" name="label">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>30</y>
+                   <width>341</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Tableau de bord</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="clientPage">
+                <widget class="QLabel" name="label_9">
+                 <property name="geometry">
+                  <rect>
+                   <x>30</x>
+                   <y>40</y>
+                   <width>281</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Clients</string>
+                 </property>
+                </widget>
+               </widget>
               </widget>
              </item>
             </layout>
@@ -1491,6 +1539,12 @@ QLineEdit, QTextEdit{
    <class>QCustomSlideMenu</class>
    <extends>QWidget</extends>
    <header location="global">Custom_Widgets.QCustomSlideMenu.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QCustomQStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">Custom_Widgets.QCustomQStackedWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
