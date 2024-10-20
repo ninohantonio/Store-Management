@@ -99,7 +99,8 @@
 			"settingBtn",
 			"aboutBtn",
 			"helpBtn",
-			"notificationBtn"
+			"notificationBtn",
+			"reliureBtn"
 		],
 		"Style": [{
 			"Active": "background-color: #fefeff;border-top-left-radius: 15px;",
@@ -141,7 +142,8 @@
 							"clientBtn": "clientPage",
 							"factureBtn": "facturePage",
 							"journalBtn": "journalPage",
-							"notificationBtn": "notificationPage"
+							"notificationBtn": "notificationPage",
+							"reliureBtn": "reliurePage"
 						}
 					]
 				}
