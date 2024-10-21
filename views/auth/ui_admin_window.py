@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowfiPOtv.ui'
+## Form generated from reading UI file 'main_admin_windownOHdKc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1312, 697)
+        MainWindow.resize(1365, 697)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"QFrame, QWidget{\n"
@@ -617,13 +617,13 @@ class Ui_MainWindow(object):
 "padding-left: 10px;")
         self.widget_7 = QWidget(self.dashboardPage)
         self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(10, 80, 1081, 531))
+        self.widget_7.setGeometry(QRect(10, 80, 1131, 531))
         self.widget_7.setStyleSheet(u"background-color: white;\n"
 "")
         self.frame_23 = QFrame(self.widget_7)
         self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setGeometry(QRect(10, 10, 121, 101))
-        self.frame_23.setStyleSheet(u"background-color: rgb(85, 170, 255);\n"
+        self.frame_23.setGeometry(QRect(10, 10, 131, 101))
+        self.frame_23.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "border-radius: 20px;")
         self.frame_23.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_23.setFrameShadow(QFrame.Shadow.Raised)
@@ -640,18 +640,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_10.addWidget(self.label_21)
 
-        self.label_22 = QLabel(self.frame_23)
-        self.label_22.setObjectName(u"label_22")
+        self.vente_jour = QLabel(self.frame_23)
+        self.vente_jour.setObjectName(u"vente_jour")
         font7 = QFont()
         font7.setFamilies([u"Nirmala UI Semilight"])
         font7.setPointSize(11)
         font7.setBold(True)
-        self.label_22.setFont(font7)
-        self.label_22.setStyleSheet(u"color: #fefeff;\n"
+        self.vente_jour.setFont(font7)
+        self.vente_jour.setStyleSheet(u"color: #fefeff;\n"
 "background: transparent;")
-        self.label_22.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.vente_jour.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_10.addWidget(self.label_22)
+        self.verticalLayout_10.addWidget(self.vente_jour)
 
         self.label_23 = QLabel(self.frame_23)
         self.label_23.setObjectName(u"label_23")
@@ -672,19 +672,20 @@ class Ui_MainWindow(object):
         self.label_24 = QLabel(self.frame_24)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setFont(font6)
-        self.label_24.setStyleSheet(u"background-color: transparent;")
+        self.label_24.setStyleSheet(u"background-color: transparent;\n"
+"color: white;")
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.label_24)
 
-        self.label_25 = QLabel(self.frame_24)
-        self.label_25.setObjectName(u"label_25")
-        self.label_25.setFont(font7)
-        self.label_25.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+        self.vente_semaine = QLabel(self.frame_24)
+        self.vente_semaine.setObjectName(u"vente_semaine")
+        self.vente_semaine.setFont(font7)
+        self.vente_semaine.setStyleSheet(u"color: #fefeff;\n"
 "background: transparent;")
-        self.label_25.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.vente_semaine.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.label_25)
+        self.verticalLayout_11.addWidget(self.vente_semaine)
 
         self.label_26 = QLabel(self.frame_24)
         self.label_26.setObjectName(u"label_26")
@@ -695,8 +696,8 @@ class Ui_MainWindow(object):
 
         self.frame_26 = QFrame(self.widget_7)
         self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setGeometry(QRect(300, 10, 131, 101))
-        self.frame_26.setStyleSheet(u"background-color:  rgba(85, 170, 255, 100);\n"
+        self.frame_26.setGeometry(QRect(290, 10, 131, 101))
+        self.frame_26.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "border-radius: 20px;")
         self.frame_26.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_26.setFrameShadow(QFrame.Shadow.Raised)
@@ -705,19 +706,20 @@ class Ui_MainWindow(object):
         self.label_30 = QLabel(self.frame_26)
         self.label_30.setObjectName(u"label_30")
         self.label_30.setFont(font6)
-        self.label_30.setStyleSheet(u"background-color: transparent;")
+        self.label_30.setStyleSheet(u"background-color: transparent;\n"
+"color: #dedede;")
         self.label_30.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_13.addWidget(self.label_30)
 
-        self.label_31 = QLabel(self.frame_26)
-        self.label_31.setObjectName(u"label_31")
-        self.label_31.setFont(font7)
-        self.label_31.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+        self.vente_mois = QLabel(self.frame_26)
+        self.vente_mois.setObjectName(u"vente_mois")
+        self.vente_mois.setFont(font7)
+        self.vente_mois.setStyleSheet(u"color: #fefeff;\n"
 "background: transparent;")
-        self.label_31.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.vente_mois.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_13.addWidget(self.label_31)
+        self.verticalLayout_13.addWidget(self.vente_mois)
 
         self.label_32 = QLabel(self.frame_26)
         self.label_32.setObjectName(u"label_32")
@@ -747,26 +749,35 @@ class Ui_MainWindow(object):
         self.pushButton_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushButton_2.setStyleSheet(u"border-radius: 10px;\n"
 "background: rgb(249, 249, 249);")
-        self.tableWidget = QTableWidget(self.frame_27)
-        if (self.tableWidget.columnCount() < 4):
-            self.tableWidget.setColumnCount(4)
+        self.facture_tableWidget = QTableWidget(self.frame_27)
+        if (self.facture_tableWidget.columnCount() < 4):
+            self.facture_tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.facture_tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.facture_tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.facture_tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(0, 40, 421, 311))
-        self.tableWidget.setAlternatingRowColors(True)
+        self.facture_tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.facture_tableWidget.setObjectName(u"facture_tableWidget")
+        self.facture_tableWidget.setGeometry(QRect(0, 40, 421, 311))
+        self.facture_tableWidget.setStyleSheet(u"background-color: white;")
+        self.facture_tableWidget.setAlternatingRowColors(True)
         self.verticalLayoutWidget = QWidget(self.widget_7)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(440, 70, 621, 441))
+        self.verticalLayoutWidget.setGeometry(QRect(440, 50, 681, 461))
         self.chartContainer = QVBoxLayout(self.verticalLayoutWidget)
         self.chartContainer.setObjectName(u"chartContainer")
         self.chartContainer.setContentsMargins(0, 0, 0, 0)
+        self.label_27 = QLabel(self.widget_7)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setGeometry(QRect(440, 10, 681, 41))
+        self.label_27.setFont(font1)
+        self.label_27.setStyleSheet(u"border: 1px solid rgb(0, 85, 255);\n"
+"border-top-left-radius: 10px;\n"
+"border-top-right-radius: 10px;")
+        self.label_27.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.mainNavigationScreen.addWidget(self.dashboardPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -912,24 +923,25 @@ class Ui_MainWindow(object):
         self.appro_detail.setText(QCoreApplication.translate("MainWindow", u"Details d'approvisionnement", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Tableau de bord", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Vente du jour", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.vente_jour.setText(QCoreApplication.translate("MainWindow", u"30000 Ar", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Vente de la semaine", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.vente_semaine.setText(QCoreApplication.translate("MainWindow", u"160000 Ar", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
         self.label_30.setText(QCoreApplication.translate("MainWindow", u"Vente du du mois", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.vente_mois.setText(QCoreApplication.translate("MainWindow", u"700000 Ar", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"Liste des Factures du Jours", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Export", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Rafraichir", None))
+        ___qtablewidgetitem = self.facture_tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Numero Facture", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.facture_tableWidget.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Etat de Payement", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.facture_tableWidget.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Date Enregistrement", None));
-        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3 = self.facture_tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Identifiant du Client", None));
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"Evolution des ventes du mois", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))

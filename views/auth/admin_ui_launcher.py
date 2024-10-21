@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 
 from Custom_Widgets import *
 from Custom_Widgets import QMainWindow
@@ -14,13 +15,13 @@ from models.model_class import Article, Approvisionnement
 from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
-from services.facture_service import get_total_facture_group_by_date
+from services.facture_service import get_total_facture_group_by_date, search_factures_by_date
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
 from PySide6.QtWidgets import QApplication, QMessageBox
 
-from views.states.stock_state import refresh_search_view_value
+from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data
 
 
 class AdminWindow(QMainWindow):
@@ -63,6 +64,7 @@ class AdminWindow(QMainWindow):
 
         self.ui.chartContainer.addWidget(self.canvas)
         self.load_line_chart_graphics()
+        self.load_facture_table_list()
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
@@ -378,19 +380,19 @@ class AdminWindow(QMainWindow):
 
         ax.plot(dates, montants, marker='o', linestyle='-', color='b', label='Ventes')
         ax.set_xlabel('Date')
-        ax.set_ylabel('Montant Total (€)')
-        ax.set_title('Progression des Ventes Journalières')
+        ax.set_ylabel('Montant Total (Ar)')
+        # ax.set_title('Progression des Ventes Journalières')
         ax.legend()
 
         # Ajouter les annotations des montants
         for date, montant in zip(dates, montants):
-            ax.annotate(f"{montant}€",  # Texte à afficher
+            ax.annotate(f"{montant}Ar",  # Texte à afficher
                         (date, montant),  # Coordonnées du point
                         textcoords="offset points",  # Décalage par rapport au point
                         xytext=(0, 5),  # Décalage vertical
                         ha='center',  # Alignement horizontal
                         fontsize=10,  # Taille de la police
-                        color='orange')
+                        color='#af0000')
 
         # Rotation des labels de date pour une meilleure lisibilité
         self.figure.autofmt_xdate()
@@ -398,5 +400,14 @@ class AdminWindow(QMainWindow):
         self.ui.chartContainer.update()
         # Mettre à jour le canvas
         self.canvas.draw()
+
+    def load_facture_table_list(self):
+        date_now = datetime.now()
+
+        factures = search_factures_by_date(date_now)
+        refresh_facture_table_data(self.ui.facture_tableWidget, factures)
+        return
+
+
 
 
