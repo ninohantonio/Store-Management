@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowUjLGva.ui'
+## Form generated from reading UI file 'main_windowLriSdr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,12 +15,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
-    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QPushButton,
-    QRadioButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QSpinBox, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
+    QDateEdit, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit,
+    QPushButton, QRadioButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QSpinBox, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -148,18 +148,30 @@ class Ui_MainWindow(object):
 "	border-radius: 5px;\n"
 "}\n"
 "\n"
-"#add_selection_rapideBtn{\n"
+"#add_selection_rapideBtn, #delete_type, #modify_reliure{\n"
 "	border: 2px solid rgb(0, 170, 255);\n"
 "	border-radius: 7px;\n"
 "	padding: 2px;\n"
 "	cursor: pointer;\n"
 "}\n"
 "\n"
-"#submit_section_rapideBtn{\n"
+"#reset_reliure{\n"
+"	border: 2px solid orange;\n"
+"	border-radius: 7px;\n"
+"	padding: 2px;\n"
+"	cursor: pointer;\n"
+"}\n"
+"\n"
+"#submit_section_rapideBtn, #add_type, #submit_reliure{\n"
 "	border: 2px solid rgb(0, 255, 127);\n"
 "	border-radius: 7px;\n"
 "	padding: 2px;\n"
 "	cursor: pointer;\n"
+"}\n"
+"\n"
+"#reliure_form{\n"
+"	border: 2px solid rgb(0, 170, 255);\n"
+"	border-radius: 15px;\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -285,6 +297,7 @@ class Ui_MainWindow(object):
         self.reliureBtn = QPushButton(self.menuFrame)
         self.reliureBtn.setObjectName(u"reliureBtn")
         self.reliureBtn.setFont(font2)
+        self.reliureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon5 = QIcon()
         icon5.addFile(u":/icons/icons/book.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.reliureBtn.setIcon(icon5)
@@ -741,8 +754,79 @@ class Ui_MainWindow(object):
         self.reliure_label.setGeometry(QRect(10, 30, 631, 61))
         self.reliure_label.setFont(font4)
         self.reliure_table = QTableWidget(self.reliurePage)
+        if (self.reliure_table.columnCount() < 5):
+            self.reliure_table.setColumnCount(5)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(0, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(1, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(2, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(3, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(4, __qtablewidgetitem21)
         self.reliure_table.setObjectName(u"reliure_table")
-        self.reliure_table.setGeometry(QRect(20, 110, 256, 192))
+        self.reliure_table.setGeometry(QRect(10, 130, 531, 441))
+        self.label_10 = QLabel(self.reliurePage)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(660, 50, 101, 16))
+        font12 = QFont()
+        font12.setFamilies([u"Arial"])
+        font12.setPointSize(10)
+        self.label_10.setFont(font12)
+        self.comboBox = QComboBox(self.reliurePage)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(770, 41, 241, 31))
+        self.comboBox.setFont(font12)
+        self.add_type = QPushButton(self.reliurePage)
+        self.add_type.setObjectName(u"add_type")
+        self.add_type.setGeometry(QRect(660, 80, 151, 31))
+        self.add_type.setFont(font8)
+        self.add_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.delete_type = QPushButton(self.reliurePage)
+        self.delete_type.setObjectName(u"delete_type")
+        self.delete_type.setGeometry(QRect(854, 80, 151, 31))
+        self.delete_type.setFont(font8)
+        self.delete_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.reliure_form = QFrame(self.reliurePage)
+        self.reliure_form.setObjectName(u"reliure_form")
+        self.reliure_form.setGeometry(QRect(580, 130, 321, 441))
+        self.reliure_form.setFrameShape(QFrame.Shape.StyledPanel)
+        self.reliure_form.setFrameShadow(QFrame.Shadow.Raised)
+        self.page_noir_spinBox = QSpinBox(self.reliure_form)
+        self.page_noir_spinBox.setObjectName(u"page_noir_spinBox")
+        self.page_noir_spinBox.setGeometry(QRect(50, 40, 121, 31))
+        self.page_couleur_spinBox = QSpinBox(self.reliure_form)
+        self.page_couleur_spinBox.setObjectName(u"page_couleur_spinBox")
+        self.page_couleur_spinBox.setGeometry(QRect(50, 120, 121, 31))
+        self.reliure_state = QCheckBox(self.reliure_form)
+        self.reliure_state.setObjectName(u"reliure_state")
+        self.reliure_state.setGeometry(QRect(50, 170, 121, 20))
+        self.reliure_state.setFont(font8)
+        self.label_11 = QLabel(self.reliure_form)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(50, 10, 121, 21))
+        self.label_11.setFont(font8)
+        self.label_12 = QLabel(self.reliure_form)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setGeometry(QRect(50, 90, 121, 21))
+        self.label_12.setFont(font8)
+        self.submit_reliure = QPushButton(self.reliure_form)
+        self.submit_reliure.setObjectName(u"submit_reliure")
+        self.submit_reliure.setGeometry(QRect(50, 210, 151, 31))
+        self.submit_reliure.setFont(font8)
+        self.submit_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.modify_reliure = QPushButton(self.reliure_form)
+        self.modify_reliure.setObjectName(u"modify_reliure")
+        self.modify_reliure.setGeometry(QRect(50, 260, 151, 31))
+        self.modify_reliure.setFont(font8)
+        self.modify_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.reset_reliure = QPushButton(self.reliure_form)
+        self.reset_reliure.setObjectName(u"reset_reliure")
+        self.reset_reliure.setGeometry(QRect(50, 380, 151, 31))
+        self.reset_reliure.setFont(font8)
+        self.reset_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.mainNavigationScreen.addWidget(self.reliurePage)
 
         self.verticalLayout.addWidget(self.mainNavigationScreen)
@@ -763,10 +847,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_18 = QLabel(self.profileMenu)
         self.label_18.setObjectName(u"label_18")
-        font12 = QFont()
-        font12.setPointSize(12)
-        font12.setBold(True)
-        self.label_18.setFont(font12)
+        font13 = QFont()
+        font13.setPointSize(12)
+        font13.setBold(True)
+        self.label_18.setFont(font13)
         self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_18)
@@ -898,6 +982,25 @@ class Ui_MainWindow(object):
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal du :", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.reliure_label.setText(QCoreApplication.translate("MainWindow", u"Commandes de reliure", None))
+        ___qtablewidgetitem17 = self.reliure_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem18 = self.reliure_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
+        ___qtablewidgetitem19 = self.reliure_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
+        ___qtablewidgetitem20 = self.reliure_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
+        ___qtablewidgetitem21 = self.reliure_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Type(s) de Livre :", None))
+        self.add_type.setText(QCoreApplication.translate("MainWindow", u"Ajouter Un Type", None))
+        self.delete_type.setText(QCoreApplication.translate("MainWindow", u"Supprimer Un type", None))
+        self.reliure_state.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Pages Noir et Blanc", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Pages en Couleur", None))
+        self.submit_reliure.setText(QCoreApplication.translate("MainWindow", u"Ajouter la Commande", None))
+        self.modify_reliure.setText(QCoreApplication.translate("MainWindow", u"Modifier la Commande", None))
+        self.reset_reliure.setText(QCoreApplication.translate("MainWindow", u"Vider les champs", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")
