@@ -64,8 +64,6 @@ class MainWindow(QMainWindow):
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
 
-        self.ui.facture_table.setColumnWidth()
-
         self.ui.selection_rapide_combo.currentIndexChanged.connect(self.manage_article_rapide_selection_change)
         self.ui.quantite_spinBox.setMinimum(0)
         self.ui.submit_section_rapideBtn.clicked.connect(self.manage_submit_article_rapide_selection)

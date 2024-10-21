@@ -1385,7 +1385,7 @@ padding-left: 10px;</string>
                   <rect>
                    <x>10</x>
                    <y>80</y>
-                   <width>1061</width>
+                   <width>1081</width>
                    <height>531</height>
                   </rect>
                  </property>
@@ -1398,8 +1398,8 @@ padding-left: 10px;</string>
                    <rect>
                     <x>10</x>
                     <y>10</y>
-                    <width>151</width>
-                    <height>111</height>
+                    <width>121</width>
+                    <height>101</height>
                    </rect>
                   </property>
                   <property name="styleSheet">
@@ -1471,10 +1471,10 @@ background: transparent;</string>
                  <widget class="QFrame" name="frame_24">
                   <property name="geometry">
                    <rect>
-                    <x>190</x>
+                    <x>150</x>
                     <y>10</y>
-                    <width>151</width>
-                    <height>111</height>
+                    <width>131</width>
+                    <height>101</height>
                    </rect>
                   </property>
                   <property name="styleSheet">
@@ -1542,87 +1542,13 @@ background: transparent;</string>
                    </item>
                   </layout>
                  </widget>
-                 <widget class="QFrame" name="frame_25">
-                  <property name="geometry">
-                   <rect>
-                    <x>550</x>
-                    <y>10</y>
-                    <width>151</width>
-                    <height>111</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color:  rgba(85, 170, 255, 50);
-border-radius: 20px;</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Raised</enum>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_12">
-                   <item>
-                    <widget class="QLabel" name="label_27">
-                     <property name="font">
-                      <font>
-                       <bold>true</bold>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">background-color: transparent;</string>
-                     </property>
-                     <property name="text">
-                      <string>Vente du jour</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_28">
-                     <property name="font">
-                      <font>
-                       <family>Nirmala UI Semilight</family>
-                       <pointsize>11</pointsize>
-                       <bold>true</bold>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 85, 255);
-background: transparent;</string>
-                     </property>
-                     <property name="text">
-                      <string>50000Ar</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_29">
-                     <property name="styleSheet">
-                      <string notr="true">background: transparent;</string>
-                     </property>
-                     <property name="text">
-                      <string>21 Oct 2024</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
                  <widget class="QFrame" name="frame_26">
                   <property name="geometry">
                    <rect>
-                    <x>370</x>
+                    <x>300</x>
                     <y>10</y>
-                    <width>151</width>
-                    <height>111</height>
+                    <width>131</width>
+                    <height>101</height>
                    </rect>
                   </property>
                   <property name="styleSheet">
@@ -1693,9 +1619,9 @@ background: transparent;</string>
                  <widget class="QFrame" name="frame_27">
                   <property name="geometry">
                    <rect>
-                    <x>20</x>
+                    <x>10</x>
                     <y>150</y>
-                    <width>531</width>
+                    <width>421</width>
                     <height>361</height>
                    </rect>
                   </property>
@@ -1732,7 +1658,7 @@ background: transparent;</string>
                   <widget class="QPushButton" name="pushButton_2">
                    <property name="geometry">
                     <rect>
-                     <x>434</x>
+                     <x>320</x>
                      <y>10</y>
                      <width>81</width>
                      <height>24</height>
@@ -1754,7 +1680,7 @@ background: rgb(249, 249, 249);</string>
                     <rect>
                      <x>0</x>
                      <y>40</y>
-                     <width>531</width>
+                     <width>421</width>
                      <height>311</height>
                     </rect>
                    </property>
@@ -1782,6 +1708,17 @@ background: rgb(249, 249, 249);</string>
                     </property>
                    </column>
                   </widget>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>440</x>
+                    <y>70</y>
+                    <width>621</width>
+                    <height>441</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="chartContainer"/>
                  </widget>
                 </widget>
                </widget>

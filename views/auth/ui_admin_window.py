@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowFyvqZH.ui'
+## Form generated from reading UI file 'main_admin_windowfiPOtv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -617,12 +617,12 @@ class Ui_MainWindow(object):
 "padding-left: 10px;")
         self.widget_7 = QWidget(self.dashboardPage)
         self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(10, 80, 1061, 531))
+        self.widget_7.setGeometry(QRect(10, 80, 1081, 531))
         self.widget_7.setStyleSheet(u"background-color: white;\n"
 "")
         self.frame_23 = QFrame(self.widget_7)
         self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setGeometry(QRect(10, 10, 151, 111))
+        self.frame_23.setGeometry(QRect(10, 10, 121, 101))
         self.frame_23.setStyleSheet(u"background-color: rgb(85, 170, 255);\n"
 "border-radius: 20px;")
         self.frame_23.setFrameShape(QFrame.Shape.StyledPanel)
@@ -662,7 +662,7 @@ class Ui_MainWindow(object):
 
         self.frame_24 = QFrame(self.widget_7)
         self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setGeometry(QRect(180, 10, 151, 111))
+        self.frame_24.setGeometry(QRect(150, 10, 131, 101))
         self.frame_24.setStyleSheet(u"background-color:  rgba(85, 170, 255, 150);\n"
 "border-radius: 20px;")
         self.frame_24.setFrameShape(QFrame.Shape.StyledPanel)
@@ -693,42 +693,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.label_26)
 
-        self.frame_25 = QFrame(self.widget_7)
-        self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setGeometry(QRect(530, 10, 151, 111))
-        self.frame_25.setStyleSheet(u"background-color:  rgba(85, 170, 255, 50);\n"
-"border-radius: 20px;")
-        self.frame_25.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_25.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.frame_25)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.label_27 = QLabel(self.frame_25)
-        self.label_27.setObjectName(u"label_27")
-        self.label_27.setFont(font6)
-        self.label_27.setStyleSheet(u"background-color: transparent;")
-        self.label_27.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_12.addWidget(self.label_27)
-
-        self.label_28 = QLabel(self.frame_25)
-        self.label_28.setObjectName(u"label_28")
-        self.label_28.setFont(font7)
-        self.label_28.setStyleSheet(u"color: rgb(0, 85, 255);\n"
-"background: transparent;")
-        self.label_28.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_12.addWidget(self.label_28)
-
-        self.label_29 = QLabel(self.frame_25)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setStyleSheet(u"background: transparent;")
-        self.label_29.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_12.addWidget(self.label_29)
-
         self.frame_26 = QFrame(self.widget_7)
         self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setGeometry(QRect(350, 10, 151, 111))
+        self.frame_26.setGeometry(QRect(300, 10, 131, 101))
         self.frame_26.setStyleSheet(u"background-color:  rgba(85, 170, 255, 100);\n"
 "border-radius: 20px;")
         self.frame_26.setFrameShape(QFrame.Shape.StyledPanel)
@@ -761,7 +728,7 @@ class Ui_MainWindow(object):
 
         self.frame_27 = QFrame(self.widget_7)
         self.frame_27.setObjectName(u"frame_27")
-        self.frame_27.setGeometry(QRect(20, 150, 531, 361))
+        self.frame_27.setGeometry(QRect(10, 150, 421, 361))
         self.frame_27.setStyleSheet(u"QFrame{\n"
 "	background: rgb(234, 234, 234);\n"
 "	border-radius: 10px;\n"
@@ -776,7 +743,7 @@ class Ui_MainWindow(object):
         self.label_33.setFont(font8)
         self.pushButton_2 = QPushButton(self.frame_27)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(434, 10, 81, 24))
+        self.pushButton_2.setGeometry(QRect(320, 10, 81, 24))
         self.pushButton_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.pushButton_2.setStyleSheet(u"border-radius: 10px;\n"
 "background: rgb(249, 249, 249);")
@@ -792,7 +759,14 @@ class Ui_MainWindow(object):
         __qtablewidgetitem3 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(0, 40, 531, 311))
+        self.tableWidget.setGeometry(QRect(0, 40, 421, 311))
+        self.tableWidget.setAlternatingRowColors(True)
+        self.verticalLayoutWidget = QWidget(self.widget_7)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(440, 70, 621, 441))
+        self.chartContainer = QVBoxLayout(self.verticalLayoutWidget)
+        self.chartContainer.setObjectName(u"chartContainer")
+        self.chartContainer.setContentsMargins(0, 0, 0, 0)
         self.mainNavigationScreen.addWidget(self.dashboardPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -943,9 +917,6 @@ class Ui_MainWindow(object):
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Vente de la semaine", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"Vente du jour", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
         self.label_30.setText(QCoreApplication.translate("MainWindow", u"Vente du du mois", None))
         self.label_31.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))

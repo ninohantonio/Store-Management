@@ -4,12 +4,17 @@ from Custom_Widgets import *
 from Custom_Widgets import QMainWindow
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from PySide6.QtGui import QIntValidator
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+
+
+from matplotlib.figure import Figure
 
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article, Approvisionnement
 from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
+from services.facture_service import get_total_facture_group_by_date
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
@@ -53,6 +58,11 @@ class AdminWindow(QMainWindow):
         self.ui.appro_detail.setVisible(False)
         self.ui.appro_detail.clicked.connect(lambda : self.show_appro_dialog(self.numero_article_to_modify))
 
+        self.figure = Figure()
+        self.canvas = FigureCanvas(self.figure)
+
+        self.ui.chartContainer.addWidget(self.canvas)
+        self.load_line_chart_graphics()
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
@@ -354,4 +364,39 @@ class AdminWindow(QMainWindow):
         if appro:
             self.appro_dialog = ApprovisionnementDialog(article=article_id, appro=appro, modification=True)
             self.appro_dialog.show()
+
+    def load_line_chart_graphics(self):
+        ventes_par_jour = get_total_facture_group_by_date()
+
+        # Trier les dates pour un affichage correct
+        dates = sorted(ventes_par_jour.keys())
+        montants = [ventes_par_jour[date] for date in dates]
+
+        # Tracer le graphique
+        ax = self.figure.add_subplot(111)
+        ax.clear()  # Nettoyer l'axe avant de dessiner
+
+        ax.plot(dates, montants, marker='o', linestyle='-', color='b', label='Ventes')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Montant Total (€)')
+        ax.set_title('Progression des Ventes Journalières')
+        ax.legend()
+
+        # Ajouter les annotations des montants
+        for date, montant in zip(dates, montants):
+            ax.annotate(f"{montant}€",  # Texte à afficher
+                        (date, montant),  # Coordonnées du point
+                        textcoords="offset points",  # Décalage par rapport au point
+                        xytext=(0, 5),  # Décalage vertical
+                        ha='center',  # Alignement horizontal
+                        fontsize=10,  # Taille de la police
+                        color='orange')
+
+        # Rotation des labels de date pour une meilleure lisibilité
+        self.figure.autofmt_xdate()
+
+        self.ui.chartContainer.update()
+        # Mettre à jour le canvas
+        self.canvas.draw()
+
 

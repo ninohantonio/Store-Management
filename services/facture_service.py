@@ -1,5 +1,6 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
+from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
 
 from models.model_class import Facture, Client
@@ -81,4 +82,49 @@ def search_factures_by_date(search_date: datetime):
     ).all()
 
     return result
+
+
+def get_total_for_facture(facture_id):
+    facture = session.query(Facture).filter_by(numeroFacture=facture_id).first()
+    total = 0
+    for i in facture.listeArticle:
+        total += int(i.split(':')[2])
+    return total
+
+def get_total_facture_group_by_date():
+    # Calcul du premier jour du mois actuel
+    debut_mois = date(datetime.today().year, datetime.today().month, 1)
+
+    # Récupérer les factures depuis la base
+    factures = session.query(
+        func.date(Facture.dateEnregistrement).label('jour'),
+        Facture.listeArticle,
+        Facture.numeroFacture
+    ).filter(
+        Facture.dateEnregistrement >= debut_mois
+    ).all()
+
+    # Grouper par jour et calculer les totaux
+    ventes_par_jour = {}
+    for jour, liste_article, numero in factures:
+        total = get_total_for_facture(numero)
+        if jour in ventes_par_jour:
+            ventes_par_jour[jour] += total
+        else:
+            ventes_par_jour[jour] = total
+
+    return ventes_par_jour
+
+
+def get_facture_for_current_mounth():
+    # Obtenir la date du premier jour du mois actuel
+    debut_mois = date(datetime.today().year, datetime.today().month, 1)
+
+    # Requête pour récupérer les factures à partir du début du mois courant
+    factures = session.query(Facture).filter(
+        Facture.dateEnregistrement >= debut_mois
+    ).all()
+
+    return factures
+
 
