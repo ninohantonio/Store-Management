@@ -5287,3 +5287,5 @@
 2024-10-21 13:57:07,067 - DEBUG - findfont: score(FontEntry(fname='C:\\Windows\\Fonts\\taileb.ttf', name='Microsoft Tai Le', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
 2024-10-21 13:57:07,067 - DEBUG - findfont: score(FontEntry(fname='C:\\Windows\\Fonts\\cour.ttf', name='Courier New', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
 2024-10-21 13:57:07,067 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('D:\\projet\\Python\\Store-Management\\.venv\\Lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2024-10-21 15:11:41,918 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-21 15:11:41,989 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
