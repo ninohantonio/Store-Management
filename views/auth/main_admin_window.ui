@@ -1471,7 +1471,7 @@ background: transparent;</string>
                  <widget class="QFrame" name="frame_24">
                   <property name="geometry">
                    <rect>
-                    <x>180</x>
+                    <x>190</x>
                     <y>10</y>
                     <width>151</width>
                     <height>111</height>
@@ -1545,7 +1545,7 @@ background: transparent;</string>
                  <widget class="QFrame" name="frame_25">
                   <property name="geometry">
                    <rect>
-                    <x>530</x>
+                    <x>550</x>
                     <y>10</y>
                     <width>151</width>
                     <height>111</height>
@@ -1619,7 +1619,7 @@ background: transparent;</string>
                  <widget class="QFrame" name="frame_26">
                   <property name="geometry">
                    <rect>
-                    <x>350</x>
+                    <x>370</x>
                     <y>10</y>
                     <width>151</width>
                     <height>111</height>
@@ -1757,6 +1757,9 @@ background: rgb(249, 249, 249);</string>
                      <width>531</width>
                      <height>311</height>
                     </rect>
+                   </property>
+                   <property name="alternatingRowColors">
+                    <bool>true</bool>
                    </property>
                    <column>
                     <property name="text">

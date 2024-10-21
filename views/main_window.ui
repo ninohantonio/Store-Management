@@ -787,7 +787,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>6</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1156,6 +1156,9 @@ QLineEdit{
                 <height>431</height>
                </rect>
               </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
               <column>
                <property name="text">
                 <string>Libelle</string>
@@ -1313,6 +1316,9 @@ QLineEdit{
               <property name="editTriggers">
                <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::EditKeyPressed</set>
               </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
               <column>
                <property name="text">
                 <string>Numero de facture</string>
@@ -1330,7 +1336,7 @@ QLineEdit{
               </column>
               <column>
                <property name="text">
-                <string>Aavancement</string>
+                <string>Avancement</string>
                </property>
               </column>
               <column>
@@ -1426,6 +1432,9 @@ QLineEdit{
              <width>821</width>
              <height>421</height>
             </rect>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
            </property>
            <column>
             <property name="text">
@@ -1525,7 +1534,7 @@ QLineEdit{
             </font>
            </property>
            <property name="text">
-            <string>Journal des actions</string>
+            <string>Commandes de reliure</string>
            </property>
           </widget>
           <widget class="QTableWidget" name="reliure_table">

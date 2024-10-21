@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowbnwcpg.ui'
+## Form generated from reading UI file 'main_windowZmArhw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -621,6 +621,7 @@ class Ui_MainWindow(object):
         self.stockTable.setHorizontalHeaderItem(8, __qtablewidgetitem8)
         self.stockTable.setObjectName(u"stockTable")
         self.stockTable.setGeometry(QRect(20, 130, 951, 431))
+        self.stockTable.setAlternatingRowColors(True)
         self.filter_labele = QLabel(self.frame_2)
         self.filter_labele.setObjectName(u"filter_labele")
         self.filter_labele.setGeometry(QRect(70, 80, 151, 31))
@@ -671,6 +672,7 @@ class Ui_MainWindow(object):
         self.facture_table.setObjectName(u"facture_table")
         self.facture_table.setGeometry(QRect(10, 130, 881, 471))
         self.facture_table.setEditTriggers(QAbstractItemView.EditTrigger.AnyKeyPressed|QAbstractItemView.EditTrigger.EditKeyPressed)
+        self.facture_table.setAlternatingRowColors(True)
         self.dateEdit = QDateEdit(self.frame_3)
         self.dateEdit.setObjectName(u"dateEdit")
         self.dateEdit.setGeometry(QRect(220, 90, 121, 31))
@@ -708,6 +710,7 @@ class Ui_MainWindow(object):
         self.journal_tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem16)
         self.journal_tableWidget.setObjectName(u"journal_tableWidget")
         self.journal_tableWidget.setGeometry(QRect(10, 150, 821, 421))
+        self.journal_tableWidget.setAlternatingRowColors(True)
         self.label_5 = QLabel(self.journalPage)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(10, 110, 111, 21))
@@ -806,7 +809,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(6)
+        self.mainNavigationScreen.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -880,7 +883,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem11 = self.facture_table.horizontalHeaderItem(2)
         ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Statut de payement", None));
         ___qtablewidgetitem12 = self.facture_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Aavancement", None));
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Avancement", None));
         ___qtablewidgetitem13 = self.facture_table.horizontalHeaderItem(4)
         ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Identifiant client", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Filtre de date :", None))
@@ -894,7 +897,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Date d'enregistrement", None));
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal du :", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
-        self.reliure_label.setText(QCoreApplication.translate("MainWindow", u"Journal des actions", None))
+        self.reliure_label.setText(QCoreApplication.translate("MainWindow", u"Commandes de reliure", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")
