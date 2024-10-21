@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowxKMCQz.ui'
+## Form generated from reading UI file 'main_admin_windowFyvqZH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1312, 710)
+        MainWindow.resize(1312, 697)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"QFrame, QWidget{\n"
@@ -608,10 +608,191 @@ class Ui_MainWindow(object):
         self.dashboardPage.setObjectName(u"dashboardPage")
         self.label = QLabel(self.dashboardPage)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(20, 30, 341, 31))
+        self.label.setGeometry(QRect(10, 20, 521, 41))
         font5 = QFont()
         font5.setPointSize(15)
         self.label.setFont(font5)
+        self.label.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
+"color: white;\n"
+"padding-left: 10px;")
+        self.widget_7 = QWidget(self.dashboardPage)
+        self.widget_7.setObjectName(u"widget_7")
+        self.widget_7.setGeometry(QRect(10, 80, 1061, 531))
+        self.widget_7.setStyleSheet(u"background-color: white;\n"
+"")
+        self.frame_23 = QFrame(self.widget_7)
+        self.frame_23.setObjectName(u"frame_23")
+        self.frame_23.setGeometry(QRect(10, 10, 151, 111))
+        self.frame_23.setStyleSheet(u"background-color: rgb(85, 170, 255);\n"
+"border-radius: 20px;")
+        self.frame_23.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_23.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_23)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.label_21 = QLabel(self.frame_23)
+        self.label_21.setObjectName(u"label_21")
+        font6 = QFont()
+        font6.setBold(True)
+        self.label_21.setFont(font6)
+        self.label_21.setStyleSheet(u"background-color: transparent;\n"
+"color: #dfdfdf;")
+        self.label_21.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_10.addWidget(self.label_21)
+
+        self.label_22 = QLabel(self.frame_23)
+        self.label_22.setObjectName(u"label_22")
+        font7 = QFont()
+        font7.setFamilies([u"Nirmala UI Semilight"])
+        font7.setPointSize(11)
+        font7.setBold(True)
+        self.label_22.setFont(font7)
+        self.label_22.setStyleSheet(u"color: #fefeff;\n"
+"background: transparent;")
+        self.label_22.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_10.addWidget(self.label_22)
+
+        self.label_23 = QLabel(self.frame_23)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setStyleSheet(u"background: transparent;")
+        self.label_23.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_10.addWidget(self.label_23)
+
+        self.frame_24 = QFrame(self.widget_7)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setGeometry(QRect(180, 10, 151, 111))
+        self.frame_24.setStyleSheet(u"background-color:  rgba(85, 170, 255, 150);\n"
+"border-radius: 20px;")
+        self.frame_24.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frame_24)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.label_24 = QLabel(self.frame_24)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setFont(font6)
+        self.label_24.setStyleSheet(u"background-color: transparent;")
+        self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_24)
+
+        self.label_25 = QLabel(self.frame_24)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setFont(font7)
+        self.label_25.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+"background: transparent;")
+        self.label_25.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_25)
+
+        self.label_26 = QLabel(self.frame_24)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setStyleSheet(u"background: transparent;")
+        self.label_26.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_26)
+
+        self.frame_25 = QFrame(self.widget_7)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setGeometry(QRect(530, 10, 151, 111))
+        self.frame_25.setStyleSheet(u"background-color:  rgba(85, 170, 255, 50);\n"
+"border-radius: 20px;")
+        self.frame_25.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_25)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.label_27 = QLabel(self.frame_25)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setFont(font6)
+        self.label_27.setStyleSheet(u"background-color: transparent;")
+        self.label_27.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_27)
+
+        self.label_28 = QLabel(self.frame_25)
+        self.label_28.setObjectName(u"label_28")
+        self.label_28.setFont(font7)
+        self.label_28.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+"background: transparent;")
+        self.label_28.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_28)
+
+        self.label_29 = QLabel(self.frame_25)
+        self.label_29.setObjectName(u"label_29")
+        self.label_29.setStyleSheet(u"background: transparent;")
+        self.label_29.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_29)
+
+        self.frame_26 = QFrame(self.widget_7)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setGeometry(QRect(350, 10, 151, 111))
+        self.frame_26.setStyleSheet(u"background-color:  rgba(85, 170, 255, 100);\n"
+"border-radius: 20px;")
+        self.frame_26.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_26)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.label_30 = QLabel(self.frame_26)
+        self.label_30.setObjectName(u"label_30")
+        self.label_30.setFont(font6)
+        self.label_30.setStyleSheet(u"background-color: transparent;")
+        self.label_30.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_13.addWidget(self.label_30)
+
+        self.label_31 = QLabel(self.frame_26)
+        self.label_31.setObjectName(u"label_31")
+        self.label_31.setFont(font7)
+        self.label_31.setStyleSheet(u"color: rgb(0, 85, 255);\n"
+"background: transparent;")
+        self.label_31.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_13.addWidget(self.label_31)
+
+        self.label_32 = QLabel(self.frame_26)
+        self.label_32.setObjectName(u"label_32")
+        self.label_32.setStyleSheet(u"background: transparent;")
+        self.label_32.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_13.addWidget(self.label_32)
+
+        self.frame_27 = QFrame(self.widget_7)
+        self.frame_27.setObjectName(u"frame_27")
+        self.frame_27.setGeometry(QRect(20, 150, 531, 361))
+        self.frame_27.setStyleSheet(u"QFrame{\n"
+"	background: rgb(234, 234, 234);\n"
+"	border-radius: 10px;\n"
+"}")
+        self.frame_27.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_27.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_33 = QLabel(self.frame_27)
+        self.label_33.setObjectName(u"label_33")
+        self.label_33.setGeometry(QRect(10, 10, 171, 21))
+        font8 = QFont()
+        font8.setPointSize(10)
+        self.label_33.setFont(font8)
+        self.pushButton_2 = QPushButton(self.frame_27)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(434, 10, 81, 24))
+        self.pushButton_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.pushButton_2.setStyleSheet(u"border-radius: 10px;\n"
+"background: rgb(249, 249, 249);")
+        self.tableWidget = QTableWidget(self.frame_27)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(0, 40, 531, 311))
         self.mainNavigationScreen.addWidget(self.dashboardPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -644,10 +825,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.label_19 = QLabel(self.widget_14)
         self.label_19.setObjectName(u"label_19")
-        font6 = QFont()
-        font6.setPointSize(12)
-        font6.setBold(True)
-        self.label_19.setFont(font6)
+        font9 = QFont()
+        font9.setPointSize(12)
+        font9.setBold(True)
+        self.label_19.setFont(font9)
         self.label_19.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_5.addWidget(self.label_19)
@@ -685,13 +866,13 @@ class Ui_MainWindow(object):
         self.search_view = QTableWidget(self.profile_container)
         if (self.search_view.columnCount() < 2):
             self.search_view.setColumnCount(2)
-        font7 = QFont()
-        font7.setPointSize(9)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setFont(font7);
-        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        font10 = QFont()
+        font10.setPointSize(9)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        __qtablewidgetitem4.setFont(font10);
+        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem5)
         self.search_view.setObjectName(u"search_view")
         self.search_view.setEnabled(True)
         self.search_view.setMaximumSize(QSize(120, 16777215))
@@ -707,7 +888,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -756,15 +937,37 @@ class Ui_MainWindow(object):
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Description", None))
         self.appro_detail.setText(QCoreApplication.translate("MainWindow", u"Details d'approvisionnement", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Tableau de bord", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Vente du jour", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Vente de la semaine", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"Vente du jour", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Vente du du mois", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"50000Ar", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"Liste des Factures du Jours", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Export", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Numero Facture", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Etat de Payement", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Date Enregistrement", None));
+        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Identifiant du Client", None));
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
-        ___qtablewidgetitem = self.search_view.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
-        ___qtablewidgetitem1 = self.search_view.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"numero", None));
+        ___qtablewidgetitem4 = self.search_view.horizontalHeaderItem(0)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
+        ___qtablewidgetitem5 = self.search_view.horizontalHeaderItem(1)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"numero", None));
     # retranslateUi
 

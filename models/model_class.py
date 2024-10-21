@@ -96,24 +96,24 @@ class Articlerapide(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     numeroArticle: Mapped[str_13] = mapped_column(ForeignKey("article.numeroArticle"))
 
-class Typelivre(Base):
-    __tablename__  = 'typelivre'
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    typeLivre: Mapped[str_20] = mapped_column()
-    prixPageNoir: Mapped[int_small] = mapped_column()
-    prixPageCouleur: Mapped[int_small] = mapped_column()
-    prixReliure: Mapped[int_small] = mapped_column()
-
-class Reliure(Base):
-    __tablename__ = 'reliure'
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
-
-    statutLivrer: Mapped[bool] = mapped_column()
-    nombrePageNoir: Mapped[int_small] = mapped_column()
-    nombrePageCouleur: Mapped[int_small] = mapped_column()
-    typeLivre: Mapped[int] = mapped_column(ForeignKey("typelivre.id"))
+# class Typelivre(Base):
+#     __tablename__  = 'typelivre'
+#
+#     id = Column(Integer, primary_key=True, autoincrement=True)
+#     typeLivre: Mapped[str_20] = mapped_column()
+#     prixPageNoir: Mapped[int_small] = mapped_column()
+#     prixPageCouleur: Mapped[int_small] = mapped_column()
+#     prixReliure: Mapped[int_small] = mapped_column()
+#
+# class Reliure(Base):
+#     __tablename__ = 'reliure'
+#
+#     id = Column(Integer, primary_key=True, autoincrement=True)
+#
+#     statutLivrer: Mapped[bool] = mapped_column()
+#     nombrePageNoir: Mapped[int_small] = mapped_column()
+#     nombrePageCouleur: Mapped[int_small] = mapped_column()
+#     typeLivre: Mapped[int] = mapped_column(ForeignKey("typelivre.id"))
 
 
 
