@@ -1478,7 +1478,7 @@ background: transparent;</string>
                    </rect>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color:  rgba(85, 170, 255, 150);
+                   <string notr="true">background-color: rgb(0, 170, 255);
 border-radius: 20px;</string>
                   </property>
                   <property name="frameShape">
@@ -1497,7 +1497,7 @@ border-radius: 20px;</string>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">background-color: transparent;
-color: white;</string>
+color: #dedede;</string>
                      </property>
                      <property name="text">
                       <string>Vente de la semaine</string>
@@ -1575,7 +1575,7 @@ border-radius: 20px;</string>
 color: #dedede;</string>
                      </property>
                      <property name="text">
-                      <string>Vente du du mois</string>
+                      <string>Vente du mois</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignmentFlag::AlignCenter</set>

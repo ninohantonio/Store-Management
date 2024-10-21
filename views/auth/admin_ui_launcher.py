@@ -15,12 +15,14 @@ from models.model_class import Article, Approvisionnement
 from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
-from services.facture_service import get_total_facture_group_by_date, search_factures_by_date
+from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
+    get_facture_by_id
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
 from PySide6.QtWidgets import QApplication, QMessageBox
 
+from views.states.facture_dialog_launcher import FactureDialog
 from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data
 
 
@@ -61,6 +63,8 @@ class AdminWindow(QMainWindow):
 
         self.figure = Figure()
         self.canvas = FigureCanvas(self.figure)
+
+        self.ui.facture_tableWidget.cellDoubleClicked.connect(self.manage_double_click_facture_item)
 
         self.ui.chartContainer.addWidget(self.canvas)
         self.load_line_chart_graphics()
@@ -384,6 +388,7 @@ class AdminWindow(QMainWindow):
         # ax.set_title('Progression des Ventes Journalières')
         ax.legend()
 
+        total = 0
         # Ajouter les annotations des montants
         for date, montant in zip(dates, montants):
             ax.annotate(f"{montant}Ar",  # Texte à afficher
@@ -394,6 +399,9 @@ class AdminWindow(QMainWindow):
                         fontsize=10,  # Taille de la police
                         color='#af0000')
 
+            total += montant
+
+        self.ui.vente_mois.setText(f"{total} Ar")
         # Rotation des labels de date pour une meilleure lisibilité
         self.figure.autofmt_xdate()
 
@@ -406,8 +414,21 @@ class AdminWindow(QMainWindow):
 
         factures = search_factures_by_date(date_now)
         refresh_facture_table_data(self.ui.facture_tableWidget, factures)
+
+        total = 0
+        for facture in factures:
+            total += get_total_for_facture(facture.numeroFacture)
+
+        self.ui.vente_jour.setText(f"{total} Ar")
         return
 
+    def manage_double_click_facture_item(self, row, column):
+        numero = self.ui.facture_table.item(row, 0).text()
+        facture = get_facture_by_id(int(numero))
+
+        self.facture_dialog = FactureDialog(facture, can_change_state=True)
+        self.facture_dialog.show()
+        return
 
 
 

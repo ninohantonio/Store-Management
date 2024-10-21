@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windownOHdKc.ui'
+## Form generated from reading UI file 'main_admin_windowjowCIA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -663,7 +663,7 @@ class Ui_MainWindow(object):
         self.frame_24 = QFrame(self.widget_7)
         self.frame_24.setObjectName(u"frame_24")
         self.frame_24.setGeometry(QRect(150, 10, 131, 101))
-        self.frame_24.setStyleSheet(u"background-color:  rgba(85, 170, 255, 150);\n"
+        self.frame_24.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "border-radius: 20px;")
         self.frame_24.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_24.setFrameShadow(QFrame.Shadow.Raised)
@@ -673,7 +673,7 @@ class Ui_MainWindow(object):
         self.label_24.setObjectName(u"label_24")
         self.label_24.setFont(font6)
         self.label_24.setStyleSheet(u"background-color: transparent;\n"
-"color: white;")
+"color: #dedede;")
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.label_24)
@@ -928,7 +928,7 @@ class Ui_MainWindow(object):
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Vente de la semaine", None))
         self.vente_semaine.setText(QCoreApplication.translate("MainWindow", u"160000 Ar", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Vente du du mois", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Vente du mois", None))
         self.vente_mois.setText(QCoreApplication.translate("MainWindow", u"700000 Ar", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"Liste des Factures du Jours", None))
