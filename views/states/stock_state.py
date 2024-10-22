@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QTableWidgetItem
 
 from models.model_class import Article, Facture, Journal, Reliure
 from services.client_service import get_client_by_id
+from services.reliure_service import get_type_livre_by_id
 
 
 def refresh_stock_table_data(table_widget, data: list[Article]):
@@ -39,6 +40,20 @@ def refresh_reliure_table_data(table_widget, data: list[Reliure]):
 
     for i, row in enumerate(data):
         client = get_client_by_id(row.numeroClient)
+        type = get_type_livre_by_id(row.numeroType)
+        etat = "Oui" if row.statutLivrer else "Non"
+        total_payer = type.prixReliure + type.prixPageNoir * row.nombrePageNoir + type.prixPageCouleur * row.nombrePageCouleur
+
+        table_widget.insertRow(i)
+        table_widget.setItem(i, 0, QTableWidgetItem(str(row.numeroReliure)))
+        table_widget.setItem(i, 1, QTableWidgetItem(str(type.typeLivre)))
+        table_widget.setItem(i, 2, QTableWidgetItem(str(row.nombrePageNoir)))
+        table_widget.setItem(i, 3, QTableWidgetItem(str(row.nombrePageCouleur)))
+        table_widget.setItem(i, 4, QTableWidgetItem(str(total_payer)))
+        table_widget.setItem(i, 5, QTableWidgetItem(etat))
+        table_widget.setItem(i, 6, QTableWidgetItem(str(client.nom)))
+
+
 
 
 def refresh_journal_table_data(table_widget, data: list[Journal]):

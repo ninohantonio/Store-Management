@@ -16,6 +16,7 @@ from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
+from services.reliure_service import get_all_reliure_commande
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -23,7 +24,8 @@ from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.facture_dialog_launcher import FactureDialog
 from views.states.notification_card import NotificationCard
-from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data, refresh_journal_table_data
+from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data, refresh_journal_table_data, \
+    refresh_reliure_table_data
 
 settings = QSettings()
 
@@ -150,6 +152,8 @@ class MainWindow(QMainWindow):
             self.ui.searchField.returnPressed.disconnect()
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
+        elif index == 1:
+            self.ui.searchField.returnPressed.disconnect()
         elif index == 3:
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_facture_data_table()
@@ -158,6 +162,9 @@ class MainWindow(QMainWindow):
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_journal_table_data()
             self.ui.searchField.returnPressed.connect(lambda : self.get_journal_by_typeaction(self.ui.searchField.text()))
+        elif index == 6:
+            self.ui.searchField.returnPressed.disconnect()
+            self.refresh_reliure_data_table()
         pass
 
     def refresh_stock_screen(self):
@@ -532,7 +539,8 @@ class MainWindow(QMainWindow):
 
 
     def refresh_reliure_data_table(self):
-
+        reliures = get_all_reliure_commande()
+        refresh_reliure_table_data(self.ui.reliure_table, reliures)
         return
 
 
@@ -542,7 +550,6 @@ class MainWindow(QMainWindow):
             self.login_window = LoginWindow()
             self.login_window.show()
         return
-
 
 
 

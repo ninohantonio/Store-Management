@@ -38,3 +38,8 @@ def insert_new_type_livre(typelivre: Typelivre):
     session.add(typelivre)
     session.commit()
     return
+
+def insert_new_reliure_commande(reliure: Reliure):
+    session.add(reliure)
+    session.commit()
+    return
