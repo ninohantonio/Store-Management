@@ -531,6 +531,11 @@ class MainWindow(QMainWindow):
         refresh_journal_table_data(self.ui.journal_tableWidget, journals)
 
 
+    def refresh_reliure_data_table(self):
+
+        return
+
+
     def manage_logout(self):
         response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir basculer de compte")
         if response:

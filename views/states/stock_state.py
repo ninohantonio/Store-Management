@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QTableWidgetItem
 
-from models.model_class import Article, Facture, Journal
+from models.model_class import Article, Facture, Journal, Reliure
+from services.client_service import get_client_by_id
 
 
 def refresh_stock_table_data(table_widget, data: list[Article]):
@@ -31,6 +32,13 @@ def refresh_facture_table_data(table_widget, data: list[Facture]):
         table_widget.setItem(i, 2, QTableWidgetItem(statut))
         table_widget.setItem(i, 3, QTableWidgetItem(str(row.avancement)))
         table_widget.setItem(i, 4, QTableWidgetItem(str(row.numeroClient)))
+
+
+def refresh_reliure_table_data(table_widget, data: list[Reliure]):
+    table_widget.setRowCount(0)
+
+    for i, row in enumerate(data):
+        client = get_client_by_id(row.numeroClient)
 
 
 def refresh_journal_table_data(table_widget, data: list[Journal]):
