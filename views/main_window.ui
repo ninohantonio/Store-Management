@@ -10,6 +10,11 @@
     <height>701</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Irina Service</string>
   </property>
@@ -802,7 +807,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1556,11 +1561,16 @@ QLineEdit{
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>130</y>
-             <width>531</width>
+             <y>150</y>
+             <width>611</width>
              <height>441</height>
             </rect>
            </property>
+           <column>
+            <property name="text">
+             <string>numero</string>
+            </property>
+           </column>
            <column>
             <property name="text">
              <string>Type</string>
@@ -1584,6 +1594,11 @@ QLineEdit{
            <column>
             <property name="text">
              <string>Etat Livrer</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Nom du Client</string>
             </property>
            </column>
           </widget>
@@ -1667,8 +1682,8 @@ QLineEdit{
           <widget class="QFrame" name="reliure_form">
            <property name="geometry">
             <rect>
-             <x>580</x>
-             <y>130</y>
+             <x>640</x>
+             <y>150</y>
              <width>321</width>
              <height>441</height>
             </rect>
@@ -1816,6 +1831,38 @@ QLineEdit{
              <string>Vider les champs</string>
             </property>
            </widget>
+          </widget>
+          <widget class="QLabel" name="label_13">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>115</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Commandes du :</string>
+           </property>
+          </widget>
+          <widget class="QDateEdit" name="date_reliure">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>111</y>
+             <width>141</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid orange;
+border-radius: 10px;</string>
+           </property>
           </widget>
          </widget>
         </widget>

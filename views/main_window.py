@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowLriSdr.ui'
+## Form generated from reading UI file 'main_windowyLtCQw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -31,6 +31,9 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1367, 701)
+        font = QFont()
+        font.setPointSize(10)
+        MainWindow.setFont(font)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"#centralwidget{\n"
@@ -203,10 +206,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.irinaServiceLabel = QLabel(self.frame_8)
         self.irinaServiceLabel.setObjectName(u"irinaServiceLabel")
-        font = QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        self.irinaServiceLabel.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(20)
+        font1.setBold(True)
+        self.irinaServiceLabel.setFont(font1)
 
         self.horizontalLayout_14.addWidget(self.irinaServiceLabel, 0, Qt.AlignmentFlag.AlignTop)
 
@@ -236,10 +239,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setContentsMargins(10, 0, 0, -1)
         self.accueilBtn = QPushButton(self.menuFrame)
         self.accueilBtn.setObjectName(u"accueilBtn")
-        font1 = QFont()
-        font1.setPointSize(12)
-        font1.setBold(False)
-        self.accueilBtn.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(12)
+        font2.setBold(False)
+        self.accueilBtn.setFont(font2)
         self.accueilBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon = QIcon()
         icon.addFile(u":/icons/icons/home.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -250,9 +253,9 @@ class Ui_MainWindow(object):
 
         self.stockBtn = QPushButton(self.menuFrame)
         self.stockBtn.setObjectName(u"stockBtn")
-        font2 = QFont()
-        font2.setPointSize(12)
-        self.stockBtn.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(12)
+        self.stockBtn.setFont(font3)
         self.stockBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon1 = QIcon()
         icon1.addFile(u":/icons/icons/stock.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -263,7 +266,7 @@ class Ui_MainWindow(object):
 
         self.factureBtn = QPushButton(self.menuFrame)
         self.factureBtn.setObjectName(u"factureBtn")
-        self.factureBtn.setFont(font2)
+        self.factureBtn.setFont(font3)
         self.factureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon2 = QIcon()
         icon2.addFile(u":/icons/icons/caddie.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -274,7 +277,7 @@ class Ui_MainWindow(object):
 
         self.journalBtn = QPushButton(self.menuFrame)
         self.journalBtn.setObjectName(u"journalBtn")
-        self.journalBtn.setFont(font2)
+        self.journalBtn.setFont(font3)
         self.journalBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon3 = QIcon()
         icon3.addFile(u":/icons/icons/facture.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -285,7 +288,7 @@ class Ui_MainWindow(object):
 
         self.clientBtn = QPushButton(self.menuFrame)
         self.clientBtn.setObjectName(u"clientBtn")
-        self.clientBtn.setFont(font2)
+        self.clientBtn.setFont(font3)
         self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon4 = QIcon()
         icon4.addFile(u":/icons/icons/people.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -296,7 +299,7 @@ class Ui_MainWindow(object):
 
         self.reliureBtn = QPushButton(self.menuFrame)
         self.reliureBtn.setObjectName(u"reliureBtn")
-        self.reliureBtn.setFont(font2)
+        self.reliureBtn.setFont(font3)
         self.reliureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon5 = QIcon()
         icon5.addFile(u":/icons/icons/book.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -307,7 +310,7 @@ class Ui_MainWindow(object):
 
         self.notificationBtn = QPushButton(self.menuFrame)
         self.notificationBtn.setObjectName(u"notificationBtn")
-        self.notificationBtn.setFont(font2)
+        self.notificationBtn.setFont(font3)
         self.notificationBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon6 = QIcon()
         icon6.addFile(u":/icons/icons/bell.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -330,7 +333,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.settingBtn = QPushButton(self.frame_6)
         self.settingBtn.setObjectName(u"settingBtn")
-        self.settingBtn.setFont(font2)
+        self.settingBtn.setFont(font3)
         self.settingBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon7 = QIcon()
         icon7.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -341,7 +344,7 @@ class Ui_MainWindow(object):
 
         self.helpBtn = QPushButton(self.frame_6)
         self.helpBtn.setObjectName(u"helpBtn")
-        self.helpBtn.setFont(font2)
+        self.helpBtn.setFont(font3)
         self.helpBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon8 = QIcon()
         icon8.addFile(u":/icons/icons/about.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -352,7 +355,7 @@ class Ui_MainWindow(object):
 
         self.aboutBtn = QPushButton(self.frame_6)
         self.aboutBtn.setObjectName(u"aboutBtn")
-        self.aboutBtn.setFont(font2)
+        self.aboutBtn.setFont(font3)
         self.aboutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon9 = QIcon()
         icon9.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -409,10 +412,10 @@ class Ui_MainWindow(object):
 
         self.appHeader = QLabel(self.widget)
         self.appHeader.setObjectName(u"appHeader")
-        font3 = QFont()
-        font3.setPointSize(15)
-        font3.setBold(True)
-        self.appHeader.setFont(font3)
+        font4 = QFont()
+        font4.setPointSize(15)
+        font4.setBold(True)
+        self.appHeader.setFont(font4)
 
         self.horizontalLayout_3.addWidget(self.appHeader)
 
@@ -485,9 +488,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.welcomeLabel = QLabel(self.frame)
         self.welcomeLabel.setObjectName(u"welcomeLabel")
-        font4 = QFont()
-        font4.setPointSize(15)
-        self.welcomeLabel.setFont(font4)
+        font5 = QFont()
+        font5.setPointSize(15)
+        self.welcomeLabel.setFont(font5)
 
         self.verticalLayout_3.addWidget(self.welcomeLabel)
 
@@ -500,10 +503,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.label = QLabel(self.frame_10)
         self.label.setObjectName(u"label")
-        font5 = QFont()
-        font5.setPointSize(13)
-        font5.setBold(True)
-        self.label.setFont(font5)
+        font6 = QFont()
+        font6.setPointSize(13)
+        font6.setBold(True)
+        self.label.setFont(font6)
 
         self.horizontalLayout_7.addWidget(self.label)
 
@@ -514,16 +517,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.label_7 = QLabel(self.widget_5)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font2)
+        self.label_7.setFont(font3)
 
         self.horizontalLayout_8.addWidget(self.label_7)
 
         self.total_payer = QLabel(self.widget_5)
         self.total_payer.setObjectName(u"total_payer")
-        font6 = QFont()
-        font6.setFamilies([u"Lucida Fax"])
-        font6.setPointSize(15)
-        self.total_payer.setFont(font6)
+        font7 = QFont()
+        font7.setFamilies([u"Lucida Fax"])
+        font7.setPointSize(15)
+        self.total_payer.setFont(font7)
 
         self.horizontalLayout_8.addWidget(self.total_payer)
 
@@ -536,10 +539,10 @@ class Ui_MainWindow(object):
         self.valider_commandeBtn = QPushButton(self.homePage)
         self.valider_commandeBtn.setObjectName(u"valider_commandeBtn")
         self.valider_commandeBtn.setGeometry(QRect(540, 580, 241, 51))
-        font7 = QFont()
-        font7.setPointSize(13)
-        font7.setBold(False)
-        self.valider_commandeBtn.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(13)
+        font8.setBold(False)
+        self.valider_commandeBtn.setFont(font8)
         self.valider_commandeBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.valider_commandeBtn.setIcon(icon2)
         self.valider_commandeBtn.setIconSize(QSize(30, 30))
@@ -558,9 +561,7 @@ class Ui_MainWindow(object):
         self.label_9 = QLabel(self.homePage)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setGeometry(QRect(630, 45, 111, 21))
-        font8 = QFont()
-        font8.setPointSize(10)
-        self.label_9.setFont(font8)
+        self.label_9.setFont(font)
         self.selection_rapide_combo = QComboBox(self.homePage)
         self.selection_rapide_combo.addItem("")
         self.selection_rapide_combo.setObjectName(u"selection_rapide_combo")
@@ -589,7 +590,7 @@ class Ui_MainWindow(object):
         self.notif_label = QLabel(self.notificationPage)
         self.notif_label.setObjectName(u"notif_label")
         self.notif_label.setGeometry(QRect(20, 20, 641, 51))
-        self.notif_label.setFont(font4)
+        self.notif_label.setFont(font5)
         self.scrollArea = QScrollArea(self.notificationPage)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setGeometry(QRect(20, 90, 641, 491))
@@ -610,7 +611,7 @@ class Ui_MainWindow(object):
         self.stock_labele = QLabel(self.frame_2)
         self.stock_labele.setObjectName(u"stock_labele")
         self.stock_labele.setGeometry(QRect(20, 20, 601, 51))
-        self.stock_labele.setFont(font4)
+        self.stock_labele.setFont(font5)
         self.stockTable = QTableWidget(self.frame_2)
         if (self.stockTable.columnCount() < 9):
             self.stockTable.setColumnCount(9)
@@ -668,7 +669,7 @@ class Ui_MainWindow(object):
         self.facture_title = QLabel(self.frame_3)
         self.facture_title.setObjectName(u"facture_title")
         self.facture_title.setGeometry(QRect(10, 20, 631, 51))
-        self.facture_title.setFont(font4)
+        self.facture_title.setFont(font5)
         self.facture_table = QTableWidget(self.frame_3)
         if (self.facture_table.columnCount() < 5):
             self.facture_table.setColumnCount(5)
@@ -698,7 +699,7 @@ class Ui_MainWindow(object):
         self.label_8 = QLabel(self.frame_3)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(360, 95, 61, 21))
-        self.label_8.setFont(font8)
+        self.label_8.setFont(font)
         self.dateEdit_2 = QDateEdit(self.frame_3)
         self.dateEdit_2.setObjectName(u"dateEdit_2")
         self.dateEdit_2.setGeometry(QRect(430, 90, 121, 31))
@@ -711,7 +712,7 @@ class Ui_MainWindow(object):
         self.journal_label = QLabel(self.journalPage)
         self.journal_label.setObjectName(u"journal_label")
         self.journal_label.setGeometry(QRect(10, 30, 631, 61))
-        self.journal_label.setFont(font4)
+        self.journal_label.setFont(font5)
         self.journal_tableWidget = QTableWidget(self.journalPage)
         if (self.journal_tableWidget.columnCount() < 3):
             self.journal_tableWidget.setColumnCount(3)
@@ -745,17 +746,17 @@ class Ui_MainWindow(object):
         self.label_6 = QLabel(self.frame_5)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(80, 20, 141, 31))
-        self.label_6.setFont(font4)
+        self.label_6.setFont(font5)
         self.mainNavigationScreen.addWidget(self.clientPage)
         self.reliurePage = QWidget()
         self.reliurePage.setObjectName(u"reliurePage")
         self.reliure_label = QLabel(self.reliurePage)
         self.reliure_label.setObjectName(u"reliure_label")
         self.reliure_label.setGeometry(QRect(10, 30, 631, 61))
-        self.reliure_label.setFont(font4)
+        self.reliure_label.setFont(font5)
         self.reliure_table = QTableWidget(self.reliurePage)
-        if (self.reliure_table.columnCount() < 5):
-            self.reliure_table.setColumnCount(5)
+        if (self.reliure_table.columnCount() < 7):
+            self.reliure_table.setColumnCount(7)
         __qtablewidgetitem17 = QTableWidgetItem()
         self.reliure_table.setHorizontalHeaderItem(0, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
@@ -766,8 +767,12 @@ class Ui_MainWindow(object):
         self.reliure_table.setHorizontalHeaderItem(3, __qtablewidgetitem20)
         __qtablewidgetitem21 = QTableWidgetItem()
         self.reliure_table.setHorizontalHeaderItem(4, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(5, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(6, __qtablewidgetitem23)
         self.reliure_table.setObjectName(u"reliure_table")
-        self.reliure_table.setGeometry(QRect(10, 130, 531, 441))
+        self.reliure_table.setGeometry(QRect(10, 150, 611, 441))
         self.label_10 = QLabel(self.reliurePage)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setGeometry(QRect(660, 50, 101, 16))
@@ -782,16 +787,16 @@ class Ui_MainWindow(object):
         self.add_type = QPushButton(self.reliurePage)
         self.add_type.setObjectName(u"add_type")
         self.add_type.setGeometry(QRect(660, 80, 151, 31))
-        self.add_type.setFont(font8)
+        self.add_type.setFont(font)
         self.add_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.delete_type = QPushButton(self.reliurePage)
         self.delete_type.setObjectName(u"delete_type")
         self.delete_type.setGeometry(QRect(854, 80, 151, 31))
-        self.delete_type.setFont(font8)
+        self.delete_type.setFont(font)
         self.delete_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.reliure_form = QFrame(self.reliurePage)
         self.reliure_form.setObjectName(u"reliure_form")
-        self.reliure_form.setGeometry(QRect(580, 130, 321, 441))
+        self.reliure_form.setGeometry(QRect(640, 150, 321, 441))
         self.reliure_form.setFrameShape(QFrame.Shape.StyledPanel)
         self.reliure_form.setFrameShadow(QFrame.Shadow.Raised)
         self.page_noir_spinBox = QSpinBox(self.reliure_form)
@@ -803,30 +808,39 @@ class Ui_MainWindow(object):
         self.reliure_state = QCheckBox(self.reliure_form)
         self.reliure_state.setObjectName(u"reliure_state")
         self.reliure_state.setGeometry(QRect(50, 170, 121, 20))
-        self.reliure_state.setFont(font8)
+        self.reliure_state.setFont(font)
         self.label_11 = QLabel(self.reliure_form)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(50, 10, 121, 21))
-        self.label_11.setFont(font8)
+        self.label_11.setFont(font)
         self.label_12 = QLabel(self.reliure_form)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setGeometry(QRect(50, 90, 121, 21))
-        self.label_12.setFont(font8)
+        self.label_12.setFont(font)
         self.submit_reliure = QPushButton(self.reliure_form)
         self.submit_reliure.setObjectName(u"submit_reliure")
         self.submit_reliure.setGeometry(QRect(50, 210, 151, 31))
-        self.submit_reliure.setFont(font8)
+        self.submit_reliure.setFont(font)
         self.submit_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.modify_reliure = QPushButton(self.reliure_form)
         self.modify_reliure.setObjectName(u"modify_reliure")
         self.modify_reliure.setGeometry(QRect(50, 260, 151, 31))
-        self.modify_reliure.setFont(font8)
+        self.modify_reliure.setFont(font)
         self.modify_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.reset_reliure = QPushButton(self.reliure_form)
         self.reset_reliure.setObjectName(u"reset_reliure")
         self.reset_reliure.setGeometry(QRect(50, 380, 151, 31))
-        self.reset_reliure.setFont(font8)
+        self.reset_reliure.setFont(font)
         self.reset_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.label_13 = QLabel(self.reliurePage)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setGeometry(QRect(10, 115, 121, 21))
+        self.label_13.setFont(font)
+        self.date_reliure = QDateEdit(self.reliurePage)
+        self.date_reliure.setObjectName(u"date_reliure")
+        self.date_reliure.setGeometry(QRect(120, 111, 141, 31))
+        self.date_reliure.setStyleSheet(u"border: 1px solid orange;\n"
+"border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.reliurePage)
 
         self.verticalLayout.addWidget(self.mainNavigationScreen)
@@ -893,7 +907,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -983,15 +997,19 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.reliure_label.setText(QCoreApplication.translate("MainWindow", u"Commandes de reliure", None))
         ___qtablewidgetitem17 = self.reliure_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"numero", None));
         ___qtablewidgetitem18 = self.reliure_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Type", None));
         ___qtablewidgetitem19 = self.reliure_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
         ___qtablewidgetitem20 = self.reliure_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
         ___qtablewidgetitem21 = self.reliure_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
+        ___qtablewidgetitem22 = self.reliure_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
+        ___qtablewidgetitem23 = self.reliure_table.horizontalHeaderItem(6)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Nom du Client", None));
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Type(s) de Livre :", None))
         self.add_type.setText(QCoreApplication.translate("MainWindow", u"Ajouter Un Type", None))
         self.delete_type.setText(QCoreApplication.translate("MainWindow", u"Supprimer Un type", None))
@@ -1001,6 +1019,7 @@ class Ui_MainWindow(object):
         self.submit_reliure.setText(QCoreApplication.translate("MainWindow", u"Ajouter la Commande", None))
         self.modify_reliure.setText(QCoreApplication.translate("MainWindow", u"Modifier la Commande", None))
         self.reset_reliure.setText(QCoreApplication.translate("MainWindow", u"Vider les champs", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Commandes du :", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")
