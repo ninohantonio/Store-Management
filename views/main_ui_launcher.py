@@ -6,7 +6,7 @@ from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
-from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide, Article
+from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide, Article, Typelivre
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
@@ -16,7 +16,7 @@ from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
-from services.reliure_service import get_all_reliure_commande
+from services.reliure_service import get_all_reliure_commande, get_all_type_livre
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -26,6 +26,7 @@ from views.states.facture_dialog_launcher import FactureDialog
 from views.states.notification_card import NotificationCard
 from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data, refresh_journal_table_data, \
     refresh_reliure_table_data
+from views.states.type_livre_dialog import TypeLivreDialog
 
 settings = QSettings()
 
@@ -38,6 +39,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.article_rapide_selection: Article = None
+        self.typeLivre_selection: Typelivre = None
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
 
         self.showMaximized()
@@ -73,6 +75,10 @@ class MainWindow(QMainWindow):
         self.ui.logoutBtn.clicked.connect(self.manage_logout)
 
         self.ui.journal_dateEdit.dateChanged.connect(self.manage_journal_date_change)
+
+        self.ui.reliure_table.hideColumn(0)
+        self.ui.comboBox.currentIndexChanged.connect(self.manage_type_livre_change)
+        self.load_type_livre_data()
 
         self.load_notification_for_user()
 
@@ -542,6 +548,23 @@ class MainWindow(QMainWindow):
         reliures = get_all_reliure_commande()
         refresh_reliure_table_data(self.ui.reliure_table, reliures)
         return
+
+    def show_type_livre_dialog(self):
+        type_livre_dialog = TypeLivreDialog()
+        type_livre_dialog.finished.connect(self.load_type_livre_data)
+
+        type_livre_dialog.exec()
+        return
+
+    def load_type_livre_data(self):
+        types = get_all_type_livre()
+        self.ui.comboBox.clear()
+        for type in types:
+            self.ui.comboBox.addItem(type.typeLivre, type)
+        return
+
+    def manage_type_livre_change(self, index):
+        self.typeLivre_selection = self.ui.comboBox.itemData(index)
 
 
     def manage_logout(self):
