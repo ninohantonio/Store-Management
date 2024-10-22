@@ -78,6 +78,8 @@ class MainWindow(QMainWindow):
 
         self.ui.reliure_table.hideColumn(0)
         self.ui.comboBox.currentIndexChanged.connect(self.manage_type_livre_change)
+        self.ui.add_type.clicked.connect(self.show_type_livre_dialog_add)
+        self.ui.delete_type.clicked.connect(self.show_type_livre_dialog_modify)
         self.load_type_livre_data()
 
         self.load_notification_for_user()
@@ -549,8 +551,15 @@ class MainWindow(QMainWindow):
         refresh_reliure_table_data(self.ui.reliure_table, reliures)
         return
 
-    def show_type_livre_dialog(self):
+    def show_type_livre_dialog_add(self):
         type_livre_dialog = TypeLivreDialog()
+        type_livre_dialog.finished.connect(self.load_type_livre_data)
+
+        type_livre_dialog.exec()
+        return
+
+    def show_type_livre_dialog_modify(self):
+        type_livre_dialog = TypeLivreDialog(True)
         type_livre_dialog.finished.connect(self.load_type_livre_data)
 
         type_livre_dialog.exec()
