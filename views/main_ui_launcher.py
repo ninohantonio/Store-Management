@@ -6,7 +6,8 @@ from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
-from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide, Article, Typelivre
+from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide, Article, Typelivre, \
+    Reliure
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
     get_article_by_price, session
@@ -16,7 +17,8 @@ from services.commande_service import insert_new_commande
 from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
-from services.reliure_service import get_all_reliure_commande, get_all_type_livre
+from services.reliure_service import get_all_reliure_commande, get_all_type_livre, insert_new_reliure_commande, \
+    get_reliure_by_id
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -40,11 +42,13 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.article_rapide_selection: Article = None
         self.typeLivre_selection: Typelivre = None
+        self.total_reliure = 0
+        self.reliure_numero = None
         loadJsonStyle(self, self.ui, jsonFiles=["views/style.json"])
 
         self.showMaximized()
 
-        self.selected_client = None
+        self.selected_client: Client = None
 
         if self.ui.mainNavigationScreen.currentIndex() == 0:
             self.ui.searchField.returnPressed.connect(self.print_search_value)
@@ -80,6 +84,17 @@ class MainWindow(QMainWindow):
         self.ui.comboBox.currentIndexChanged.connect(self.manage_type_livre_change)
         self.ui.add_type.clicked.connect(self.show_type_livre_dialog_add)
         self.ui.delete_type.clicked.connect(self.show_type_livre_dialog_modify)
+        self.ui.exemplaire_spinBox.setMinimum(1)
+
+        self.ui.page_noir_spinBox.textChanged.connect(self.manage_page_spinbox_change)
+        self.ui.page_couleur_spinBox.textChanged.connect(self.manage_page_spinbox_change)
+        self.ui.exemplaire_spinBox.textChanged.connect(self.manage_page_spinbox_change)
+        self.ui.reset_reliure.clicked.connect(self.reset_reliure_form)
+        self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
+        self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
+        self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
+
+        self.manage_page_spinbox_change()
         self.load_type_livre_data()
 
         self.load_notification_for_user()
@@ -574,7 +589,85 @@ class MainWindow(QMainWindow):
 
     def manage_type_livre_change(self, index):
         self.typeLivre_selection = self.ui.comboBox.itemData(index)
+        self.manage_page_spinbox_change()
 
+
+    def manage_page_spinbox_change(self):
+        if self.typeLivre_selection:
+            page_noir = int(self.ui.page_noir_spinBox.text())
+            page_couleur = int(self.ui.page_couleur_spinBox.text())
+            exemplaire = int(self.ui.exemplaire_spinBox.text())
+            total = (
+                                page_noir * self.typeLivre_selection.prixPageNoir + page_couleur * self.typeLivre_selection.prixPageCouleur + self.typeLivre_selection.prixReliure) * exemplaire
+            self.ui.total_reliure.setText(f"{total} Ar")
+            self.total_reliure = total
+
+        else:
+            self.ui.total_reliure.setText(f"{0} Ar")
+
+    def reset_reliure_form(self):
+        self.ui.page_noir_spinBox.setValue(0)
+        self.ui.page_couleur_spinBox.setValue(0)
+        self.ui.exemplaire_spinBox.setValue(1)
+        self.ui.total_reliure.setText(f"{0} Ar")
+        self.total_reliure = 0
+        self.reliure_numero = None
+
+    def handle_submit_reliure(self):
+        if self.reliure_numero is None:
+            response = self.show_confirmation_dialog("Etes vous sur pour cette commande de reliure")
+            if response:
+                if self.total_reliure == 0:
+                    self.show_alert_message("Votre Commande est de 0 Ar, veuillez verifier!")
+                else:
+                    self.show_client_selection_dialog()
+                    if self.selected_client:
+                        reliure = Reliure()
+                        reliure.nombreExemplaire = int(self.ui.exemplaire_spinBox.text())
+                        reliure.nombrePageNoir = int(self.ui.page_noir_spinBox.text())
+                        reliure.nombrePageCouleur = int(self.ui.page_couleur_spinBox.text())
+                        reliure.numeroType = self.typeLivre_selection.numeroType
+                        reliure.numeroClient = self.selected_client.numeroClient
+                        reliure.statutLivrer = self.ui.reliure_state.isChecked()
+
+                        insert_new_reliure_commande(reliure)
+                        self.refresh_reliure_data_table()
+                        self.reset_reliure_form()
+                    else:
+                        return
+            else:
+                return
+        else:
+            self.show_alert_message("Cette commande est deja ajouter")
+
+
+    def manage_reliure_table_cell_click(self, row, column):
+        numero = self.ui.reliure_table.item(row, 0).text()
+        reliure = get_reliure_by_id(int(numero))
+
+        self.ui.page_noir_spinBox.setValue(reliure.nombrePageNoir)
+        self.ui.page_couleur_spinBox.setValue(reliure.nombrePageCouleur)
+        self.ui.reliure_state.setChecked(reliure.statutLivrer)
+        self.ui.exemplaire_spinBox.setValue(reliure.nombreExemplaire)
+        self.reliure_numero = numero
+        return
+
+    def handle_modify_reliure(self):
+        if self.reliure_numero:
+            reliure = get_reliure_by_id(self.reliure_numero)
+            reliure.nombreExemplaire = int(self.ui.exemplaire_spinBox.text())
+            reliure.nombrePageNoir = int(self.ui.page_noir_spinBox.text())
+            reliure.nombrePageCouleur = int(self.ui.page_couleur_spinBox.text())
+            reliure.numeroType = self.typeLivre_selection.numeroType
+            reliure.statutLivrer = self.ui.reliure_state.isChecked()
+            session.commit()
+
+            self.reset_reliure_form()
+            self.refresh_reliure_data_table()
+
+        else:
+            self.show_alert_message("La commande n'existe pas encore")
+            return
 
     def manage_logout(self):
         response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir basculer de compte")
@@ -582,6 +675,7 @@ class MainWindow(QMainWindow):
             self.login_window = LoginWindow()
             self.login_window.show()
         return
+
 
 
 

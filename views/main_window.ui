@@ -1566,6 +1566,9 @@ QLineEdit{
              <height>441</height>
             </rect>
            </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+           </property>
            <column>
             <property name="text">
              <string>numero</string>
@@ -1584,6 +1587,11 @@ QLineEdit{
            <column>
             <property name="text">
              <string>Page Couleur</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Exemplaire</string>
             </property>
            </column>
            <column>
@@ -1684,7 +1692,7 @@ QLineEdit{
             <rect>
              <x>640</x>
              <y>150</y>
-             <width>321</width>
+             <width>361</width>
              <height>441</height>
             </rect>
            </property>
@@ -1697,30 +1705,42 @@ QLineEdit{
            <widget class="QSpinBox" name="page_noir_spinBox">
             <property name="geometry">
              <rect>
-              <x>50</x>
+              <x>30</x>
               <y>40</y>
               <width>121</width>
               <height>31</height>
              </rect>
             </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid black;</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
            </widget>
            <widget class="QSpinBox" name="page_couleur_spinBox">
             <property name="geometry">
              <rect>
-              <x>50</x>
+              <x>30</x>
               <y>120</y>
               <width>121</width>
               <height>31</height>
              </rect>
             </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid black;</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
            </widget>
            <widget class="QCheckBox" name="reliure_state">
             <property name="geometry">
              <rect>
-              <x>50</x>
-              <y>170</y>
+              <x>180</x>
+              <y>120</y>
               <width>121</width>
-              <height>20</height>
+              <height>31</height>
              </rect>
             </property>
             <property name="font">
@@ -1735,7 +1755,7 @@ QLineEdit{
            <widget class="QLabel" name="label_11">
             <property name="geometry">
              <rect>
-              <x>50</x>
+              <x>30</x>
               <y>10</y>
               <width>121</width>
               <height>21</height>
@@ -1753,7 +1773,7 @@ QLineEdit{
            <widget class="QLabel" name="label_12">
             <property name="geometry">
              <rect>
-              <x>50</x>
+              <x>30</x>
               <y>90</y>
               <width>121</width>
               <height>21</height>
@@ -1771,8 +1791,8 @@ QLineEdit{
            <widget class="QPushButton" name="submit_reliure">
             <property name="geometry">
              <rect>
-              <x>50</x>
-              <y>210</y>
+              <x>30</x>
+              <y>200</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1792,8 +1812,8 @@ QLineEdit{
            <widget class="QPushButton" name="modify_reliure">
             <property name="geometry">
              <rect>
-              <x>50</x>
-              <y>260</y>
+              <x>190</x>
+              <y>200</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1813,8 +1833,8 @@ QLineEdit{
            <widget class="QPushButton" name="reset_reliure">
             <property name="geometry">
              <rect>
-              <x>50</x>
-              <y>380</y>
+              <x>30</x>
+              <y>250</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1829,6 +1849,79 @@ QLineEdit{
             </property>
             <property name="text">
              <string>Vider les champs</string>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="exemplaire_spinBox">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>40</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid black</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_14">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>10</y>
+              <width>131</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Nombre d'exemplaire</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="total_reliure">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>340</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 85, 0)</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_15">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>340</y>
+              <width>101</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Total a payer :</string>
             </property>
            </widget>
           </widget>

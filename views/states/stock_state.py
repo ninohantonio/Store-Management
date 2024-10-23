@@ -42,16 +42,17 @@ def refresh_reliure_table_data(table_widget, data: list[Reliure]):
         client = get_client_by_id(row.numeroClient)
         type = get_type_livre_by_id(row.numeroType)
         etat = "Oui" if row.statutLivrer else "Non"
-        total_payer = type.prixReliure + type.prixPageNoir * row.nombrePageNoir + type.prixPageCouleur * row.nombrePageCouleur
+        total_payer = (type.prixReliure + type.prixPageNoir * row.nombrePageNoir + type.prixPageCouleur * row.nombrePageCouleur) * row.nombreExemplaire
 
         table_widget.insertRow(i)
         table_widget.setItem(i, 0, QTableWidgetItem(str(row.numeroReliure)))
         table_widget.setItem(i, 1, QTableWidgetItem(str(type.typeLivre)))
         table_widget.setItem(i, 2, QTableWidgetItem(str(row.nombrePageNoir)))
         table_widget.setItem(i, 3, QTableWidgetItem(str(row.nombrePageCouleur)))
-        table_widget.setItem(i, 4, QTableWidgetItem(str(total_payer)))
-        table_widget.setItem(i, 5, QTableWidgetItem(etat))
-        table_widget.setItem(i, 6, QTableWidgetItem(str(client.nom)))
+        table_widget.setItem(i, 4, QTableWidgetItem(str(row.nombreExemplaire)))
+        table_widget.setItem(i, 5, QTableWidgetItem(str(total_payer)))
+        table_widget.setItem(i, 6, QTableWidgetItem(etat))
+        table_widget.setItem(i, 7, QTableWidgetItem(str(client.nom)))
 
 
 

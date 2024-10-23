@@ -16,9 +16,9 @@ class TypeLivreDialog(QDialog):
 
         self.type_selection: Typelivre = None
 
-        self.ui.prix_noir.setValidator(QIntValidator(0, 9999))
-        self.ui.prix_couleur.setValidator(QIntValidator(0, 9999))
-        self.ui.prix_reliure.setValidator(QIntValidator(0, 9999))
+        self.ui.prix_noir.setValidator(QIntValidator(0, 999999))
+        self.ui.prix_couleur.setValidator(QIntValidator(0, 999999))
+        self.ui.prix_reliure.setValidator(QIntValidator(0, 999999))
 
         self.ui.submit_type.clicked.connect(self.submit_new_type_livre)
         self.ui.reset_type.clicked.connect(lambda : self.close())
@@ -60,7 +60,7 @@ class TypeLivreDialog(QDialog):
 
     def show_alert_message(self, message: str):
         msg_box = QMessageBox()
-        msg_box.setIcon(QMessageBox.Info)
+        msg_box.setIcon(QMessageBox.Information)
         msg_box.setWindowTitle("Info")
         msg_box.setText(message)
         msg_box.setStandardButtons(QMessageBox.Ok)

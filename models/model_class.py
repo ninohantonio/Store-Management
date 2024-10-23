@@ -113,6 +113,7 @@ class Reliure(Base):
     statutLivrer: Mapped[bool] = mapped_column()
     nombrePageNoir: Mapped[int_small] = mapped_column()
     nombrePageCouleur: Mapped[int_small] = mapped_column()
+    nombreExemplaire: Mapped[int_small] = mapped_column()
     dateCommande = Column(Date)
     numeroType: Mapped[int] = mapped_column(ForeignKey("typelivre.numeroType"))
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))
