@@ -18,7 +18,7 @@ from services.facture_service import insert_new_facture, get_facture_by_id, get_
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
 from services.reliure_service import get_all_reliure_commande, get_all_type_livre, insert_new_reliure_commande, \
-    get_reliure_by_id
+    get_reliure_by_id, get_type_livre_by_id
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -644,7 +644,12 @@ class MainWindow(QMainWindow):
     def manage_reliure_table_cell_click(self, row, column):
         numero = self.ui.reliure_table.item(row, 0).text()
         reliure = get_reliure_by_id(int(numero))
+        type = get_type_livre_by_id(reliure.numeroType)
 
+        for i in range(self.ui.comboBox.count()):
+            if self.ui.comboBox.itemData(i) == type:
+                self.ui.comboBox.setCurrentIndex(i)
+        print(self.typeLivre_selection.numeroType)
         self.ui.page_noir_spinBox.setValue(reliure.nombrePageNoir)
         self.ui.page_couleur_spinBox.setValue(reliure.nombrePageCouleur)
         self.ui.reliure_state.setChecked(reliure.statutLivrer)

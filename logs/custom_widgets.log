@@ -6454,3 +6454,11 @@
 2024-10-25 10:35:13,717 - DEBUG - findfont: score(FontEntry(fname='C:\\Windows\\Fonts\\taileb.ttf', name='Microsoft Tai Le', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
 2024-10-25 10:35:13,717 - DEBUG - findfont: score(FontEntry(fname='C:\\Windows\\Fonts\\cour.ttf', name='Courier New', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
 2024-10-25 10:35:13,717 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('D:\\projet\\Python\\Store-Management\\.venv\\Lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2024-10-26 07:14:16,219 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-26 07:14:16,254 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-26 07:30:01,995 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-26 07:30:01,999 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-26 07:31:24,281 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-26 07:31:24,285 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-26 07:33:01,055 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-26 07:33:01,058 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
