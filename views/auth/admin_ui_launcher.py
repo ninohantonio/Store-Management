@@ -70,6 +70,14 @@ class AdminWindow(QMainWindow):
         self.load_line_chart_graphics()
         self.load_facture_table_list()
 
+    def manage_navigation(self, index):
+        if index == 1:
+            self.ui.search_field.returnPressed.disconnect()
+        elif index == 0:
+            self.ui.search_field.returnPressed.connect(self.manage_search_value_input)
+            self.ui.search_field.textChanged.connect(self.manage_search_value_input)
+            self.ui.search_field.setFocus()
+
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
         if len(search_value) == 13 and search_value.isdigit():
@@ -423,7 +431,7 @@ class AdminWindow(QMainWindow):
         return
 
     def manage_double_click_facture_item(self, row, column):
-        numero = self.ui.facture_table.item(row, 0).text()
+        numero = self.ui.facture_tableWidget.item(row, 0).text()
         facture = get_facture_by_id(int(numero))
 
         self.facture_dialog = FactureDialog(facture, can_change_state=True)
