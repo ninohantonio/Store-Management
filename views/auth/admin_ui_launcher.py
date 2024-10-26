@@ -43,6 +43,8 @@ class AdminWindow(QMainWindow):
 
         self.numero_is_valid = False
 
+        self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
+
         self.ui.radioButton.clicked.connect(self.manage_radio_checked)
         self.ui.radioButton_2.clicked.connect(self.manage_radio_checked)
 
