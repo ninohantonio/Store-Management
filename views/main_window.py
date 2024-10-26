@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowigEEID.ui'
+## Form generated from reading UI file 'main_windowiIdUFd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -160,6 +160,13 @@ class Ui_MainWindow(object):
 "\n"
 "#reset_reliure{\n"
 "	border: 2px solid orange;\n"
+"	border-radius: 7px;\n"
+"	padding: 2px;\n"
+"	cursor: pointer;\n"
+"}\n"
+"\n"
+"#delete_reliure{\n"
+"	border: 2px solid red;\n"
 "	border-radius: 7px;\n"
 "	padding: 2px;\n"
 "	cursor: pointer;\n"
@@ -857,6 +864,10 @@ class Ui_MainWindow(object):
         self.label_15.setObjectName(u"label_15")
         self.label_15.setGeometry(QRect(40, 340, 101, 31))
         self.label_15.setFont(font10)
+        self.delete_reliure = QPushButton(self.reliure_form)
+        self.delete_reliure.setObjectName(u"delete_reliure")
+        self.delete_reliure.setGeometry(QRect(190, 250, 151, 31))
+        self.delete_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.label_13 = QLabel(self.reliurePage)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setGeometry(QRect(10, 115, 121, 21))
@@ -932,7 +943,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1024,19 +1035,19 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem17 = self.reliure_table.horizontalHeaderItem(0)
         ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"numero", None));
         ___qtablewidgetitem18 = self.reliure_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Nom du Client", None));
         ___qtablewidgetitem19 = self.reliure_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Type", None));
         ___qtablewidgetitem20 = self.reliure_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
         ___qtablewidgetitem21 = self.reliure_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Exemplaire", None));
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
         ___qtablewidgetitem22 = self.reliure_table.horizontalHeaderItem(5)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Exemplaire", None));
         ___qtablewidgetitem23 = self.reliure_table.horizontalHeaderItem(6)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
         ___qtablewidgetitem24 = self.reliure_table.horizontalHeaderItem(7)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Nom du Client", None));
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Type(s) de Livre :", None))
         self.add_type.setText(QCoreApplication.translate("MainWindow", u"Ajouter Un Type", None))
         self.delete_type.setText(QCoreApplication.translate("MainWindow", u"Supprimer Un type", None))
@@ -1049,6 +1060,7 @@ class Ui_MainWindow(object):
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Nombre d'exemplaire", None))
         self.total_reliure.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
+        self.delete_reliure.setText(QCoreApplication.translate("MainWindow", u"Supprimer", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Commandes du :", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))

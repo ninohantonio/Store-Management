@@ -81,6 +81,8 @@ class MainWindow(QMainWindow):
         self.ui.journal_dateEdit.dateChanged.connect(self.manage_journal_date_change)
 
         self.ui.reliure_table.hideColumn(0)
+        self.ui.reliure_table.hideColumn(3)
+        self.ui.reliure_table.hideColumn(4)
         self.ui.comboBox.currentIndexChanged.connect(self.manage_type_livre_change)
         self.ui.add_type.clicked.connect(self.show_type_livre_dialog_add)
         self.ui.delete_type.clicked.connect(self.show_type_livre_dialog_modify)
@@ -92,6 +94,7 @@ class MainWindow(QMainWindow):
         self.ui.reset_reliure.clicked.connect(self.reset_reliure_form)
         self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
         self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
+        self.ui.delete_reliure.clicked.connect(self.handle_delete_reliure)
         self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
 
         self.manage_page_spinbox_change()
@@ -471,7 +474,8 @@ class MainWindow(QMainWindow):
         facture = get_facture_by_id(int(numero))
 
         self.facture_dialog = FactureDialog(facture, can_change_state=True)
-        self.facture_dialog.show()
+        self.facture_dialog.finished.connect(self.refresh_facture_data_table)
+        self.facture_dialog.exec()
         return
 
 
@@ -669,6 +673,21 @@ class MainWindow(QMainWindow):
 
             self.reset_reliure_form()
             self.refresh_reliure_data_table()
+
+        else:
+            self.show_alert_message("La commande n'existe pas encore")
+            return
+
+    def handle_delete_reliure(self):
+        if self.reliure_numero:
+            if self.show_confirmation_dialog("Etes vous sur de supprimer cette commande?"):
+                reliure = get_reliure_by_id(self.reliure_numero)
+                session.delete(reliure)
+                session.commit()
+
+                self.reset_reliure_form()
+                self.refresh_reliure_data_table()
+
 
         else:
             self.show_alert_message("La commande n'existe pas encore")

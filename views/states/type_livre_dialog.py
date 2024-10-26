@@ -31,6 +31,7 @@ class TypeLivreDialog(QDialog):
             self.ui.reset_type.clicked.connect(self.handle_delete_type)
             self.ui.comboBox.currentIndexChanged.connect(self.manage_type_selection_changed)
             self.ui.label_5.setText("Modifier ou Supprimer un Type de Livre")
+            self.load_type_selection()
         else:
             self.ui.comboBox.setHidden(True)
             self.ui.submit_type.clicked.connect(self.submit_new_type_livre)

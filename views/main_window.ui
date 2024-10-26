@@ -147,6 +147,13 @@ QLineEdit{
 	cursor: pointer;
 }
 
+#delete_reliure{
+	border: 2px solid red;
+	border-radius: 7px;
+	padding: 2px;
+	cursor: pointer;
+}
+
 #submit_section_rapideBtn, #add_type, #submit_reliure{
 	border: 2px solid rgb(0, 255, 127);
 	border-radius: 7px;
@@ -807,7 +814,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1576,6 +1583,11 @@ QLineEdit{
            </column>
            <column>
             <property name="text">
+             <string>Nom du Client</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
              <string>Type</string>
             </property>
            </column>
@@ -1602,11 +1614,6 @@ QLineEdit{
            <column>
             <property name="text">
              <string>Etat Livrer</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Nom du Client</string>
             </property>
            </column>
           </widget>
@@ -1922,6 +1929,22 @@ QLineEdit{
             </property>
             <property name="text">
              <string>Total a payer :</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="delete_reliure">
+            <property name="geometry">
+             <rect>
+              <x>190</x>
+              <y>250</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Supprimer</string>
             </property>
            </widget>
           </widget>
