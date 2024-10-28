@@ -1695,7 +1695,7 @@ border-radius: 10px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="text">
-            <string>Supprimer Un type</string>
+            <string>Modifier un type</string>
            </property>
           </widget>
           <widget class="QFrame" name="reliure_form">

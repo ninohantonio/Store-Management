@@ -5,6 +5,7 @@ from PySide6.QtCore import QEvent
 from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
 
+import services.reliure_service
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
 from models.model_class import Facture, Client, Commande, Journal, Notification, Articlerapide, Article, Typelivre, \
     Reliure
@@ -19,7 +20,7 @@ from services.facture_service import insert_new_facture, get_facture_by_id, get_
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
 from services.reliure_service import get_all_reliure_commande, get_all_type_livre, insert_new_reliure_commande, \
-    get_reliure_by_id, get_type_livre_by_id, get_reliure_by_date, get_reliure_by_state
+    get_reliure_by_id, get_type_livre_by_id, get_reliure_by_date, get_reliure_by_state, session
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -686,7 +687,7 @@ class MainWindow(QMainWindow):
             reliure.nombrePageCouleur = int(self.ui.page_couleur_spinBox.text())
             reliure.numeroType = self.typeLivre_selection.numeroType
             reliure.statutLivrer = self.ui.reliure_state.isChecked()
-            session.commit()
+            services.reliure_service.session.commit()
 
             self.reset_reliure_form()
             self.refresh_reliure_data_table()

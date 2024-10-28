@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowRYhTwU.ui'
+## Form generated from reading UI file 'main_windowHtkCuc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -1058,7 +1058,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Type(s) de Livre :", None))
         self.add_type.setText(QCoreApplication.translate("MainWindow", u"Ajouter Un Type", None))
-        self.delete_type.setText(QCoreApplication.translate("MainWindow", u"Supprimer Un type", None))
+        self.delete_type.setText(QCoreApplication.translate("MainWindow", u"Modifier un type", None))
         self.reliure_state.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Pages Noir et Blanc", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Pages en Couleur", None))

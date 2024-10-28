@@ -20,8 +20,6 @@ class TypeLivreDialog(QDialog):
         self.ui.prix_couleur.setValidator(QIntValidator(0, 999999))
         self.ui.prix_reliure.setValidator(QIntValidator(0, 999999))
 
-        self.ui.submit_type.clicked.connect(self.submit_new_type_livre)
-        self.ui.reset_type.clicked.connect(lambda : self.close())
 
         if modification:
             self.ui.comboBox.setHidden(False)
@@ -33,6 +31,8 @@ class TypeLivreDialog(QDialog):
             self.ui.label_5.setText("Modifier ou Supprimer un Type de Livre")
             self.load_type_selection()
         else:
+            self.ui.submit_type.clicked.connect(self.submit_new_type_livre)
+            self.ui.reset_type.clicked.connect(lambda : self.close())
             self.ui.comboBox.setHidden(True)
             self.ui.submit_type.clicked.connect(self.submit_new_type_livre)
             self.ui.reset_type.clicked.connect(lambda: self.close())
@@ -105,7 +105,6 @@ class TypeLivreDialog(QDialog):
             type.prixPageCouleur = int(prix_couleur)
             type.prixReliure = int(prix_reliure)
             session.commit()
-            self.reset_form()
             self.show_alert_message("Le type a ete modifier avec succes :)")
             return
         else:
@@ -116,3 +115,5 @@ class TypeLivreDialog(QDialog):
         type = get_type_livre_by_id(self.type_selection.numeroType)
         session.delete(type)
         session.commit()
+        self.show_alert_message("Le type a ete supprimer")
+        self.ui.comboBox.setCurrentIndex(0)

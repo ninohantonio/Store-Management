@@ -410,6 +410,7 @@ class AdminWindow(QMainWindow):
         montants = [ventes_par_jour[date] for date in dates]
 
         # Tracer le graphique
+        self.figure.clear()
         ax = self.figure.add_subplot(111)
         ax.clear()  # Nettoyer l'axe avant de dessiner
 
@@ -469,6 +470,7 @@ class AdminWindow(QMainWindow):
         montants = [reliures_par_jours[date] for date in dates]
 
         # Tracer le graphique
+        self.reliure_figure.clear()
         ax = self.reliure_figure.add_subplot(111)
         ax.clear()  # Nettoyer l'axe avant de dessiner
 
