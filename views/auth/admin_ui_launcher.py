@@ -1,5 +1,5 @@
 import sys
-from datetime import datetime
+from datetime import datetime, date
 
 from Custom_Widgets import *
 from Custom_Widgets import QMainWindow
@@ -17,13 +17,14 @@ from services.article_service import verify_article_by_id, get_article_by_id, in
     update_article
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
     get_facture_by_id
+from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_date
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
 from PySide6.QtWidgets import QApplication, QMessageBox
 
 from views.states.facture_dialog_launcher import FactureDialog
-from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data
+from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data, refresh_reliure_table_data
 
 
 class AdminWindow(QMainWindow):
@@ -66,11 +67,17 @@ class AdminWindow(QMainWindow):
         self.figure = Figure()
         self.canvas = FigureCanvas(self.figure)
 
+        self.reliure_figure = Figure()
+        self.reliure_canvas = FigureCanvas(self.reliure_figure)
+
         self.ui.facture_tableWidget.cellDoubleClicked.connect(self.manage_double_click_facture_item)
 
         self.ui.chartContainer.addWidget(self.canvas)
+        self.ui.reliureCourbe.addWidget(self.reliure_canvas)
+        self.load_reliure_line_chart()
         self.load_line_chart_graphics()
         self.load_facture_table_list()
+        self.load_reliure_table_list()
 
     def manage_navigation(self, index):
         if index == 1:
@@ -79,6 +86,9 @@ class AdminWindow(QMainWindow):
             self.ui.search_field.returnPressed.connect(self.manage_search_value_input)
             self.ui.search_field.textChanged.connect(self.manage_search_value_input)
             self.ui.search_field.setFocus()
+        elif index == 2:
+            self.ui.search_field.returnPressed.disconnect()
+
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
@@ -438,6 +448,49 @@ class AdminWindow(QMainWindow):
 
         self.facture_dialog = FactureDialog(facture, can_change_state=True)
         self.facture_dialog.show()
+        return
+
+
+    def load_reliure_line_chart(self):
+        reliures_par_jours = get_total_reliure_group_by_date()
+
+        dates = sorted(reliures_par_jours.keys())
+        montants = [reliures_par_jours[date] for date in dates]
+
+        # Tracer le graphique
+        ax = self.figure.add_subplot(111)
+        ax.clear()  # Nettoyer l'axe avant de dessiner
+
+        ax.plot(dates, montants, marker='o', linestyle='-', color='b', label='Commandes')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Montant Total (Ar)')
+        # ax.set_title('Progression des Ventes Journalières')
+        ax.legend()
+
+        total = 0
+        # Ajouter les annotations des montants
+        for date, montant in zip(dates, montants):
+            ax.annotate(f"{montant}Ar",  # Texte à afficher
+                        (date, montant),  # Coordonnées du point
+                        textcoords="offset points",  # Décalage par rapport au point
+                        xytext=(0, 5),  # Décalage vertical
+                        ha='center',  # Alignement horizontal
+                        fontsize=10,  # Taille de la police
+                        color='#af0000')
+
+            total += montant
+
+            # Rotation des labels de date pour une meilleure lisibilité
+            self.reliure_figure.autofmt_xdate()
+
+            self.ui.reliureCourbe.update()
+
+            self.reliure_canvas.draw()
+        return
+
+    def load_reliure_table_list(self):
+        reliures = get_reliure_by_date(datetime.now())
+        refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
         return
 
 

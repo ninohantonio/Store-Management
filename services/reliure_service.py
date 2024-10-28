@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, date
 
+from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
 
 from models.model_class import Reliure, Typelivre
@@ -46,3 +47,32 @@ def insert_new_reliure_commande(reliure: Reliure):
     session.add(reliure)
     session.commit()
     return
+
+def get_total_for_reliure(reliure_id: int):
+    reliure = get_reliure_by_id(reliure_id)
+    type = get_type_livre_by_id(reliure.numeroType)
+    return (reliure.nombrePageNoir * type.prixPageNoir + reliure.nombrePageCouleur * type.prixPageCouleur + type.prixReliure) * reliure.nombreExemplaire
+
+
+def get_total_reliure_group_by_date():
+    # Calcul du premier jour du mois actuel
+    debut_mois = date(datetime.today().year, datetime.today().month, 1)
+
+    # Récupérer les factures depuis la base
+    reliures = session.query(
+        Reliure.dateCommande,
+        Reliure.numeroReliure
+    ).filter(
+        Reliure.dateCommande >= debut_mois, Reliure.statutLivrer == True
+    ).all()
+
+    # Grouper par jour et calculer les totaux
+    ventes_par_jour = {}
+    for jour, numero in reliures:
+        total = get_total_for_reliure(numero)
+        if jour in ventes_par_jour:
+            ventes_par_jour[jour] += total
+        else:
+            ventes_par_jour[jour] = total
+
+    return ventes_par_jour

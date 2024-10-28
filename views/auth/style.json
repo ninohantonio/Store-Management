@@ -19,7 +19,8 @@
 		"Buttons": [
 			"formulaireBtn",
 			"dashboardBtn",
-			"clientBtn"
+			"clientBtn",
+			"reliureBtn"
 		],
 		"Style": [{
 			"Active": "background-color: #fefeff;border-radius: 10px;padding: 10px;",
@@ -99,7 +100,7 @@
 						{
 							"formulaireBtn": "ajout_page",
 							"dashboardBtn": "dashboardPage",
-							"clientBtn": "clientPage"
+							"reliureBtn": "clientPage"
 						}
 					]
 				}
