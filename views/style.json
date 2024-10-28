@@ -93,7 +93,6 @@
 		"Buttons": [
 			"accueilBtn",
 			"stockBtn",
-			"clientBtn",
 			"factureBtn",
 			"journalBtn",
 			"settingBtn",
@@ -139,7 +138,6 @@
 						{
 							"accueilBtn": "homePage",
 							"stockBtn": "stockPage",
-							"clientBtn": "clientPage",
 							"factureBtn": "facturePage",
 							"journalBtn": "journalPage",
 							"notificationBtn": "notificationPage",

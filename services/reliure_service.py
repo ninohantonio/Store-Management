@@ -26,7 +26,7 @@ def get_reliure_by_date(search_date: date):
     # Filtrer les factures enregistrées ce jour-là
     result = session.query(Reliure).filter(
         Reliure.dateCommande >= start_of_day,
-        Reliure.dateEnregistrement < end_of_day
+        Reliure.dateCommande < end_of_day
     ).all()
 
     return result
@@ -38,6 +38,9 @@ def insert_new_type_livre(typelivre: Typelivre):
     session.add(typelivre)
     session.commit()
     return
+
+def get_reliure_by_state(state: bool):
+    return session.query(Reliure).filter(Reliure.statutLivrer == state).all()
 
 def insert_new_reliure_commande(reliure: Reliure):
     session.add(reliure)

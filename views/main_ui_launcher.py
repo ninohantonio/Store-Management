@@ -14,11 +14,12 @@ from services.article_service import verify_article_by_id, get_article_by_id, ge
 from services.articlerapide_service import insert_new_article_rapide, get_all_articlerapide
 from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
-from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, search_factures_by_date_range
+from services.facture_service import insert_new_facture, get_facture_by_id, get_all_facture, \
+    search_factures_by_date_range, get_facture_by_state
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
 from services.reliure_service import get_all_reliure_commande, get_all_type_livre, insert_new_reliure_commande, \
-    get_reliure_by_id, get_type_livre_by_id
+    get_reliure_by_id, get_type_livre_by_id, get_reliure_by_date, get_reliure_by_state
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -71,6 +72,7 @@ class MainWindow(QMainWindow):
         self.ui.add_selection_rapideBtn.clicked.connect(self.show_article_rapide_dialog)
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
+        self.ui.filter_facture_combo.currentIndexChanged.connect(self.manage_filter_facture_change)
 
         self.ui.selection_rapide_combo.currentIndexChanged.connect(self.manage_article_rapide_selection_change)
         self.ui.quantite_spinBox.setMinimum(0)
@@ -95,7 +97,10 @@ class MainWindow(QMainWindow):
         self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
         self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
         self.ui.delete_reliure.clicked.connect(self.handle_delete_reliure)
+        self.ui.delete_reliure.setHidden(True)
         self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
+        self.ui.date_reliure.dateChanged.connect(self.handle_date_reliure_changed)
+        self.ui.filter_reliure.currentIndexChanged.connect(self.manage_filter_reliure_change)
 
         self.manage_page_spinbox_change()
         self.load_type_livre_data()
@@ -478,6 +483,16 @@ class MainWindow(QMainWindow):
         self.facture_dialog.exec()
         return
 
+    def manage_filter_facture_change(self, index):
+        if index == 0:
+            self.refresh_facture_data_table()
+        elif index == 1:
+            factures = get_facture_by_state(False)
+            refresh_facture_table_data(self.ui.facture_table, factures)
+        else:
+            factures = get_facture_by_state(True)
+            refresh_facture_table_data(self.ui.facture_table, factures)
+
 
     def load_notification_for_user(self):
         articles = get_article_in_limite()
@@ -633,6 +648,7 @@ class MainWindow(QMainWindow):
                         reliure.numeroType = self.typeLivre_selection.numeroType
                         reliure.numeroClient = self.selected_client.numeroClient
                         reliure.statutLivrer = self.ui.reliure_state.isChecked()
+                        reliure.dateCommande = get_date_to_string()
 
                         insert_new_reliure_commande(reliure)
                         self.refresh_reliure_data_table()
@@ -692,6 +708,24 @@ class MainWindow(QMainWindow):
         else:
             self.show_alert_message("La commande n'existe pas encore")
             return
+
+    def handle_date_reliure_changed(self):
+        search_date = self.ui.date_reliure.date().toPython()
+
+        reliures = get_reliure_by_date(search_date)
+        refresh_reliure_table_data(self.ui.reliure_table, reliures)
+        print(len(reliures))
+        pass
+
+    def manage_filter_reliure_change(self, index):
+        if index == 0:
+            self.refresh_reliure_data_table()
+        elif index == 1:
+            reliures = get_reliure_by_state(False)
+            refresh_reliure_table_data(self.ui.reliure_table, reliures)
+        else:
+            reliures = get_reliure_by_state(True)
+            refresh_reliure_table_data(self.ui.reliure_table, reliures)
 
     def manage_logout(self):
         response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir basculer de compte")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowiIdUFd.ui'
+## Form generated from reading UI file 'main_windowRYhTwU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -293,24 +293,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.journalBtn)
 
-        self.clientBtn = QPushButton(self.menuFrame)
-        self.clientBtn.setObjectName(u"clientBtn")
-        self.clientBtn.setFont(font3)
-        self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/icons/people.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.clientBtn.setIcon(icon4)
-        self.clientBtn.setIconSize(QSize(22, 22))
-
-        self.verticalLayout_9.addWidget(self.clientBtn)
-
         self.reliureBtn = QPushButton(self.menuFrame)
         self.reliureBtn.setObjectName(u"reliureBtn")
         self.reliureBtn.setFont(font3)
         self.reliureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/icons/book.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.reliureBtn.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/icons/book.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.reliureBtn.setIcon(icon4)
         self.reliureBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_9.addWidget(self.reliureBtn)
@@ -319,9 +308,9 @@ class Ui_MainWindow(object):
         self.notificationBtn.setObjectName(u"notificationBtn")
         self.notificationBtn.setFont(font3)
         self.notificationBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/icons/bell.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.notificationBtn.setIcon(icon6)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/icons/bell.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.notificationBtn.setIcon(icon5)
         self.notificationBtn.setIconSize(QSize(26, 26))
 
         self.verticalLayout_9.addWidget(self.notificationBtn)
@@ -342,9 +331,9 @@ class Ui_MainWindow(object):
         self.settingBtn.setObjectName(u"settingBtn")
         self.settingBtn.setFont(font3)
         self.settingBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.settingBtn.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.settingBtn.setIcon(icon6)
         self.settingBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_2.addWidget(self.settingBtn)
@@ -353,9 +342,9 @@ class Ui_MainWindow(object):
         self.helpBtn.setObjectName(u"helpBtn")
         self.helpBtn.setFont(font3)
         self.helpBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/icons/about.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.helpBtn.setIcon(icon8)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/icons/about.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.helpBtn.setIcon(icon7)
         self.helpBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_2.addWidget(self.helpBtn)
@@ -364,9 +353,9 @@ class Ui_MainWindow(object):
         self.aboutBtn.setObjectName(u"aboutBtn")
         self.aboutBtn.setFont(font3)
         self.aboutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.aboutBtn.setIcon(icon9)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/icons/info.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.aboutBtn.setIcon(icon8)
         self.aboutBtn.setIconSize(QSize(22, 22))
 
         self.verticalLayout_2.addWidget(self.aboutBtn)
@@ -410,9 +399,9 @@ class Ui_MainWindow(object):
         self.menuBtn = QPushButton(self.widget)
         self.menuBtn.setObjectName(u"menuBtn")
         self.menuBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon10 = QIcon()
-        icon10.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.menuBtn.setIcon(icon10)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/icons/burger-menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.menuBtn.setIcon(icon9)
         self.menuBtn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_3.addWidget(self.menuBtn)
@@ -469,9 +458,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.accountBtn = QPushButton(self.widget_3)
         self.accountBtn.setObjectName(u"accountBtn")
-        icon11 = QIcon()
-        icon11.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.accountBtn.setIcon(icon11)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.accountBtn.setIcon(icon10)
         self.accountBtn.setIconSize(QSize(30, 30))
 
         self.horizontalLayout_6.addWidget(self.accountBtn)
@@ -579,17 +568,17 @@ class Ui_MainWindow(object):
         self.add_selection_rapideBtn = QPushButton(self.homePage)
         self.add_selection_rapideBtn.setObjectName(u"add_selection_rapideBtn")
         self.add_selection_rapideBtn.setGeometry(QRect(740, 90, 81, 31))
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.add_selection_rapideBtn.setIcon(icon12)
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/icons/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.add_selection_rapideBtn.setIcon(icon11)
         self.add_selection_rapideBtn.setIconSize(QSize(26, 26))
         self.submit_section_rapideBtn = QPushButton(self.homePage)
         self.submit_section_rapideBtn.setObjectName(u"submit_section_rapideBtn")
         self.submit_section_rapideBtn.setGeometry(QRect(850, 90, 81, 31))
         self.submit_section_rapideBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/icons/valide.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.submit_section_rapideBtn.setIcon(icon13)
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/icons/valide.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.submit_section_rapideBtn.setIcon(icon12)
         self.submit_section_rapideBtn.setIconSize(QSize(26, 26))
         self.mainNavigationScreen.addWidget(self.homePage)
         self.notificationPage = QWidget()
@@ -710,6 +699,14 @@ class Ui_MainWindow(object):
         self.dateEdit_2 = QDateEdit(self.frame_3)
         self.dateEdit_2.setObjectName(u"dateEdit_2")
         self.dateEdit_2.setGeometry(QRect(430, 90, 121, 31))
+        self.filter_facture_combo = QComboBox(self.frame_3)
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.setObjectName(u"filter_facture_combo")
+        self.filter_facture_combo.setGeometry(QRect(700, 90, 191, 31))
+        self.filter_facture_combo.setStyleSheet(u"border: 1px solid orange;\n"
+"border-radius: 10px;")
 
         self.verticalLayout_5.addWidget(self.frame_3)
 
@@ -877,6 +874,14 @@ class Ui_MainWindow(object):
         self.date_reliure.setGeometry(QRect(120, 111, 141, 31))
         self.date_reliure.setStyleSheet(u"border: 1px solid orange;\n"
 "border-radius: 10px;")
+        self.filter_reliure = QComboBox(self.reliurePage)
+        self.filter_reliure.addItem("")
+        self.filter_reliure.addItem("")
+        self.filter_reliure.addItem("")
+        self.filter_reliure.setObjectName(u"filter_reliure")
+        self.filter_reliure.setGeometry(QRect(430, 110, 181, 31))
+        self.filter_reliure.setStyleSheet(u"border: 1px solid orange;\n"
+"border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.reliurePage)
 
         self.verticalLayout.addWidget(self.mainNavigationScreen)
@@ -926,9 +931,9 @@ class Ui_MainWindow(object):
         self.logoutBtn = QPushButton(self.profileMenu)
         self.logoutBtn.setObjectName(u"logoutBtn")
         self.logoutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon14)
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon13)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_12.addWidget(self.logoutBtn)
@@ -943,7 +948,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(6)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -956,7 +961,6 @@ class Ui_MainWindow(object):
         self.stockBtn.setText(QCoreApplication.translate("MainWindow", u"Etat de Stock", None))
         self.factureBtn.setText(QCoreApplication.translate("MainWindow", u"Consulter facture", None))
         self.journalBtn.setText(QCoreApplication.translate("MainWindow", u"Journal", None))
-        self.clientBtn.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.reliureBtn.setText(QCoreApplication.translate("MainWindow", u"Reliure", None))
         self.notificationBtn.setText(QCoreApplication.translate("MainWindow", u"Notifications", None))
         self.settingBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -1022,6 +1026,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Identifiant client", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Filtre de date :", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"jusqu'au", None))
+        self.filter_facture_combo.setItemText(0, QCoreApplication.translate("MainWindow", u"Toutes les factures", None))
+        self.filter_facture_combo.setItemText(1, QCoreApplication.translate("MainWindow", u"Facture Non Payer", None))
+        self.filter_facture_combo.setItemText(2, QCoreApplication.translate("MainWindow", u"Facture Payer", None))
+
         self.journal_label.setText(QCoreApplication.translate("MainWindow", u"Journal des actions", None))
         ___qtablewidgetitem14 = self.journal_tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Action", None));
@@ -1062,6 +1070,10 @@ class Ui_MainWindow(object):
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Total a payer :", None))
         self.delete_reliure.setText(QCoreApplication.translate("MainWindow", u"Supprimer", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Commandes du :", None))
+        self.filter_reliure.setItemText(0, QCoreApplication.translate("MainWindow", u"Tous les Commandes", None))
+        self.filter_reliure.setItemText(1, QCoreApplication.translate("MainWindow", u"Commandes Non Livrer", None))
+        self.filter_reliure.setItemText(2, QCoreApplication.translate("MainWindow", u"Commande Livrer", None))
+
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")

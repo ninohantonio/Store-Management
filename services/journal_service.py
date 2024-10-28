@@ -20,12 +20,11 @@ def get_all_journal():
 
 def search_journals_by_date(search_date: datetime):
     # Obtenir la date de début et de fin de la journée
-    start_of_day = datetime(search_date.year, search_date.month, search_date.day)
-    end_of_day = start_of_day + timedelta(days=1)
+    end_of_day = search_date + timedelta(days=1)
 
     # Filtrer les factures enregistrées ce jour-là
     result = session.query(Journal).filter(
-        Journal.dateEnregistrement >= start_of_day,
+        Journal.dateEnregistrement >= search_date,
         Journal.dateEnregistrement < end_of_day
     ).all()
 
