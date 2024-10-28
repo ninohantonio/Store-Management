@@ -1745,10 +1745,11 @@ padding-left: 10px;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_24">
+                   <widget class="QLabel" name="reliure_jour">
                     <property name="font">
                      <font>
-                      <pointsize>11</pointsize>
+                      <family>Yu Gothic Medium</family>
+                      <pointsize>15</pointsize>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -1763,7 +1764,7 @@ padding-left: 10px;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_25">
+                   <widget class="QLabel" name="livre_jour">
                     <property name="font">
                      <font>
                       <pointsize>11</pointsize>
@@ -1820,10 +1821,11 @@ padding-left: 10px;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_28">
+                   <widget class="QLabel" name="reliure_mois">
                     <property name="font">
                      <font>
-                      <pointsize>11</pointsize>
+                      <family>Yu Gothic Medium</family>
+                      <pointsize>15</pointsize>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -1838,7 +1840,7 @@ padding-left: 10px;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_29">
+                   <widget class="QLabel" name="livre_mois">
                     <property name="font">
                      <font>
                       <pointsize>11</pointsize>
@@ -1940,6 +1942,51 @@ border-top-right-radius: 10px;</string>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
+                </widget>
+                <widget class="QDateEdit" name="reliureDate">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>210</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                 </property>
+                </widget>
+                <widget class="QComboBox" name="reliure_filterCombo">
+                 <property name="geometry">
+                  <rect>
+                   <x>240</x>
+                   <y>211</y>
+                   <width>181</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background: white;
+border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Toutes les Commandes</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Commandes Livrees</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Commandes Non Livrees</string>
+                  </property>
+                 </item>
                 </widget>
                </widget>
               </widget>

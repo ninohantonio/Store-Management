@@ -17,7 +17,8 @@ from services.article_service import verify_article_by_id, get_article_by_id, in
     update_article
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
     get_facture_by_id
-from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_date
+from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_date, get_total_for_reliure, \
+    get_reliure_by_date_and_state
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
@@ -71,6 +72,14 @@ class AdminWindow(QMainWindow):
         self.reliure_canvas = FigureCanvas(self.reliure_figure)
 
         self.ui.facture_tableWidget.cellDoubleClicked.connect(self.manage_double_click_facture_item)
+        self.ui.reliureDate.dateChanged.connect(self.manage_reliure_date_change)
+        self.ui.reliure_filterCombo.currentIndexChanged.connect(self.manage_reliure_date_change)
+
+        self.ui.reliureTableWidget.hideColumn(0)
+        self.ui.reliureTableWidget.hideColumn(3)
+        self.ui.reliureTableWidget.hideColumn(4)
+
+        self.ui.reliureDate.setDate(datetime.now().date())
 
         self.ui.chartContainer.addWidget(self.canvas)
         self.ui.reliureCourbe.addWidget(self.reliure_canvas)
@@ -88,6 +97,8 @@ class AdminWindow(QMainWindow):
             self.ui.search_field.setFocus()
         elif index == 2:
             self.ui.search_field.returnPressed.disconnect()
+            self.load_reliure_line_chart()
+            self.load_total_reliure_today()
 
 
     def manage_search_value_input(self):
@@ -458,7 +469,7 @@ class AdminWindow(QMainWindow):
         montants = [reliures_par_jours[date] for date in dates]
 
         # Tracer le graphique
-        ax = self.figure.add_subplot(111)
+        ax = self.reliure_figure.add_subplot(111)
         ax.clear()  # Nettoyer l'axe avant de dessiner
 
         ax.plot(dates, montants, marker='o', linestyle='-', color='b', label='Commandes')
@@ -480,18 +491,37 @@ class AdminWindow(QMainWindow):
 
             total += montant
 
+            self.ui.reliure_mois.setText(f"{total} Ar")
             # Rotation des labels de date pour une meilleure lisibilité
             self.reliure_figure.autofmt_xdate()
 
             self.ui.reliureCourbe.update()
 
             self.reliure_canvas.draw()
-        return
 
     def load_reliure_table_list(self):
         reliures = get_reliure_by_date(datetime.now())
         refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
         return
+
+    def manage_reliure_date_change(self):
+        date = self.ui.reliureDate.date().toPython()
+        index = self.ui.reliure_filterCombo.currentIndex()
+        if index == 0:
+            refresh_reliure_table_data(self.ui.reliureTableWidget, get_reliure_by_date(date))
+        elif index == 1:
+            reliures = get_reliure_by_date_and_state(date, True)
+            refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
+        else :
+            reliures = get_reliure_by_date_and_state(date, False)
+            refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
+
+
+    def load_total_reliure_today(self):
+        reliures = get_reliure_by_date(datetime.now())
+        total = [get_total_for_reliure(reliure.numeroReliure) for reliure in reliures]
+        montant = sum(total)
+        self.ui.reliure_jour.setText(f"{montant} Ar")
 
 
 

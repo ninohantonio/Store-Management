@@ -10,7 +10,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 def get_all_facture():
-    return session.query(Facture).all()
+    return session.query(Facture).order_by(Facture.dateEnregistrement.desc()).all()
 
 def get_facture_for_client(client_id: int):
     return session.query(Facture).where(Facture.numeroClient == client_id).all()
@@ -19,10 +19,10 @@ def get_facture_by_id(facture_id: int):
     return session.query(Facture).filter(Facture.numeroFacture == facture_id).first()
 
 def get_facture_by_date_enregistrement(date: str):
-    return session.query(Facture).filter(Facture.dateEnregistrement == date).all()
+    return session.query(Facture).order_by(Facture.dateEnregistrement.desc()).filter(Facture.dateEnregistrement == date).all()
 
 def get_facture_by_state(statut: bool):
-    return session.query(Facture).filter(Facture.statutPayement == statut).all()
+    return session.query(Facture).order_by(Facture.dateEnregistrement.desc()).filter(Facture.statutPayement == statut).all()
 
 def get_client_by_facture(facture_id: int):
     return session.query(Client).join(Facture, Facture.numeroFacture == facture_id, full=True).first()
@@ -62,7 +62,7 @@ def search_factures_by_date_range(start_date: datetime, end_date: datetime):
     end_date_adjusted = end_date + timedelta(days=1)
 
     # Filtrer les factures entre deux dates
-    result = session.query(Facture).filter(
+    result = session.query(Facture).order_by(Facture.dateEnregistrement.desc()).filter(
         Facture.dateEnregistrement >= start_date,
         Facture.dateEnregistrement < end_date_adjusted
     ).all()
@@ -76,7 +76,7 @@ def search_factures_by_date(search_date: datetime):
     end_of_day = start_of_day + timedelta(days=1)
 
     # Filtrer les factures enregistrées ce jour-là
-    result = session.query(Facture).filter(
+    result = session.query(Facture).order_by(Facture.dateEnregistrement.desc()).filter(
         Facture.dateEnregistrement >= start_of_day,
         Facture.dateEnregistrement < end_of_day
     ).all()

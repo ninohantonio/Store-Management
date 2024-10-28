@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowqyAXzB.ui'
+## Form generated from reading UI file 'main_admin_windowsYNpvb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit,
-    QPushButton, QRadioButton, QSizePolicy, QSpacerItem,
-    QTableWidget, QTableWidgetItem, QTextEdit, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
+    QFrame, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QPushButton, QRadioButton,
+    QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem,
+    QTextEdit, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -776,20 +776,23 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.label_9)
 
-        self.label_24 = QLabel(self.frame_24)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setFont(font1)
-        self.label_24.setStyleSheet(u"color: rgb(255, 0, 0);")
-        self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.reliure_jour = QLabel(self.frame_24)
+        self.reliure_jour.setObjectName(u"reliure_jour")
+        font9 = QFont()
+        font9.setFamilies([u"Yu Gothic Medium"])
+        font9.setPointSize(15)
+        self.reliure_jour.setFont(font9)
+        self.reliure_jour.setStyleSheet(u"color: rgb(255, 0, 0);")
+        self.reliure_jour.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.label_24)
+        self.verticalLayout_11.addWidget(self.reliure_jour)
 
-        self.label_25 = QLabel(self.frame_24)
-        self.label_25.setObjectName(u"label_25")
-        self.label_25.setFont(font1)
-        self.label_25.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.livre_jour = QLabel(self.frame_24)
+        self.livre_jour.setObjectName(u"livre_jour")
+        self.livre_jour.setFont(font1)
+        self.livre_jour.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.label_25)
+        self.verticalLayout_11.addWidget(self.livre_jour)
 
         self.frame_25 = QFrame(self.clientPage)
         self.frame_25.setObjectName(u"frame_25")
@@ -810,20 +813,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.label_26)
 
-        self.label_28 = QLabel(self.frame_25)
-        self.label_28.setObjectName(u"label_28")
-        self.label_28.setFont(font1)
-        self.label_28.setStyleSheet(u"color: rgb(255, 0, 0);")
-        self.label_28.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.reliure_mois = QLabel(self.frame_25)
+        self.reliure_mois.setObjectName(u"reliure_mois")
+        self.reliure_mois.setFont(font9)
+        self.reliure_mois.setStyleSheet(u"color: rgb(255, 0, 0);")
+        self.reliure_mois.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_12.addWidget(self.label_28)
+        self.verticalLayout_12.addWidget(self.reliure_mois)
 
-        self.label_29 = QLabel(self.frame_25)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setFont(font1)
-        self.label_29.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.livre_mois = QLabel(self.frame_25)
+        self.livre_mois.setObjectName(u"livre_mois")
+        self.livre_mois.setFont(font1)
+        self.livre_mois.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_12.addWidget(self.label_29)
+        self.verticalLayout_12.addWidget(self.livre_mois)
 
         self.reliureTableWidget = QTableWidget(self.clientPage)
         if (self.reliureTableWidget.columnCount() < 8):
@@ -860,6 +863,21 @@ class Ui_MainWindow(object):
 "border-top-left-radius: 10px;\n"
 "border-top-right-radius: 10px;")
         self.label_31.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.reliureDate = QDateEdit(self.clientPage)
+        self.reliureDate.setObjectName(u"reliureDate")
+        self.reliureDate.setGeometry(QRect(20, 210, 151, 31))
+        self.reliureDate.setStyleSheet(u"\n"
+"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
+        self.reliure_filterCombo = QComboBox(self.clientPage)
+        self.reliure_filterCombo.addItem("")
+        self.reliure_filterCombo.addItem("")
+        self.reliure_filterCombo.addItem("")
+        self.reliure_filterCombo.setObjectName(u"reliure_filterCombo")
+        self.reliure_filterCombo.setGeometry(QRect(240, 211, 181, 31))
+        self.reliure_filterCombo.setStyleSheet(u"background: white;\n"
+"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.clientPage)
 
         self.horizontalLayout_2.addWidget(self.mainNavigationScreen)
@@ -885,10 +903,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.label_19 = QLabel(self.widget_14)
         self.label_19.setObjectName(u"label_19")
-        font9 = QFont()
-        font9.setPointSize(12)
-        font9.setBold(True)
-        self.label_19.setFont(font9)
+        font10 = QFont()
+        font10.setPointSize(12)
+        font10.setBold(True)
+        self.label_19.setFont(font10)
         self.label_19.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_5.addWidget(self.label_19)
@@ -925,10 +943,10 @@ class Ui_MainWindow(object):
         self.search_view = QTableWidget(self.profile_container)
         if (self.search_view.columnCount() < 2):
             self.search_view.setColumnCount(2)
-        font10 = QFont()
-        font10.setPointSize(9)
+        font11 = QFont()
+        font11.setPointSize(9)
         __qtablewidgetitem12 = QTableWidgetItem()
-        __qtablewidgetitem12.setFont(font10);
+        __qtablewidgetitem12.setFont(font11);
         self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
         self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem13)
@@ -1015,11 +1033,11 @@ class Ui_MainWindow(object):
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Evolution des ventes du mois", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Commande de Livre", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Commande livrer du Jour", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"50 livre", None))
+        self.reliure_jour.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))
+        self.livre_jour.setText(QCoreApplication.translate("MainWindow", u"50 livre", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Commande livrer du mois", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"50 livre", None))
+        self.reliure_mois.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))
+        self.livre_mois.setText(QCoreApplication.translate("MainWindow", u"50 livre", None))
         ___qtablewidgetitem4 = self.reliureTableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"numero", None));
         ___qtablewidgetitem5 = self.reliureTableWidget.horizontalHeaderItem(1)
@@ -1037,6 +1055,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem11 = self.reliureTableWidget.horizontalHeaderItem(7)
         ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
         self.label_31.setText(QCoreApplication.translate("MainWindow", u"Evolutions des Commandes Livrees", None))
+        self.reliure_filterCombo.setItemText(0, QCoreApplication.translate("MainWindow", u"Toutes les Commandes", None))
+        self.reliure_filterCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"Commandes Livrees", None))
+        self.reliure_filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Commandes Non Livrees", None))
+
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")

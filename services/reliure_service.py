@@ -11,7 +11,7 @@ session = Session()
 
 
 def get_all_reliure_commande():
-    return session.query(Reliure).all()
+    return session.query(Reliure).order_by(Reliure.dateCommande.desc()).all()
 
 def get_all_type_livre():
     return session.query(Typelivre).all()
@@ -25,7 +25,7 @@ def get_reliure_by_date(search_date: date):
     end_of_day = start_of_day + timedelta(days=1)
 
     # Filtrer les factures enregistrées ce jour-là
-    result = session.query(Reliure).filter(
+    result = session.query(Reliure).order_by(Reliure.dateCommande.desc()).filter(
         Reliure.dateCommande >= start_of_day,
         Reliure.dateCommande < end_of_day
     ).all()
@@ -53,6 +53,11 @@ def get_total_for_reliure(reliure_id: int):
     type = get_type_livre_by_id(reliure.numeroType)
     return (reliure.nombrePageNoir * type.prixPageNoir + reliure.nombrePageCouleur * type.prixPageCouleur + type.prixReliure) * reliure.nombreExemplaire
 
+def get_reliure_by_date_and_state(date: date, state: bool):
+    return session.query(Reliure).order_by(Reliure.dateCommande.desc()).filter(
+        Reliure.dateCommande == date, Reliure.statutLivrer == state
+    ).all()
+
 
 def get_total_reliure_group_by_date():
     # Calcul du premier jour du mois actuel
@@ -76,3 +81,4 @@ def get_total_reliure_group_by_date():
             ventes_par_jour[jour] = total
 
     return ventes_par_jour
+
