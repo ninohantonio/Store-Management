@@ -481,6 +481,7 @@ class AdminWindow(QMainWindow):
         ax.legend()
 
         total = 0
+        annotation_date = [datetime(2024, 10, 1), datetime(2024, 10, 31)]
         # Ajouter les annotations des montants
         for date, montant in zip(dates, montants):
             ax.annotate(f"{montant}Ar",  # Texte à afficher
