@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowjowCIA.ui'
+## Form generated from reading UI file 'main_admin_windowqyAXzB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -180,12 +180,22 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.dashboardBtn)
 
+        self.reliureBtn = QPushButton(self.frame_2)
+        self.reliureBtn.setObjectName(u"reliureBtn")
+        self.reliureBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/icons/book.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.reliureBtn.setIcon(icon2)
+        self.reliureBtn.setIconSize(QSize(32, 32))
+
+        self.verticalLayout.addWidget(self.reliureBtn)
+
         self.clientBtn = QPushButton(self.frame_2)
         self.clientBtn.setObjectName(u"clientBtn")
         self.clientBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.clientBtn.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/icons/avatar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.clientBtn.setIcon(icon3)
         self.clientBtn.setIconSize(QSize(32, 32))
 
         self.verticalLayout.addWidget(self.clientBtn)
@@ -203,13 +213,6 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame_3)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.pushButton = QPushButton(self.frame_3)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setIcon(icon)
-        self.pushButton.setIconSize(QSize(32, 32))
-
-        self.verticalLayout_2.addWidget(self.pushButton)
-
 
         self.verticalLayout_3.addWidget(self.frame_3)
 
@@ -291,7 +294,7 @@ class Ui_MainWindow(object):
         self.accountBtn_2 = QPushButton(self.widget_11)
         self.accountBtn_2.setObjectName(u"accountBtn_2")
         self.accountBtn_2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.accountBtn_2.setIcon(icon2)
+        self.accountBtn_2.setIcon(icon3)
         self.accountBtn_2.setIconSize(QSize(30, 30))
 
         self.horizontalLayout_15.addWidget(self.accountBtn_2, 0, Qt.AlignmentFlag.AlignRight)
@@ -617,12 +620,12 @@ class Ui_MainWindow(object):
 "padding-left: 10px;")
         self.widget_7 = QWidget(self.dashboardPage)
         self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(10, 80, 1131, 531))
+        self.widget_7.setGeometry(QRect(10, 80, 1131, 551))
         self.widget_7.setStyleSheet(u"background-color: white;\n"
 "")
         self.frame_23 = QFrame(self.widget_7)
         self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setGeometry(QRect(10, 10, 131, 101))
+        self.frame_23.setGeometry(QRect(10, 10, 161, 101))
         self.frame_23.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "border-radius: 20px;")
         self.frame_23.setFrameShape(QFrame.Shape.StyledPanel)
@@ -660,43 +663,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_10.addWidget(self.label_23)
 
-        self.frame_24 = QFrame(self.widget_7)
-        self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setGeometry(QRect(150, 10, 131, 101))
-        self.frame_24.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
-"border-radius: 20px;")
-        self.frame_24.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_24.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_11 = QVBoxLayout(self.frame_24)
-        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.label_24 = QLabel(self.frame_24)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setFont(font6)
-        self.label_24.setStyleSheet(u"background-color: transparent;\n"
-"color: #dedede;")
-        self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_11.addWidget(self.label_24)
-
-        self.vente_semaine = QLabel(self.frame_24)
-        self.vente_semaine.setObjectName(u"vente_semaine")
-        self.vente_semaine.setFont(font7)
-        self.vente_semaine.setStyleSheet(u"color: #fefeff;\n"
-"background: transparent;")
-        self.vente_semaine.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_11.addWidget(self.vente_semaine)
-
-        self.label_26 = QLabel(self.frame_24)
-        self.label_26.setObjectName(u"label_26")
-        self.label_26.setStyleSheet(u"background: transparent;")
-        self.label_26.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_11.addWidget(self.label_26)
-
         self.frame_26 = QFrame(self.widget_7)
         self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setGeometry(QRect(290, 10, 131, 101))
+        self.frame_26.setGeometry(QRect(260, 10, 161, 101))
         self.frame_26.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "border-radius: 20px;")
         self.frame_26.setFrameShape(QFrame.Shape.StyledPanel)
@@ -730,7 +699,7 @@ class Ui_MainWindow(object):
 
         self.frame_27 = QFrame(self.widget_7)
         self.frame_27.setObjectName(u"frame_27")
-        self.frame_27.setGeometry(QRect(10, 150, 421, 361))
+        self.frame_27.setGeometry(QRect(10, 180, 421, 361))
         self.frame_27.setStyleSheet(u"QFrame{\n"
 "	background: rgb(234, 234, 234);\n"
 "	border-radius: 10px;\n"
@@ -766,7 +735,7 @@ class Ui_MainWindow(object):
         self.facture_tableWidget.setAlternatingRowColors(True)
         self.verticalLayoutWidget = QWidget(self.widget_7)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(440, 50, 681, 461))
+        self.verticalLayoutWidget.setGeometry(QRect(440, 50, 681, 481))
         self.chartContainer = QVBoxLayout(self.verticalLayoutWidget)
         self.chartContainer.setObjectName(u"chartContainer")
         self.chartContainer.setContentsMargins(0, 0, 0, 0)
@@ -781,10 +750,116 @@ class Ui_MainWindow(object):
         self.mainNavigationScreen.addWidget(self.dashboardPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
-        self.label_9 = QLabel(self.clientPage)
+        self.label_22 = QLabel(self.clientPage)
+        self.label_22.setObjectName(u"label_22")
+        self.label_22.setGeometry(QRect(10, 20, 521, 41))
+        self.label_22.setFont(font5)
+        self.label_22.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
+"color: white;\n"
+"padding-left: 10px;")
+        self.frame_24 = QFrame(self.clientPage)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setGeometry(QRect(10, 80, 201, 101))
+        self.frame_24.setStyleSheet(u"#frame_24{\n"
+"	border: 2px solid rgb(0, 85, 255);\n"
+"	border-radius: 12px;\n"
+"}")
+        self.frame_24.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frame_24)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.label_9 = QLabel(self.frame_24)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(30, 40, 281, 31))
-        self.label_9.setFont(font5)
+        self.label_9.setFont(font1)
+        self.label_9.setStyleSheet(u"color: rgb(255, 85, 0);")
+        self.label_9.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_9)
+
+        self.label_24 = QLabel(self.frame_24)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setFont(font1)
+        self.label_24.setStyleSheet(u"color: rgb(255, 0, 0);")
+        self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_24)
+
+        self.label_25 = QLabel(self.frame_24)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setFont(font1)
+        self.label_25.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_25)
+
+        self.frame_25 = QFrame(self.clientPage)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setGeometry(QRect(320, 80, 211, 101))
+        self.frame_25.setStyleSheet(u"#frame_25{\n"
+"	border: 2px solid rgb(0, 85, 255);\n"
+"	border-radius: 12px;\n"
+"}")
+        self.frame_25.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_25)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.label_26 = QLabel(self.frame_25)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setFont(font1)
+        self.label_26.setStyleSheet(u"color: rgb(255, 85, 0);")
+        self.label_26.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_26)
+
+        self.label_28 = QLabel(self.frame_25)
+        self.label_28.setObjectName(u"label_28")
+        self.label_28.setFont(font1)
+        self.label_28.setStyleSheet(u"color: rgb(255, 0, 0);")
+        self.label_28.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_28)
+
+        self.label_29 = QLabel(self.frame_25)
+        self.label_29.setObjectName(u"label_29")
+        self.label_29.setFont(font1)
+        self.label_29.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_29)
+
+        self.reliureTableWidget = QTableWidget(self.clientPage)
+        if (self.reliureTableWidget.columnCount() < 8):
+            self.reliureTableWidget.setColumnCount(8)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.reliureTableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem11)
+        self.reliureTableWidget.setObjectName(u"reliureTableWidget")
+        self.reliureTableWidget.setGeometry(QRect(10, 260, 521, 371))
+        self.verticalLayoutWidget_2 = QWidget(self.clientPage)
+        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
+        self.verticalLayoutWidget_2.setGeometry(QRect(550, 139, 591, 491))
+        self.reliureCourbe = QVBoxLayout(self.verticalLayoutWidget_2)
+        self.reliureCourbe.setObjectName(u"reliureCourbe")
+        self.reliureCourbe.setContentsMargins(0, 0, 0, 0)
+        self.label_31 = QLabel(self.clientPage)
+        self.label_31.setObjectName(u"label_31")
+        self.label_31.setGeometry(QRect(550, 100, 591, 41))
+        self.label_31.setFont(font1)
+        self.label_31.setStyleSheet(u"border: 1px solid rgb(0, 85, 255);\n"
+"border-top-left-radius: 10px;\n"
+"border-top-right-radius: 10px;")
+        self.label_31.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.mainNavigationScreen.addWidget(self.clientPage)
 
         self.horizontalLayout_2.addWidget(self.mainNavigationScreen)
@@ -831,16 +906,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.label_20)
 
-        self.pushButton_5 = QPushButton(self.widget_14)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-
-        self.verticalLayout_5.addWidget(self.pushButton_5)
-
         self.logoutBtn = QPushButton(self.widget_14)
         self.logoutBtn.setObjectName(u"logoutBtn")
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon3)
+        self.logoutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.logoutBtn.setStyleSheet(u"border: 2px solid orange;\n"
+"border-radius: 10px;\n"
+"height: 30px;")
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon4)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_5.addWidget(self.logoutBtn)
@@ -853,11 +927,11 @@ class Ui_MainWindow(object):
             self.search_view.setColumnCount(2)
         font10 = QFont()
         font10.setPointSize(9)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font10);
-        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem5)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        __qtablewidgetitem12.setFont(font10);
+        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem13)
         self.search_view.setObjectName(u"search_view")
         self.search_view.setEnabled(True)
         self.search_view.setMaximumSize(QSize(120, 16777215))
@@ -873,7 +947,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(1)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -883,8 +957,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.formulaireBtn.setText("")
         self.dashboardBtn.setText("")
+        self.reliureBtn.setText("")
         self.clientBtn.setText("")
-        self.pushButton.setText("")
         self.appHeader_2.setText(QCoreApplication.translate("MainWindow", u"Administration", None))
         self.label_12.setText("")
         self.search_field.setText("")
@@ -921,14 +995,11 @@ class Ui_MainWindow(object):
         self.article_name.setText(QCoreApplication.translate("MainWindow", u"Nom de l'article", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Description", None))
         self.appro_detail.setText(QCoreApplication.translate("MainWindow", u"Details d'approvisionnement", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Tableau de bord", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Vente du jour", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Evolution des Ventes", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Ventes du jour", None))
         self.vente_jour.setText(QCoreApplication.translate("MainWindow", u"30000 Ar", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Vente de la semaine", None))
-        self.vente_semaine.setText(QCoreApplication.translate("MainWindow", u"160000 Ar", None))
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Vente du mois", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Ventes du mois", None))
         self.vente_mois.setText(QCoreApplication.translate("MainWindow", u"700000 Ar", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"21 Oct 2024", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"Liste des Factures du Jours", None))
@@ -942,15 +1013,37 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3 = self.facture_tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Identifiant du Client", None));
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Evolution des ventes du mois", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Commande de Livre", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Commande livrer du Jour", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"50 livre", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"Commande livrer du mois", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"50 livre", None))
+        ___qtablewidgetitem4 = self.reliureTableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"numero", None));
+        ___qtablewidgetitem5 = self.reliureTableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Nom du client", None));
+        ___qtablewidgetitem6 = self.reliureTableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem7 = self.reliureTableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Page Noir", None));
+        ___qtablewidgetitem8 = self.reliureTableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
+        ___qtablewidgetitem9 = self.reliureTableWidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Exemplaire", None));
+        ___qtablewidgetitem10 = self.reliureTableWidget.horizontalHeaderItem(6)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Total a payer", None));
+        ___qtablewidgetitem11 = self.reliureTableWidget.horizontalHeaderItem(7)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"Evolutions des Commandes Livrees", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Mon Profile", None))
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
-        ___qtablewidgetitem4 = self.search_view.horizontalHeaderItem(0)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
-        ___qtablewidgetitem5 = self.search_view.horizontalHeaderItem(1)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"numero", None));
+        ___qtablewidgetitem12 = self.search_view.horizontalHeaderItem(0)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
+        ___qtablewidgetitem13 = self.search_view.horizontalHeaderItem(1)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"numero", None));
     # retranslateUi
 

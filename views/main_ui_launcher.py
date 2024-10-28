@@ -298,9 +298,10 @@ class MainWindow(QMainWindow):
                 self.facture_dialog.show()
                 #nettoyer carte
                 self.reset_card_container()
+                self.load_notification_for_user()
                 return
             else:
-                self.show_alert_message("Acun client selectionnee!! Veuillez reessayer!")
+                self.show_alert_message("Aucun client selectionnee!! Veuillez reessayer!")
         return
 
     def extract_info_to_card(self):

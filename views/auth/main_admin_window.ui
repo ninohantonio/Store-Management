@@ -235,6 +235,26 @@ QLineEdit, QTextEdit{
                  </widget>
                 </item>
                 <item>
+                 <widget class="QPushButton" name="reliureBtn">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../resources.qrc">
+                    <normaloff>:/icons/icons/book.png</normaloff>:/icons/icons/book.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="clientBtn">
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
@@ -278,25 +298,7 @@ QLineEdit, QTextEdit{
                <property name="frameShadow">
                 <enum>QFrame::Shadow::Raised</enum>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_2">
-                <item>
-                 <widget class="QPushButton" name="pushButton">
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../resources.qrc">
-                    <normaloff>:/icons/icons/caddie.png</normaloff>:/icons/icons/caddie.png</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>32</width>
-                    <height>32</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <layout class="QVBoxLayout" name="verticalLayout_2"/>
               </widget>
              </item>
             </layout>
@@ -499,7 +501,7 @@ QLineEdit, QTextEdit{
              <item>
               <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
                <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="ajout_page">
                 <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -1377,7 +1379,7 @@ color: white;
 padding-left: 10px;</string>
                  </property>
                  <property name="text">
-                  <string>Tableau de bord</string>
+                  <string>Evolution des Ventes</string>
                  </property>
                 </widget>
                 <widget class="QWidget" name="widget_7" native="true">
@@ -1386,7 +1388,7 @@ padding-left: 10px;</string>
                    <x>10</x>
                    <y>80</y>
                    <width>1131</width>
-                   <height>531</height>
+                   <height>551</height>
                   </rect>
                  </property>
                  <property name="styleSheet">
@@ -1398,7 +1400,7 @@ padding-left: 10px;</string>
                    <rect>
                     <x>10</x>
                     <y>10</y>
-                    <width>131</width>
+                    <width>161</width>
                     <height>101</height>
                    </rect>
                   </property>
@@ -1425,7 +1427,7 @@ border-radius: 20px;</string>
 color: #dfdfdf;</string>
                      </property>
                      <property name="text">
-                      <string>Vente du jour</string>
+                      <string>Ventes du jour</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1468,87 +1470,12 @@ background: transparent;</string>
                    </item>
                   </layout>
                  </widget>
-                 <widget class="QFrame" name="frame_24">
-                  <property name="geometry">
-                   <rect>
-                    <x>150</x>
-                    <y>10</y>
-                    <width>131</width>
-                    <height>101</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(0, 170, 255);
-border-radius: 20px;</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Raised</enum>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_11">
-                   <item>
-                    <widget class="QLabel" name="label_24">
-                     <property name="font">
-                      <font>
-                       <bold>true</bold>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">background-color: transparent;
-color: #dedede;</string>
-                     </property>
-                     <property name="text">
-                      <string>Vente de la semaine</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="vente_semaine">
-                     <property name="font">
-                      <font>
-                       <family>Nirmala UI Semilight</family>
-                       <pointsize>11</pointsize>
-                       <bold>true</bold>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: #fefeff;
-background: transparent;</string>
-                     </property>
-                     <property name="text">
-                      <string>160000 Ar</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_26">
-                     <property name="styleSheet">
-                      <string notr="true">background: transparent;</string>
-                     </property>
-                     <property name="text">
-                      <string>21 Oct 2024</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
                  <widget class="QFrame" name="frame_26">
                   <property name="geometry">
                    <rect>
-                    <x>290</x>
+                    <x>260</x>
                     <y>10</y>
-                    <width>131</width>
+                    <width>161</width>
                     <height>101</height>
                    </rect>
                   </property>
@@ -1575,7 +1502,7 @@ border-radius: 20px;</string>
 color: #dedede;</string>
                      </property>
                      <property name="text">
-                      <string>Vente du mois</string>
+                      <string>Ventes du mois</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1622,7 +1549,7 @@ background: transparent;</string>
                   <property name="geometry">
                    <rect>
                     <x>10</x>
-                    <y>150</y>
+                    <y>180</y>
                     <width>421</width>
                     <height>361</height>
                    </rect>
@@ -1720,7 +1647,7 @@ background: rgb(249, 249, 249);</string>
                     <x>440</x>
                     <y>50</y>
                     <width>681</width>
-                    <height>461</height>
+                    <height>481</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="chartContainer"/>
@@ -1754,13 +1681,13 @@ border-top-right-radius: 10px;</string>
                 </widget>
                </widget>
                <widget class="QWidget" name="clientPage">
-                <widget class="QLabel" name="label_9">
+                <widget class="QLabel" name="label_22">
                  <property name="geometry">
                   <rect>
-                   <x>30</x>
-                   <y>40</y>
-                   <width>281</width>
-                   <height>31</height>
+                   <x>10</x>
+                   <y>20</y>
+                   <width>521</width>
+                   <height>41</height>
                   </rect>
                  </property>
                  <property name="font">
@@ -1768,8 +1695,250 @@ border-top-right-radius: 10px;</string>
                    <pointsize>15</pointsize>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(0, 170, 255);
+color: white;
+padding-left: 10px;</string>
+                 </property>
                  <property name="text">
-                  <string>Clients</string>
+                  <string>Commande de Livre</string>
+                 </property>
+                </widget>
+                <widget class="QFrame" name="frame_24">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>80</y>
+                   <width>201</width>
+                   <height>101</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">#frame_24{
+	border: 2px solid rgb(0, 85, 255);
+	border-radius: 12px;
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <item>
+                   <widget class="QLabel" name="label_9">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 85, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Commande livrer du Jour</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_24">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 0, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>100000 Ar</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_25">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>50 livre</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QFrame" name="frame_25">
+                 <property name="geometry">
+                  <rect>
+                   <x>320</x>
+                   <y>80</y>
+                   <width>211</width>
+                   <height>101</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">#frame_25{
+	border: 2px solid rgb(0, 85, 255);
+	border-radius: 12px;
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                  <item>
+                   <widget class="QLabel" name="label_26">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 85, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Commande livrer du mois</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_28">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 0, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>100000 Ar</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_29">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>50 livre</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QTableWidget" name="reliureTableWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>260</y>
+                   <width>521</width>
+                   <height>371</height>
+                  </rect>
+                 </property>
+                 <column>
+                  <property name="text">
+                   <string>numero</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Nom du client</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Type</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Page Noir</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Page Couleur</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Exemplaire</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Total a payer</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Etat Livrer</string>
+                  </property>
+                 </column>
+                </widget>
+                <widget class="QWidget" name="verticalLayoutWidget_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>550</x>
+                   <y>139</y>
+                   <width>591</width>
+                   <height>491</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="reliureCourbe"/>
+                </widget>
+                <widget class="QLabel" name="label_31">
+                 <property name="geometry">
+                  <rect>
+                   <x>550</x>
+                   <y>100</y>
+                   <width>591</width>
+                   <height>41</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: 1px solid rgb(0, 85, 255);
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;</string>
+                 </property>
+                 <property name="text">
+                  <string>Evolutions des Commandes Livrees</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </widget>
@@ -1851,14 +2020,15 @@ border-top-right-radius: 10px;</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_5">
-            <property name="text">
-             <string>Mon Profile</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="logoutBtn">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid orange;
+border-radius: 10px;
+height: 30px;</string>
+            </property>
             <property name="text">
              <string>Se deconnecter</string>
             </property>
