@@ -2,6 +2,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtGui import QPdfWriter, QPageLayout, QPageSize, QPainter, QPixmap
 from PySide6.QtPrintSupport import QPrinter, QPrintDialog, QPrinterInfo
 from PySide6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox, QFileDialog
+from num2words import num2words
 
 from models.model_class import Facture, Client
 from services.article_service import get_article_by_id
@@ -78,6 +79,8 @@ class FactureDialog(QDialog):
         self.ui.reste_payer.setText(reste_payer)
         self.ui.avance.setText(f"{facture.avancement} Ar")
         self.ui.total.setText(f"{self.total_a_payer} Ar")
+        total_lettre = num2words(self.total_a_payer, lang='fr')
+        self.ui.total_lettre.setText(total_lettre)
 
     def change_facture_state(self):
         if self.statut_payement:
