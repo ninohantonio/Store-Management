@@ -80,7 +80,7 @@ class FactureDialog(QDialog):
         self.ui.avance.setText(f"{facture.avancement} Ar")
         self.ui.total.setText(f"{self.total_a_payer} Ar")
         total_lettre = num2words(self.total_a_payer, lang='fr')
-        self.ui.total_lettre.setText(total_lettre)
+        self.ui.total_lettre.setText(f"{total_lettre} Ariary")
 
     def change_facture_state(self):
         if self.statut_payement:
