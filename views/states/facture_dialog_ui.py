@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_dialogeoYABf.ui'
+## Form generated from reading UI file 'facture_dialogTeqIcb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -176,11 +176,11 @@ class Ui_Dialog(object):
         self.label_10.setFont(font)
         self.label_17 = QLabel(self.footer_frame)
         self.label_17.setObjectName(u"label_17")
-        self.label_17.setGeometry(QRect(10, 70, 281, 16))
+        self.label_17.setGeometry(QRect(0, 65, 311, 21))
         self.label_17.setFont(font1)
         self.total_lettre = QLabel(self.footer_frame)
         self.total_lettre.setObjectName(u"total_lettre")
-        self.total_lettre.setGeometry(QRect(300, 70, 441, 16))
+        self.total_lettre.setGeometry(QRect(310, 60, 441, 31))
         self.total_lettre.setFont(font1)
         self.total_lettre.setStyleSheet(u"color: rgb(255, 0, 0);")
         self.header_frame = QFrame(Dialog)
