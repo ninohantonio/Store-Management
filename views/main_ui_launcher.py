@@ -72,6 +72,16 @@ class MainWindow(QMainWindow):
 
         self.ui.add_selection_rapideBtn.clicked.connect(self.show_article_rapide_dialog)
 
+        self.ui.facture_table.setColumnWidth(0, 150)
+        self.ui.facture_table.setColumnWidth(1, 150)
+        self.ui.facture_table.setColumnWidth(2, 150)
+        self.ui.facture_table.setColumnWidth(3, 150)
+        self.ui.facture_table.setColumnWidth(4, 150)
+
+        self.ui.journal_tableWidget.setColumnWidth(0, 150)
+        self.ui.journal_tableWidget.setColumnWidth(1, 150)
+        self.ui.journal_tableWidget.setColumnWidth(2, 150)
+
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
         self.ui.filter_facture_combo.currentIndexChanged.connect(self.manage_filter_facture_change)
 

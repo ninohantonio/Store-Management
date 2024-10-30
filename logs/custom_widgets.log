@@ -11407,3 +11407,69 @@
 2024-10-28 14:08:49,265 - DEBUG - findfont: score(FontEntry(fname='C:\\Windows\\Fonts\\taileb.ttf', name='Microsoft Tai Le', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
 2024-10-28 14:08:49,265 - DEBUG - findfont: score(FontEntry(fname='C:\\Windows\\Fonts\\cour.ttf', name='Courier New', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
 2024-10-28 14:08:49,265 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('D:\\projet\\Python\\Store-Management\\.venv\\Lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2024-10-29 07:02:50,262 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 07:02:50,283 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 07:05:44,637 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 07:05:44,641 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 07:12:05,468 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 07:12:05,472 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 07:13:14,572 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 07:13:14,576 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 09:24:42,798 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 09:24:42,802 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 09:30:39,381 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 09:30:39,385 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 09:36:08,223 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 09:36:08,227 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 10:21:07,255 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 10:21:07,258 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 10:47:45,819 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 10:47:45,823 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:14:42,516 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:14:42,520 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:22:02,624 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:22:02,628 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:29:34,563 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:29:34,567 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:37:47,873 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:37:47,877 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:42:08,777 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:42:08,780 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:43:45,080 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:43:45,083 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:48:14,648 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:48:14,652 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 11:50:49,231 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 11:50:49,234 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:00:29,021 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:00:29,025 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:06:05,411 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:06:05,414 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:17:55,457 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:17:55,461 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:21:08,761 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:21:08,765 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:25:39,109 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:25:39,114 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:28:31,107 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:28:31,111 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:32:30,082 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:32:30,086 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:34:45,889 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:34:45,893 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:36:49,495 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:36:49,498 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:39:46,387 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:39:46,391 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:44:27,695 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:44:27,699 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:50:43,967 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:50:43,971 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 12:59:35,266 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 12:59:35,270 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 13:01:01,031 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 13:01:01,035 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 13:04:01,708 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 13:04:01,711 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
+2024-10-29 13:13:37,735 - DEBUG - CACHEDIR=C:\Users\같Lenovo X260같\.matplotlib
+2024-10-29 13:13:37,738 - DEBUG - Using fontManager instance from C:\Users\같Lenovo X260같\.matplotlib\fontlist-v390.json
