@@ -3,7 +3,7 @@ from models.model_class import Article
 from services.article_service import get_article_for_articlerapide
 from services.auth_service import create_user, verify_password
 from services.facture_service import get_total_for_facture, get_total_facture_group_by_date
-from services.reliure_service import get_total_reliure_group_by_date
+from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_client_name
 
 # create_user("ninohantonio@gmail.com", "ninokely123")
 # verify = verify_password("ninohantonio@gmail.com", "ninokely123")
@@ -26,4 +26,4 @@ from services.reliure_service import get_total_reliure_group_by_date
 #gerer le screen facture (affichage et recherche)
 #gerer le screen journal (affichage et recherche)
 
-print(get_total_reliure_group_by_date())
+print(get_reliure_by_client_name("rakoto"))

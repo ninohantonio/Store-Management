@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, date
 from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
 
-from models.model_class import Reliure, Typelivre
+from models.model_class import Reliure, Typelivre, Client
 from utils.database import engine
 
 Session = sessionmaker(bind=engine)
@@ -57,6 +57,9 @@ def get_reliure_by_date_and_state(date: date, state: bool):
     return session.query(Reliure).order_by(Reliure.dateCommande.desc()).filter(
         Reliure.dateCommande == date, Reliure.statutLivrer == state
     ).all()
+
+def get_reliure_by_client_name(clientname: str):
+    return session.query(Reliure).join(Client).filter(Client.nom.contains(clientname)).all()
 
 
 def get_total_reliure_group_by_date():

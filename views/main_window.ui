@@ -789,7 +789,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1273,6 +1273,20 @@ QLineEdit{
                 <string>Date d'entrer en stock</string>
                </property>
               </item>
+             </widget>
+             <widget class="QDateEdit" name="date_article">
+              <property name="geometry">
+               <rect>
+                <x>490</x>
+                <y>80</y>
+                <width>151</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 2px solid orange;
+border-radius: 10px;</string>
+              </property>
              </widget>
             </widget>
            </item>

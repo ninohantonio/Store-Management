@@ -18,7 +18,7 @@ def get_article_by_id(article_id):
     return article
 
 def filter_article_by_date(date: datetime.date):
-    articles = session.query(Article).where(dateEntrer = date).all()
+    articles = session.query(Article).where(Article.dateEntrer == date).all()
     return articles
 
 def insert_new_article(article: Article):
@@ -59,6 +59,7 @@ def get_article_by_name(article_name):
 def get_article_by_price(article_price):
     articles = session.query(Article).where(Article.prixUnitaire == article_price).order_by(Article.pieceEnStock.asc()).all()
     return articles
+
 
 def verify_article_by_id(article_id):
     return session.query(Article).filter_by(numeroArticle=article_id).first() is not None

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowHtkCuc.ui'
+## Form generated from reading UI file 'main_windowFQUKBk.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -650,6 +650,11 @@ class Ui_MainWindow(object):
         self.filterCombo.addItem("")
         self.filterCombo.setObjectName(u"filterCombo")
         self.filterCombo.setGeometry(QRect(220, 81, 161, 31))
+        self.date_article = QDateEdit(self.frame_2)
+        self.date_article.setObjectName(u"date_article")
+        self.date_article.setGeometry(QRect(490, 80, 151, 31))
+        self.date_article.setStyleSheet(u"border: 2px solid orange;\n"
+"border-radius: 10px;")
 
         self.verticalLayout_4.addWidget(self.frame_2)
 
@@ -948,7 +953,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

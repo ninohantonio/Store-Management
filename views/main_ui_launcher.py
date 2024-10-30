@@ -11,7 +11,7 @@ from models.model_class import Facture, Client, Commande, Journal, Notification,
     Reliure
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
-    get_article_by_price, session
+    get_article_by_price, session, filter_article_by_date
 from services.articlerapide_service import insert_new_article_rapide, get_all_articlerapide
 from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
@@ -20,7 +20,8 @@ from services.facture_service import insert_new_facture, get_facture_by_id, get_
 from services.journal_service import insert_new_journal, get_all_journal, get_journal_by_type_action, \
     search_journals_by_date
 from services.reliure_service import get_all_reliure_commande, get_all_type_livre, insert_new_reliure_commande, \
-    get_reliure_by_id, get_type_livre_by_id, get_reliure_by_date, get_reliure_by_state, session
+    get_reliure_by_id, get_type_livre_by_id, get_reliure_by_date, get_reliure_by_state, session, \
+    get_reliure_by_client_name
 from views.article_rapide_launcher import ArticleRapideDialog
 from views.auth.login_launcher import LoginWindow
 from views.client_ui_launcher import ClientList
@@ -188,7 +189,9 @@ class MainWindow(QMainWindow):
     def manage_navigation(self, index):
         if index == 2:
             self.refresh_stock_screen()
+            self.ui.date_article.setHidden(True)
             self.ui.searchField.returnPressed.disconnect()
+            self.ui.filterCombo.currentIndexChanged.connect(self.refresh_data_search)
             self.ui.searchField.returnPressed.connect(self.refresh_data_search)
         elif index == 0:
             self.ui.searchField.returnPressed.disconnect()
@@ -207,6 +210,7 @@ class MainWindow(QMainWindow):
         elif index == 6:
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_reliure_data_table()
+            self.ui.searchField.returnPressed.connect(lambda : self.search_reliure_by_clientname(self.ui.searchField.text()))
         pass
 
     def refresh_stock_screen(self):
@@ -216,6 +220,7 @@ class MainWindow(QMainWindow):
     def refresh_data_search(self):
         current_filter_index = self.ui.filterCombo.currentIndex()
         articles = []
+        self.ui.date_article.setHidden(True)
         if current_filter_index == 0:
             ## search by libelle
             if self.ui.searchField.text().strip() == "":
@@ -241,14 +246,22 @@ class MainWindow(QMainWindow):
 
         elif current_filter_index == 3:
             ## search by date d'entrer
+            self.ui.date_article.dateChanged.connect(self.search_article_by_date)
+            self.ui.date_article.setHidden(False)
+            date = self.ui.date_article.date().toPython()
             if self.ui.searchField.text().strip() == "":
                 articles = get_all_article()
             else:
-                articles = get_article_by_name(self.ui.searchField.text())
+                articles = filter_article_by_date(date)
             pass
         print(f"articles = {articles}")
         refresh_stock_table_data(self.ui.stockTable, articles)
         pass
+
+    def search_article_by_date(self):
+        date = self.ui.date_article.date().toPython()
+        articles = filter_article_by_date(date)
+        refresh_stock_table_data(self.ui.stockTable, articles)
 
     def redirect_to_admin_window(self):
         self.login_window = LoginWindow()
@@ -737,6 +750,13 @@ class MainWindow(QMainWindow):
             refresh_reliure_table_data(self.ui.reliure_table, reliures)
         else:
             reliures = get_reliure_by_state(True)
+            refresh_reliure_table_data(self.ui.reliure_table, reliures)
+
+    def search_reliure_by_clientname(self, client: str):
+        if client.strip() == "":
+            self.refresh_reliure_data_table()
+        else:
+            reliures = get_reliure_by_client_name(client)
             refresh_reliure_table_data(self.ui.reliure_table, reliures)
 
     def manage_logout(self):
