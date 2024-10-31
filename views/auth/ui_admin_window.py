@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowsYNpvb.ui'
+## Form generated from reading UI file 'main_admin_windowaJTmXf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -747,6 +747,19 @@ class Ui_MainWindow(object):
 "border-top-left-radius: 10px;\n"
 "border-top-right-radius: 10px;")
         self.label_27.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.date_facture = QDateEdit(self.widget_7)
+        self.date_facture.setObjectName(u"date_facture")
+        self.date_facture.setGeometry(QRect(20, 130, 121, 31))
+        self.date_facture.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
+        self.filter_facture_combo = QComboBox(self.widget_7)
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.addItem("")
+        self.filter_facture_combo.setObjectName(u"filter_facture_combo")
+        self.filter_facture_combo.setGeometry(QRect(240, 131, 181, 31))
+        self.filter_facture_combo.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.dashboardPage)
         self.clientPage = QWidget()
         self.clientPage.setObjectName(u"clientPage")
@@ -965,7 +978,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1031,6 +1044,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3 = self.facture_tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Identifiant du Client", None));
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Evolution des ventes du mois", None))
+        self.filter_facture_combo.setItemText(0, QCoreApplication.translate("MainWindow", u"Toutes les Factures", None))
+        self.filter_facture_combo.setItemText(1, QCoreApplication.translate("MainWindow", u"Factures Payer", None))
+        self.filter_facture_combo.setItemText(2, QCoreApplication.translate("MainWindow", u"Facture Non Payer", None))
+
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Commande de Livre", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Commande livrer du Jour", None))
         self.reliure_jour.setText(QCoreApplication.translate("MainWindow", u"100000 Ar", None))

@@ -501,7 +501,7 @@ QLineEdit, QTextEdit{
              <item>
               <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="ajout_page">
                 <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -1677,6 +1677,49 @@ border-top-right-radius: 10px;</string>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
+                 </widget>
+                 <widget class="QDateEdit" name="date_facture">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>130</y>
+                    <width>121</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                  </property>
+                 </widget>
+                 <widget class="QComboBox" name="filter_facture_combo">
+                  <property name="geometry">
+                   <rect>
+                    <x>240</x>
+                    <y>131</y>
+                    <width>181</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Toutes les Factures</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Factures Payer</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Facture Non Payer</string>
+                   </property>
+                  </item>
                  </widget>
                 </widget>
                </widget>
