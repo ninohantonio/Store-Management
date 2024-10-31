@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowaJTmXf.ui'
+## Form generated from reading UI file 'main_admin_windowrGQkoQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -199,6 +199,16 @@ class Ui_MainWindow(object):
         self.clientBtn.setIconSize(QSize(32, 32))
 
         self.verticalLayout.addWidget(self.clientBtn)
+
+        self.pushButton = QPushButton(self.frame_2)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/icons/barcode.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton.setIcon(icon4)
+        self.pushButton.setIconSize(QSize(32, 32))
+
+        self.verticalLayout.addWidget(self.pushButton)
 
 
         self.verticalLayout_3.addWidget(self.frame_2)
@@ -943,9 +953,9 @@ class Ui_MainWindow(object):
         self.logoutBtn.setStyleSheet(u"border: 2px solid orange;\n"
 "border-radius: 10px;\n"
 "height: 30px;")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon5)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_5.addWidget(self.logoutBtn)
@@ -986,10 +996,26 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+#if QT_CONFIG(whatsthis)
+        self.formulaireBtn.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
         self.formulaireBtn.setText("")
+#if QT_CONFIG(whatsthis)
+        self.dashboardBtn.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
         self.dashboardBtn.setText("")
+#if QT_CONFIG(whatsthis)
+        self.reliureBtn.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
         self.reliureBtn.setText("")
+#if QT_CONFIG(whatsthis)
+        self.clientBtn.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
         self.clientBtn.setText("")
+#if QT_CONFIG(whatsthis)
+        self.pushButton.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
+        self.pushButton.setText("")
         self.appHeader_2.setText(QCoreApplication.translate("MainWindow", u"Administration", None))
         self.label_12.setText("")
         self.search_field.setText("")
