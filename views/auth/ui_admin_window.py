@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowrGQkoQ.ui'
+## Form generated from reading UI file 'main_admin_windowWXpBAj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -200,15 +200,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.clientBtn)
 
-        self.pushButton = QPushButton(self.frame_2)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.barcodeBtn = QPushButton(self.frame_2)
+        self.barcodeBtn.setObjectName(u"barcodeBtn")
+        self.barcodeBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon4 = QIcon()
         icon4.addFile(u":/icons/icons/barcode.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton.setIcon(icon4)
-        self.pushButton.setIconSize(QSize(32, 32))
+        self.barcodeBtn.setIcon(icon4)
+        self.barcodeBtn.setIconSize(QSize(32, 32))
 
-        self.verticalLayout.addWidget(self.pushButton)
+        self.verticalLayout.addWidget(self.barcodeBtn)
 
 
         self.verticalLayout_3.addWidget(self.frame_2)
@@ -902,6 +902,18 @@ class Ui_MainWindow(object):
 "border: 2px solid rgb(0, 85, 255);\n"
 "border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.clientPage)
+        self.client_listPage = QWidget()
+        self.client_listPage.setObjectName(u"client_listPage")
+        self.label_24 = QLabel(self.client_listPage)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setGeometry(QRect(170, 70, 49, 16))
+        self.mainNavigationScreen.addWidget(self.client_listPage)
+        self.barcodePage = QWidget()
+        self.barcodePage.setObjectName(u"barcodePage")
+        self.label_25 = QLabel(self.barcodePage)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setGeometry(QRect(80, 30, 49, 16))
+        self.mainNavigationScreen.addWidget(self.barcodePage)
 
         self.horizontalLayout_2.addWidget(self.mainNavigationScreen)
 
@@ -988,7 +1000,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(1)
+        self.mainNavigationScreen.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1013,9 +1025,9 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(whatsthis)
         self.clientBtn.setText("")
 #if QT_CONFIG(whatsthis)
-        self.pushButton.setWhatsThis("")
+        self.barcodeBtn.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
-        self.pushButton.setText("")
+        self.barcodeBtn.setText("")
         self.appHeader_2.setText(QCoreApplication.translate("MainWindow", u"Administration", None))
         self.label_12.setText("")
         self.search_field.setText("")
@@ -1102,6 +1114,8 @@ class Ui_MainWindow(object):
         self.reliure_filterCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"Commandes Livrees", None))
         self.reliure_filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Commandes Non Livrees", None))
 
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"Barcode", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")
