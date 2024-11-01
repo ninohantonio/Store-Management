@@ -1,19 +1,23 @@
 import os
 
 import bcrypt
+from sqlalchemy.orm import sessionmaker
 
 from models.model_class import User
-from services.article_service import session
 
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+from utils.database import engine
 
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 EMAIL_ADDRESS = os.getenv('MAIL_ADDRESS')
 EMAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+
+Session = sessionmaker(bind=engine)
+session = Session()
 
 def hash_password(password):
     salt = bcrypt.gensalt()
@@ -73,5 +77,9 @@ def send_email_confirmation_to_admin(email, object, message):
 def confirm_by_email(email):
     pass
 
-def change_password(email):
+def change_password(email, new_password):
+    new_hash_password = hash_password(new_password)
+    client = session.query(User).filter_by(email = email).first()
+    client.password_hash = new_hash_password
+    session.commit()
     pass

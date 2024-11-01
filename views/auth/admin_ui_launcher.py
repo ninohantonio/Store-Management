@@ -16,7 +16,7 @@ from models.model_class import Article, Approvisionnement
 from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
-from services.auth_service import check_if_mail_is_admin, send_email_confirmation_to_admin
+from services.auth_service import check_if_mail_is_admin, send_email_confirmation_to_admin, change_password
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
     get_facture_by_id, get_facture_by_date_enregistrement, get_all_facture, get_facture_by_state, \
     get_factures_by_date_and_state
@@ -38,6 +38,7 @@ class AdminWindow(QMainWindow):
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/auth/style.json"])
         self.confirmation_code = None
+        self.email_admin = None
 
         self.showMaximized()
         self.ui.resetBtn.clicked.connect(self.reset_form)
@@ -116,6 +117,13 @@ class AdminWindow(QMainWindow):
             self.ui.search_field.returnPressed.connect(self.get_reliure_by_client_name)
             self.load_reliure_line_chart()
             self.load_total_reliure_today()
+        elif index == 4:
+            self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
+            self.confirmation_code = None
+            self.email_admin = None
+            self.ui.search_field.returnPressed.disconnect()
+            self.ui.change_password_frame.setHidden(True)
+            self.ui.confirmation_form.setHidden(False)
 
 
     def manage_search_value_input(self):
@@ -600,6 +608,7 @@ class AdminWindow(QMainWindow):
 
     def handle_send_code(self):
         if check_if_mail_is_admin(self.ui.email_confirmation.text()):
+            self.email_admin = self.ui.email_confirmation.text()
             self.confirmation_code = self.generate_confirmation_code()
             if send_email_confirmation_to_admin(self.ui.email_confirmation.text(), "Code de validation Irina service", f"Voici la code de validation {self.confirmation_code}"):
                 QMessageBox.information(self, "Code de validation", "Le code de validation a bien ete envoyer")
@@ -624,7 +633,17 @@ class AdminWindow(QMainWindow):
 
 
 
-
-
-
-
+    def handle_submit_new_password(self):
+        if self.ui.new_password.text().strip() != "" and self.ui.new_password_confirm.text().strip() != "":
+            if self.ui.new_password.text() == self.ui.new_password_confirm.text():
+                change_password(self.email_admin, self.ui.new_password.text())
+                QMessageBox.information(self, "Mot de passe modifier", "Votre mot passe a bien ete changer")
+                self.ui.new_password.clear()
+                self.ui.new_password_confirm.clear()
+                self.ui.change_password_frame.setHidden(True)
+                self.ui.confirmation_form.setHidden(False)
+                pass
+            else:
+                QMessageBox.critical(self, "Confirmation de mot de passe", "Verifier votre nouveau mot de passe et bien le confirmer")
+        else:
+            QMessageBox.warning(self, "Confirmation de mot de passe", "Veuillez remplir toutes les champs")
