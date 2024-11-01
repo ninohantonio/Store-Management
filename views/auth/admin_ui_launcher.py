@@ -16,13 +16,14 @@ from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
-    get_facture_by_id
+    get_facture_by_id, get_facture_by_date_enregistrement, get_all_facture, get_facture_by_state, \
+    get_factures_by_date_and_state
 from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_date, get_total_for_reliure, \
-    get_reliure_by_date_and_state
+    get_reliure_by_date_and_state, get_reliure_by_client_name
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
-from PySide6.QtWidgets import QApplication, QMessageBox
+from PySide6.QtWidgets import QApplication, QMessageBox, QFileDialog
 
 from views.states.facture_dialog_launcher import FactureDialog
 from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data, refresh_reliure_table_data
@@ -74,6 +75,11 @@ class AdminWindow(QMainWindow):
         self.ui.facture_tableWidget.cellDoubleClicked.connect(self.manage_double_click_facture_item)
         self.ui.reliureDate.dateChanged.connect(self.manage_reliure_date_change)
         self.ui.reliure_filterCombo.currentIndexChanged.connect(self.manage_reliure_date_change)
+        self.ui.date_facture.dateChanged.connect(self.manage_filter_facture_change)
+        self.ui.filter_facture_combo.currentIndexChanged.connect(self.manage_filter_facture_change)
+        self.ui.pushButton_2.clicked.connect(self.refresh_factures_view)
+        self.ui.refreshReliure.clicked.connect(self.load_reliure_table_list)
+        self.ui.generer_code_barre.clicked.connect(self.generate_bar_code)
 
         self.ui.reliureTableWidget.hideColumn(0)
         self.ui.reliureTableWidget.hideColumn(3)
@@ -91,12 +97,17 @@ class AdminWindow(QMainWindow):
     def manage_navigation(self, index):
         if index == 1:
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.date_facture.setDate(datetime.now())
+            self.ui.search_field.clear()
         elif index == 0:
+            self.ui.search_field.clear()
             self.ui.search_field.returnPressed.connect(self.manage_search_value_input)
             self.ui.search_field.textChanged.connect(self.manage_search_value_input)
             self.ui.search_field.setFocus()
         elif index == 2:
+            self.ui.search_field.clear()
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.returnPressed.connect(self.get_reliure_by_client_name)
             self.load_reliure_line_chart()
             self.load_total_reliure_today()
 
@@ -463,6 +474,28 @@ class AdminWindow(QMainWindow):
         return
 
 
+    def manage_facture_date_change(self):
+        date = self.ui.date_facture.date().toPython()
+        factures = search_factures_by_date(date)
+        if len(factures) > 0:
+            refresh_facture_table_data(self.ui.facture_tableWidget, factures)
+
+    def manage_filter_facture_change(self):
+        index = self.ui.filter_facture_combo.currentIndex()
+        date = self.ui.date_facture.date().toPython()
+        if index == 0:
+            refresh_facture_table_data(self.ui.facture_tableWidget, search_factures_by_date(date))
+        elif index == 1:
+            refresh_facture_table_data(self.ui.facture_tableWidget, get_factures_by_date_and_state(date, True))
+        else:
+            refresh_facture_table_data(self.ui.facture_tableWidget, get_factures_by_date_and_state(date, False))
+
+    def refresh_factures_view(self):
+        self.ui.date_facture.setDate(datetime.now())
+        refresh_facture_table_data(self.ui.facture_tableWidget, search_factures_by_date(datetime.now()))
+
+
+
     def load_reliure_line_chart(self):
         reliures_par_jours = get_total_reliure_group_by_date()
 
@@ -503,6 +536,7 @@ class AdminWindow(QMainWindow):
             self.reliure_canvas.draw()
 
     def load_reliure_table_list(self):
+        self.ui.reliureDate.setDate(datetime.now())
         reliures = get_reliure_by_date(datetime.now())
         refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
         return
@@ -519,12 +553,41 @@ class AdminWindow(QMainWindow):
             reliures = get_reliure_by_date_and_state(date, False)
             refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
 
+    def get_reliure_by_client_name(self):
+        if self.ui.search_field.text().strip() == "":
+            self.load_reliure_table_list()
+        else:
+            reliures = get_reliure_by_client_name(self.ui.search_field.text())
+            refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
 
     def load_total_reliure_today(self):
         reliures = get_reliure_by_date(datetime.now())
         total = [get_total_for_reliure(reliure.numeroReliure) for reliure in reliures]
         montant = sum(total)
         self.ui.reliure_jour.setText(f"{montant} Ar")
+
+
+    def generate_bar_code(self):
+        import uuid
+        from barcode import EAN13
+        from barcode.writer import ImageWriter
+
+        path = QFileDialog.getSaveFileName(
+            self,
+            "Enregistrer le code barre vers",
+        )
+
+        unique_id = uuid.uuid4().int
+        barcode_number = str(unique_id)[:13]
+
+        barcode = EAN13(barcode_number, writer=ImageWriter())
+        if path:
+            print(path[0])
+            barcode.save(path[0])
+            QMessageBox.information(self, f"Code barre enregistrer ", f"Dans : {path[0]}")
+
+        return
+
 
 
 

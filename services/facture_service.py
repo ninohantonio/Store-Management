@@ -18,7 +18,7 @@ def get_facture_for_client(client_id: int):
 def get_facture_by_id(facture_id: int):
     return session.query(Facture).filter(Facture.numeroFacture == facture_id).first()
 
-def get_facture_by_date_enregistrement(date: str):
+def get_facture_by_date_enregistrement(date: date):
     return session.query(Facture).order_by(Facture.dateEnregistrement.desc()).filter(Facture.dateEnregistrement == date).all()
 
 def get_facture_by_state(statut: bool):
@@ -70,7 +70,20 @@ def search_factures_by_date_range(start_date: datetime, end_date: datetime):
     return result
 
 
-def search_factures_by_date(search_date: datetime):
+def get_factures_by_date_and_state(date: date, state: bool):
+    start_of_day = datetime(date.year, date.month, date.day)
+    end_of_day = start_of_day + timedelta(days=1)
+
+    # Filtrer les factures enregistrées ce jour-là
+    result = session.query(Facture).order_by(Facture.dateEnregistrement.desc()).filter(
+        Facture.dateEnregistrement >= start_of_day,
+        Facture.dateEnregistrement < end_of_day,
+        Facture.statutPayement == state
+    ).all()
+
+    return result
+
+def search_factures_by_date(search_date: date):
     # Obtenir la date de début et de fin de la journée
     start_of_day = datetime(search_date.year, search_date.month, search_date.day)
     end_of_day = start_of_day + timedelta(days=1)
@@ -82,6 +95,7 @@ def search_factures_by_date(search_date: datetime):
     ).all()
 
     return result
+
 
 
 def get_total_for_facture(facture_id):

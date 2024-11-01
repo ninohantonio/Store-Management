@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowWXpBAj.ui'
+## Form generated from reading UI file 'main_admin_windowbfqAsZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -871,7 +871,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem11 = QTableWidgetItem()
         self.reliureTableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem11)
         self.reliureTableWidget.setObjectName(u"reliureTableWidget")
-        self.reliureTableWidget.setGeometry(QRect(10, 260, 521, 371))
+        self.reliureTableWidget.setGeometry(QRect(10, 280, 521, 351))
         self.verticalLayoutWidget_2 = QWidget(self.clientPage)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
         self.verticalLayoutWidget_2.setGeometry(QRect(550, 139, 591, 491))
@@ -901,6 +901,12 @@ class Ui_MainWindow(object):
         self.reliure_filterCombo.setStyleSheet(u"background: white;\n"
 "border: 2px solid rgb(0, 85, 255);\n"
 "border-radius: 10px;")
+        self.refreshReliure = QPushButton(self.clientPage)
+        self.refreshReliure.setObjectName(u"refreshReliure")
+        self.refreshReliure.setGeometry(QRect(440, 250, 75, 24))
+        self.refreshReliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.refreshReliure.setStyleSheet(u"border-radius: 10px;\n"
+"background: white;")
         self.mainNavigationScreen.addWidget(self.clientPage)
         self.client_listPage = QWidget()
         self.client_listPage.setObjectName(u"client_listPage")
@@ -910,9 +916,12 @@ class Ui_MainWindow(object):
         self.mainNavigationScreen.addWidget(self.client_listPage)
         self.barcodePage = QWidget()
         self.barcodePage.setObjectName(u"barcodePage")
-        self.label_25 = QLabel(self.barcodePage)
-        self.label_25.setObjectName(u"label_25")
-        self.label_25.setGeometry(QRect(80, 30, 49, 16))
+        self.generer_code_barre = QPushButton(self.barcodePage)
+        self.generer_code_barre.setObjectName(u"generer_code_barre")
+        self.generer_code_barre.setGeometry(QRect(440, 80, 271, 41))
+        self.generer_code_barre.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.generer_code_barre.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.barcodePage)
 
         self.horizontalLayout_2.addWidget(self.mainNavigationScreen)
@@ -1000,7 +1009,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(4)
+        self.mainNavigationScreen.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1114,8 +1123,9 @@ class Ui_MainWindow(object):
         self.reliure_filterCombo.setItemText(1, QCoreApplication.translate("MainWindow", u"Commandes Livrees", None))
         self.reliure_filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Commandes Non Livrees", None))
 
+        self.refreshReliure.setText(QCoreApplication.translate("MainWindow", u"Rafraichir", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"Barcode", None))
+        self.generer_code_barre.setText(QCoreApplication.translate("MainWindow", u"Generer un Code Barre", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")
