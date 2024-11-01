@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowbfqAsZ.ui'
+## Form generated from reading UI file 'main_admin_windowBItRUm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -209,6 +209,16 @@ class Ui_MainWindow(object):
         self.barcodeBtn.setIconSize(QSize(32, 32))
 
         self.verticalLayout.addWidget(self.barcodeBtn)
+
+        self.changePasswordBtn = QPushButton(self.frame_2)
+        self.changePasswordBtn.setObjectName(u"changePasswordBtn")
+        self.changePasswordBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.changePasswordBtn.setIcon(icon5)
+        self.changePasswordBtn.setIconSize(QSize(32, 32))
+
+        self.verticalLayout.addWidget(self.changePasswordBtn)
 
 
         self.verticalLayout_3.addWidget(self.frame_2)
@@ -923,6 +933,64 @@ class Ui_MainWindow(object):
         self.generer_code_barre.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
 "border-radius: 10px;")
         self.mainNavigationScreen.addWidget(self.barcodePage)
+        self.settingPage = QWidget()
+        self.settingPage.setObjectName(u"settingPage")
+        self.confirmation_form = QFrame(self.settingPage)
+        self.confirmation_form.setObjectName(u"confirmation_form")
+        self.confirmation_form.setGeometry(QRect(10, 100, 271, 221))
+        self.confirmation_form.setFrameShape(QFrame.Shape.StyledPanel)
+        self.confirmation_form.setFrameShadow(QFrame.Shadow.Raised)
+        self.email_confirmation = QLineEdit(self.confirmation_form)
+        self.email_confirmation.setObjectName(u"email_confirmation")
+        self.email_confirmation.setGeometry(QRect(10, 30, 241, 31))
+        self.code_confirmation = QLineEdit(self.confirmation_form)
+        self.code_confirmation.setObjectName(u"code_confirmation")
+        self.code_confirmation.setGeometry(QRect(10, 110, 241, 31))
+        self.label_25 = QLabel(self.confirmation_form)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setGeometry(QRect(10, 6, 101, 20))
+        self.label_25.setFont(font8)
+        self.label_28 = QLabel(self.confirmation_form)
+        self.label_28.setObjectName(u"label_28")
+        self.label_28.setGeometry(QRect(10, 86, 141, 20))
+        self.label_28.setFont(font8)
+        self.send_code_confirmation = QPushButton(self.confirmation_form)
+        self.send_code_confirmation.setObjectName(u"send_code_confirmation")
+        self.send_code_confirmation.setGeometry(QRect(10, 170, 241, 31))
+        self.send_code_confirmation.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
+        self.change_password_frame = QFrame(self.settingPage)
+        self.change_password_frame.setObjectName(u"change_password_frame")
+        self.change_password_frame.setGeometry(QRect(10, 100, 271, 221))
+        self.change_password_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.change_password_frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.new_password = QLineEdit(self.change_password_frame)
+        self.new_password.setObjectName(u"new_password")
+        self.new_password.setGeometry(QRect(10, 30, 241, 31))
+        self.new_password_confirm = QLineEdit(self.change_password_frame)
+        self.new_password_confirm.setObjectName(u"new_password_confirm")
+        self.new_password_confirm.setGeometry(QRect(10, 110, 241, 31))
+        self.submit_new_password = QPushButton(self.change_password_frame)
+        self.submit_new_password.setObjectName(u"submit_new_password")
+        self.submit_new_password.setGeometry(QRect(10, 170, 241, 31))
+        self.submit_new_password.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
+        self.label_29 = QLabel(self.change_password_frame)
+        self.label_29.setObjectName(u"label_29")
+        self.label_29.setGeometry(QRect(20, 10, 171, 21))
+        self.label_29.setFont(font8)
+        self.label_34 = QLabel(self.change_password_frame)
+        self.label_34.setObjectName(u"label_34")
+        self.label_34.setGeometry(QRect(20, 85, 221, 21))
+        self.label_34.setFont(font8)
+        self.label_35 = QLabel(self.settingPage)
+        self.label_35.setObjectName(u"label_35")
+        self.label_35.setGeometry(QRect(10, 30, 481, 41))
+        self.label_35.setFont(font5)
+        self.label_35.setStyleSheet(u"background: rgb(0, 170, 255);\n"
+"padding-left: 10px;\n"
+"color: white;")
+        self.mainNavigationScreen.addWidget(self.settingPage)
 
         self.horizontalLayout_2.addWidget(self.mainNavigationScreen)
 
@@ -942,6 +1010,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setContentsMargins(-1, 0, 0, 0)
         self.widget_14 = QWidget(self.profile_container)
         self.widget_14.setObjectName(u"widget_14")
+        self.widget_14.setStyleSheet(u"#widget_14{\n"
+"	background: rgb(0, 85, 255);\n"
+"padding-bottom: 10px;\n"
+"}")
         self.verticalLayout_5 = QVBoxLayout(self.widget_14)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -973,10 +1045,11 @@ class Ui_MainWindow(object):
         self.logoutBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.logoutBtn.setStyleSheet(u"border: 2px solid orange;\n"
 "border-radius: 10px;\n"
-"height: 30px;")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.logoutBtn.setIcon(icon5)
+"height: 30px;\n"
+"margin-bottom: 5px;")
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/icons/logout.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.logoutBtn.setIcon(icon6)
         self.logoutBtn.setIconSize(QSize(18, 18))
 
         self.verticalLayout_5.addWidget(self.logoutBtn)
@@ -1009,7 +1082,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainNavigationScreen.setCurrentIndex(0)
+        self.mainNavigationScreen.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1037,6 +1110,7 @@ class Ui_MainWindow(object):
         self.barcodeBtn.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.barcodeBtn.setText("")
+        self.changePasswordBtn.setText("")
         self.appHeader_2.setText(QCoreApplication.translate("MainWindow", u"Administration", None))
         self.label_12.setText("")
         self.search_field.setText("")
@@ -1126,6 +1200,13 @@ class Ui_MainWindow(object):
         self.refreshReliure.setText(QCoreApplication.translate("MainWindow", u"Rafraichir", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
         self.generer_code_barre.setText(QCoreApplication.translate("MainWindow", u"Generer un Code Barre", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"email admin", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"Code de confirmation", None))
+        self.send_code_confirmation.setText(QCoreApplication.translate("MainWindow", u"Envoyer le code", None))
+        self.submit_new_password.setText(QCoreApplication.translate("MainWindow", u"Valider le nouveau mot de passe", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"Nouveau Mot de passe", None))
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"Confirmer le nouveau mot de passe", None))
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"Changer Votre mot de Passe", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")

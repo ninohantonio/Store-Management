@@ -21,7 +21,8 @@
 			"dashboardBtn",
 			"clientBtn",
 			"reliureBtn",
-			"barcodeBtn"
+			"barcodeBtn",
+			"changePasswordBtn"
 		],
 		"Style": [{
 			"Active": "background-color: #fefeff;border-radius: 10px;padding: 10px;",
@@ -103,7 +104,8 @@
 							"dashboardBtn": "dashboardPage",
 							"reliureBtn": "clientPage",
 							"clientBtn": "client_listPage",
-							"barcodeBtn": "barcodePage"
+							"barcodeBtn": "barcodePage",
+							"changePasswordBtn" : "settingPage"
 						}
 					]
 				}

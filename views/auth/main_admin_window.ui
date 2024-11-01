@@ -309,6 +309,26 @@ QLineEdit, QTextEdit{
                   </property>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QPushButton" name="changePasswordBtn">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../resources.qrc">
+                    <normaloff>:/icons/icons/settings.png</normaloff>:/icons/icons/settings.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </widget>
              </item>
@@ -536,7 +556,7 @@ QLineEdit, QTextEdit{
              <item>
               <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
                <property name="currentIndex">
-                <number>0</number>
+                <number>5</number>
                </property>
                <widget class="QWidget" name="ajout_page">
                 <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -2124,6 +2144,209 @@ border-radius: 10px;</string>
                  </property>
                 </widget>
                </widget>
+               <widget class="QWidget" name="settingPage">
+                <widget class="QFrame" name="confirmation_form">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>100</y>
+                   <width>271</width>
+                   <height>221</height>
+                  </rect>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <widget class="QLineEdit" name="email_confirmation">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="code_confirmation">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>110</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_25">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>6</y>
+                    <width>101</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>email admin</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_28">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>86</y>
+                    <width>141</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Code de confirmation</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="send_code_confirmation">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>170</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Envoyer le code</string>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QFrame" name="change_password_frame">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>100</y>
+                   <width>271</width>
+                   <height>221</height>
+                  </rect>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <widget class="QLineEdit" name="new_password">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="new_password_confirm">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>110</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="submit_new_password">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>170</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Valider le nouveau mot de passe</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_29">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>171</width>
+                    <height>21</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Nouveau Mot de passe</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_34">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>85</y>
+                    <width>221</width>
+                    <height>21</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Confirmer le nouveau mot de passe</string>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QLabel" name="label_35">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>30</y>
+                   <width>481</width>
+                   <height>41</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background: rgb(0, 170, 255);
+padding-left: 10px;
+color: white;</string>
+                 </property>
+                 <property name="text">
+                  <string>Changer Votre mot de Passe</string>
+                 </property>
+                </widget>
+               </widget>
               </widget>
              </item>
             </layout>
@@ -2149,6 +2372,12 @@ border-radius: 10px;</string>
        </property>
        <item alignment="Qt::AlignmentFlag::AlignTop">
         <widget class="QWidget" name="widget_14" native="true">
+         <property name="styleSheet">
+          <string notr="true">#widget_14{
+	background: rgb(0, 85, 255);
+padding-bottom: 10px;
+}</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <property name="leftMargin">
            <number>0</number>
@@ -2209,7 +2438,8 @@ border-radius: 10px;</string>
             <property name="styleSheet">
              <string notr="true">border: 2px solid orange;
 border-radius: 10px;
-height: 30px;</string>
+height: 30px;
+margin-bottom: 5px;</string>
             </property>
             <property name="text">
              <string>Se deconnecter</string>
