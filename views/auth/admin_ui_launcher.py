@@ -9,12 +9,14 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 
 from matplotlib.figure import Figure
+from numpy.random import random_integers
 
 from controllers.article_controller import get_date_to_string
 from models.model_class import Article, Approvisionnement
 from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
+from services.auth_service import check_if_mail_is_admin, send_email_confirmation_to_admin
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
     get_facture_by_id, get_facture_by_date_enregistrement, get_all_facture, get_facture_by_state, \
     get_factures_by_date_and_state
@@ -35,6 +37,7 @@ class AdminWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles=["views/auth/style.json"])
+        self.confirmation_code = None
 
         self.showMaximized()
         self.ui.resetBtn.clicked.connect(self.reset_form)
@@ -80,6 +83,9 @@ class AdminWindow(QMainWindow):
         self.ui.pushButton_2.clicked.connect(self.refresh_factures_view)
         self.ui.refreshReliure.clicked.connect(self.load_reliure_table_list)
         self.ui.generer_code_barre.clicked.connect(self.generate_bar_code)
+        self.ui.change_password_frame.setHidden(True)
+        self.ui.send_code_confirmation.clicked.connect(self.handle_send_code)
+        self.ui.code_confirmation.textChanged.connect(self.handle_code_validation_change)
 
         self.ui.reliureTableWidget.hideColumn(0)
         self.ui.reliureTableWidget.hideColumn(3)
@@ -587,6 +593,37 @@ class AdminWindow(QMainWindow):
             QMessageBox.information(self, f"Code barre enregistrer ", f"Dans : {path[0]}")
 
         return
+
+    def generate_confirmation_code(self):
+        code = random_integers(low=100000, high=999999)
+        return code
+
+    def handle_send_code(self):
+        if check_if_mail_is_admin(self.ui.email_confirmation.text()):
+            self.confirmation_code = self.generate_confirmation_code()
+            if send_email_confirmation_to_admin(self.ui.email_confirmation.text(), "Code de validation Irina service", f"Voici la code de validation {self.confirmation_code}"):
+                QMessageBox.information(self, "Code de validation", "Le code de validation a bien ete envoyer")
+            else:
+                QMessageBox.critical(self, "Code de confirmation", "Un erreur s'est produit, veuillez reessayer")
+                print(self.confirmation_code)
+        else:
+            QMessageBox.warning(self, "Email incorrect", "Cette email de confirmation n'est pas administrateur")
+        return
+
+    def handle_code_validation_change(self):
+        self.ui.code_confirmation.setStyleSheet("border: 2px solid #000000; border-radius: 10px;")
+        if self.ui.code_confirmation.text() != "" and len(self.ui.code_confirmation.text()) == 6:
+            if str(self.confirmation_code) == self.ui.code_confirmation.text():
+                print("Code de validation correct")
+                self.ui.confirmation_form.setHidden(True)
+                self.ui.change_password_frame.setHidden(False)
+                return
+            else:
+                self.ui.code_confirmation.setStyleSheet("border: 2px solid #ff0000; border-radius: 10px;")
+        pass
+
+
+
 
 
 
