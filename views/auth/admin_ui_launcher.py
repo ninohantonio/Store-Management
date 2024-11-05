@@ -103,8 +103,10 @@ class AdminWindow(QMainWindow):
 
     def manage_navigation(self, index):
         if index == 1:
-            self.ui.search_field.returnPressed.disconnect()
+            # self.ui.search_field.returnPressed.disconnect()
             self.ui.date_facture.setDate(datetime.now())
+            self.load_facture_table_list()
+            self.load_line_chart_graphics()
             self.ui.search_field.clear()
         elif index == 0:
             self.ui.search_field.clear()
@@ -113,15 +115,15 @@ class AdminWindow(QMainWindow):
             self.ui.search_field.setFocus()
         elif index == 2:
             self.ui.search_field.clear()
-            self.ui.search_field.returnPressed.disconnect()
+            # self.ui.search_field.returnPressed.disconnect()
             self.ui.search_field.returnPressed.connect(self.get_reliure_by_client_name)
             self.load_reliure_line_chart()
             self.load_total_reliure_today()
-        elif index == 4:
+        elif index == 5:
             self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
             self.confirmation_code = None
             self.email_admin = None
-            self.ui.search_field.returnPressed.disconnect()
+            # self.ui.search_field.returnPressed.disconnect()
             self.ui.change_password_frame.setHidden(True)
             self.ui.confirmation_form.setHidden(False)
 
@@ -274,8 +276,8 @@ class AdminWindow(QMainWindow):
 
         insert_new_article(article)
         print("submit success")
-        self.appro_dialog = ApprovisionnementDialog(article)
-        self.appro_dialog.show()
+        self.appro_dialog = ApprovisionnementDialog(article.numeroArticle)
+        self.appro_dialog.exec()
         self.reset_form()
         self.show_dialog_success()
 
@@ -468,7 +470,6 @@ class AdminWindow(QMainWindow):
 
     def load_facture_table_list(self):
         date_now = datetime.now()
-
         factures = search_factures_by_date(date_now)
         refresh_facture_table_data(self.ui.facture_tableWidget, factures)
 
@@ -591,14 +592,16 @@ class AdminWindow(QMainWindow):
             "Enregistrer le code barre vers",
         )
 
-        unique_id = uuid.uuid4().int
-        barcode_number = str(unique_id)[:13]
+        if path[0] != "":
+            unique_id = uuid.uuid4().int
+            barcode_number = str(unique_id)[:13]
 
-        barcode = EAN13(barcode_number, writer=ImageWriter())
-        if path:
+            barcode = EAN13(barcode_number, writer=ImageWriter())
             print(path[0])
             barcode.save(path[0])
             QMessageBox.information(self, f"Code barre enregistrer ", f"Dans : {path[0]}")
+        else:
+            QMessageBox.warning(self, "Chemin no valide", "Vous devez donnez un nom comme inscription pour le fichier")
 
         return
 

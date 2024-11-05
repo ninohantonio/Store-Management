@@ -49,7 +49,7 @@ class Commande(Base):
 
     numeroCommande = Column(Integer, primary_key=True, autoincrement=True)
     dateCommande = Column(DateTime)
-    dateLivraison = Column(Date)
+    # dateLivraison = Column(Date)
     quantiteCommande: Mapped[int_small]
     type = Column(String(10))
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))
@@ -100,10 +100,12 @@ class Typelivre(Base):
     __tablename__  = 'typelivre'
 
     numeroType = Column(Integer, primary_key=True, autoincrement=True)
-    typeLivre: Mapped[str_20] = mapped_column()
+    typeLivre: Mapped[str_50] = mapped_column()
     prixPageNoir: Mapped[int_small] = mapped_column()
     prixPageCouleur: Mapped[int_small] = mapped_column()
     prixReliure: Mapped[int_small] = mapped_column()
+    prixBristole: Mapped[int_small] = mapped_column()
+    prixPapierGlace: Mapped[int_small] = mapped_column()
 
 class Reliure(Base):
     __tablename__ = 'reliure'
@@ -114,6 +116,8 @@ class Reliure(Base):
     nombrePageNoir: Mapped[int_small] = mapped_column()
     nombrePageCouleur: Mapped[int_small] = mapped_column()
     nombreExemplaire: Mapped[int_small] = mapped_column()
+    nombreCouverture: Mapped[int_small] = mapped_column()
+    typeCouverture: Mapped[bool] = mapped_column()
     dateCommande = Column(Date)
     numeroType: Mapped[int] = mapped_column(ForeignKey("typelivre.numeroType"))
     numeroClient: Mapped[int] = mapped_column(ForeignKey("client.numeroClient"))

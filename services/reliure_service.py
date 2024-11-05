@@ -14,7 +14,7 @@ def get_all_reliure_commande():
     return session.query(Reliure).order_by(Reliure.dateCommande.desc()).all()
 
 def get_all_type_livre():
-    return session.query(Typelivre).all()
+    return session.query(Typelivre).order_by(Typelivre.typeLivre.asc()).all()
 
 def get_type_livre_by_id(livre_id: int):
     return session.query(Typelivre).filter_by(numeroType=livre_id).first()
@@ -51,7 +51,8 @@ def insert_new_reliure_commande(reliure: Reliure):
 def get_total_for_reliure(reliure_id: int):
     reliure = get_reliure_by_id(reliure_id)
     type = get_type_livre_by_id(reliure.numeroType)
-    return (reliure.nombrePageNoir * type.prixPageNoir + reliure.nombrePageCouleur * type.prixPageCouleur + type.prixReliure) * reliure.nombreExemplaire
+    prix_couverture = reliure.nombreCouverture * type.prixBristole if reliure.typeCouverture else reliure.nombreCouverture * type.prixPapierGlace
+    return (reliure.nombrePageNoir * type.prixPageNoir + reliure.nombrePageCouleur * type.prixPageCouleur + type.prixReliure + prix_couverture) * reliure.nombreExemplaire
 
 def get_reliure_by_date_and_state(date: date, state: bool):
     return session.query(Reliure).order_by(Reliure.dateCommande.desc()).filter(

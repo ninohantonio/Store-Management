@@ -61,7 +61,7 @@ class MainWindow(QMainWindow):
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
         self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
-        self.ui.avance_field.setValidator(QIntValidator(0, 9999999))
+        self.ui.avance_field.setValidator(QIntValidator(0, 999999))
 
         self.ui.tout_payer.setChecked(True)
 
@@ -100,11 +100,12 @@ class MainWindow(QMainWindow):
         self.ui.comboBox.currentIndexChanged.connect(self.manage_type_livre_change)
         self.ui.add_type.clicked.connect(self.show_type_livre_dialog_add)
         self.ui.delete_type.clicked.connect(self.show_type_livre_dialog_modify)
-        self.ui.exemplaire_spinBox.setMinimum(1)
+        self.ui.exemplaire_spinBox.setMinimum(0)
 
         self.ui.page_noir_spinBox.textChanged.connect(self.manage_page_spinbox_change)
         self.ui.page_couleur_spinBox.textChanged.connect(self.manage_page_spinbox_change)
         self.ui.exemplaire_spinBox.textChanged.connect(self.manage_page_spinbox_change)
+        self.ui.couverture_spin_box.textChanged.connect(self.manage_page_spinbox_change)
         self.ui.reset_reliure.clicked.connect(self.reset_reliure_form)
         self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
         self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
@@ -446,7 +447,7 @@ class MainWindow(QMainWindow):
         #numero: libelle:sous - total: desciption:effectif
         for commande_data in liste_article:
             commande_split = commande_data.split(':')
-            commande = Commande(dateCommande=get_date_time_to_string(), dateLivraison=get_date_to_string(), quantiteCommande=commande_split[4], type=commande_split[3], numeroClient=numero_client, numeroArticle=commande_split[0])
+            commande = Commande(dateCommande=get_date_time_to_string(), quantiteCommande=commande_split[4], type=commande_split[3], numeroClient=numero_client, numeroArticle=commande_split[0])
             insert_new_commande(commande)
 
     def store_data_to_facture(self, liste_article: list[str], numero_client):
@@ -641,8 +642,11 @@ class MainWindow(QMainWindow):
             page_noir = int(self.ui.page_noir_spinBox.text())
             page_couleur = int(self.ui.page_couleur_spinBox.text())
             exemplaire = int(self.ui.exemplaire_spinBox.text())
+            type_couverture = self.ui.radioBristole.isChecked()
+            couverture = int(self.ui.couverture_spin_box.text())
+            prix_couverture = couverture * self.typeLivre_selection.prixBristole if type_couverture else couverture * self.typeLivre_selection.prixPapierGlace
             total = (
-                                page_noir * self.typeLivre_selection.prixPageNoir + page_couleur * self.typeLivre_selection.prixPageCouleur + self.typeLivre_selection.prixReliure) * exemplaire
+                                page_noir * self.typeLivre_selection.prixPageNoir + page_couleur * self.typeLivre_selection.prixPageCouleur + self.typeLivre_selection.prixReliure + prix_couverture) * exemplaire
             self.ui.total_reliure.setText(f"{total} Ar")
             self.total_reliure = total
 
@@ -654,6 +658,7 @@ class MainWindow(QMainWindow):
         self.ui.page_couleur_spinBox.setValue(0)
         self.ui.exemplaire_spinBox.setValue(1)
         self.ui.total_reliure.setText(f"{0} Ar")
+        self.ui.couverture_spin_box.setValue(0)
         self.total_reliure = 0
         self.reliure_numero = None
 
@@ -673,6 +678,8 @@ class MainWindow(QMainWindow):
                         reliure.numeroType = self.typeLivre_selection.numeroType
                         reliure.numeroClient = self.selected_client.numeroClient
                         reliure.statutLivrer = self.ui.reliure_state.isChecked()
+                        reliure.nombreCouverture = int(self.ui.couverture_spin_box.text())
+                        reliure.typeCouverture = self.ui.radioBristole.isChecked()
                         reliure.dateCommande = get_date_to_string()
 
                         insert_new_reliure_commande(reliure)
@@ -699,6 +706,9 @@ class MainWindow(QMainWindow):
         self.ui.page_couleur_spinBox.setValue(reliure.nombrePageCouleur)
         self.ui.reliure_state.setChecked(reliure.statutLivrer)
         self.ui.exemplaire_spinBox.setValue(reliure.nombreExemplaire)
+        self.ui.couverture_spin_box.setValue(reliure.nombreCouverture)
+        self.ui.radioBristole.setChecked(reliure.typeCouverture)
+        self.ui.radioGlace.setChecked(not reliure.typeCouverture)
         self.reliure_numero = numero
         return
 
@@ -710,6 +720,8 @@ class MainWindow(QMainWindow):
             reliure.nombrePageCouleur = int(self.ui.page_couleur_spinBox.text())
             reliure.numeroType = self.typeLivre_selection.numeroType
             reliure.statutLivrer = self.ui.reliure_state.isChecked()
+            reliure.typeCouverture = self.ui.radioBristole.isChecked()
+            reliure.nombreCouverture = int(self.ui.couverture_spin_box.text())
             services.reliure_service.session.commit()
 
             self.reset_reliure_form()

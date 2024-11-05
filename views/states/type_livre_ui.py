@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'type_livrePQIMCk.ui'
+## Form generated from reading UI file 'type_livreRIOGxU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -22,7 +22,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(474, 457)
+        Dialog.resize(481, 556)
         Dialog.setStyleSheet(u"QDialog{\n"
 "	background: white;\n"
 "}\n"
@@ -50,10 +50,10 @@ class Ui_Dialog(object):
         self.prix_noir.setGeometry(QRect(60, 180, 171, 31))
         self.prix_couleur = QLineEdit(Dialog)
         self.prix_couleur.setObjectName(u"prix_couleur")
-        self.prix_couleur.setGeometry(QRect(270, 180, 131, 31))
+        self.prix_couleur.setGeometry(QRect(270, 180, 151, 31))
         self.prix_reliure = QLineEdit(Dialog)
         self.prix_reliure.setObjectName(u"prix_reliure")
-        self.prix_reliure.setGeometry(QRect(270, 80, 131, 31))
+        self.prix_reliure.setGeometry(QRect(270, 80, 151, 31))
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(60, 60, 121, 20))
@@ -82,18 +82,35 @@ class Ui_Dialog(object):
         self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.submit_type = QPushButton(Dialog)
         self.submit_type.setObjectName(u"submit_type")
-        self.submit_type.setGeometry(QRect(60, 360, 141, 31))
+        self.submit_type.setGeometry(QRect(60, 490, 141, 31))
         self.submit_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.reset_type = QPushButton(Dialog)
         self.reset_type.setObjectName(u"reset_type")
-        self.reset_type.setGeometry(QRect(260, 360, 141, 31))
+        self.reset_type.setGeometry(QRect(260, 490, 141, 31))
         self.reset_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.comboBox = QComboBox(Dialog)
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(70, 260, 331, 41))
+        self.comboBox.setGeometry(QRect(70, 390, 331, 41))
         self.comboBox.setStyleSheet(u"background: white;\n"
 "border: 2px solid rgb(0, 85, 255);\n"
 "bo")
+        self.prix_bristole = QLineEdit(Dialog)
+        self.prix_bristole.setObjectName(u"prix_bristole")
+        self.prix_bristole.setGeometry(QRect(60, 280, 171, 31))
+        self.prix_bristole.setStyleSheet(u"border: 1px solid black;\n"
+"	border-radius: 15px;\n"
+"	padding-left: 10px;")
+        self.prix_glace = QLineEdit(Dialog)
+        self.prix_glace.setObjectName(u"prix_glace")
+        self.prix_glace.setGeometry(QRect(280, 280, 141, 31))
+        self.label_6 = QLabel(Dialog)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(60, 255, 191, 21))
+        self.label_6.setFont(font)
+        self.label_7 = QLabel(Dialog)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(280, 255, 191, 21))
+        self.label_7.setFont(font)
 
         self.retranslateUi(Dialog)
 
@@ -106,12 +123,16 @@ class Ui_Dialog(object):
         self.prix_noir.setPlaceholderText(QCoreApplication.translate("Dialog", u"ex : 100", None))
         self.prix_couleur.setPlaceholderText(QCoreApplication.translate("Dialog", u"ex : 200", None))
         self.prix_reliure.setPlaceholderText(QCoreApplication.translate("Dialog", u"ex : 15000", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"Description :", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"D\u00e9scription :", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Prix d'une Page Noir et Blanc :", None))
         self.label_3.setText(QCoreApplication.translate("Dialog", u"Prix d'une Page en Couleur :", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Prix du Reliure", None))
         self.label_5.setText(QCoreApplication.translate("Dialog", u"Ajouter un nouveau type de livre ", None))
         self.submit_type.setText(QCoreApplication.translate("Dialog", u"Ajouter le type", None))
         self.reset_type.setText(QCoreApplication.translate("Dialog", u"Annuler", None))
+        self.prix_bristole.setPlaceholderText(QCoreApplication.translate("Dialog", u"ex : 1000", None))
+        self.prix_glace.setPlaceholderText(QCoreApplication.translate("Dialog", u"ex : 1000", None))
+        self.label_6.setText(QCoreApplication.translate("Dialog", u"Prix d'une couverture Bristole", None))
+        self.label_7.setText(QCoreApplication.translate("Dialog", u"Prix d'une couverture Glac\u00e9", None))
     # retranslateUi
 

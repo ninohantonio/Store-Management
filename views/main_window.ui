@@ -789,7 +789,7 @@ QLineEdit{
        <item>
         <widget class="QCustomQStackedWidget" name="mainNavigationScreen">
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="homePage">
           <widget class="QFrame" name="frame">
@@ -1762,8 +1762,8 @@ border-radius: 10px;</string>
            <widget class="QCheckBox" name="reliure_state">
             <property name="geometry">
              <rect>
-              <x>180</x>
-              <y>120</y>
+              <x>40</x>
+              <y>240</y>
               <width>121</width>
               <height>31</height>
              </rect>
@@ -1817,7 +1817,7 @@ border-radius: 10px;</string>
             <property name="geometry">
              <rect>
               <x>30</x>
-              <y>200</y>
+              <y>280</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1838,7 +1838,7 @@ border-radius: 10px;</string>
             <property name="geometry">
              <rect>
               <x>190</x>
-              <y>200</y>
+              <y>280</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1859,7 +1859,7 @@ border-radius: 10px;</string>
             <property name="geometry">
              <rect>
               <x>30</x>
-              <y>250</y>
+              <y>330</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1914,7 +1914,7 @@ border-radius: 10px;</string>
             <property name="geometry">
              <rect>
               <x>170</x>
-              <y>340</y>
+              <y>390</y>
               <width>121</width>
               <height>31</height>
              </rect>
@@ -1935,7 +1935,7 @@ border-radius: 10px;</string>
             <property name="geometry">
              <rect>
               <x>40</x>
-              <y>340</y>
+              <y>390</y>
               <width>101</width>
               <height>31</height>
              </rect>
@@ -1946,14 +1946,14 @@ border-radius: 10px;</string>
              </font>
             </property>
             <property name="text">
-             <string>Total a payer :</string>
+             <string>Total à payer :</string>
             </property>
            </widget>
            <widget class="QPushButton" name="delete_reliure">
             <property name="geometry">
              <rect>
               <x>190</x>
-              <y>250</y>
+              <y>330</y>
               <width>151</width>
               <height>31</height>
              </rect>
@@ -1963,6 +1963,73 @@ border-radius: 10px;</string>
             </property>
             <property name="text">
              <string>Supprimer</string>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="couverture_spin_box">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>190</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid black;</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_19">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>170</y>
+              <width>101</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Couverture</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioBristole">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>190</y>
+              <width>71</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Bristole</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioGlace">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>190</y>
+              <width>101</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Papier Glacé</string>
             </property>
            </widget>
           </widget>

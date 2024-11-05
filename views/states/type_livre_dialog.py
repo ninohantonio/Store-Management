@@ -16,9 +16,10 @@ class TypeLivreDialog(QDialog):
 
         self.type_selection: Typelivre = None
 
-        self.ui.prix_noir.setValidator(QIntValidator(0, 999999))
-        self.ui.prix_couleur.setValidator(QIntValidator(0, 999999))
-        self.ui.prix_reliure.setValidator(QIntValidator(0, 999999))
+        self.ui.prix_noir.setValidator(QIntValidator(0, 99999))
+        self.ui.prix_couleur.setValidator(QIntValidator(0, 99999))
+        self.ui.prix_reliure.setValidator(QIntValidator(0, 99999))
+        self.ui.prix_glace.setValidator(QIntValidator(0, 99999))
 
 
         if modification:
@@ -43,13 +44,17 @@ class TypeLivreDialog(QDialog):
         prix_noir = self.ui.prix_noir.text()
         prix_couleur = self.ui.prix_couleur.text()
         prix_reliure = self.ui.prix_reliure.text()
+        prix_bristole = self.ui.prix_bristole.text()
+        prix_glace = self.ui.prix_glace.text()
 
-        if description != "" and prix_reliure != 0 and prix_couleur != 0 and prix_noir != "":
+        if description != "" and prix_reliure != 0 and prix_couleur != 0 and prix_noir != "" and prix_glace != "" and prix_bristole != "":
             type = Typelivre()
             type.typeLivre = description
             type.prixPageNoir = int(prix_noir)
             type.prixPageCouleur = int(prix_couleur)
             type.prixReliure = int(prix_reliure)
+            type.prixBristole = int(prix_bristole)
+            type.prixPapierGlace = int(prix_glace)
             insert_new_type_livre(type)
             self.reset_form()
             self.show_alert_message("Le type a ete ajouter avec succes :)")
@@ -75,6 +80,8 @@ class TypeLivreDialog(QDialog):
         self.ui.prix_noir.clear()
         self.ui.prix_couleur.clear()
         self.ui.description.clear()
+        self.ui.prix_glace.clear()
+        self.ui.prix_bristole.clear()
 
     def load_type_selection(self):
         types = get_all_type_livre()
@@ -90,6 +97,8 @@ class TypeLivreDialog(QDialog):
         self.ui.prix_noir.setText(str(self.type_selection.prixPageNoir))
         self.ui.prix_reliure.setText(str(self.type_selection.prixReliure))
         self.ui.prix_couleur.setText(str(self.type_selection.prixPageCouleur))
+        self.ui.prix_bristole.setText(str(self.type_selection.prixBristole))
+        self.ui.prix_glace.setText(str(self.type_selection.prixPapierGlace))
 
     def modify_typelivre(self):
         type = get_type_livre_by_id(self.type_selection.numeroType)
@@ -98,12 +107,16 @@ class TypeLivreDialog(QDialog):
         prix_noir = self.ui.prix_noir.text()
         prix_couleur = self.ui.prix_couleur.text()
         prix_reliure = self.ui.prix_reliure.text()
+        prix_bristole = self.ui.prix_bristole.text()
+        prix_glace = self.ui.prix_glace.text()
 
         if description != "" and prix_reliure != 0 and prix_couleur != 0 and prix_noir != "":
             type.typeLivre = description
             type.prixPageNoir = int(prix_noir)
             type.prixPageCouleur = int(prix_couleur)
             type.prixReliure = int(prix_reliure)
+            type.prixBristole = int(prix_bristole)
+            type.prixPapierGlace = int(prix_glace)
             session.commit()
             self.show_alert_message("Le type a ete modifier avec succes :)")
             return
