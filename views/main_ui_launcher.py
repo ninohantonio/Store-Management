@@ -109,8 +109,7 @@ class MainWindow(QMainWindow):
         self.ui.reset_reliure.clicked.connect(self.reset_reliure_form)
         self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
         self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
-        self.ui.delete_reliure.clicked.connect(self.handle_delete_reliure)
-        self.ui.delete_reliure.setHidden(True)
+
         self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
         self.ui.date_reliure.dateChanged.connect(self.handle_date_reliure_changed)
         self.ui.filter_reliure.currentIndexChanged.connect(self.manage_filter_reliure_change)
@@ -656,7 +655,7 @@ class MainWindow(QMainWindow):
     def reset_reliure_form(self):
         self.ui.page_noir_spinBox.setValue(0)
         self.ui.page_couleur_spinBox.setValue(0)
-        self.ui.exemplaire_spinBox.setValue(1)
+        self.ui.exemplaire_spinBox.setValue(0)
         self.ui.total_reliure.setText(f"{0} Ar")
         self.ui.couverture_spin_box.setValue(0)
         self.total_reliure = 0

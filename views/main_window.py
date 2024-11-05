@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowPDCWYP.ui'
+## Form generated from reading UI file 'main_windowyMYQyD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -151,7 +151,7 @@ class Ui_MainWindow(object):
 "	border-radius: 5px;\n"
 "}\n"
 "\n"
-"#add_selection_rapideBtn, #delete_type, #modify_reliure{\n"
+"#add_selection_rapideBtn, #delete_type, #modify_reliure, #facture_reliure{\n"
 "	border: 2px solid rgb(0, 170, 255);\n"
 "	border-radius: 7px;\n"
 "	padding: 2px;\n"
@@ -866,10 +866,10 @@ class Ui_MainWindow(object):
         self.label_15.setObjectName(u"label_15")
         self.label_15.setGeometry(QRect(40, 390, 101, 31))
         self.label_15.setFont(font10)
-        self.delete_reliure = QPushButton(self.reliure_form)
-        self.delete_reliure.setObjectName(u"delete_reliure")
-        self.delete_reliure.setGeometry(QRect(190, 330, 151, 31))
-        self.delete_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.facture_reliure = QPushButton(self.reliure_form)
+        self.facture_reliure.setObjectName(u"facture_reliure")
+        self.facture_reliure.setGeometry(QRect(190, 330, 151, 31))
+        self.facture_reliure.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.couverture_spin_box = QSpinBox(self.reliure_form)
         self.couverture_spin_box.setObjectName(u"couverture_spin_box")
         self.couverture_spin_box.setGeometry(QRect(30, 190, 121, 31))
@@ -1089,7 +1089,7 @@ class Ui_MainWindow(object):
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Nombre d'exemplaire", None))
         self.total_reliure.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Total \u00e0 payer :", None))
-        self.delete_reliure.setText(QCoreApplication.translate("MainWindow", u"Supprimer", None))
+        self.facture_reliure.setText(QCoreApplication.translate("MainWindow", u"Voir la facture", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Couverture", None))
         self.radioBristole.setText(QCoreApplication.translate("MainWindow", u"Bristole", None))
         self.radioGlace.setText(QCoreApplication.translate("MainWindow", u"Papier Glac\u00e9", None))
