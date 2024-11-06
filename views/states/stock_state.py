@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QTableWidgetItem
 
 from models.model_class import Article, Facture, Journal, Reliure
 from services.client_service import get_client_by_id
-from services.reliure_service import get_type_livre_by_id
+from services.reliure_service import get_type_livre_by_id, get_total_for_reliure
 
 
 def refresh_stock_table_data(table_widget, data: list[Article]):
@@ -42,7 +42,7 @@ def refresh_reliure_table_data(table_widget, data: list[Reliure]):
         client = get_client_by_id(row.numeroClient)
         type = get_type_livre_by_id(row.numeroType)
         etat = "Oui" if row.statutLivrer else "Non"
-        total_payer = (type.prixReliure + type.prixPageNoir * row.nombrePageNoir + type.prixPageCouleur * row.nombrePageCouleur) * row.nombreExemplaire
+        total_payer = get_total_for_reliure(row.numeroReliure)
 
         table_widget.insertRow(i)
         table_widget.setItem(i, 0, QTableWidgetItem(str(row.numeroReliure)))
