@@ -153,6 +153,7 @@ class FactureDialog(QDialog):
             print(painter.isActive())
             self.draw_invoice_for_pdf(painter)
             painter.end()
+            QMessageBox.information(self, "Facture de vente", f"La facture a été enregistrer dans : {facture_path}")
         else:
             print("Erreur de path")
 

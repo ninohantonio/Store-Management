@@ -29,6 +29,9 @@ class FactureReliureDialog(QDialog):
         self.ui.tableWidget.setRowHeight(3, 30)
         self.ui.tableWidget.setRowHeight(4, 30)
 
+        self.ui.print_btn.clicked.connect(self.print_or_save_invoice_with_double_copy)
+        self.ui.pushButton.clicked.connect(self.export_to_pdf)
+
         self.reliure = reliure
         self.total_a_payer = get_total_for_reliure(self.reliure.numeroReliure)
 
@@ -160,7 +163,7 @@ class FactureReliureDialog(QDialog):
             print(painter.isActive())
             self.draw_invoice_for_pdf(painter)
             painter.end()
-            QMessageBox.information(self, "Facture de reliure", f"Le facture a ete enregistrer dans : {facture_path}")
+            QMessageBox.information(self, "Facture de reliure", f"Le facture a été enregistrer dans : {facture_path}")
         else:
             print("Erreur de path")
 
