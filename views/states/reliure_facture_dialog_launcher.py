@@ -131,7 +131,7 @@ class FactureReliureDialog(QDialog):
             painter.end()
 
     def save_double_invoice_to_pdf(self):
-        facture_path = os.path.join(os.path.expanduser("~"), "Documents", f"facture-{self.facture.numeroFacture}.pdf")
+        facture_path = os.path.join(os.path.expanduser("~"), "Documents", f"facture-{self.reliure.numeroReliure}.pdf")
         pdf_writer = QPdfWriter(facture_path)
         pdf_writer.setPageSize(QPageSize(QPageSize.A4))
         pdf_writer.setResolution(300)  # Résolution de haute qualité
@@ -147,12 +147,12 @@ class FactureReliureDialog(QDialog):
         )
         if save_path:
             try:
-                with open(f"{save_path}/reliure_facture_{str(self.reliure.numeroFacture)}.pdf", 'w') as f:
+                with open(f"{save_path}/reliure_facture_{str(self.reliure.numeroReliure)}.pdf", 'w') as f:
                     print(f.name)
                     pass
             except Exception as e:
                 print(f"exception: {e}")
-            facture_path = os.path.join(save_path, f"reliure_facture_{str(self.reliure.numeroFacture)}.pdf").replace("\\", '/')
+            facture_path = os.path.join(save_path, f"reliure_facture_{str(self.reliure.numeroReliure)}.pdf").replace("\\", '/')
             print(facture_path)
             pdf_writer = QPdfWriter(facture_path)
             pdf_writer.setPageSize(QPageSize(QPageSize.A4))
