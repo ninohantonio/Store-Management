@@ -29,6 +29,8 @@ class FactureReliureDialog(QDialog):
         self.ui.tableWidget.setRowHeight(3, 30)
         self.ui.tableWidget.setRowHeight(4, 30)
 
+        self.default_printer = None
+
         self.ui.print_btn.clicked.connect(self.print_or_save_invoice_with_double_copy)
         self.ui.pushButton.clicked.connect(self.export_to_pdf)
 
@@ -53,7 +55,7 @@ class FactureReliureDialog(QDialog):
         self.ui.adresse_client.setText(client.adresse)
 
         total_lettre = num2words(total_a_payer, lang="fr")
-        self.ui.total_lettre.setText(total_lettre)
+        self.ui.total_lettre.setText(f"{total_lettre} Ariary")
 
     def load_facture_detail_table(self):
         self.ui.tableWidget.setRowCount(0)
@@ -122,6 +124,8 @@ class FactureReliureDialog(QDialog):
             # Si une imprimante valide est trouvée, l'utiliser pour imprimer
             printer.setPrinterName(printer_info.printerName())
             self.print_double_invoice_to_printer(printer)
+
+
 
     def print_double_invoice_to_printer(self, printer):
         dialog = QPrintDialog(printer, self)
