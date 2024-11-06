@@ -29,6 +29,7 @@ from views.main_window import *
 from views.states.commande_card import CardCommande
 from views.states.facture_dialog_launcher import FactureDialog
 from views.states.notification_card import NotificationCard
+from views.states.reliure_facture_dialog_launcher import FactureReliureDialog
 from views.states.stock_state import refresh_stock_table_data, refresh_facture_table_data, refresh_journal_table_data, \
     refresh_reliure_table_data
 from views.states.type_livre_dialog import TypeLivreDialog
@@ -109,6 +110,7 @@ class MainWindow(QMainWindow):
         self.ui.reset_reliure.clicked.connect(self.reset_reliure_form)
         self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
         self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
+        self.ui.facture_reliure.clicked.connect(self.show_reliure_facture_dialog)
 
         self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
         self.ui.date_reliure.dateChanged.connect(self.handle_date_reliure_changed)
@@ -769,6 +771,12 @@ class MainWindow(QMainWindow):
         else:
             reliures = get_reliure_by_client_name(client)
             refresh_reliure_table_data(self.ui.reliure_table, reliures)
+
+
+    def show_reliure_facture_dialog(self):
+        reliure = get_reliure_by_id(int(self.reliure_numero))
+        self.reliure_facture = FactureReliureDialog(reliure)
+        self.reliure_facture.exec()
 
     def manage_logout(self):
         response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir basculer de compte")

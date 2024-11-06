@@ -29,7 +29,7 @@ class FactureReliureDialog(QDialog):
         self.ui.tableWidget.setRowHeight(3, 30)
         self.ui.tableWidget.setRowHeight(4, 30)
 
-        self.reliure = Reliure
+        self.reliure = reliure
         self.total_a_payer = get_total_for_reliure(self.reliure.numeroReliure)
 
         self.load_header_data_facture()
@@ -42,11 +42,11 @@ class FactureReliureDialog(QDialog):
         self.ui.statut_facture.setText("Livré") if self.reliure.statutLivrer else self.ui.statut_facture.setText("Non Livré")
 
         total_a_payer = self.total_a_payer
-        self.ui.total.setText(f"{total_a_payer}")
+        self.ui.total.setText(f"{total_a_payer} Ar")
 
         client = get_client_by_id(self.reliure.numeroClient)
         self.ui.nom_client.setText(client.nom)
-        self.ui.numero_client.setText(client.numeroClient)
+        self.ui.numero_client.setText(client.telephone)
         self.ui.adresse_client.setText(client.adresse)
 
         total_lettre = num2words(total_a_payer, lang="fr")
@@ -58,9 +58,10 @@ class FactureReliureDialog(QDialog):
         type = get_type_livre_by_id(self.reliure.numeroType)
         page_noir = type.prixPageNoir * self.reliure.nombrePageNoir
         page_couleur = type.prixPageCouleur * self.reliure.nombrePageCouleur
+
         self.ui.tableWidget.insertRow(0)
         self.ui.tableWidget.setItem(0, 0, QTableWidgetItem("Page en Noir et Blanc"))
-        self.ui.tableWidget.setItem(0, 1, QTableWidgetItem(str(self.reliure.nombrePageNoir)))
+        self.ui.tableWidget.setItem(0, 1, QTableWidgetItem(f"{self.reliure.nombrePageNoir}"))
         self.ui.tableWidget.setItem(0, 2, QTableWidgetItem(str(type.prixPageNoir)))
         self.ui.tableWidget.setItem(0, 3, QTableWidgetItem(f"{page_noir} Ar"))
 
@@ -70,26 +71,35 @@ class FactureReliureDialog(QDialog):
         self.ui.tableWidget.setItem(1, 2, QTableWidgetItem(str(type.prixPageCouleur)))
         self.ui.tableWidget.setItem(1, 3, QTableWidgetItem(f"{page_couleur} Ar"))
 
+        couverture = "Bristole" if self.reliure.typeCouverture else "Glacé"
+        prixCouverture = type.prixBristole if self.reliure.typeCouverture else type.prixPapierGlace
         self.ui.tableWidget.insertRow(2)
-        self.ui.tableWidget.setItem(2, 0, QTableWidgetItem(f"Impression {type.typeLivre}"))
-        self.ui.tableWidget.setItem(2, 1, QTableWidgetItem(str("Neant")))
-        self.ui.tableWidget.setItem(2, 2, QTableWidgetItem(str(type.prixReliure)))
-        self.ui.tableWidget.setItem(2, 3, QTableWidgetItem(f"{type.prixReliure} Ar"))
+        self.ui.tableWidget.setItem(2, 0, QTableWidgetItem(f"Couverture Papier {couverture}"))
+        self.ui.tableWidget.setItem(2, 1, QTableWidgetItem(str(self.reliure.nombreCouverture)))
+        self.ui.tableWidget.setItem(2, 2, QTableWidgetItem(str(prixCouverture)))
+        self.ui.tableWidget.setItem(2, 3, QTableWidgetItem(f"{self.reliure.nombreCouverture * prixCouverture} Ar"))
 
         self.ui.tableWidget.insertRow(3)
-        self.ui.tableWidget.setSpan(3, 0, 1, 3)
-        self.ui.tableWidget.setItem(3, 0, QTableWidgetItem("Sous-Total"))
-        self.ui.tableWidget.setItem(3, 3, QTableWidgetItem(f"{page_noir + page_couleur + type.prixReliure} Ar"))
+        self.ui.tableWidget.setItem(3, 0, QTableWidgetItem(f"Impression {type.typeLivre}"))
+        self.ui.tableWidget.setItem(3, 1, QTableWidgetItem(str("Neant")))
+        self.ui.tableWidget.setItem(3, 2, QTableWidgetItem(str(type.prixReliure)))
+        self.ui.tableWidget.setItem(3, 3, QTableWidgetItem(f"{type.prixReliure} Ar"))
 
         self.ui.tableWidget.insertRow(4)
         self.ui.tableWidget.setSpan(4, 0, 1, 3)
-        self.ui.tableWidget.setItem(4, 0, QTableWidgetItem("Nombre d'Exemplaire"))
-        self.ui.tableWidget.setItem(4, 3, QTableWidgetItem(f"{self.reliure.nombreExemplaire} "))
+        self.ui.tableWidget.setItem(4, 0, QTableWidgetItem("Sous-Total"))
+        self.ui.tableWidget.setItem(4, 3, QTableWidgetItem(f"{page_noir + page_couleur + type.prixReliure + prixCouverture * self.reliure.nombreCouverture} Ar"))
+
 
         self.ui.tableWidget.insertRow(5)
         self.ui.tableWidget.setSpan(5, 0, 1, 3)
-        self.ui.tableWidget.setItem(5, 0, QTableWidgetItem("TOTAL"))
-        self.ui.tableWidget.setItem(5, 3, QTableWidgetItem(f"{self.total_a_payer} Ar"))
+        self.ui.tableWidget.setItem(5, 0, QTableWidgetItem("Nombre d'Exemplaire"))
+        self.ui.tableWidget.setItem(5, 3, QTableWidgetItem(f"{self.reliure.nombreExemplaire} "))
+
+        self.ui.tableWidget.insertRow(6)
+        self.ui.tableWidget.setSpan(6, 0, 1, 3)
+        self.ui.tableWidget.setItem(6, 0, QTableWidgetItem("TOTAL"))
+        self.ui.tableWidget.setItem(6, 3, QTableWidgetItem(f"{self.total_a_payer} Ar"))
 
 
     def print_or_save_invoice_with_double_copy(self):
