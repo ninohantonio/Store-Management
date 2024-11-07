@@ -103,7 +103,7 @@ class AdminWindow(QMainWindow):
 
     def manage_navigation(self, index):
         if index == 1:
-            # self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.returnPressed.disconnect()
             self.ui.date_facture.setDate(datetime.now())
             self.load_facture_table_list()
             self.load_line_chart_graphics()
@@ -115,7 +115,7 @@ class AdminWindow(QMainWindow):
             self.ui.search_field.setFocus()
         elif index == 2:
             self.ui.search_field.clear()
-            # self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.returnPressed.disconnect()
             self.ui.search_field.returnPressed.connect(self.get_reliure_by_client_name)
             self.load_reliure_line_chart()
             self.load_total_reliure_today()
@@ -123,7 +123,7 @@ class AdminWindow(QMainWindow):
             self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
             self.confirmation_code = None
             self.email_admin = None
-            # self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.returnPressed.disconnect()
             self.ui.change_password_frame.setHidden(True)
             self.ui.confirmation_form.setHidden(False)
 
@@ -469,7 +469,7 @@ class AdminWindow(QMainWindow):
         self.canvas.draw()
 
     def load_facture_table_list(self):
-        date_now = datetime.now()
+        date_now = datetime.now().date()
         factures = search_factures_by_date(date_now)
         refresh_facture_table_data(self.ui.facture_tableWidget, factures)
 
@@ -552,7 +552,7 @@ class AdminWindow(QMainWindow):
 
     def load_reliure_table_list(self):
         self.ui.reliureDate.setDate(datetime.now())
-        reliures = get_reliure_by_date(datetime.now())
+        reliures = get_reliure_by_date(datetime.now().date())
         refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
         return
 
@@ -576,7 +576,7 @@ class AdminWindow(QMainWindow):
             refresh_reliure_table_data(self.ui.reliureTableWidget, reliures)
 
     def load_total_reliure_today(self):
-        reliures = get_reliure_by_date(datetime.now())
+        reliures = get_reliure_by_date(datetime.now().date())
         total = [get_total_for_reliure(reliure.numeroReliure) for reliure in reliures]
         montant = sum(total)
         self.ui.reliure_jour.setText(f"{montant} Ar")

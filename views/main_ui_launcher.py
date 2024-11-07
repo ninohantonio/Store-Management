@@ -111,6 +111,8 @@ class MainWindow(QMainWindow):
         self.ui.submit_reliure.clicked.connect(self.handle_submit_reliure)
         self.ui.modify_reliure.clicked.connect(self.handle_modify_reliure)
         self.ui.facture_reliure.clicked.connect(self.show_reliure_facture_dialog)
+        self.ui.radioBristole.clicked.connect(self.manage_page_spinbox_change)
+        self.ui.radioGlace.clicked.connect(self.manage_page_spinbox_change)
 
         self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
         self.ui.date_reliure.dateChanged.connect(self.handle_date_reliure_changed)

@@ -1770,7 +1770,7 @@ border-radius: 10px;</string>
             </property>
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <pointsize>11</pointsize>
              </font>
             </property>
             <property name="text">
@@ -1915,7 +1915,7 @@ border-radius: 10px;</string>
              <rect>
               <x>170</x>
               <y>390</y>
-              <width>121</width>
+              <width>151</width>
               <height>31</height>
              </rect>
             </property>
@@ -2030,6 +2030,24 @@ border-radius: 10px;</string>
             </property>
             <property name="text">
              <string>Papier Glacé</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="payement_reliure">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>240</y>
+              <width>131</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Tout Payé</string>
             </property>
            </widget>
           </widget>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowyMYQyD.ui'
+## Form generated from reading UI file 'main_windownimMSg.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -824,7 +824,7 @@ class Ui_MainWindow(object):
         self.reliure_state = QCheckBox(self.reliure_form)
         self.reliure_state.setObjectName(u"reliure_state")
         self.reliure_state.setGeometry(QRect(40, 240, 121, 31))
-        self.reliure_state.setFont(font)
+        self.reliure_state.setFont(font10)
         self.label_11 = QLabel(self.reliure_form)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(30, 10, 121, 21))
@@ -859,7 +859,7 @@ class Ui_MainWindow(object):
         self.label_14.setFont(font)
         self.total_reliure = QLabel(self.reliure_form)
         self.total_reliure.setObjectName(u"total_reliure")
-        self.total_reliure.setGeometry(QRect(170, 390, 121, 31))
+        self.total_reliure.setGeometry(QRect(170, 390, 151, 31))
         self.total_reliure.setFont(font10)
         self.total_reliure.setStyleSheet(u"color: rgb(255, 85, 0)")
         self.label_15 = QLabel(self.reliure_form)
@@ -886,6 +886,10 @@ class Ui_MainWindow(object):
         self.radioGlace.setObjectName(u"radioGlace")
         self.radioGlace.setGeometry(QRect(240, 190, 101, 31))
         self.radioGlace.setFont(font)
+        self.payement_reliure = QCheckBox(self.reliure_form)
+        self.payement_reliure.setObjectName(u"payement_reliure")
+        self.payement_reliure.setGeometry(QRect(200, 240, 131, 31))
+        self.payement_reliure.setFont(font10)
         self.label_13 = QLabel(self.reliurePage)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setGeometry(QRect(10, 115, 121, 21))
@@ -1093,6 +1097,7 @@ class Ui_MainWindow(object):
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Couverture", None))
         self.radioBristole.setText(QCoreApplication.translate("MainWindow", u"Bristole", None))
         self.radioGlace.setText(QCoreApplication.translate("MainWindow", u"Papier Glac\u00e9", None))
+        self.payement_reliure.setText(QCoreApplication.translate("MainWindow", u"Tout Pay\u00e9", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Commandes du :", None))
         self.filter_reliure.setItemText(0, QCoreApplication.translate("MainWindow", u"Tous les Commandes", None))
         self.filter_reliure.setItemText(1, QCoreApplication.translate("MainWindow", u"Commandes Non Livrer", None))

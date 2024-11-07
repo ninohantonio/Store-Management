@@ -97,9 +97,10 @@ class FactureReliureDialog(QDialog):
 
 
         self.ui.tableWidget.insertRow(5)
-        self.ui.tableWidget.setSpan(5, 0, 1, 3)
+        self.ui.tableWidget.setSpan(5, 1, 1, 2)
         self.ui.tableWidget.setItem(5, 0, QTableWidgetItem("Nombre d'Exemplaire"))
-        self.ui.tableWidget.setItem(5, 3, QTableWidgetItem(f"{self.reliure.nombreExemplaire} "))
+        self.ui.tableWidget.setItem(5, 1, QTableWidgetItem(f"{self.reliure.nombreExemplaire} "))
+        self.ui.tableWidget.setItem(5, 3, QTableWidgetItem(f" * "))
 
         self.ui.tableWidget.insertRow(6)
         self.ui.tableWidget.setSpan(6, 0, 1, 3)

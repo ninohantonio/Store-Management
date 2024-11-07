@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>737</width>
-    <height>873</height>
+    <width>738</width>
+    <height>938</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -149,45 +149,25 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="print_btn">
-   <property name="geometry">
-    <rect>
-     <x>604</x>
-     <y>10</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 2px solid rgb(0, 85, 255);
-border-radius: 10px;</string>
-   </property>
-   <property name="text">
-    <string>Imprimer</string>
-   </property>
-  </widget>
   <widget class="QFrame" name="footer_frame">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>640</y>
      <width>720</width>
-     <height>225</height>
+     <height>270</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>720</width>
-     <height>225</height>
+     <height>270</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>720</width>
-     <height>225</height>
+     <height>270</height>
     </size>
    </property>
    <property name="baseSize">
@@ -206,7 +186,7 @@ border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>100</y>
+      <y>130</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -236,7 +216,7 @@ border-radius: 10px;</string>
      </font>
     </property>
     <property name="text">
-     <string>Reste a payer :</string>
+     <string>Reste à payer :</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -278,136 +258,6 @@ border-radius: 10px;</string>
      <string>0 Ar</string>
     </property>
    </widget>
-   <widget class="QFrame" name="client_frame">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>341</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>101</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Client : M(me). </string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="nom_client">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>20</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>nom_client</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>81</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Telephone :</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="numero_client">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>50</y>
-       <width>211</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>1234567890</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>71</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Adresse :</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="adresse_client">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>80</y>
-       <width>221</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>adresse</string>
-     </property>
-    </widget>
-   </widget>
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
@@ -429,15 +279,15 @@ border-radius: 10px;</string>
    <widget class="QLabel" name="total_lettre">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>60</y>
-      <width>441</width>
+      <x>0</x>
+      <y>90</y>
+      <width>711</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
+      <pointsize>13</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -445,6 +295,88 @@ border-radius: 10px;</string>
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Le Client</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="reste_reliure">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>10</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 85, 0)</string>
+    </property>
+    <property name="text">
+     <string>0 Ar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>20</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Avancement :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="avance_reliure">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>15</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 85, 255)</string>
+    </property>
+    <property name="text">
+     <string>0 Ar</string>
     </property>
    </widget>
   </widget>
@@ -484,8 +416,8 @@ border-radius: 10px;</string>
    <widget class="QLabel" name="statut_facture">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>145</y>
+      <x>520</x>
+      <y>125</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -505,7 +437,7 @@ border-radius: 10px;</string>
       <x>0</x>
       <y>150</y>
       <width>221</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -524,9 +456,9 @@ border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>520</x>
-      <y>106</y>
+      <y>109</y>
       <width>171</width>
-      <height>20</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -542,7 +474,7 @@ border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>70</y>
+      <y>90</y>
       <width>121</width>
       <height>16</height>
      </rect>
@@ -560,10 +492,10 @@ border-radius: 10px;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>20</y>
-      <width>161</width>
-      <height>16</height>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -574,7 +506,13 @@ border-radius: 10px;</string>
      </font>
     </property>
     <property name="text">
-     <string>IrinaService</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../resources.qrc">:/icons/icons/irina-service.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_14">
@@ -601,10 +539,10 @@ border-radius: 10px;</string>
    <widget class="QLabel" name="numero_facture">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>70</y>
+      <x>520</x>
+      <y>80</y>
       <width>191</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -639,7 +577,7 @@ border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>150</y>
+      <y>130</y>
       <width>141</width>
       <height>16</height>
      </rect>
@@ -717,14 +655,181 @@ border-radius: 10px;</string>
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QFrame" name="client_frame">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>-10</y>
+      <width>311</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Client : M(me). </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="nom_client">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>221</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>nom_client</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Telephone :</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="numero_client">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>50</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>1234567890</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Adresse :</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="adresse_client">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>70</y>
+       <width>221</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>adresse</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>150</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>statut payement :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="payement_reliure">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>150</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>payement</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>10</y>
-     <width>141</width>
-     <height>31</height>
+     <x>680</x>
+     <y>60</y>
+     <width>51</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="cursor">
@@ -735,15 +840,52 @@ border-radius: 10px;</string>
 border-radius: 10px;</string>
    </property>
    <property name="text">
-    <string>Exporter en pdf</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/icons/icons/topdf.png</normaloff>:/icons/icons/topdf.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
-  <zorder>frame</zorder>
-  <zorder>footer_frame</zorder>
-  <zorder>header_frame</zorder>
-  <zorder>print_btn</zorder>
-  <zorder>pushButton</zorder>
+  <widget class="QPushButton" name="print_btn">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>10</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/icons/icons/printer.png</normaloff>:/icons/icons/printer.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

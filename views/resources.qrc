@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/printer.png</file>
+    <file>icons/topdf.png</file>
     <file>icons/barcode.png</file>
     <file>icons/book.png</file>
     <file>icons/bell.png</file>
