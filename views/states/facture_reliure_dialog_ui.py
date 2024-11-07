@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_reliure_dialogpmFbLG.ui'
+## Form generated from reading UI file 'facture_reliure_dialogmqTImS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -169,7 +169,7 @@ class Ui_Dialog(object):
         self.statut_facture.setFont(font2)
         self.label_16 = QLabel(self.header_frame)
         self.label_16.setObjectName(u"label_16")
-        self.label_16.setGeometry(QRect(0, 150, 221, 21))
+        self.label_16.setGeometry(QRect(0, 150, 221, 31))
         self.label_16.setFont(font2)
         self.label_16.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.date_facture = QLabel(self.header_frame)
@@ -185,7 +185,7 @@ class Ui_Dialog(object):
         self.label.setFont(font5)
         self.label_2 = QLabel(self.header_frame)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(10, 10, 121, 71))
+        self.label_2.setGeometry(QRect(10, 10, 141, 81))
         font6 = QFont()
         font6.setFamilies([u"Arial"])
         font6.setPointSize(14)
@@ -195,7 +195,7 @@ class Ui_Dialog(object):
         self.label_2.setScaledContents(True)
         self.label_14 = QLabel(self.header_frame)
         self.label_14.setObjectName(u"label_14")
-        self.label_14.setGeometry(QRect(0, 106, 211, 20))
+        self.label_14.setGeometry(QRect(0, 120, 211, 20))
         self.label_14.setFont(font2)
         self.label_14.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.numero_facture = QLabel(self.header_frame)
@@ -212,17 +212,17 @@ class Ui_Dialog(object):
         self.label_4.setFont(font5)
         self.label_13 = QLabel(self.header_frame)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setGeometry(QRect(0, 90, 211, 16))
+        self.label_13.setGeometry(QRect(0, 100, 211, 16))
         self.label_13.setFont(font2)
         self.label_13.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_12 = QLabel(self.header_frame)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setGeometry(QRect(0, 70, 211, 16))
+        self.label_12.setGeometry(QRect(0, 80, 211, 16))
         self.label_12.setFont(font2)
         self.label_12.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_15 = QLabel(self.header_frame)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(0, 130, 211, 16))
+        self.label_15.setGeometry(QRect(0, 140, 211, 16))
         self.label_15.setFont(font2)
         self.label_15.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.client_frame = QFrame(self.header_frame)
