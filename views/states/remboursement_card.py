@@ -2,7 +2,7 @@ from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from PySide6.QtCore import QSize, QRect, Signal
 from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QWidget, QFrame, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox, \
-    QSpinBox
+    QSpinBox, QMessageBox
 
 from models.model_class import Article
 
@@ -207,9 +207,14 @@ class RemboursementCard(QWidget):
                 lambda: self.line_edit_quantite.setValue(self.piece_maximum))  # cancel button clicked,
 
     def remove_card(self):
-        """Supprime la carte de l'affichage."""
-        # Émet un signal pour notifier la suppression de la carte
-        self.card_removed.emit(self.article.numeroArticle, self.sou_total)
-        # Supprime le widget lui-même
-        self.setParent(None)
-        self.deleteLater()
+        response = QMessageBox.question(self.parent, "Supprimer la carte", f"Etes vous sur de supprimer '{self.article.libelle}' de la commande")
+        if response == QMessageBox.Yes:
+            """Supprime la carte de l'affichage."""
+            # Émet un signal pour notifier la suppression de la carte
+            self.card_removed.emit(self.article.numeroArticle, self.sou_total)
+            # Supprime le widget lui-même
+            self.setParent(None)
+            self.deleteLater()
+        else:
+            print(response)
+            return

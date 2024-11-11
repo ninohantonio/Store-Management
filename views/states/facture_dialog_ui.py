@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_dialoguarFVQ.ui'
+## Form generated from reading UI file 'facture_dialogFZEfzE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -25,7 +25,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(731, 922)
+        Dialog.resize(730, 922)
         Dialog.setStyleSheet(u"QDialog{\n"
 "	background-color: white;\n"
 "}\n"
@@ -98,7 +98,7 @@ class Ui_Dialog(object):
 
         self.change_state_btn = QPushButton(Dialog)
         self.change_state_btn.setObjectName(u"change_state_btn")
-        self.change_state_btn.setGeometry(QRect(640, 150, 91, 31))
+        self.change_state_btn.setGeometry(QRect(260, 140, 91, 31))
         self.change_state_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.print_btn = QPushButton(Dialog)
         self.print_btn.setObjectName(u"print_btn")
@@ -276,12 +276,22 @@ class Ui_Dialog(object):
         icon1.addFile(u":/icons/icons/topdf.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton.setIcon(icon1)
         self.pushButton.setIconSize(QSize(25, 25))
+        self.modify_btn = QPushButton(Dialog)
+        self.modify_btn.setObjectName(u"modify_btn")
+        self.modify_btn.setGeometry(QRect(670, 110, 51, 41))
+        self.modify_btn.setStyleSheet(u"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/icons/setting.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.modify_btn.setIcon(icon2)
+        self.modify_btn.setIconSize(QSize(30, 30))
         self.frame.raise_()
         self.footer_frame.raise_()
         self.header_frame.raise_()
         self.change_state_btn.raise_()
         self.print_btn.raise_()
         self.pushButton.raise_()
+        self.modify_btn.raise_()
 
         self.retranslateUi(Dialog)
 
@@ -329,5 +339,6 @@ class Ui_Dialog(object):
         self.label_9.setText(QCoreApplication.translate("Dialog", u"Adresse :", None))
         self.adresse_client.setText(QCoreApplication.translate("Dialog", u"adresse", None))
         self.pushButton.setText("")
+        self.modify_btn.setText("")
     # retranslateUi
 

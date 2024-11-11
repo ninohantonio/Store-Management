@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QDialog
+from PySide6.QtWidgets import QDialog, QMessageBox
 
 from models.model_class import Facture
 from services.article_service import get_article_by_id
@@ -29,7 +29,7 @@ class RemboursementDialog(QDialog):
 
             element = len(liste_article)
             index_quantite = 0 if data[3] == "pieces" else 1
-            carte = RemboursementCard(article, numero_article=article.numeroArticle, parent=self, quantite=data[4], type_index=index_quantite, sous_total=data[2])
+            carte = RemboursementCard(article, numero_article=article.numeroArticle, parent=self, quantite=int(data[4]), type_index=index_quantite, sous_total=int(data[2]))
             carte.sous_total_changed.connect(self.update_total_payer)
             carte.card_removed.connect(self.remove_card)
 
@@ -38,9 +38,7 @@ class RemboursementDialog(QDialog):
         self.ui.total_payer.setText(f"{self.total_a_payer} Ar")
 
     def remove_card(self, numero_article, sous_total):
-        if numero_article in self.commande_item:
-            del self.commande_item[numero_article]
-            self.update_total_payer(0, sous_total * -1)
+        self.update_total_payer(0, sous_total * -1)
 
     def update_total_payer(self, ancien: int, sous_total: int):
         self.total_a_payer = self.total_a_payer + sous_total - ancien

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>731</width>
+    <width>730</width>
     <height>922</height>
    </rect>
   </property>
@@ -152,8 +152,8 @@
   <widget class="QPushButton" name="change_state_btn">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>150</y>
+     <x>260</x>
+     <y>140</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -857,12 +857,40 @@ border-radius: 10px;</string>
     </size>
    </property>
   </widget>
+  <widget class="QPushButton" name="modify_btn">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>110</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/icons/icons/setting.png</normaloff>:/icons/icons/setting.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
   <zorder>frame</zorder>
   <zorder>footer_frame</zorder>
   <zorder>header_frame</zorder>
   <zorder>change_state_btn</zorder>
   <zorder>print_btn</zorder>
   <zorder>pushButton</zorder>
+  <zorder>modify_btn</zorder>
  </widget>
  <resources>
   <include location="../resources.qrc"/>

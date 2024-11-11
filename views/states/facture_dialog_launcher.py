@@ -12,6 +12,8 @@ from views.states.facture_dialog_ui import Ui_Dialog
 
 import os
 
+from views.states.remboursement_dialogue_launcher import RemboursementDialog
+
 
 class FactureDialog(QDialog):
     def __init__(self, facture: Facture=None, can_change_state=False):
@@ -43,6 +45,7 @@ class FactureDialog(QDialog):
         self.display_facture_detail(facture)
         self.ui.print_btn.clicked.connect(self.print_or_save_invoice_with_double_copy)
         self.ui.pushButton.clicked.connect(self.export_to_pdf)
+        self.ui.modify_btn.clicked.connect(self.show_remboursement_dialog)
 
     def display_header_information(self, facture: Facture, client: Client):
         self.ui.numero_facture.setText(facture.numeroFacture)
@@ -94,6 +97,10 @@ class FactureDialog(QDialog):
         session.commit()
         self.display_facture_detail(self.facture)
         return
+
+    def show_remboursement_dialog(self):
+        self.remboursement = RemboursementDialog(self.facture)
+        self.remboursement.exec()
 
     def print_or_save_invoice_with_double_copy(self):
         # Configuration de l'imprimante en mode paysage
