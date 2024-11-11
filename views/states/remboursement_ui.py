@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'remboursement_dialogjzYUBZ.ui'
+## Form generated from reading UI file 'remboursement_dialogAizEGp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -58,13 +58,13 @@ class Ui_Dialog(object):
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(20, 615, 121, 31))
         self.label_3.setFont(font2)
-        self.label_4 = QLabel(Dialog)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(150, 610, 161, 41))
+        self.total_payer = QLabel(Dialog)
+        self.total_payer.setObjectName(u"total_payer")
+        self.total_payer.setGeometry(QRect(150, 610, 161, 41))
         font3 = QFont()
         font3.setPointSize(17)
-        self.label_4.setFont(font3)
-        self.label_4.setStyleSheet(u"color: rgb(255, 85, 0)")
+        self.total_payer.setFont(font3)
+        self.total_payer.setStyleSheet(u"color: rgb(255, 85, 0)")
         self.submit = QPushButton(Dialog)
         self.submit.setObjectName(u"submit")
         self.submit.setGeometry(QRect(550, 610, 211, 41))
@@ -87,7 +87,7 @@ class Ui_Dialog(object):
         self.numero_facture.setText(QCoreApplication.translate("Dialog", u"000000001", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Liste des commandes :", None))
         self.label_3.setText(QCoreApplication.translate("Dialog", u"Total \u00e0 payer :", None))
-        self.label_4.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
+        self.total_payer.setText(QCoreApplication.translate("Dialog", u"0 Ar", None))
         self.submit.setText(QCoreApplication.translate("Dialog", u"Enregistrer les modifications", None))
     # retranslateUi
 

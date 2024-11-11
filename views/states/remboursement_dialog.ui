@@ -107,7 +107,7 @@ padding-left: 10px;</string>
     <string>Total à payer :</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="total_payer">
    <property name="geometry">
     <rect>
      <x>150</x>
