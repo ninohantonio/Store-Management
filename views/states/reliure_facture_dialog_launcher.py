@@ -1,4 +1,4 @@
-from PySide6.QtGui import QPageLayout, QPainter, QPdfWriter, QPageSize, QPixmap
+from PySide6.QtGui import QPageLayout, QPainter, QPdfWriter, QPageSize, QPixmap, QFont
 from PySide6.QtPrintSupport import QPrinter, QPrinterInfo, QPrintDialog
 from PySide6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox, QFileDialog
 from num2words import num2words
@@ -103,9 +103,14 @@ class FactureReliureDialog(QDialog):
         self.ui.tableWidget.setItem(5, 3, QTableWidgetItem(f" * "))
 
         self.ui.tableWidget.insertRow(6)
+        font = QFont()
+        font.setBold(True)
+        font.setPointSize(15)
         self.ui.tableWidget.setSpan(6, 0, 1, 3)
         self.ui.tableWidget.setItem(6, 0, QTableWidgetItem("TOTAL"))
         self.ui.tableWidget.setItem(6, 3, QTableWidgetItem(f"{self.total_a_payer} Ar"))
+        self.ui.tableWidget.item(6, 0).setFont(font)
+        self.ui.tableWidget.item(6, 3).setFont(font)
 
 
     def print_or_save_invoice_with_double_copy(self):
