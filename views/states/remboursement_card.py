@@ -207,7 +207,7 @@ class RemboursementCard(QWidget):
                 lambda: self.line_edit_quantite.setValue(self.piece_maximum))  # cancel button clicked,
 
     def remove_card(self):
-        response = QMessageBox.question(self.parent, "Supprimer la carte", f"Etes vous sur de supprimer '{self.article.libelle}' de la commande")
+        response = QMessageBox.question(self.parent, "Supprimer la carte", f"Etes vous sur de supprimer '{self.article.libelle}' de la commande ? Cela est ireversible !")
         if response == QMessageBox.Yes:
             """Supprime la carte de l'affichage."""
             # Émet un signal pour notifier la suppression de la carte

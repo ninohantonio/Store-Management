@@ -576,7 +576,7 @@ class MainWindow(QMainWindow):
     def manage_submit_article_rapide_selection(self):
         quantite = int(self.ui.quantite_spinBox.text())
         if quantite > 0:
-            detail_article = f"{self.article_rapide_selection.numeroArticle}:{self.article_rapide_selection.libelle}:{self.article_rapide_selection.prixUnitaire * quantite}:Piece:{quantite}"
+            detail_article = f"{self.article_rapide_selection.numeroArticle}:{self.article_rapide_selection.libelle}:{self.article_rapide_selection.prixUnitaire * quantite}:pieces:{quantite}"
             # modifier stock
             self.modify_stock_for_type(self.article_rapide_selection.numeroArticle, quantite, 1)
             # ajouter au facture

@@ -100,6 +100,7 @@ class FactureDialog(QDialog):
 
     def show_remboursement_dialog(self):
         self.remboursement = RemboursementDialog(self.facture)
+        self.remboursement.finished.connect(lambda : self.display_facture_detail(self.facture))
         self.remboursement.exec()
 
     def print_or_save_invoice_with_double_copy(self):
