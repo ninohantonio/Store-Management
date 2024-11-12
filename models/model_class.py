@@ -113,6 +113,8 @@ class Reliure(Base):
     numeroReliure = Column(Integer, primary_key=True, autoincrement=True)
 
     statutLivrer: Mapped[bool] = mapped_column()
+    payementReliure: Mapped[bool] = mapped_column()
+    avanceReliure: Mapped[int_small] = mapped_column()
     nombrePageNoir: Mapped[int_small] = mapped_column()
     nombrePageCouleur: Mapped[int_small] = mapped_column()
     nombreExemplaire: Mapped[int_small] = mapped_column()

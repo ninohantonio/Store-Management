@@ -45,9 +45,14 @@ class FactureReliureDialog(QDialog):
         self.ui.numero_facture.setText(str(self.reliure.numeroReliure))
         self.ui.date_facture.setText(f"{self.reliure.dateCommande}")
         self.ui.statut_facture.setText("Livré") if self.reliure.statutLivrer else self.ui.statut_facture.setText("Non Livré")
+        self.ui.payement_reliure.setText("Tout payé") if self.reliure.payementReliure else self.ui.payement_reliure.setText("Non payé")
 
         total_a_payer = self.total_a_payer
+        reste_payer = self.total_a_payer - self.reliure.avanceReliure
         self.ui.total.setText(f"{total_a_payer} Ar")
+
+        self.ui.avance_reliure.setText(f"{self.reliure.avanceReliure} Ar")
+        self.ui.reste_reliure.setText(f"{reste_payer} Ar")
 
         client = get_client_by_id(self.reliure.numeroClient)
         self.ui.nom_client.setText(client.nom)

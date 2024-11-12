@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windownimMSg.ui'
+## Form generated from reading UI file 'main_windowDZyCtp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -808,7 +808,7 @@ class Ui_MainWindow(object):
         self.delete_type.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.reliure_form = QFrame(self.reliurePage)
         self.reliure_form.setObjectName(u"reliure_form")
-        self.reliure_form.setGeometry(QRect(640, 150, 361, 441))
+        self.reliure_form.setGeometry(QRect(640, 190, 361, 441))
         self.reliure_form.setFrameShape(QFrame.Shape.StyledPanel)
         self.reliure_form.setFrameShadow(QFrame.Shadow.Raised)
         self.page_noir_spinBox = QSpinBox(self.reliure_form)
@@ -886,10 +886,6 @@ class Ui_MainWindow(object):
         self.radioGlace.setObjectName(u"radioGlace")
         self.radioGlace.setGeometry(QRect(240, 190, 101, 31))
         self.radioGlace.setFont(font)
-        self.payement_reliure = QCheckBox(self.reliure_form)
-        self.payement_reliure.setObjectName(u"payement_reliure")
-        self.payement_reliure.setGeometry(QRect(200, 240, 131, 31))
-        self.payement_reliure.setFont(font10)
         self.label_13 = QLabel(self.reliurePage)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setGeometry(QRect(10, 115, 121, 21))
@@ -907,7 +903,38 @@ class Ui_MainWindow(object):
         self.filter_reliure.setGeometry(QRect(430, 110, 181, 31))
         self.filter_reliure.setStyleSheet(u"border: 1px solid orange;\n"
 "border-radius: 10px;")
+        self.avance_reliure = QLineEdit(self.reliurePage)
+        self.avance_reliure.setObjectName(u"avance_reliure")
+        self.avance_reliure.setGeometry(QRect(830, 140, 121, 31))
+        self.avance_reliure.setFont(font10)
+        self.avance_reliure.setStyleSheet(u"border: 1px solid black;\n"
+"border-radius: 5px;\n"
+"padding-left: 24px;")
+        self.frame_4 = QFrame(self.reliurePage)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setGeometry(QRect(690, 130, 191, 51))
+        self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.toutPaye_reliure = QRadioButton(self.frame_4)
+        self.toutPaye_reliure.setObjectName(u"toutPaye_reliure")
+        self.toutPaye_reliure.setGeometry(QRect(10, 10, 101, 31))
+        self.toutPaye_reliure.setFont(font10)
+        self.avancePaye_reliure = QRadioButton(self.frame_4)
+        self.avancePaye_reliure.setObjectName(u"avancePaye_reliure")
+        self.avancePaye_reliure.setGeometry(QRect(150, 10, 20, 31))
         self.mainNavigationScreen.addWidget(self.reliurePage)
+        self.frame_4.raise_()
+        self.reliure_label.raise_()
+        self.reliure_table.raise_()
+        self.label_10.raise_()
+        self.comboBox.raise_()
+        self.add_type.raise_()
+        self.delete_type.raise_()
+        self.reliure_form.raise_()
+        self.label_13.raise_()
+        self.date_reliure.raise_()
+        self.filter_reliure.raise_()
+        self.avance_reliure.raise_()
 
         self.verticalLayout.addWidget(self.mainNavigationScreen)
 
@@ -1097,12 +1124,14 @@ class Ui_MainWindow(object):
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Couverture", None))
         self.radioBristole.setText(QCoreApplication.translate("MainWindow", u"Bristole", None))
         self.radioGlace.setText(QCoreApplication.translate("MainWindow", u"Papier Glac\u00e9", None))
-        self.payement_reliure.setText(QCoreApplication.translate("MainWindow", u"Tout Pay\u00e9", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Commandes du :", None))
         self.filter_reliure.setItemText(0, QCoreApplication.translate("MainWindow", u"Tous les Commandes", None))
         self.filter_reliure.setItemText(1, QCoreApplication.translate("MainWindow", u"Commandes Non Livrer", None))
         self.filter_reliure.setItemText(2, QCoreApplication.translate("MainWindow", u"Commande Livrer", None))
 
+        self.avance_reliure.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Avance", None))
+        self.toutPaye_reliure.setText(QCoreApplication.translate("MainWindow", u"Tout pay\u00e9", None))
+        self.avancePaye_reliure.setText("")
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Vendeur", None))
         self.label_16.setText("")

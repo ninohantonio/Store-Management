@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_reliure_dialogmqTImS.ui'
+## Form generated from reading UI file 'facture_reliure_dialoglPMsmg.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -25,7 +25,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(738, 938)
+        Dialog.resize(739, 938)
         Dialog.setStyleSheet(u"QDialog{\n"
 "	background-color: white;\n"
 "}\n"
@@ -165,7 +165,7 @@ class Ui_Dialog(object):
         self.header_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.statut_facture = QLabel(self.header_frame)
         self.statut_facture.setObjectName(u"statut_facture")
-        self.statut_facture.setGeometry(QRect(520, 125, 121, 21))
+        self.statut_facture.setGeometry(QRect(520, 130, 121, 21))
         self.statut_facture.setFont(font2)
         self.label_16 = QLabel(self.header_frame)
         self.label_16.setObjectName(u"label_16")
@@ -208,7 +208,7 @@ class Ui_Dialog(object):
         self.label_3.setFont(font5)
         self.label_4 = QLabel(self.header_frame)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(360, 130, 141, 16))
+        self.label_4.setGeometry(QRect(360, 135, 141, 16))
         self.label_4.setFont(font5)
         self.label_13 = QLabel(self.header_frame)
         self.label_13.setObjectName(u"label_13")
@@ -256,11 +256,11 @@ class Ui_Dialog(object):
         self.adresse_client.setFont(font)
         self.label_18 = QLabel(self.header_frame)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setGeometry(QRect(360, 150, 111, 21))
+        self.label_18.setGeometry(QRect(360, 160, 111, 21))
         self.label_18.setFont(font5)
         self.payement_reliure = QLabel(self.header_frame)
         self.payement_reliure.setObjectName(u"payement_reliure")
-        self.payement_reliure.setGeometry(QRect(520, 150, 81, 21))
+        self.payement_reliure.setGeometry(QRect(520, 160, 81, 21))
         self.payement_reliure.setFont(font2)
         self.pushButton = QPushButton(Dialog)
         self.pushButton.setObjectName(u"pushButton")

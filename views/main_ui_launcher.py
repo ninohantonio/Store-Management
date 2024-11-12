@@ -63,10 +63,13 @@ class MainWindow(QMainWindow):
 
         self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)
         self.ui.avance_field.setValidator(QIntValidator(0, 999999))
+        self.ui.avance_reliure.setValidator(QIntValidator(0, 999999))
 
         self.ui.tout_payer.setChecked(True)
+        self.ui.toutPaye_reliure.setChecked(True)
 
         self.ui.avance_field.installEventFilter(self)
+        self.ui.avance_reliure.installEventFilter(self)
 
         # Connecter les signaux dateChanged
         self.ui.dateEdit.dateChanged.connect(self.on_date_changed)
@@ -132,6 +135,9 @@ class MainWindow(QMainWindow):
         if obj == self.ui.avance_field and event.type() == QEvent.FocusIn:
             # Lorsque le focus entre dans le QLineEdit, cocher un bouton radio
             self.ui.avancement.setChecked(True)
+            return True
+        elif obj == self.ui.avance_reliure and event.type() == QEvent.FocusIn:
+            self.ui.avancePaye_reliure.setChecked(True)
             return True
         return super().eventFilter(obj, event)
 
@@ -662,6 +668,7 @@ class MainWindow(QMainWindow):
         self.ui.exemplaire_spinBox.setValue(0)
         self.ui.total_reliure.setText(f"{0} Ar")
         self.ui.couverture_spin_box.setValue(0)
+        self.ui.avance_reliure.clear()
         self.total_reliure = 0
         self.reliure_numero = None
 
@@ -683,6 +690,8 @@ class MainWindow(QMainWindow):
                         reliure.statutLivrer = self.ui.reliure_state.isChecked()
                         reliure.nombreCouverture = int(self.ui.couverture_spin_box.text())
                         reliure.typeCouverture = self.ui.radioBristole.isChecked()
+                        reliure.payementReliure = self.ui.toutPaye_reliure.isChecked()
+                        reliure.avanceReliure = int(self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
                         reliure.dateCommande = get_date_to_string()
 
                         insert_new_reliure_commande(reliure)
@@ -712,6 +721,8 @@ class MainWindow(QMainWindow):
         self.ui.couverture_spin_box.setValue(reliure.nombreCouverture)
         self.ui.radioBristole.setChecked(reliure.typeCouverture)
         self.ui.radioGlace.setChecked(not reliure.typeCouverture)
+        self.ui.toutPaye_reliure.setChecked(reliure.payementReliure)
+        self.ui.avance_reliure.setText(str(reliure.avanceReliure))
         self.reliure_numero = numero
         return
 
@@ -725,6 +736,9 @@ class MainWindow(QMainWindow):
             reliure.statutLivrer = self.ui.reliure_state.isChecked()
             reliure.typeCouverture = self.ui.radioBristole.isChecked()
             reliure.nombreCouverture = int(self.ui.couverture_spin_box.text())
+            reliure.payementReliure = self.ui.toutPaye_reliure.isChecked()
+            reliure.avanceReliure = int(
+                self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
             services.reliure_service.session.commit()
 
             self.reset_reliure_form()
