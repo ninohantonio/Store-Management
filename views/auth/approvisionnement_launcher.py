@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QDialog
 
 from models.model_class import Approvisionnement
 from services.approvisionnement_service import insert_new_approvisionnement, update_appro
+from services.article_service import get_article_by_id
 from views.auth.ui_approvisionnement import Ui_Dialog
 
 
@@ -16,6 +17,15 @@ class ApprovisionnementDialog(QDialog):
 
         self.ui.submit.clicked.connect(lambda: self.submit_approvisionnement(article))
         self.ui.cancel.clicked.connect(lambda: self.close())
+
+        self.article = get_article_by_id(article)
+        if self.article.typeConteneur == "Paquet":
+            self.ui.radioButton_2.setHidden(True)
+        else:
+            self.ui.radioButton.setHidden(True)
+
+        self.finished.connect(lambda : self.submit_approvisionnement(article))
+
 
         self.load_appro_info(appro)
 
