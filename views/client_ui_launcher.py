@@ -45,12 +45,13 @@ class ClientList(QDialog):
 
     def handle_temporary_client(self):
         self.temporary_client_selected = True
+
         self.accept()
 
     def get_selected_client(self):
         selected_row = self.ui.tableWidget.currentRow()
         print(f"selected row = {selected_row}")
-        if selected_row != -1:
+        if selected_row != -1 and self.temporary_client_selected == False:
             # Récupérer les informations du client sélectionné
             numero = self.ui.tableWidget.item(selected_row, 2).text()
             return get_client_by_id(numero)

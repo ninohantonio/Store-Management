@@ -321,6 +321,7 @@ class MainWindow(QMainWindow):
             if client is not None:
                 #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
                 liste_article = self.extract_info_to_card()
+                print("vita ny extraction")
                 #boucle pour stocker les informations dans commande
                 self.store_data_to_commande(liste_article, client.numeroClient)
                 #stocker dans Facture
@@ -437,6 +438,7 @@ class MainWindow(QMainWindow):
                 newclient_tmp.adresse = "tmp"
                 insert_new_client(newclient_tmp)
                 self.selected_client = newclient_tmp
+                return
             else:
                 # Récupérer les informations du client sélectionné dans la table
                 client_info = self.dialog.get_selected_client()
@@ -444,6 +446,7 @@ class MainWindow(QMainWindow):
                     # Afficher les informations du client sélectionné ou temporaire
                     self.selected_client = client_info
                     print(f"Client sélectionné : {client_info.nom}, Telephone : {client_info.telephone}")
+                    return
                 else:
                     print("Aucun client sélectionné.")
                     self.selected_client = None
@@ -454,10 +457,17 @@ class MainWindow(QMainWindow):
 
     def store_data_to_commande(self, liste_article: list[str], numero_client):
         #numero: libelle:sous - total: desciption:effectif
+        print("insertion de la commande")
         for commande_data in liste_article:
             commande_split = commande_data.split(':')
-            commande = Commande(dateCommande=get_date_time_to_string(), quantiteCommande=commande_split[4], type=commande_split[3], numeroClient=numero_client, numeroArticle=commande_split[0])
-            insert_new_commande(commande)
+            commande = Commande()
+            commande.dateCommande = get_date_time_to_string()
+            commande.quantiteCommande = commande_split[4]
+            commande.type = commande_split[3]
+            commande.numeroClient = numero_client
+            commande.numeroArticle = commande_split[0]
+            # services.commande_service.session.add(commande)
+            # services.commande_service.session.commit()
 
     def store_data_to_facture(self, liste_article: list[str], numero_client):
         statut_payement = self.ui.tout_payer.isChecked()
