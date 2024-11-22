@@ -327,7 +327,7 @@ class MainWindow(QMainWindow):
                 #stocker dans Facture
                 facture = self.store_data_to_facture(liste_article, client.numeroClient)
                 #stocker dans journal de vente
-                self.store_data_to_journal(liste_article)
+                self.store_data_to_journal([f"facture {facture.numeroFacture}"])
                 #afficher dialog avec facture
                 self.facture_dialog = FactureDialog(facture)
                 self.facture_dialog.show()
@@ -706,9 +706,9 @@ class MainWindow(QMainWindow):
 
                         journal = Journal()
                         journal.dateEnregistrement = get_date_to_string()
-                        journal.typeAction = "commande reliure"
-                        journal.listeArticle = []
-                        journal.description = "commande livrer" if reliure.statutLivrer else "commande non livrer"
+                        journal.typeAction = "commande reliure livré" if reliure.statutLivrer else "commande reliure non livré"
+                        journal.listeArticle = [f"reliure {reliure.numeroReliure}"]
+                        journal.description = "commande payé" if reliure.payementReliure else "commande non payé"
                         insert_new_journal(journal)
 
                         insert_new_reliure_commande(reliure)
@@ -757,6 +757,13 @@ class MainWindow(QMainWindow):
             reliure.avanceReliure = int(
                 self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
             services.reliure_service.session.commit()
+
+            journal = Journal()
+            journal.dateEnregistrement = get_date_to_string()
+            journal.typeAction = "modification reliure livré" if reliure.statutLivrer else "modification reliure non livré"
+            journal.listeArticle = [f"reliure {reliure.numeroReliure}"]
+            journal.description = "modification payé" if reliure.payementReliure else "modification non payé"
+            insert_new_journal(journal)
 
             self.reset_reliure_form()
             self.refresh_reliure_data_table()
