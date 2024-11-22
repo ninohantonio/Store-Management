@@ -739,6 +739,7 @@ class MainWindow(QMainWindow):
         self.ui.radioBristole.setChecked(reliure.typeCouverture)
         self.ui.radioGlace.setChecked(not reliure.typeCouverture)
         self.ui.toutPaye_reliure.setChecked(reliure.payementReliure)
+        self.ui.avancePaye_reliure.setChecked(not reliure.payementReliure)
         self.ui.avance_reliure.setText(str(reliure.avanceReliure))
         self.reliure_numero = numero
         return
