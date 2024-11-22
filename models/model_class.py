@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey, String, DateTime, Date, JSON
 from sqlalchemy.orm import Mapped, relationship, mapped_column
 
 from utils.database import Base, engine, str_50, str_10, str_date, str_date_time, int_small, str_20, str_30_optional, \
-    str_13
+    str_13, int_big
 
 
 class Client(Base):
@@ -36,7 +36,7 @@ class Article(Base):
     pieceEnStock: Mapped[int_small]
     packetEnStock: Mapped[int_small]
     boiteEnStock: Mapped[int_small]
-    prixUnitaire: Mapped[int_small]
+    prixUnitaire: Mapped[int_big]
     dateEntrer = Column(Date)
     description: Mapped[str_30_optional]
     commandes: Mapped[list["Commande"]] = relationship()
@@ -61,7 +61,7 @@ class Facture(Base):
     dateEnregistrement = Column(DateTime)
     listeArticle = Column(JSON) #numero:libelle:sous-total:desciption:effectif
     statutPayement: Mapped[bool] = mapped_column()
-    avancement: Mapped[int_small] = mapped_column()
+    avancement: Mapped[int_big] = mapped_column()
     numeroClient = Column(ForeignKey("client.numeroClient"))
 
 class Journal(Base):
@@ -100,11 +100,11 @@ class Typelivre(Base):
 
     numeroType = Column(Integer, primary_key=True, autoincrement=True)
     typeLivre: Mapped[str_50] = mapped_column()
-    prixPageNoir: Mapped[int_small] = mapped_column()
-    prixPageCouleur: Mapped[int_small] = mapped_column()
-    prixReliure: Mapped[int_small] = mapped_column()
-    prixBristole: Mapped[int_small] = mapped_column()
-    prixPapierGlace: Mapped[int_small] = mapped_column()
+    prixPageNoir: Mapped[int_big] = mapped_column()
+    prixPageCouleur: Mapped[int_big] = mapped_column()
+    prixReliure: Mapped[int_big] = mapped_column()
+    prixBristole: Mapped[int_big] = mapped_column()
+    prixPapierGlace: Mapped[int_big] = mapped_column()
 
 class Reliure(Base):
     __tablename__ = 'reliure'
@@ -113,7 +113,7 @@ class Reliure(Base):
 
     statutLivrer: Mapped[bool] = mapped_column()
     payementReliure: Mapped[bool] = mapped_column()
-    avanceReliure: Mapped[int_small] = mapped_column()
+    avanceReliure: Mapped[int_big] = mapped_column()
     nombrePageNoir: Mapped[int_small] = mapped_column()
     nombrePageCouleur: Mapped[int_small] = mapped_column()
     nombreExemplaire: Mapped[int_small] = mapped_column()

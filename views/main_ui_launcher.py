@@ -70,6 +70,7 @@ class MainWindow(QMainWindow):
 
         self.ui.avance_field.installEventFilter(self)
         self.ui.avance_reliure.installEventFilter(self)
+        self.ui.tout_payer.clicked.connect(self.handle_tout_payer_facture_checked)
 
         # Connecter les signaux dateChanged
         self.ui.dateEdit.dateChanged.connect(self.on_date_changed)
@@ -116,6 +117,7 @@ class MainWindow(QMainWindow):
         self.ui.facture_reliure.clicked.connect(self.show_reliure_facture_dialog)
         self.ui.radioBristole.clicked.connect(self.manage_page_spinbox_change)
         self.ui.radioGlace.clicked.connect(self.manage_page_spinbox_change)
+        self.ui.toutPaye_reliure.clicked.connect(self.handle_tout_paye_checked)
 
         self.ui.reliure_table.cellDoubleClicked.connect(self.manage_reliure_table_cell_click)
         self.ui.date_reliure.dateChanged.connect(self.handle_date_reliure_changed)
@@ -468,6 +470,10 @@ class MainWindow(QMainWindow):
             commande.numeroArticle = commande_split[0]
             insert_new_commande(commande)
 
+    def handle_tout_payer_facture_checked(self):
+        self.ui.avance_field.clear()
+        return
+
     def store_data_to_facture(self, liste_article: list[str], numero_client):
         statut_payement = self.ui.tout_payer.isChecked()
         try:
@@ -681,6 +687,10 @@ class MainWindow(QMainWindow):
         self.ui.avance_reliure.clear()
         self.total_reliure = 0
         self.reliure_numero = None
+
+    def handle_tout_paye_checked(self):
+        self.ui.avance_reliure.clear()
+        return
 
     def handle_submit_reliure(self):
         if self.reliure_numero is None:
