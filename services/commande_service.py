@@ -27,7 +27,22 @@ def get_article_by_commande(client_id: int):
     articles = session.query(Article).where(Article.numeroArticle == Commande.numeroArticle and Client.numeroClient == Commande.numeroClient and Client.numeroClient == client_id).all()
     return articles
 
+def get_next_commande_number():
+    # Récupérer la dernière commande enregistrée
+    last_commande = session.query(Commande).order_by(Commande.numeroCommande.desc()).first()
+
+    if last_commande:
+        # Incrémenter le numéro de facture
+        next_number = last_commande.numeroCommande + 1
+    else:
+        # Si aucune facture n'existe encore, commencer à 00000001
+        next_number = 1
+
+    return next_number
+
+
 def insert_new_commande(commande: Commande):
+    commande.numeroCommande = get_next_commande_number()
     session.add(commande)
     session.commit()
 

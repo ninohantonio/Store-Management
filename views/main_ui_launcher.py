@@ -323,7 +323,7 @@ class MainWindow(QMainWindow):
                 liste_article = self.extract_info_to_card()
                 print("vita ny extraction")
                 #boucle pour stocker les informations dans commande
-                self.store_data_to_commande(liste_article, client.numeroClient)
+                # self.store_data_to_commande(liste_article, client.numeroClient)
                 #stocker dans Facture
                 facture = self.store_data_to_facture(liste_article, client.numeroClient)
                 #stocker dans journal de vente
@@ -466,8 +466,7 @@ class MainWindow(QMainWindow):
             commande.type = commande_split[3]
             commande.numeroClient = numero_client
             commande.numeroArticle = commande_split[0]
-            # services.commande_service.session.add(commande)
-            # services.commande_service.session.commit()
+            insert_new_commande(commande)
 
     def store_data_to_facture(self, liste_article: list[str], numero_client):
         statut_payement = self.ui.tout_payer.isChecked()
@@ -485,6 +484,7 @@ class MainWindow(QMainWindow):
 
     def reset_card_container(self):
         self.ui.total_payer.setText(f"0 Ar")
+        self.total_a_payer = 0
         for i in range(self.ui.cardContainer.count()):
             card_widget = self.ui.cardContainer.itemAt(i).widget()
             card_widget.deleteLater()
@@ -703,6 +703,13 @@ class MainWindow(QMainWindow):
                         reliure.payementReliure = self.ui.toutPaye_reliure.isChecked()
                         reliure.avanceReliure = int(self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
                         reliure.dateCommande = get_date_to_string()
+
+                        journal = Journal()
+                        journal.dateEnregistrement = get_date_to_string()
+                        journal.typeAction = "commande reliure"
+                        journal.listeArticle = []
+                        journal.description = "commande livrer" if reliure.statutLivrer else "commande non livrer"
+                        insert_new_journal(journal)
 
                         insert_new_reliure_commande(reliure)
                         self.refresh_reliure_data_table()

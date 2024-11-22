@@ -47,7 +47,7 @@ class Article(Base):
 class Commande(Base):
     __tablename__: str = "commande"
 
-    numeroCommande = Column(Integer, primary_key=True, autoincrement=True)
+    numeroCommande = Column(Integer, primary_key=True)
     dateCommande = Column(DateTime)
     quantiteCommande: Mapped[int_small]
     type = Column(String(10))
