@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowqkabZg.ui'
+## Form generated from reading UI file 'main_admin_windowrqwPwp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -597,12 +597,13 @@ class Ui_MainWindow(object):
         self.frame_21.setFrameShadow(QFrame.Shadow.Raised)
         self.article_name = QLabel(self.frame_21)
         self.article_name.setObjectName(u"article_name")
-        self.article_name.setGeometry(QRect(180, 30, 181, 20))
+        self.article_name.setGeometry(QRect(110, 30, 301, 20))
         font4 = QFont()
         font4.setFamilies([u"Arial"])
         font4.setPointSize(13)
         font4.setBold(True)
         self.article_name.setFont(font4)
+        self.article_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.frame_22 = QFrame(self.frame_14)
         self.frame_22.setObjectName(u"frame_22")
         self.frame_22.setGeometry(QRect(10, 489, 511, 111))

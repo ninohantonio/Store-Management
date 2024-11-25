@@ -62,10 +62,14 @@ class AdminWindow(QMainWindow):
         self.numero_article_to_modify = None
         self.alert_label = QLabel()
 
-        self.ui.prix_form.setValidator(QIntValidator(0, 9999999))
-        self.ui.nbConteneur_form.setValidator(QIntValidator(0, 999))
-        self.ui.pieceParConteneur.setValidator(QIntValidator(0, 9999))
-        self.ui.pieceSupplement_form.setValidator(QIntValidator(0, 9999))
+        self.ui.prix_form.setValidator(QIntValidator(0, 999999))
+        self.ui.nbConteneur_form.setValidator(QIntValidator(0, 100))
+        self.ui.pieceParConteneur.setValidator(QIntValidator(1, 100))
+        validator = QIntValidator(0, 100)
+        self.ui.pieceSupplement_form.setValidator(validator)
+
+        self.ui.libelle_form.setMaxLength(20)
+        self.ui.description_form.setMaxLength(30)
 
         self.ui.appro_detail.setVisible(False)
         self.ui.appro_detail.clicked.connect(lambda : self.show_appro_dialog(self.numero_article_to_modify))
@@ -87,6 +91,7 @@ class AdminWindow(QMainWindow):
         self.ui.change_password_frame.setHidden(True)
         self.ui.send_code_confirmation.clicked.connect(self.handle_send_code)
         self.ui.code_confirmation.textChanged.connect(self.handle_code_validation_change)
+        self.ui.logoutBtn.clicked.connect(lambda : self.close())
 
         self.ui.reliureTableWidget.hideColumn(0)
         self.ui.reliureTableWidget.hideColumn(3)
@@ -158,6 +163,7 @@ class AdminWindow(QMainWindow):
             self.ui.appro_detail.setVisible(False)
             self.ui.submitBtn.clicked.disconnect()
             self.ui.submitBtn.clicked.connect(self.insert_new_article)
+            self.reset_if_not_exist(search_value)
 
 
     def manage_radio_checked(self):
@@ -267,8 +273,8 @@ class AdminWindow(QMainWindow):
             pieceParPaquet=pieceParPaquet,
             pieceParBoite=pieceParBoite,
             pieceEnStock=pieceEnStock,
-            packetEnStock=nbPacket,
-            boiteEnStock=nbBoite,
+            packetEnStock=pieceEnStock // pieceParPaquet if self.ui.radioButton.isChecked() else 0,
+            boiteEnStock=pieceEnStock // pieceParBoite if self.ui.radioButton_2.isChecked() else 0,
             description=self.ui.description_form.text(),
             dateEntrer=get_date_to_string(),
             numeroArticle=self.numero_to_insert,
@@ -344,8 +350,8 @@ class AdminWindow(QMainWindow):
             pieceParPaquet=pieceParPaquet,
             pieceParBoite=pieceParBoite,
             pieceEnStock=pieceEnStock,
-            packetEnStock=nbPacket,
-            boiteEnStock=nbBoite,
+            packetEnStock=pieceEnStock // pieceParPaquet if self.ui.radioButton.isChecked() else 0,
+            boiteEnStock=pieceEnStock // pieceParBoite if self.ui.radioButton_2.isChecked() else 0,
             description=self.ui.description_form.text(),
             dateEntrer=get_date_to_string(),
         )
@@ -372,6 +378,25 @@ class AdminWindow(QMainWindow):
         self.ui.dateEntrer_detail.clear()
         self.ui.description_detail.clear()
         self.numero_article_to_modify = None
+        print("reset")
+
+    def reset_if_not_exist(self, search_value):
+        self.ui.nbConteneur_form.clear()
+        self.ui.description_form.clear()
+        self.ui.prix_form.clear()
+        self.ui.libelle_form.clear()
+        self.ui.pieceSupplement_form.clear()
+        self.ui.pieceParConteneur.clear()
+
+        self.ui.article_name.setText("Inserer cet nouvel article")
+        self.ui.prixUnitaire_detail.clear()
+        self.ui.pieceParConteneur_detail.clear()
+        self.ui.conteneur_detail.clear()
+        self.ui.nbConteneur_detail.clear()
+        self.ui.piece_detail.clear()
+        self.ui.dateEntrer_detail.clear()
+        self.ui.description_detail.clear()
+        self.numero_to_insert = search_value
         print("reset")
 
     def show_dialog_success(self):

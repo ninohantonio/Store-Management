@@ -11,7 +11,7 @@ from models.model_class import Facture, Client, Commande, Journal, Notification,
     Reliure
 from services.approvisionnement_service import get_article_in_limite
 from services.article_service import verify_article_by_id, get_article_by_id, get_all_article, get_article_by_name, \
-    get_article_by_price, session, filter_article_by_date
+    get_article_by_price, filter_article_by_date
 from services.articlerapide_service import insert_new_article_rapide, get_all_articlerapide
 from services.client_service import insert_new_client, get_client_by_id
 from services.commande_service import insert_new_commande
@@ -364,6 +364,7 @@ class MainWindow(QMainWindow):
         quantite = int(quantite)
         article = get_article_by_id(numero)
         type_quantite = article.typeConteneur
+        # PIECES
         if type == 1:
             stock_actuel = article.pieceEnStock
             nouveau_stock = stock_actuel - quantite
@@ -374,25 +375,27 @@ class MainWindow(QMainWindow):
             else:
                 article.pieceEnStock = nouveau_stock
                 article.boiteEnStock = nouveau_conteneur
-            session.commit()
+            services.article_service.session.commit()
             return
 
+        # PAQUET
         elif type == 2:
             packet_actuel = article.packetEnStock
             nouveau_packet = packet_actuel - quantite
             nouveau_stock = article.pieceEnStock - (article.pieceParPaquet * quantite)
             article.pieceEnStock = nouveau_stock
             article.packetEnStock = nouveau_packet
-            session.commit()
+            services.article_service.session.commit()
             return
 
+        # BOITE
         else:
             boite_actuel = article.boiteEnStock
             nouveau_boite = boite_actuel - quantite
             nouveau_stock = article.pieceEnStock - (article.pieceParBoite * quantite)
             article.pieceEnStock = nouveau_stock
             article.boiteEnStock = nouveau_boite
-            session.commit()
+            services.article_service.session.commit()
             return
 
     def show_alert_message(self, message: str):

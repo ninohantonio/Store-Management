@@ -48,7 +48,7 @@ class FactureReliureDialog(QDialog):
         self.ui.payement_reliure.setText("Tout payé") if self.reliure.payementReliure else self.ui.payement_reliure.setText("Non payé")
 
         total_a_payer = self.total_a_payer
-        reste_payer = self.total_a_payer - self.reliure.avanceReliure
+        reste_payer = self.total_a_payer - self.reliure.avanceReliure if not self.reliure.payementReliure else 0
         self.ui.total.setText(f"{total_a_payer} Ar")
 
         self.ui.avance_reliure.setText(f"{self.reliure.avanceReliure} Ar")
