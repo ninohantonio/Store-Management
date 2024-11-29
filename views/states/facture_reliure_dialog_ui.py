@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_reliure_dialoglPMsmg.ui'
+## Form generated from reading UI file 'facture_reliure_dialogAoIURM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -185,13 +185,13 @@ class Ui_Dialog(object):
         self.label.setFont(font5)
         self.label_2 = QLabel(self.header_frame)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(10, 10, 141, 81))
+        self.label_2.setGeometry(QRect(10, -20, 161, 141))
         font6 = QFont()
         font6.setFamilies([u"Arial"])
         font6.setPointSize(14)
         font6.setBold(True)
         self.label_2.setFont(font6)
-        self.label_2.setPixmap(QPixmap(u":/icons/icons/irina-service.jpg"))
+        self.label_2.setPixmap(QPixmap(u":/icons/icons/LOGO IRINA SERVICE-02.jpg"))
         self.label_2.setScaledContents(True)
         self.label_14 = QLabel(self.header_frame)
         self.label_14.setObjectName(u"label_14")
@@ -262,6 +262,21 @@ class Ui_Dialog(object):
         self.payement_reliure.setObjectName(u"payement_reliure")
         self.payement_reliure.setGeometry(QRect(520, 160, 81, 21))
         self.payement_reliure.setFont(font2)
+        self.label_2.raise_()
+        self.statut_facture.raise_()
+        self.label_16.raise_()
+        self.date_facture.raise_()
+        self.label.raise_()
+        self.label_14.raise_()
+        self.numero_facture.raise_()
+        self.label_3.raise_()
+        self.label_4.raise_()
+        self.label_13.raise_()
+        self.label_12.raise_()
+        self.label_15.raise_()
+        self.client_frame.raise_()
+        self.label_18.raise_()
+        self.payement_reliure.raise_()
         self.pushButton = QPushButton(Dialog)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(680, 60, 51, 41))
