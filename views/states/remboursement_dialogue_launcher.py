@@ -34,7 +34,7 @@ class RemboursementDialog(QDialog):
             self.total_a_payer += int(data[2])
             article = get_article_by_id(data[0])
 
-            element = len(liste_article)
+            element = liste_article.index(item) + 1
             index_quantite = 0 if data[3] == "pieces" else 1
             carte = RemboursementCard(article, numero_article=article.numeroArticle, parent=self, quantite=int(data[4]), type_index=index_quantite, sous_total=int(data[2]))
             carte.sous_total_changed.connect(self.update_total_payer)
