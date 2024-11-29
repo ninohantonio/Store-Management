@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'facture_dialogFZEfzE.ui'
+## Form generated from reading UI file 'facture_dialogwSvNVZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -132,7 +132,7 @@ class Ui_Dialog(object):
         self.reste_payer.setFont(font2)
         self.label_5 = QLabel(self.footer_frame)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(490, 20, 101, 21))
+        self.label_5.setGeometry(QRect(450, 20, 141, 21))
         self.label_5.setFont(font)
         self.label_11 = QLabel(self.footer_frame)
         self.label_11.setObjectName(u"label_11")
@@ -140,7 +140,7 @@ class Ui_Dialog(object):
         self.label_11.setFont(font)
         self.avance = QLabel(self.footer_frame)
         self.avance.setObjectName(u"avance")
-        self.avance.setGeometry(QRect(340, 20, 131, 21))
+        self.avance.setGeometry(QRect(310, 20, 131, 21))
         self.avance.setFont(font2)
         self.total = QLabel(self.footer_frame)
         self.total.setObjectName(u"total")
@@ -148,7 +148,7 @@ class Ui_Dialog(object):
         self.total.setFont(font2)
         self.label_10 = QLabel(self.footer_frame)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(280, 20, 61, 21))
+        self.label_10.setGeometry(QRect(250, 20, 61, 21))
         self.label_10.setFont(font)
         self.label_17 = QLabel(self.footer_frame)
         self.label_17.setObjectName(u"label_17")
@@ -197,13 +197,13 @@ class Ui_Dialog(object):
         self.label.setFont(font5)
         self.label_2 = QLabel(self.header_frame)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(0, 10, 151, 81))
+        self.label_2.setGeometry(QRect(0, -30, 161, 151))
         font6 = QFont()
         font6.setFamilies([u"Arial"])
         font6.setPointSize(14)
         font6.setBold(True)
         self.label_2.setFont(font6)
-        self.label_2.setPixmap(QPixmap(u":/icons/icons/irina-service.jpg"))
+        self.label_2.setPixmap(QPixmap(u":/icons/icons/LOGO IRINA SERVICE-02.jpg"))
         self.label_2.setScaledContents(True)
         self.label_14 = QLabel(self.header_frame)
         self.label_14.setObjectName(u"label_14")
@@ -266,6 +266,19 @@ class Ui_Dialog(object):
         self.adresse_client.setObjectName(u"adresse_client")
         self.adresse_client.setGeometry(QRect(110, 70, 221, 16))
         self.adresse_client.setFont(font)
+        self.label_2.raise_()
+        self.statut_facture.raise_()
+        self.label_16.raise_()
+        self.date_facture.raise_()
+        self.label.raise_()
+        self.label_14.raise_()
+        self.numero_facture.raise_()
+        self.label_3.raise_()
+        self.label_4.raise_()
+        self.label_13.raise_()
+        self.label_12.raise_()
+        self.label_15.raise_()
+        self.client_frame.raise_()
         self.pushButton = QPushButton(Dialog)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(670, 60, 51, 41))

@@ -78,8 +78,21 @@ class FactureDialog(QDialog):
             self.ui.tableWidget.setItem(i, 2,  QTableWidgetItem(row_data[3]))
             self.ui.tableWidget.setItem(i, 3,  QTableWidgetItem(row_data[2]))
 
-        reste_payer = "0 Ar" if facture.statutPayement else f"{self.total_a_payer - facture.avancement} Ar"
-        self.ui.reste_payer.setText(reste_payer)
+        if self.total_a_payer == 0 :
+            self.ui.avance.setText(f"{facture.avancement} Ar")
+            self.ui.label_5.setText("Reste a Rembourser")
+            self.ui.reste_payer.setText(f"{facture.avancement} Ar")
+            self.ui.total.setText(f"{self.total_a_payer} Ar")
+            total_lettre = num2words(self.total_a_payer, lang='fr')
+            self.ui.total_lettre.setText(f"{total_lettre} Ariary")
+            return
+
+        reste_payer = 0 if facture.statutPayement else self.total_a_payer - facture.avancement
+        self.ui.reste_payer.setText(f"{reste_payer} Ar")
+        self.ui.label_5.setText("Reste a Payer")
+        if self.total_a_payer - facture.avancement < 0 :
+            self.ui.label_5.setText("Reste a Rembourser")
+            self.ui.reste_payer.setText(f"{reste_payer * -1} Ar")
         self.ui.avance.setText(f"{facture.avancement} Ar")
         self.ui.total.setText(f"{self.total_a_payer} Ar")
         total_lettre = num2words(self.total_a_payer, lang='fr')
