@@ -17,6 +17,7 @@ from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
 from services.auth_service import check_if_mail_is_admin, send_email_confirmation_to_admin, change_password
+from services.client_service import get_all_client, get_client_by_id, get_client_by_name
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
     get_facture_by_id, get_facture_by_date_enregistrement, get_all_facture, get_facture_by_state, \
     get_factures_by_date_and_state
@@ -29,7 +30,8 @@ from views.auth.ui_admin_window import Ui_MainWindow
 from PySide6.QtWidgets import QApplication, QMessageBox, QFileDialog
 
 from views.states.facture_dialog_launcher import FactureDialog
-from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data, refresh_reliure_table_data
+from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data, refresh_reliure_table_data, \
+    refresh_client_list
 
 
 class AdminWindow(QMainWindow):
@@ -100,6 +102,10 @@ class AdminWindow(QMainWindow):
         self.ui.reliureTableWidget.hideColumn(3)
         self.ui.reliureTableWidget.hideColumn(4)
 
+        self.ui.client_liste_tableWidget.setColumnWidth(0, 60)
+        self.ui.client_liste_tableWidget.setColumnWidth(1, 60)
+        self.ui.client_liste_tableWidget.setColumnWidth(2, 60)
+
         self.ui.reliureDate.setDate(datetime.now().date())
 
         self.ui.chartContainer.addWidget(self.canvas)
@@ -112,6 +118,7 @@ class AdminWindow(QMainWindow):
     def manage_navigation(self, index):
         if index == 1:
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.textChanged.disconnect()
             self.ui.date_facture.setDate(datetime.now())
             self.load_facture_table_list()
             self.load_line_chart_graphics()
@@ -124,6 +131,7 @@ class AdminWindow(QMainWindow):
         elif index == 2:
             self.ui.search_field.clear()
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.textChanged.disconnect()
             self.ui.search_field.returnPressed.connect(self.get_reliure_by_client_name)
             self.load_reliure_line_chart()
             self.load_reliure_table_list()
@@ -131,14 +139,19 @@ class AdminWindow(QMainWindow):
         elif index == 3:
             self.ui.search_field.clear()
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.textChanged.disconnect()
+            self.load_client_list_data()
+            self.ui.search_field.returnPressed.connect(lambda : self.search_client_by_prompt(self.ui.search_field.text()))
         elif index == 4:
             self.ui.search_field.clear()
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.textChanged.disconnect()
         elif index == 5:
             self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
             self.confirmation_code = None
             self.email_admin = None
             self.ui.search_field.returnPressed.disconnect()
+            self.ui.search_field.textChanged.disconnect()
             self.ui.change_password_frame.setHidden(True)
             self.ui.confirmation_form.setHidden(False)
 
@@ -691,3 +704,19 @@ class AdminWindow(QMainWindow):
                 QMessageBox.critical(self, "Confirmation de mot de passe", "Verifier votre nouveau mot de passe et bien le confirmer")
         else:
             QMessageBox.warning(self, "Confirmation de mot de passe", "Veuillez remplir toutes les champs")
+
+
+    def load_client_list_data(self):
+        clients = get_all_client()
+        refresh_client_list(self.ui.client_liste_tableWidget, clients)
+        return
+
+    def search_client_by_prompt(self, client: str):
+        if client.strip() == "":
+            self.load_client_list_data()
+        elif client.isnumeric():
+            clt = get_client_by_id(int(client))
+            refresh_client_list(self.ui.client_liste_tableWidget, [clt])
+        else:
+            clients = get_client_by_name(client)
+            refresh_client_list(self.ui.client_liste_tableWidget, clients) if clients else self.ui.client_liste_tableWidget.setRowCount(0)

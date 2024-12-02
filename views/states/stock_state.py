@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QTableWidgetItem
 
-from models.model_class import Article, Facture, Journal, Reliure
+from models.model_class import Article, Facture, Journal, Reliure, Client
 from services.client_service import get_client_by_id
 from services.reliure_service import get_type_livre_by_id, get_total_for_reliure
 
@@ -74,3 +74,13 @@ def refresh_search_view_value(table_widtget, data: list[Article]):
         table_widtget.insertRow(i)
         table_widtget.setItem(i, 0, QTableWidgetItem(str(row.libelle)))
         table_widtget.setItem(i, 1, QTableWidgetItem(str(row.numeroArticle)))
+
+
+def refresh_client_list(tableWidget, data: list[Client]):
+    tableWidget.setRowCount(0)
+
+    for i, row in enumerate(data):
+        tableWidget.insertRow(i)
+        tableWidget.setItem(i, 0, QTableWidgetItem(str(row.nom)))
+        tableWidget.setItem(i, 1, QTableWidgetItem(str(row.telephone)))
+        tableWidget.setItem(i, 2, QTableWidgetItem(str(row.numeroClient)))
