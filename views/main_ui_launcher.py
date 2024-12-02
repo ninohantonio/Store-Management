@@ -316,29 +316,32 @@ class MainWindow(QMainWindow):
 
         #demander confirmation
         response = self.show_confirmation_dialog("Êtes-vous sûr de vouloir continuer ?")
-        if response:
-            #choisir un client, en creer un
-            self.show_client_selection_dialog()
-            client = self.selected_client
-            if client is not None:
-                #formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
-                liste_article = self.extract_info_to_card()
-                print("vita ny extraction")
-                #boucle pour stocker les informations dans commande
-                # self.store_data_to_commande(liste_article, client.numeroClient)
-                #stocker dans Facture
-                facture = self.store_data_to_facture(liste_article, client.numeroClient)
-                #stocker dans journal de vente
-                self.store_data_to_journal([f"facture {facture.numeroFacture}"])
-                #afficher dialog avec facture
-                self.facture_dialog = FactureDialog(facture)
-                self.facture_dialog.show()
-                #nettoyer carte
-                self.reset_card_container()
-                self.load_notification_for_user()
-                return
-            else:
-                self.show_alert_message("Aucun client selectionnee!! Veuillez reessayer!")
+        if self.ui.avance_field.text().isnumeric() and int(self.ui.avance_field.text()) >= self.total_a_payer:
+            self.show_alert_message("Votre avance depasse le montant total")
+        else:
+            if response:
+                # choisir un client, en creer un
+                self.show_client_selection_dialog()
+                client = self.selected_client
+                if client is not None:
+                    # formater les donnee de la carte numero:libelle:sous-total:desciption:effectif et modifier l'etat de stocck
+                    liste_article = self.extract_info_to_card()
+                    print("vita ny extraction")
+                    # boucle pour stocker les informations dans commande
+                    # self.store_data_to_commande(liste_article, client.numeroClient)
+                    # stocker dans Facture
+                    facture = self.store_data_to_facture(liste_article, client.numeroClient)
+                    # stocker dans journal de vente
+                    self.store_data_to_journal([f"facture {facture.numeroFacture}"])
+                    # afficher dialog avec facture
+                    self.facture_dialog = FactureDialog(facture)
+                    self.facture_dialog.show()
+                    # nettoyer carte
+                    self.reset_card_container()
+                    self.load_notification_for_user()
+                    return
+                else:
+                    self.show_alert_message("Aucun client selectionnee!! Veuillez reessayer!")
         return
 
     def extract_info_to_card(self):
@@ -701,6 +704,8 @@ class MainWindow(QMainWindow):
             if response:
                 if self.total_reliure == 0:
                     self.show_alert_message("Votre Commande est de 0 Ar, veuillez verifier!")
+                elif self.ui.avance_reliure.text().isnumeric() and  self.total_reliure <= int(self.ui.avance_reliure.text()):
+                    self.show_alert_message("Votre avance depasse le montant total")
                 else:
                     self.show_client_selection_dialog()
                     if self.selected_client:
@@ -759,28 +764,33 @@ class MainWindow(QMainWindow):
 
     def handle_modify_reliure(self):
         if self.reliure_numero:
-            reliure = get_reliure_by_id(self.reliure_numero)
-            reliure.nombreExemplaire = int(self.ui.exemplaire_spinBox.text())
-            reliure.nombrePageNoir = int(self.ui.page_noir_spinBox.text())
-            reliure.nombrePageCouleur = int(self.ui.page_couleur_spinBox.text())
-            reliure.numeroType = self.typeLivre_selection.numeroType
-            reliure.statutLivrer = self.ui.reliure_state.isChecked()
-            reliure.typeCouverture = self.ui.radioBristole.isChecked()
-            reliure.nombreCouverture = int(self.ui.couverture_spin_box.text())
-            reliure.payementReliure = self.ui.toutPaye_reliure.isChecked()
-            reliure.avanceReliure = int(
-                self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
-            services.reliure_service.session.commit()
+            if self.total_reliure == 0:
+                self.show_alert_message("Votre Commande est de 0 Ar, veuillez verifier!")
+            elif self.ui.avance_reliure.text().isnumeric() and self.total_reliure <= int(self.ui.avance_reliure.text()):
+                self.show_alert_message("Votre avance depasse le montant total")
+            else:
+                reliure = get_reliure_by_id(self.reliure_numero)
+                reliure.nombreExemplaire = int(self.ui.exemplaire_spinBox.text())
+                reliure.nombrePageNoir = int(self.ui.page_noir_spinBox.text())
+                reliure.nombrePageCouleur = int(self.ui.page_couleur_spinBox.text())
+                reliure.numeroType = self.typeLivre_selection.numeroType
+                reliure.statutLivrer = self.ui.reliure_state.isChecked()
+                reliure.typeCouverture = self.ui.radioBristole.isChecked()
+                reliure.nombreCouverture = int(self.ui.couverture_spin_box.text())
+                reliure.payementReliure = self.ui.toutPaye_reliure.isChecked()
+                reliure.avanceReliure = int(
+                    self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
+                services.reliure_service.session.commit()
 
-            journal = Journal()
-            journal.dateEnregistrement = get_date_to_string()
-            journal.typeAction = "modification reliure livré" if reliure.statutLivrer else "modification reliure non livré"
-            journal.listeArticle = [f"reliure {reliure.numeroReliure}"]
-            journal.description = "modification payé" if reliure.payementReliure else "modification non payé"
-            insert_new_journal(journal)
+                journal = Journal()
+                journal.dateEnregistrement = get_date_to_string()
+                journal.typeAction = "modification reliure livré" if reliure.statutLivrer else "modification reliure non livré"
+                journal.listeArticle = [f"reliure {reliure.numeroReliure}"]
+                journal.description = "modification payé" if reliure.payementReliure else "modification non payé"
+                insert_new_journal(journal)
 
-            self.reset_reliure_form()
-            self.refresh_reliure_data_table()
+                self.reset_reliure_form()
+                self.refresh_reliure_data_table()
 
         else:
             self.show_alert_message("La commande n'existe pas encore")
