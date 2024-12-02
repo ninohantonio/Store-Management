@@ -128,6 +128,12 @@ class AdminWindow(QMainWindow):
             self.load_reliure_line_chart()
             self.load_reliure_table_list()
             self.load_total_reliure_today()
+        elif index == 3:
+            self.ui.search_field.clear()
+            self.ui.search_field.returnPressed.disconnect()
+        elif index == 4:
+            self.ui.search_field.clear()
+            self.ui.search_field.returnPressed.disconnect()
         elif index == 5:
             self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
             self.confirmation_code = None

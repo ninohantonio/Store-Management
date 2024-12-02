@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowrqwPwp.ui'
+## Form generated from reading UI file 'main_admin_windowaDfIfj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -921,9 +921,24 @@ class Ui_MainWindow(object):
         self.mainNavigationScreen.addWidget(self.clientPage)
         self.client_listPage = QWidget()
         self.client_listPage.setObjectName(u"client_listPage")
-        self.label_24 = QLabel(self.client_listPage)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setGeometry(QRect(170, 70, 49, 16))
+        self.label_36 = QLabel(self.client_listPage)
+        self.label_36.setObjectName(u"label_36")
+        self.label_36.setGeometry(QRect(10, 10, 521, 41))
+        self.label_36.setFont(font5)
+        self.label_36.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
+"color: white;\n"
+"padding-left: 10px;")
+        self.client_liste_tableWidget = QTableWidget(self.client_listPage)
+        if (self.client_liste_tableWidget.columnCount() < 3):
+            self.client_liste_tableWidget.setColumnCount(3)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.client_liste_tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.client_liste_tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.client_liste_tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem14)
+        self.client_liste_tableWidget.setObjectName(u"client_liste_tableWidget")
+        self.client_liste_tableWidget.setGeometry(QRect(10, 70, 521, 411))
         self.mainNavigationScreen.addWidget(self.client_listPage)
         self.barcodePage = QWidget()
         self.barcodePage.setObjectName(u"barcodePage")
@@ -1063,11 +1078,11 @@ class Ui_MainWindow(object):
             self.search_view.setColumnCount(2)
         font11 = QFont()
         font11.setPointSize(9)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        __qtablewidgetitem12.setFont(font11);
-        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem13)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        __qtablewidgetitem15.setFont(font11);
+        self.search_view.setHorizontalHeaderItem(0, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.search_view.setHorizontalHeaderItem(1, __qtablewidgetitem16)
         self.search_view.setObjectName(u"search_view")
         self.search_view.setEnabled(True)
         self.search_view.setMaximumSize(QSize(120, 16777215))
@@ -1199,7 +1214,13 @@ class Ui_MainWindow(object):
         self.reliure_filterCombo.setItemText(2, QCoreApplication.translate("MainWindow", u"Commandes Non Livrees", None))
 
         self.refreshReliure.setText(QCoreApplication.translate("MainWindow", u"Rafraichir", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Clients", None))
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"Liste des Clients", None))
+        ___qtablewidgetitem12 = self.client_liste_tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Nom et Prenom", None));
+        ___qtablewidgetitem13 = self.client_liste_tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Telephone", None));
+        ___qtablewidgetitem14 = self.client_liste_tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
         self.generer_code_barre.setText(QCoreApplication.translate("MainWindow", u"Generer un Code Barre", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"email admin", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Code de confirmation", None))
@@ -1212,9 +1233,9 @@ class Ui_MainWindow(object):
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_20.setText("")
         self.logoutBtn.setText(QCoreApplication.translate("MainWindow", u"Se deconnecter", None))
-        ___qtablewidgetitem12 = self.search_view.horizontalHeaderItem(0)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
-        ___qtablewidgetitem13 = self.search_view.horizontalHeaderItem(1)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"numero", None));
+        ___qtablewidgetitem15 = self.search_view.horizontalHeaderItem(0)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Articles recherher", None));
+        ___qtablewidgetitem16 = self.search_view.horizontalHeaderItem(1)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"numero", None));
     # retranslateUi
 
