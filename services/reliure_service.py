@@ -86,3 +86,32 @@ def get_total_reliure_group_by_date():
 
     return ventes_par_jour
 
+def get_exemplaire_reliure_by_mounth():
+    # Calcul du premier jour du mois actuel
+    debut_mois = date(datetime.today().year, datetime.today().month, 1)
+
+    # Récupérer les factures depuis la base
+    exemplaires = session.query(
+        func.sum(Reliure.nombreExemplaire)
+    ).filter(
+        Reliure.dateCommande >= debut_mois, Reliure.statutLivrer == True
+    ).scalar()
+
+    return exemplaires if exemplaires else 0
+
+def get_exemplaire_reliure_today():
+    date = datetime.now().date()
+    exemplaires = session.query(
+        func.sum(Reliure.nombreExemplaire)
+    ).filter(
+        Reliure.dateCommande == date
+    ).scalar()
+    return exemplaires if exemplaires else 0
+
+def get_exemplaire_reliure_by_date(date: date):
+    exemplaires = session.query(
+        func.sum(Reliure.nombreExemplaire)
+    ).filter(
+        Reliure.dateCommande == date
+    ).scalar()
+    return exemplaires if exemplaires else 0

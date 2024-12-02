@@ -21,7 +21,8 @@ from services.facture_service import get_total_facture_group_by_date, search_fac
     get_facture_by_id, get_facture_by_date_enregistrement, get_all_facture, get_facture_by_state, \
     get_factures_by_date_and_state
 from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_date, get_total_for_reliure, \
-    get_reliure_by_date_and_state, get_reliure_by_client_name
+    get_reliure_by_date_and_state, get_reliure_by_client_name, get_exemplaire_reliure_today, \
+    get_exemplaire_reliure_by_mounth
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
@@ -50,6 +51,7 @@ class AdminWindow(QMainWindow):
 
         self.numero_is_valid = False
         self.ui.reliure_mois.setText("0 Ar")
+        self.ui.label_32.setHidden(True)
 
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
@@ -124,6 +126,7 @@ class AdminWindow(QMainWindow):
             self.ui.search_field.returnPressed.disconnect()
             self.ui.search_field.returnPressed.connect(self.get_reliure_by_client_name)
             self.load_reliure_line_chart()
+            self.load_reliure_table_list()
             self.load_total_reliure_today()
         elif index == 5:
             self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
@@ -504,6 +507,8 @@ class AdminWindow(QMainWindow):
             total += get_total_for_facture(facture.numeroFacture)
 
         self.ui.vente_jour.setText(f"{total} Ar")
+        today = datetime.now()
+        self.ui.label_23.setText(today.strftime("%d %b %Y"))
         return
 
     def manage_double_click_facture_item(self, row, column):
@@ -539,6 +544,7 @@ class AdminWindow(QMainWindow):
 
     def load_reliure_line_chart(self):
         reliures_par_jours = get_total_reliure_group_by_date()
+        exemplaires = get_exemplaire_reliure_by_mounth()
 
         dates = sorted(reliures_par_jours.keys())
         montants = [reliures_par_jours[date] for date in dates]
@@ -568,13 +574,14 @@ class AdminWindow(QMainWindow):
 
             total += montant
 
-            self.ui.reliure_mois.setText(f"{total} Ar")
-            # Rotation des labels de date pour une meilleure lisibilité
-            self.reliure_figure.autofmt_xdate()
+        self.ui.reliure_mois.setText(f"{total} Ar")
+        self.ui.livre_mois.setText(f"{exemplaires} livre(s)")
+        # Rotation des labels de date pour une meilleure lisibilité
+        self.reliure_figure.autofmt_xdate()
 
-            self.ui.reliureCourbe.update()
+        self.ui.reliureCourbe.update()
 
-            self.reliure_canvas.draw()
+        self.reliure_canvas.draw()
 
     def load_reliure_table_list(self):
         self.ui.reliureDate.setDate(datetime.now())
@@ -603,9 +610,11 @@ class AdminWindow(QMainWindow):
 
     def load_total_reliure_today(self):
         reliures = get_reliure_by_date(datetime.now().date())
+        exemplaires = get_exemplaire_reliure_today()
         total = [get_total_for_reliure(reliure.numeroReliure) for reliure in reliures]
         montant = sum(total)
         self.ui.reliure_jour.setText(f"{montant} Ar")
+        self.ui.livre_jour.setText(f"{exemplaires} livre(s)")
 
 
     def generate_bar_code(self):

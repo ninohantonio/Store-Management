@@ -84,8 +84,8 @@ class MainWindow(QMainWindow):
         self.ui.facture_table.setColumnWidth(3, 150)
         self.ui.facture_table.setColumnWidth(4, 150)
 
-        self.ui.journal_tableWidget.setColumnWidth(0, 150)
-        self.ui.journal_tableWidget.setColumnWidth(1, 150)
+        self.ui.journal_tableWidget.setColumnWidth(0, 220)
+        self.ui.journal_tableWidget.setColumnWidth(1, 220)
         self.ui.journal_tableWidget.setColumnWidth(2, 150)
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
