@@ -49,6 +49,7 @@ class AdminWindow(QMainWindow):
             pass
 
         self.numero_is_valid = False
+        self.ui.reliure_mois.setText("0 Ar")
 
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
