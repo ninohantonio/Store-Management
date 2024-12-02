@@ -85,7 +85,7 @@ class MainWindow(QMainWindow):
         self.ui.facture_table.setColumnWidth(4, 150)
 
         self.ui.journal_tableWidget.setColumnWidth(0, 220)
-        self.ui.journal_tableWidget.setColumnWidth(1, 220)
+        self.ui.journal_tableWidget.setColumnWidth(1, 250)
         self.ui.journal_tableWidget.setColumnWidth(2, 150)
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
@@ -822,6 +822,9 @@ class MainWindow(QMainWindow):
     def search_reliure_by_clientname(self, client: str):
         if client.strip() == "":
             self.refresh_reliure_data_table()
+        elif client.isnumeric():
+            reliures = get_reliure_by_id(int(client))
+            refresh_reliure_table_data(self.ui.reliure_table, [reliures])
         else:
             reliures = get_reliure_by_client_name(client)
             refresh_reliure_table_data(self.ui.reliure_table, reliures)
