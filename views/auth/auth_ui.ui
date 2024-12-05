@@ -389,7 +389,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../resources.qrc">:/icons/icons/irina-service.jpg</pixmap>
+       <pixmap resource="../resources.qrc">:/icons/icons/LOGO IRINA SERVICE-02.jpg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>

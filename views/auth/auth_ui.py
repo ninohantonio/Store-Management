@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'auth_uiraYAbP.ui'
+## Form generated from reading UI file 'auth_uiJyAygE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -215,7 +215,7 @@ class Ui_Form(object):
         self.label_2 = QLabel(self.right)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(90, 80, 321, 261))
-        self.label_2.setPixmap(QPixmap(u":/icons/icons/irina-service.jpg"))
+        self.label_2.setPixmap(QPixmap(u":/icons/icons/LOGO IRINA SERVICE-02.jpg"))
         self.label_2.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.right)

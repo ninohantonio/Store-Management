@@ -454,6 +454,7 @@ class AdminWindow(QMainWindow):
     def print_search_view_item_clicked(self, row, column):
 
         numero = self.ui.search_view.item(row, 1).text()
+        self.ui.appro_detail.setVisible(True)
         self.show_detail_article(numero)
         print(f"numero = {numero}")
         return
