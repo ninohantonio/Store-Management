@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from Custom_Widgets.QCustomQDialog import QCustomQDialog
 from Custom_Widgets.Widgets import *
 from Custom_Widgets.Widgets import QMainWindow
@@ -87,6 +89,7 @@ class MainWindow(QMainWindow):
         self.ui.journal_tableWidget.setColumnWidth(0, 220)
         self.ui.journal_tableWidget.setColumnWidth(1, 250)
         self.ui.journal_tableWidget.setColumnWidth(2, 150)
+        self.ui.journal_dateEdit.setDate(datetime.now().date())
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
         self.ui.filter_facture_combo.currentIndexChanged.connect(self.manage_filter_facture_change)

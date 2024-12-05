@@ -53,8 +53,9 @@ def delete_article_by_id(article_id: str) -> bool:
 #     return True
 
 def get_article_by_name(article_name):
-    articles = session.query(Article).order_by(Article.libelle).filter(Article.libelle.contains(article_name)).all()
-    return articles
+    articles1 = session.query(Article).order_by(Article.libelle).filter(Article.libelle.contains(article_name)).all()
+    articles2 = session.query(Article).order_by(Article.libelle).filter(Article.description.contains(article_name)).all()
+    return articles1 if len(articles1) >= 1 else articles2
 
 def get_article_by_price(article_price):
     articles = session.query(Article).where(Article.prixUnitaire == article_price).order_by(Article.libelle.asc()).all()
