@@ -64,7 +64,8 @@ def refresh_journal_table_data(table_widget, data: list[Journal]):
         table_widget.insertRow(i)
         table_widget.setItem(i, 0, QTableWidgetItem(str(row.typeAction)))
         table_widget.setItem(i, 1, QTableWidgetItem(str(row.description)))
-        table_widget.setItem(i, 2, QTableWidgetItem(str(row.dateEnregistrement)))
+        table_widget.setItem(i, 2, QTableWidgetItem(str(row.listeArticle)))
+        table_widget.setItem(i, 3, QTableWidgetItem(str(row.dateEnregistrement)))
 
 
 def refresh_search_view_value(table_widtget, data: list[Article]):

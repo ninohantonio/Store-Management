@@ -6,6 +6,7 @@ from Custom_Widgets.Widgets import QMainWindow
 from PySide6.QtCore import QEvent
 from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMessageBox, QDialog
+from scripts.regsetup import description
 
 import services.reliure_service
 from controllers.commande_controller import get_date_time_to_string, get_date_to_string
@@ -89,6 +90,7 @@ class MainWindow(QMainWindow):
         self.ui.journal_tableWidget.setColumnWidth(0, 220)
         self.ui.journal_tableWidget.setColumnWidth(1, 250)
         self.ui.journal_tableWidget.setColumnWidth(2, 150)
+        self.ui.journal_tableWidget.setColumnWidth(3, 150)
         self.ui.journal_dateEdit.setDate(datetime.now().date())
 
         self.ui.facture_table.cellDoubleClicked.connect(self.manage_double_click_facture_item)
@@ -203,26 +205,34 @@ class MainWindow(QMainWindow):
 
     def manage_navigation(self, index):
         if index == 2:
+            self.ui.searchField.clear()
             self.refresh_stock_screen()
             self.ui.date_article.setHidden(True)
             self.ui.searchField.returnPressed.disconnect()
             self.ui.filterCombo.currentIndexChanged.connect(self.refresh_data_search)
             self.ui.searchField.returnPressed.connect(self.refresh_data_search)
         elif index == 0:
+            self.ui.searchField.clear()
             self.ui.searchField.returnPressed.disconnect()
             self.ui.searchField.returnPressed.connect(self.print_search_value)
             self.ui.searchField.setFocus()
         elif index == 1:
+            self.ui.searchField.clear()
             self.ui.searchField.returnPressed.disconnect()
+            self.ui.searchField.returnPressed.connect(self.load_notification_for_user)
+            self.load_notification_for_user()
         elif index == 3:
+            self.ui.searchField.clear()
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_facture_data_table()
             self.ui.searchField.returnPressed.connect(lambda : self.fill_facture_data_to_table(self.ui.searchField.text()))
         elif index == 4:
+            self.ui.searchField.clear()
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_journal_table_data()
             self.ui.searchField.returnPressed.connect(lambda : self.get_journal_by_typeaction(self.ui.searchField.text()))
         elif index == 6:
+            self.ui.searchField.clear()
             self.ui.searchField.returnPressed.disconnect()
             self.refresh_reliure_data_table()
             self.ui.searchField.returnPressed.connect(lambda : self.search_reliure_by_clientname(self.ui.searchField.text()))
@@ -334,8 +344,9 @@ class MainWindow(QMainWindow):
                     # self.store_data_to_commande(liste_article, client.numeroClient)
                     # stocker dans Facture
                     facture = self.store_data_to_facture(liste_article, client.numeroClient)
+                    print(facture.numeroFacture)
                     # stocker dans journal de vente
-                    self.store_data_to_journal([f"facture {facture.numeroFacture}"])
+                    self.store_data_to_journal([f"facture {facture.numeroFacture}"], facture)
                     # afficher dialog avec facture
                     self.facture_dialog = FactureDialog(facture)
                     self.facture_dialog.show()
@@ -493,8 +504,9 @@ class MainWindow(QMainWindow):
         insert_new_facture(facture)
         return facture
 
-    def store_data_to_journal(self, liste_article: list[str]):
-        journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, typeAction="vente d'article")
+    def store_data_to_journal(self, liste_article: list[str], facture: Facture):
+        description = "payé" if facture.statutPayement else "non payé"
+        journal = Journal(dateEnregistrement=get_date_time_to_string(), listeArticle=liste_article, description=f"commandes {description}", typeAction="vente d'article")
         insert_new_journal(journal)
 
     def reset_card_container(self):
@@ -563,9 +575,10 @@ class MainWindow(QMainWindow):
 
         for article in articles:
             notification = Notification()
+            article_detail = get_article_by_id(article)
             notification.numeroArticle = article
             notification.titre = "Marge d'approvisionnement atteint"
-            notification.contenu = f"Veuillez approvisionner le stock portant le numero Bar : {article}"
+            notification.contenu = f"Approvisionnez {article_detail.libelle} {article_detail.description}"
             notification.dateEmmission = get_date_time_to_string()
 
             card = NotificationCard(notification)
@@ -613,7 +626,7 @@ class MainWindow(QMainWindow):
             # ajouter au facture
             facture = self.store_data_to_facture([detail_article], 1)
             # ajouter au journal
-            self.store_data_to_journal([detail_article])
+            self.store_data_to_journal([detail_article], facture)
             # refresh notifications
             print(f"facture rapide : {facture}")
             self.ui.quantite_spinBox.clear()

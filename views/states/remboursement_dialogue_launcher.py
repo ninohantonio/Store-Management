@@ -55,7 +55,7 @@ class RemboursementDialog(QDialog):
         if self.ui.card_container.count() < 1:
             self.reset_all_facture_items()
             journal = Journal()
-            journal.listeArticle = []
+            journal.listeArticle = f"facture {self.facture.numeroFacture}"
             journal.description = f"Modification et remboursement sur la facture {self.facture.numeroFacture}"
             journal.dateEnregistrement = get_date_time_to_string()
             journal.typeAction = "Modification de commande"
@@ -68,7 +68,7 @@ class RemboursementDialog(QDialog):
             self.facture.listeArticle = facture_detail
             session.commit()
             journal = Journal()
-            journal.listeArticle = []
+            journal.listeArticle = f"facture {self.facture.numeroFacture}"
             journal.description = f"Modification et remboursement sur la facture {self.facture.numeroFacture}"
             journal.dateEnregistrement = get_date_time_to_string()
             journal.typeAction = "Modification de commande"

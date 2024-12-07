@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowDZyCtp.ui'
+## Form generated from reading UI file 'main_windowiHqwpb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -723,16 +723,19 @@ class Ui_MainWindow(object):
         self.journal_label.setGeometry(QRect(10, 30, 631, 61))
         self.journal_label.setFont(font5)
         self.journal_tableWidget = QTableWidget(self.journalPage)
-        if (self.journal_tableWidget.columnCount() < 3):
-            self.journal_tableWidget.setColumnCount(3)
+        if (self.journal_tableWidget.columnCount() < 4):
+            self.journal_tableWidget.setColumnCount(4)
         __qtablewidgetitem14 = QTableWidgetItem()
         self.journal_tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
         self.journal_tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem15)
         __qtablewidgetitem16 = QTableWidgetItem()
         self.journal_tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.journal_tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem17)
         self.journal_tableWidget.setObjectName(u"journal_tableWidget")
         self.journal_tableWidget.setGeometry(QRect(10, 150, 821, 421))
+        self.journal_tableWidget.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.journal_tableWidget.setAlternatingRowColors(True)
         self.label_5 = QLabel(self.journalPage)
         self.label_5.setObjectName(u"label_5")
@@ -766,22 +769,22 @@ class Ui_MainWindow(object):
         self.reliure_table = QTableWidget(self.reliurePage)
         if (self.reliure_table.columnCount() < 8):
             self.reliure_table.setColumnCount(8)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(0, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(1, __qtablewidgetitem18)
+        self.reliure_table.setHorizontalHeaderItem(0, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(2, __qtablewidgetitem19)
+        self.reliure_table.setHorizontalHeaderItem(1, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(3, __qtablewidgetitem20)
+        self.reliure_table.setHorizontalHeaderItem(2, __qtablewidgetitem20)
         __qtablewidgetitem21 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(4, __qtablewidgetitem21)
+        self.reliure_table.setHorizontalHeaderItem(3, __qtablewidgetitem21)
         __qtablewidgetitem22 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(5, __qtablewidgetitem22)
+        self.reliure_table.setHorizontalHeaderItem(4, __qtablewidgetitem22)
         __qtablewidgetitem23 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(6, __qtablewidgetitem23)
+        self.reliure_table.setHorizontalHeaderItem(5, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.reliure_table.setHorizontalHeaderItem(7, __qtablewidgetitem24)
+        self.reliure_table.setHorizontalHeaderItem(6, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.reliure_table.setHorizontalHeaderItem(7, __qtablewidgetitem25)
         self.reliure_table.setObjectName(u"reliure_table")
         self.reliure_table.setGeometry(QRect(10, 150, 611, 441))
         self.reliure_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -1088,26 +1091,28 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem15 = self.journal_tableWidget.horizontalHeaderItem(1)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Description", None));
         ___qtablewidgetitem16 = self.journal_tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Date d'enregistrement", None));
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Reference", None));
+        ___qtablewidgetitem17 = self.journal_tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Date d'enregistrement", None));
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Journal du :", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Liste des clients", None))
         self.reliure_label.setText(QCoreApplication.translate("MainWindow", u"Commandes de reliure", None))
-        ___qtablewidgetitem17 = self.reliure_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"numero", None));
-        ___qtablewidgetitem18 = self.reliure_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Nom du Client", None));
-        ___qtablewidgetitem19 = self.reliure_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Type", None));
-        ___qtablewidgetitem20 = self.reliure_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
-        ___qtablewidgetitem21 = self.reliure_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
-        ___qtablewidgetitem22 = self.reliure_table.horizontalHeaderItem(5)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Exemplaire", None));
-        ___qtablewidgetitem23 = self.reliure_table.horizontalHeaderItem(6)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
-        ___qtablewidgetitem24 = self.reliure_table.horizontalHeaderItem(7)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
+        ___qtablewidgetitem18 = self.reliure_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"numero", None));
+        ___qtablewidgetitem19 = self.reliure_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Nom du Client", None));
+        ___qtablewidgetitem20 = self.reliure_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem21 = self.reliure_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Page Noire", None));
+        ___qtablewidgetitem22 = self.reliure_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Page Couleur", None));
+        ___qtablewidgetitem23 = self.reliure_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Exemplaire", None));
+        ___qtablewidgetitem24 = self.reliure_table.horizontalHeaderItem(6)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Total a Payer", None));
+        ___qtablewidgetitem25 = self.reliure_table.horizontalHeaderItem(7)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Etat Livrer", None));
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Type(s) de Livre :", None))
         self.add_type.setText(QCoreApplication.translate("MainWindow", u"Ajouter Un Type", None))
         self.delete_type.setText(QCoreApplication.translate("MainWindow", u"Modifier un type", None))

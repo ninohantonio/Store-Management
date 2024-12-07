@@ -31,6 +31,7 @@ def insert_new_facture(facture: Facture):
     facture.numeroFacture = get_next_facture_number()
     session.add(facture)
     session.commit()
+    return facture.numeroFacture
 
 def update_facture_by_id(facture_id: int, new_facture: Facture):
     facture = get_facture_by_id(facture_id)

@@ -1478,6 +1478,9 @@ border-radius: 10px;</string>
              <height>421</height>
             </rect>
            </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+           </property>
            <property name="alternatingRowColors">
             <bool>true</bool>
            </property>
@@ -1489,6 +1492,11 @@ border-radius: 10px;</string>
            <column>
             <property name="text">
              <string>Description</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Reference</string>
             </property>
            </column>
            <column>
