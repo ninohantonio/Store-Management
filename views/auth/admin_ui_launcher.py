@@ -27,7 +27,7 @@ from services.reliure_service import get_total_reliure_group_by_date, get_reliur
 from views.auth.approvisionnement_launcher import ApprovisionnementDialog
 from views.auth.ui_admin_window import Ui_MainWindow
 
-from PySide6.QtWidgets import QApplication, QMessageBox, QFileDialog
+from PySide6.QtWidgets import QApplication, QMessageBox, QFileDialog, QLineEdit
 
 from views.states.facture_dialog_launcher import FactureDialog
 from views.states.stock_state import refresh_search_view_value, refresh_facture_table_data, refresh_reliure_table_data, \
@@ -96,6 +96,10 @@ class AdminWindow(QMainWindow):
         self.ui.change_password_frame.setHidden(True)
         self.ui.send_code_confirmation.clicked.connect(self.handle_send_code)
         self.ui.code_confirmation.textChanged.connect(self.handle_code_validation_change)
+        self.ui.show_password.clicked.connect(self.show_password)
+        self.ui.show_password_confirm.clicked.connect(self.show_password)
+        self.ui.hide_password.clicked.connect(self.hide_password)
+        self.ui.hide_password_confirm.clicked.connect(self.hide_password)
         self.ui.logoutBtn.clicked.connect(lambda : self.close())
 
         self.ui.reliureTableWidget.hideColumn(0)
@@ -721,3 +725,21 @@ class AdminWindow(QMainWindow):
         else:
             clients = get_client_by_name(client)
             refresh_client_list(self.ui.client_liste_tableWidget, clients) if clients else self.ui.client_liste_tableWidget.setRowCount(0)
+
+    def show_password(self):
+        self.ui.new_password.setEchoMode(QLineEdit.Normal)
+        self.ui.new_password_confirm.setEchoMode(QLineEdit.Normal)
+        self.ui.hide_password.setHidden(False)
+        self.ui.hide_password_confirm.setHidden(False)
+        self.ui.show_password.setHidden(True)
+        self.ui.show_password_confirm.setHidden(True)
+        pass
+
+    def hide_password(self):
+        self.ui.new_password.setEchoMode(QLineEdit.Password)
+        self.ui.new_password_confirm.setEchoMode(QLineEdit.Password)
+        self.ui.hide_password.setHidden(True)
+        self.ui.hide_password_confirm.setHidden(True)
+        self.ui.show_password.setHidden(False)
+        self.ui.show_password_confirm.setHidden(False)
+        pass
