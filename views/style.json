@@ -103,7 +103,7 @@
 		],
 		"Style": [{
 			"Active": "background-color: #fefeff;border-top-left-radius: 15px; color: black;",
-			"NotActive": "background-color: transparent; color: white;"
+			"NotActive": "background-color: transparent;"
 		}]
 
 	}],

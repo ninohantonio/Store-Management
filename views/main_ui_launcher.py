@@ -738,14 +738,15 @@ class MainWindow(QMainWindow):
                         reliure.avanceReliure = int(self.ui.avance_reliure.text()) if self.ui.avance_reliure.text().strip() != "" else 0
                         reliure.dateCommande = get_date_to_string()
 
+                        insert_new_reliure_commande(reliure)
+
                         journal = Journal()
-                        journal.dateEnregistrement = get_date_to_string()
+                        journal.dateEnregistrement = get_date_time_to_string()
                         journal.typeAction = "commande reliure livré" if reliure.statutLivrer else "commande reliure non livré"
                         journal.listeArticle = [f"reliure {reliure.numeroReliure}"]
                         journal.description = "commande payé" if reliure.payementReliure else "commande non payé"
                         insert_new_journal(journal)
 
-                        insert_new_reliure_commande(reliure)
                         self.refresh_reliure_data_table()
                         self.reset_reliure_form()
                     else:
@@ -799,7 +800,7 @@ class MainWindow(QMainWindow):
                 services.reliure_service.session.commit()
 
                 journal = Journal()
-                journal.dateEnregistrement = get_date_to_string()
+                journal.dateEnregistrement = get_date_time_to_string()
                 journal.typeAction = "modification reliure livré" if reliure.statutLivrer else "modification reliure non livré"
                 journal.listeArticle = [f"reliure {reliure.numeroReliure}"]
                 journal.description = "modification payé" if reliure.payementReliure else "modification non payé"
