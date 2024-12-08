@@ -94,6 +94,8 @@ class AdminWindow(QMainWindow):
         self.ui.refreshReliure.clicked.connect(self.load_reliure_table_list)
         self.ui.generer_code_barre.clicked.connect(self.generate_bar_code)
         self.ui.change_password_frame.setHidden(True)
+        self.ui.new_password.setEchoMode(QLineEdit.Password)
+        self.ui.new_password_confirm.setEchoMode(QLineEdit.Password)
         self.ui.send_code_confirmation.clicked.connect(self.handle_send_code)
         self.ui.code_confirmation.textChanged.connect(self.handle_code_validation_change)
         self.ui.show_password.clicked.connect(self.show_password)
@@ -154,10 +156,14 @@ class AdminWindow(QMainWindow):
             self.ui.submit_new_password.clicked.connect(self.handle_submit_new_password)
             self.confirmation_code = None
             self.email_admin = None
+            self.ui.new_password.clear()
+            self.ui.new_password_confirm.clear()
             self.ui.search_field.returnPressed.disconnect()
             self.ui.search_field.textChanged.disconnect()
             self.ui.change_password_frame.setHidden(True)
             self.ui.confirmation_form.setHidden(False)
+            self.ui.email_confirmation.clear()
+            self.ui.code_confirmation.clear()
 
 
     def manage_search_value_input(self):
@@ -688,6 +694,10 @@ class AdminWindow(QMainWindow):
                 print("Code de validation correct")
                 self.ui.confirmation_form.setHidden(True)
                 self.ui.change_password_frame.setHidden(False)
+                self.ui.new_password.clear()
+                self.ui.new_password_confirm.clear()
+                self.ui.email_confirmation.clear()
+                self.ui.code_confirmation.clear()
                 return
             else:
                 self.ui.code_confirmation.setStyleSheet("border: 2px solid #ff0000; border-radius: 10px;")
@@ -704,6 +714,10 @@ class AdminWindow(QMainWindow):
                 self.ui.new_password_confirm.clear()
                 self.ui.change_password_frame.setHidden(True)
                 self.ui.confirmation_form.setHidden(False)
+                self.ui.new_password.clear()
+                self.ui.new_password_confirm.clear()
+                self.ui.email_confirmation.clear()
+                self.ui.code_confirmation.clear()
                 pass
             else:
                 QMessageBox.critical(self, "Confirmation de mot de passe", "Verifier votre nouveau mot de passe et bien le confirmer")

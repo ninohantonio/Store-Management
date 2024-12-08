@@ -2360,54 +2360,6 @@ border-radius: 10px;</string>
                    <string>Confirmer le nouveau mot de passe</string>
                   </property>
                  </widget>
-                 <widget class="QPushButton" name="show_password">
-                  <property name="geometry">
-                   <rect>
-                    <x>220</x>
-                    <y>40</y>
-                    <width>21</width>
-                    <height>21</height>
-                   </rect>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border: none;
-background: white;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../resources.qrc">
-                    <normaloff>:/icons/icons/visible.png</normaloff>:/icons/icons/visible.png</iconset>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="show_password_confirm">
-                  <property name="geometry">
-                   <rect>
-                    <x>220</x>
-                    <y>120</y>
-                    <width>21</width>
-                    <height>21</height>
-                   </rect>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border: none;
-background: white;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../resources.qrc">
-                    <normaloff>:/icons/icons/visible.png</normaloff>:/icons/icons/visible.png</iconset>
-                  </property>
-                 </widget>
                  <widget class="QPushButton" name="hide_password">
                   <property name="geometry">
                    <rect>
@@ -2430,6 +2382,30 @@ background: white;</string>
                   <property name="icon">
                    <iconset resource="../resources.qrc">
                     <normaloff>:/icons/icons/invisible.png</normaloff>:/icons/icons/invisible.png</iconset>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="show_password">
+                  <property name="geometry">
+                   <rect>
+                    <x>220</x>
+                    <y>40</y>
+                    <width>21</width>
+                    <height>21</height>
+                   </rect>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: none;
+background: white;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../resources.qrc">
+                    <normaloff>:/icons/icons/visible.png</normaloff>:/icons/icons/visible.png</iconset>
                   </property>
                  </widget>
                  <widget class="QPushButton" name="hide_password_confirm">
@@ -2456,15 +2432,30 @@ background: white;</string>
                     <normaloff>:/icons/icons/invisible.png</normaloff>:/icons/icons/invisible.png</iconset>
                   </property>
                  </widget>
-                 <zorder>hide_password_confirm</zorder>
-                 <zorder>hide_password</zorder>
-                 <zorder>new_password</zorder>
-                 <zorder>new_password_confirm</zorder>
-                 <zorder>submit_new_password</zorder>
-                 <zorder>label_29</zorder>
-                 <zorder>label_34</zorder>
-                 <zorder>show_password</zorder>
-                 <zorder>show_password_confirm</zorder>
+                 <widget class="QPushButton" name="show_password_confirm">
+                  <property name="geometry">
+                   <rect>
+                    <x>220</x>
+                    <y>120</y>
+                    <width>21</width>
+                    <height>21</height>
+                   </rect>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: none;
+background: white;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../resources.qrc">
+                    <normaloff>:/icons/icons/visible.png</normaloff>:/icons/icons/visible.png</iconset>
+                  </property>
+                 </widget>
                 </widget>
                 <widget class="QLabel" name="label_35">
                  <property name="geometry">

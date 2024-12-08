@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowCPRJbq.ui'
+## Form generated from reading UI file 'main_admin_windowwTGMXS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -999,47 +999,38 @@ class Ui_MainWindow(object):
         self.label_34.setObjectName(u"label_34")
         self.label_34.setGeometry(QRect(20, 85, 221, 21))
         self.label_34.setFont(font8)
-        self.show_password = QPushButton(self.change_password_frame)
-        self.show_password.setObjectName(u"show_password")
-        self.show_password.setGeometry(QRect(220, 40, 21, 21))
-        self.show_password.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.show_password.setStyleSheet(u"border: none;\n"
-"background: white;")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/icons/visible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.show_password.setIcon(icon6)
-        self.show_password_confirm = QPushButton(self.change_password_frame)
-        self.show_password_confirm.setObjectName(u"show_password_confirm")
-        self.show_password_confirm.setGeometry(QRect(220, 120, 21, 21))
-        self.show_password_confirm.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.show_password_confirm.setStyleSheet(u"border: none;\n"
-"background: white;")
-        self.show_password_confirm.setIcon(icon6)
         self.hide_password = QPushButton(self.change_password_frame)
         self.hide_password.setObjectName(u"hide_password")
         self.hide_password.setGeometry(QRect(220, 40, 21, 21))
         self.hide_password.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.hide_password.setStyleSheet(u"border: none;\n"
 "background: white;")
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/icons/invisible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.hide_password.setIcon(icon6)
+        self.show_password = QPushButton(self.change_password_frame)
+        self.show_password.setObjectName(u"show_password")
+        self.show_password.setGeometry(QRect(220, 40, 21, 21))
+        self.show_password.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.show_password.setStyleSheet(u"border: none;\n"
+"background: white;")
         icon7 = QIcon()
-        icon7.addFile(u":/icons/icons/invisible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.hide_password.setIcon(icon7)
+        icon7.addFile(u":/icons/icons/visible.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.show_password.setIcon(icon7)
         self.hide_password_confirm = QPushButton(self.change_password_frame)
         self.hide_password_confirm.setObjectName(u"hide_password_confirm")
         self.hide_password_confirm.setGeometry(QRect(220, 120, 21, 21))
         self.hide_password_confirm.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.hide_password_confirm.setStyleSheet(u"border: none;\n"
 "background: white;")
-        self.hide_password_confirm.setIcon(icon7)
-        self.hide_password_confirm.raise_()
-        self.hide_password.raise_()
-        self.new_password.raise_()
-        self.new_password_confirm.raise_()
-        self.submit_new_password.raise_()
-        self.label_29.raise_()
-        self.label_34.raise_()
-        self.show_password.raise_()
-        self.show_password_confirm.raise_()
+        self.hide_password_confirm.setIcon(icon6)
+        self.show_password_confirm = QPushButton(self.change_password_frame)
+        self.show_password_confirm.setObjectName(u"show_password_confirm")
+        self.show_password_confirm.setGeometry(QRect(220, 120, 21, 21))
+        self.show_password_confirm.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.show_password_confirm.setStyleSheet(u"border: none;\n"
+"background: white;")
+        self.show_password_confirm.setIcon(icon7)
         self.label_35 = QLabel(self.settingPage)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setGeometry(QRect(10, 30, 481, 41))
@@ -1269,10 +1260,10 @@ class Ui_MainWindow(object):
         self.submit_new_password.setText(QCoreApplication.translate("MainWindow", u"Valider le nouveau mot de passe", None))
         self.label_29.setText(QCoreApplication.translate("MainWindow", u"Nouveau Mot de passe", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"Confirmer le nouveau mot de passe", None))
-        self.show_password.setText("")
-        self.show_password_confirm.setText("")
         self.hide_password.setText("")
+        self.show_password.setText("")
         self.hide_password_confirm.setText("")
+        self.show_password_confirm.setText("")
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Changer Votre mot de Passe", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
