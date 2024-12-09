@@ -12,7 +12,8 @@ from matplotlib.figure import Figure
 from numpy.random import random_integers
 
 from controllers.article_controller import get_date_to_string
-from models.model_class import Article, Approvisionnement
+from controllers.commande_controller import get_date_time_to_string
+from models.model_class import Article, Approvisionnement, Journal
 from services.approvisionnement_service import get_appro_by_article_id
 from services.article_service import verify_article_by_id, get_article_by_id, insert_new_article, get_article_by_name, \
     update_article
@@ -21,6 +22,7 @@ from services.client_service import get_all_client, get_client_by_id, get_client
 from services.facture_service import get_total_facture_group_by_date, search_factures_by_date, get_total_for_facture, \
     get_facture_by_id, get_facture_by_date_enregistrement, get_all_facture, get_facture_by_state, \
     get_factures_by_date_and_state
+from services.journal_service import insert_new_journal
 from services.reliure_service import get_total_reliure_group_by_date, get_reliure_by_date, get_total_for_reliure, \
     get_reliure_by_date_and_state, get_reliure_by_client_name, get_exemplaire_reliure_today, \
     get_exemplaire_reliure_by_mounth
@@ -320,6 +322,13 @@ class AdminWindow(QMainWindow):
         self.reset_form()
         self.show_dialog_success()
 
+        journal = Journal()
+        journal.dateEnregistrement = get_date_time_to_string()
+        journal.typeAction = "insertion nouvel article"
+        journal.listeArticle = [f"{article.libelle}"]
+        journal.description = f"piece en stock {article.pieceEnStock}"
+        insert_new_journal(journal)
+
 
 
     def update_article(self):
@@ -393,6 +402,12 @@ class AdminWindow(QMainWindow):
         print("submit success")
         self.reset_form()
         self.show_dialog_success()
+        journal = Journal()
+        journal.dateEnregistrement = get_date_time_to_string()
+        journal.typeAction = "modificatin article"
+        journal.listeArticle = [f"{article.libelle}"]
+        journal.description = f"piece en stock {article.pieceEnStock}"
+        insert_new_journal(journal)
 
     def reset_form(self):
         self.ui.nbConteneur_form.clear()
