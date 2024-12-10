@@ -1,0 +1,116 @@
+{
+
+  "QMainWindow": [{
+		"title": "Irina Services"
+	}],
+
+	"QSettings": [{
+		"ThemeSettings": [{
+			"CustomTheme": []
+		}],
+		"AppSettings": {
+			"OrganizationName": "Irina Service",
+			"ApplicationName": "Store-Management",
+			"OrganizationDomain": "Irina Service"
+		}
+	}],
+
+	"QPushButtonGroup": [{
+		"Buttons": [
+			"formulaireBtn",
+			"dashboardBtn",
+			"clientBtn",
+			"reliureBtn",
+			"barcodeBtn",
+			"changePasswordBtn"
+		],
+		"Style": [{
+			"Active": "background-color: #fefeff;border-radius: 10px;padding: 10px;",
+			"NotActive": "background-color: rgb(47, 109, 255); border-radius: 10px;padding: 10px;"
+		}]
+
+	}],
+
+  "QCustomSlideMenu": [
+      {
+			"name": "profile_container",
+			"defaultSize": [{
+				"width": 140,
+				"height": "auto"
+			}],
+			"collapsedSize": [{
+				"width": 0,
+				"height": "parent"
+			}],
+			"expandedSize": [{
+				"width": 140,
+				"height": "parent"
+			}],
+			"toggleButton": [{
+				"buttonName": "accountBtn_2",
+
+				"style": [{
+					"whenMenuIsCollapsed": [
+						"border: 1px solid transparent; border-radius: 10px;"
+					],
+					"whenMenuIsExpanded": [
+						"border: 1px solid #c4e4db; border-radius: 10px; padding: 4px 7px;"
+					]
+				}]
+			}],
+			"menuTransitionAnimation": [{
+				"animationDuration": 300,
+				"animationEasingCurve": "Linear",
+				"whenCollapsing": [{
+					"animationDuration": 300,
+					"animationEasingCurve": "Linear"
+				}],
+				"whenExpanding": [{
+					"animationDuration": 300,
+					"animationEasingCurve": "Linear"
+				}]
+			}]
+		}
+
+  ],
+
+	"QCustomQStackedWidget":[
+		{
+			"name":"mainNavigationScreen",
+			"transitionAnimation":[
+				{
+					"fade":[
+						{
+							"active": true,
+							"duration":500,
+							"easingCurve": "OutBack"
+						}
+					],
+					"slide":[
+						{
+							"active":true,
+							"duration": 500,
+							"direction": "horizontal",
+							"easingCurve": "OutBack"
+						}
+					]
+				}
+			],
+			"navigation":[
+				{
+					"navigationButtons":[
+						{
+							"formulaireBtn": "ajout_page",
+							"dashboardBtn": "dashboardPage",
+							"reliureBtn": "clientPage",
+							"clientBtn": "client_listPage",
+							"barcodeBtn": "barcodePage",
+							"changePasswordBtn" : "settingPage"
+						}
+					]
+				}
+			]
+
+		}
+	]
+}

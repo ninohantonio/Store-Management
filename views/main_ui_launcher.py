@@ -158,8 +158,14 @@ class MainWindow(QMainWindow):
         # Effacer le texte pour préparer le prochain scan
         self.ui.searchField.clear()
         print(f"Article existe = {verify_article_by_id(search_value)}")
-        self.add_new_card_commande(search_value) if verify_article_by_id(
-            search_value) else self.show_article_not_found()
+        if verify_article_by_id(search_value):
+            article = get_article_by_id(search_value)
+            if article.pieceEnStock <= 0 :
+                self.show_alert_message("Le stock pour cet article est epuisé, veuillez approvisionner!")
+            else:
+                self.add_new_card_commande(search_value)
+        else:
+            self.show_article_not_found()
 
     def add_new_card_commande(self, numero):
         if numero in self.commande_item:
