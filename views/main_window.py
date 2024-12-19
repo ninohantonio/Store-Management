@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowiHqwpb.ui'
+## Form generated from reading UI file 'main_windowAMrrZO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -528,7 +528,7 @@ class Ui_MainWindow(object):
 
         self.gridLayoutWidget = QWidget(self.homePage)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(20, 140, 761, 431))
+        self.gridLayoutWidget.setGeometry(QRect(20, 140, 891, 431))
         self.cardContainer = QGridLayout(self.gridLayoutWidget)
         self.cardContainer.setObjectName(u"cardContainer")
         self.cardContainer.setContentsMargins(0, 0, 0, 0)

@@ -57,6 +57,7 @@ class AdminWindow(QMainWindow):
         self.ui.reliure_mois.setText("0 Ar")
         self.ui.label_32.setHidden(True)
 
+
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
         self.ui.radioButton.clicked.connect(self.manage_radio_checked)
@@ -116,6 +117,9 @@ class AdminWindow(QMainWindow):
 
         self.ui.reliureDate.setDate(datetime.now().date())
 
+        #REGLE DE MODIFICATION
+        self.set_default_form_add()
+
         self.ui.chartContainer.addWidget(self.canvas)
         self.ui.reliureCourbe.addWidget(self.reliure_canvas)
         self.load_reliure_line_chart()
@@ -167,6 +171,30 @@ class AdminWindow(QMainWindow):
             self.ui.email_confirmation.clear()
             self.ui.code_confirmation.clear()
 
+    def set_default_form_add(self):
+        self.ui.modification_F1.setHidden(True)
+        self.ui.modification_F2.setHidden(True)
+        self.ui.conteneur_modification.clear()
+        self.ui.piece_modification.clear()
+        self.ui.label_24.setHidden(True)
+        self.ui.type_modification.setHidden(True)
+
+        self.ui.frame_12.setHidden(False)
+        self.ui.frame_13.setHidden(False)
+        self.ui.frame_7.setHidden(False)
+        self.ui.frame_5.setHidden(False)
+        self.ui.frame_11.setHidden(False)
+
+
+    def set_modification_form_stock(self):
+        self.ui.modification_F1.setHidden(False)
+        self.ui.modification_F2.setHidden(False)
+        self.ui.label_24.setHidden(True)
+        self.ui.type_modification.setHidden(True)
+        self.ui.piece_modification.setValue(0)
+        self.ui.conteneur_modification.setValue(0)
+        return
+
 
     def manage_search_value_input(self):
         search_value = self.ui.search_field.text()
@@ -193,8 +221,10 @@ class AdminWindow(QMainWindow):
             self.ui.appro_detail.setVisible(True)
             self.ui.submitBtn.clicked.disconnect()
             self.ui.submitBtn.clicked.connect(self.update_article)
+            self.set_modification_form_stock()
         else:
             self.show_message_to_add()
+            self.set_default_form_add()
             self.ui.appro_detail.setVisible(False)
             self.ui.submitBtn.clicked.disconnect()
             self.ui.submitBtn.clicked.connect(self.insert_new_article)
@@ -373,17 +403,19 @@ class AdminWindow(QMainWindow):
         nbBoite = 0
         pieceParBoite = 0
         pieceEnStock = 0
+        pieceAjout = self.ui.piece_modification.value()
+        pieceSupplement = int(self.ui.piece_detail.text()) - (int(self.ui.nbConteneur_detail.text()) * int(self.ui.pieceParConteneur_detail.text()))
         if self.ui.radioButton.isChecked():
-            nbPacket = int(self.ui.nbConteneur_form.text())
+            nbPacket = int(self.ui.nbConteneur_detail.text()) + int(self.ui.conteneur_modification.text())
             pieceParPaquet = int(self.ui.pieceParConteneur.text())
-            pieceEnStock = int(self.ui.pieceSupplement_form.text()) + (
-                    int(self.ui.nbConteneur_form.text()) * pieceParPaquet)
+            pieceEnStock = int(self.ui.piece_detail.text()) + int(self.ui.piece_modification.text()) + (
+                    int(self.ui.pieceParConteneur.text()) * int(self.ui.conteneur_modification.text()))
 
         else:
-            nbBoite = int(self.ui.nbConteneur_form.text())
+            nbBoite = int(self.ui.nbConteneur_detail.text()) + int(self.ui.conteneur_modification.text())
             pieceParBoite = int(self.ui.pieceParConteneur.text())
-            pieceEnStock = int(self.ui.pieceSupplement_form.text()) + (
-                    int(self.ui.nbConteneur_form.text()) * pieceParBoite)
+            pieceEnStock = int(self.ui.piece_detail.text()) + int(self.ui.piece_modification.text()) + (
+                    int(self.ui.pieceParConteneur.text()) * int(self.ui.conteneur_modification.text()))
 
         article = Article(
             libelle=self.ui.libelle_form.text(),
@@ -406,10 +438,11 @@ class AdminWindow(QMainWindow):
         journal.dateEnregistrement = get_date_time_to_string()
         journal.typeAction = "modificatin article"
         journal.listeArticle = [f"{article.libelle}"]
-        journal.description = f"piece en stock {article.pieceEnStock}"
+        journal.description = f"piece en stock {article.pieceEnStock}, ajout de {nbPacket + nbBoite} {article.typeConteneur} et {pieceAjout} pieces"
         insert_new_journal(journal)
 
     def reset_form(self):
+        self.set_default_form_add()
         self.ui.nbConteneur_form.clear()
         self.ui.description_form.clear()
         self.ui.prix_form.clear()
@@ -429,6 +462,7 @@ class AdminWindow(QMainWindow):
         print("reset")
 
     def reset_if_not_exist(self, search_value):
+        self.set_default_form_add()
         self.ui.nbConteneur_form.clear()
         self.ui.description_form.clear()
         self.ui.prix_form.clear()
@@ -481,6 +515,7 @@ class AdminWindow(QMainWindow):
         numero = self.ui.search_view.item(row, 1).text()
         self.ui.appro_detail.setVisible(True)
         self.show_detail_article(numero)
+        self.set_modification_form_stock()
         print(f"numero = {numero}")
         return
 

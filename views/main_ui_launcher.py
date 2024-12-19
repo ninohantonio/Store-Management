@@ -62,6 +62,10 @@ class MainWindow(QMainWindow):
             self.ui.searchField.setFocus()
             pass
 
+        self.ui.aboutBtn.setHidden(True)
+        self.ui.helpBtn.setHidden(True)
+        self.ui.settingBtn.setHidden(True)
+
         self.ui.mainNavigationScreen.currentChanged.connect(self.manage_navigation)
 
         self.ui.valider_commandeBtn.clicked.connect(self.handle_submit_commande_validation)

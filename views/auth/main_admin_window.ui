@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1365</width>
+    <width>1370</width>
     <height>697</height>
    </rect>
   </property>
@@ -849,6 +849,37 @@ QLineEdit, QTextEdit{
                                <string>Conteneur a ajouter</string>
                               </property>
                              </widget>
+                             <widget class="QFrame" name="modification_F1">
+                              <property name="geometry">
+                               <rect>
+                                <x>0</x>
+                                <y>0</y>
+                                <width>237</width>
+                                <height>103</height>
+                               </rect>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::Shape::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Shadow::Raised</enum>
+                              </property>
+                              <widget class="QSpinBox" name="conteneur_modification">
+                               <property name="geometry">
+                                <rect>
+                                 <x>10</x>
+                                 <y>40</y>
+                                 <width>201</width>
+                                 <height>31</height>
+                                </rect>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">padding-left: 10px;
+border-radius: 10px;
+border: 1px solid black;</string>
+                               </property>
+                              </widget>
+                             </widget>
                             </widget>
                            </item>
                            <item>
@@ -889,6 +920,37 @@ QLineEdit, QTextEdit{
                               <property name="placeholderText">
                                <string>Piece supplementaire a ajouter</string>
                               </property>
+                             </widget>
+                             <widget class="QFrame" name="modification_F2">
+                              <property name="geometry">
+                               <rect>
+                                <x>0</x>
+                                <y>0</y>
+                                <width>237</width>
+                                <height>103</height>
+                               </rect>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::Shape::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Shadow::Raised</enum>
+                              </property>
+                              <widget class="QSpinBox" name="piece_modification">
+                               <property name="geometry">
+                                <rect>
+                                 <x>10</x>
+                                 <y>40</y>
+                                 <width>201</width>
+                                 <height>31</height>
+                                </rect>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">padding-left: 10px;
+border-radius: 10px;
+border: 1px solid black;</string>
+                               </property>
+                              </widget>
                              </widget>
                             </widget>
                            </item>
@@ -975,6 +1037,49 @@ QLineEdit, QTextEdit{
                        </property>
                        <property name="text">
                         <string>Vider les champs</string>
+                       </property>
+                      </widget>
+                      <widget class="QComboBox" name="type_modification">
+                       <property name="geometry">
+                        <rect>
+                         <x>260</x>
+                         <y>10</y>
+                         <width>151</width>
+                         <height>31</height>
+                        </rect>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">padding-left: 7px;
+border: 2px solid rgb(0, 85, 255);
+border-radius: 10px;</string>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>Etat de Stock</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Descriptifs</string>
+                        </property>
+                       </item>
+                      </widget>
+                      <widget class="QLabel" name="label_24">
+                       <property name="geometry">
+                        <rect>
+                         <x>140</x>
+                         <y>10</y>
+                         <width>111</width>
+                         <height>31</height>
+                        </rect>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Modification sur :</string>
                        </property>
                       </widget>
                      </widget>

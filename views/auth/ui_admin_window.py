@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_admin_windowwTGMXS.ui'
+## Form generated from reading UI file 'main_admin_windowkgfXRh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -18,8 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
     QFrame, QHBoxLayout, QHeaderView, QLabel,
     QLineEdit, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem,
-    QTextEdit, QVBoxLayout, QWidget)
+    QSizePolicy, QSpacerItem, QSpinBox, QTableWidget,
+    QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
 
 from Custom_Widgets.QCustomQStackedWidget import QCustomQStackedWidget
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1365, 697)
+        MainWindow.resize(1370, 697)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"QFrame, QWidget{\n"
@@ -446,6 +446,17 @@ class Ui_MainWindow(object):
         self.nbConteneur_form = QLineEdit(self.frame_12)
         self.nbConteneur_form.setObjectName(u"nbConteneur_form")
         self.nbConteneur_form.setGeometry(QRect(10, 40, 201, 31))
+        self.modification_F1 = QFrame(self.frame_12)
+        self.modification_F1.setObjectName(u"modification_F1")
+        self.modification_F1.setGeometry(QRect(0, 0, 237, 103))
+        self.modification_F1.setFrameShape(QFrame.Shape.StyledPanel)
+        self.modification_F1.setFrameShadow(QFrame.Shadow.Raised)
+        self.conteneur_modification = QSpinBox(self.modification_F1)
+        self.conteneur_modification.setObjectName(u"conteneur_modification")
+        self.conteneur_modification.setGeometry(QRect(10, 40, 201, 31))
+        self.conteneur_modification.setStyleSheet(u"padding-left: 10px;\n"
+"border-radius: 10px;\n"
+"border: 1px solid black;")
 
         self.verticalLayout_7.addWidget(self.frame_12)
 
@@ -460,6 +471,17 @@ class Ui_MainWindow(object):
         self.pieceSupplement_form = QLineEdit(self.frame_13)
         self.pieceSupplement_form.setObjectName(u"pieceSupplement_form")
         self.pieceSupplement_form.setGeometry(QRect(10, 40, 201, 31))
+        self.modification_F2 = QFrame(self.frame_13)
+        self.modification_F2.setObjectName(u"modification_F2")
+        self.modification_F2.setGeometry(QRect(0, 0, 237, 103))
+        self.modification_F2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.modification_F2.setFrameShadow(QFrame.Shadow.Raised)
+        self.piece_modification = QSpinBox(self.modification_F2)
+        self.piece_modification.setObjectName(u"piece_modification")
+        self.piece_modification.setGeometry(QRect(10, 40, 201, 31))
+        self.piece_modification.setStyleSheet(u"padding-left: 10px;\n"
+"border-radius: 10px;\n"
+"border: 1px solid black;")
 
         self.verticalLayout_7.addWidget(self.frame_13)
 
@@ -496,6 +518,20 @@ class Ui_MainWindow(object):
         self.resetBtn.setObjectName(u"resetBtn")
         self.resetBtn.setGeometry(QRect(290, 530, 221, 41))
         self.resetBtn.setFont(font2)
+        self.type_modification = QComboBox(self.formulaire1)
+        self.type_modification.addItem("")
+        self.type_modification.addItem("")
+        self.type_modification.setObjectName(u"type_modification")
+        self.type_modification.setGeometry(QRect(260, 10, 151, 31))
+        self.type_modification.setStyleSheet(u"padding-left: 7px;\n"
+"border: 2px solid rgb(0, 85, 255);\n"
+"border-radius: 10px;")
+        self.label_24 = QLabel(self.formulaire1)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setGeometry(QRect(140, 10, 111, 31))
+        font3 = QFont()
+        font3.setPointSize(10)
+        self.label_24.setFont(font3)
 
         self.horizontalLayout_7.addWidget(self.formulaire1)
 
@@ -521,10 +557,10 @@ class Ui_MainWindow(object):
         self.prixUnitaire_detail.setObjectName(u"prixUnitaire_detail")
         self.prixUnitaire_detail.setEnabled(False)
         self.prixUnitaire_detail.setGeometry(QRect(10, 40, 201, 31))
-        font3 = QFont()
-        font3.setFamilies([u"Arial"])
-        font3.setBold(True)
-        self.prixUnitaire_detail.setFont(font3)
+        font4 = QFont()
+        font4.setFamilies([u"Arial"])
+        font4.setBold(True)
+        self.prixUnitaire_detail.setFont(font4)
         self.frame_16 = QFrame(self.frame_14)
         self.frame_16.setObjectName(u"frame_16")
         self.frame_16.setGeometry(QRect(280, 140, 231, 101))
@@ -537,7 +573,7 @@ class Ui_MainWindow(object):
         self.pieceParConteneur_detail.setObjectName(u"pieceParConteneur_detail")
         self.pieceParConteneur_detail.setEnabled(False)
         self.pieceParConteneur_detail.setGeometry(QRect(10, 40, 201, 31))
-        self.pieceParConteneur_detail.setFont(font3)
+        self.pieceParConteneur_detail.setFont(font4)
         self.frame_17 = QFrame(self.frame_14)
         self.frame_17.setObjectName(u"frame_17")
         self.frame_17.setGeometry(QRect(10, 250, 261, 101))
@@ -550,7 +586,7 @@ class Ui_MainWindow(object):
         self.conteneur_detail.setObjectName(u"conteneur_detail")
         self.conteneur_detail.setEnabled(False)
         self.conteneur_detail.setGeometry(QRect(10, 40, 201, 31))
-        self.conteneur_detail.setFont(font3)
+        self.conteneur_detail.setFont(font4)
         self.frame_18 = QFrame(self.frame_14)
         self.frame_18.setObjectName(u"frame_18")
         self.frame_18.setGeometry(QRect(10, 360, 261, 101))
@@ -563,7 +599,7 @@ class Ui_MainWindow(object):
         self.piece_detail.setObjectName(u"piece_detail")
         self.piece_detail.setEnabled(False)
         self.piece_detail.setGeometry(QRect(10, 40, 201, 31))
-        self.piece_detail.setFont(font3)
+        self.piece_detail.setFont(font4)
         self.frame_19 = QFrame(self.frame_14)
         self.frame_19.setObjectName(u"frame_19")
         self.frame_19.setGeometry(QRect(280, 250, 231, 101))
@@ -576,7 +612,7 @@ class Ui_MainWindow(object):
         self.nbConteneur_detail.setObjectName(u"nbConteneur_detail")
         self.nbConteneur_detail.setEnabled(False)
         self.nbConteneur_detail.setGeometry(QRect(10, 40, 201, 31))
-        self.nbConteneur_detail.setFont(font3)
+        self.nbConteneur_detail.setFont(font4)
         self.frame_20 = QFrame(self.frame_14)
         self.frame_20.setObjectName(u"frame_20")
         self.frame_20.setGeometry(QRect(280, 360, 261, 101))
@@ -589,7 +625,7 @@ class Ui_MainWindow(object):
         self.dateEntrer_detail.setObjectName(u"dateEntrer_detail")
         self.dateEntrer_detail.setEnabled(False)
         self.dateEntrer_detail.setGeometry(QRect(10, 40, 201, 31))
-        self.dateEntrer_detail.setFont(font3)
+        self.dateEntrer_detail.setFont(font4)
         self.frame_21 = QFrame(self.frame_14)
         self.frame_21.setObjectName(u"frame_21")
         self.frame_21.setGeometry(QRect(10, 50, 491, 80))
@@ -598,11 +634,11 @@ class Ui_MainWindow(object):
         self.article_name = QLabel(self.frame_21)
         self.article_name.setObjectName(u"article_name")
         self.article_name.setGeometry(QRect(110, 30, 301, 20))
-        font4 = QFont()
-        font4.setFamilies([u"Arial"])
-        font4.setPointSize(13)
-        font4.setBold(True)
-        self.article_name.setFont(font4)
+        font5 = QFont()
+        font5.setFamilies([u"Arial"])
+        font5.setPointSize(13)
+        font5.setBold(True)
+        self.article_name.setFont(font5)
         self.article_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.frame_22 = QFrame(self.frame_14)
         self.frame_22.setObjectName(u"frame_22")
@@ -633,9 +669,9 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.dashboardPage)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(10, 20, 521, 41))
-        font5 = QFont()
-        font5.setPointSize(15)
-        self.label.setFont(font5)
+        font6 = QFont()
+        font6.setPointSize(15)
+        self.label.setFont(font6)
         self.label.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "color: white;\n"
 "padding-left: 10px;")
@@ -655,9 +691,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.label_21 = QLabel(self.frame_23)
         self.label_21.setObjectName(u"label_21")
-        font6 = QFont()
-        font6.setBold(True)
-        self.label_21.setFont(font6)
+        font7 = QFont()
+        font7.setBold(True)
+        self.label_21.setFont(font7)
         self.label_21.setStyleSheet(u"background-color: transparent;\n"
 "color: #dfdfdf;")
         self.label_21.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -666,11 +702,11 @@ class Ui_MainWindow(object):
 
         self.vente_jour = QLabel(self.frame_23)
         self.vente_jour.setObjectName(u"vente_jour")
-        font7 = QFont()
-        font7.setFamilies([u"Nirmala UI Semilight"])
-        font7.setPointSize(11)
-        font7.setBold(True)
-        self.vente_jour.setFont(font7)
+        font8 = QFont()
+        font8.setFamilies([u"Nirmala UI Semilight"])
+        font8.setPointSize(11)
+        font8.setBold(True)
+        self.vente_jour.setFont(font8)
         self.vente_jour.setStyleSheet(u"color: #fefeff;\n"
 "background: transparent;")
         self.vente_jour.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -695,7 +731,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.label_30 = QLabel(self.frame_26)
         self.label_30.setObjectName(u"label_30")
-        self.label_30.setFont(font6)
+        self.label_30.setFont(font7)
         self.label_30.setStyleSheet(u"background-color: transparent;\n"
 "color: #dedede;")
         self.label_30.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -704,7 +740,7 @@ class Ui_MainWindow(object):
 
         self.vente_mois = QLabel(self.frame_26)
         self.vente_mois.setObjectName(u"vente_mois")
-        self.vente_mois.setFont(font7)
+        self.vente_mois.setFont(font8)
         self.vente_mois.setStyleSheet(u"color: #fefeff;\n"
 "background: transparent;")
         self.vente_mois.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -730,9 +766,7 @@ class Ui_MainWindow(object):
         self.label_33 = QLabel(self.frame_27)
         self.label_33.setObjectName(u"label_33")
         self.label_33.setGeometry(QRect(10, 10, 171, 21))
-        font8 = QFont()
-        font8.setPointSize(10)
-        self.label_33.setFont(font8)
+        self.label_33.setFont(font3)
         self.pushButton_2 = QPushButton(self.frame_27)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(320, 10, 81, 24))
@@ -787,7 +821,7 @@ class Ui_MainWindow(object):
         self.label_22 = QLabel(self.clientPage)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setGeometry(QRect(10, 20, 521, 41))
-        self.label_22.setFont(font5)
+        self.label_22.setFont(font6)
         self.label_22.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "color: white;\n"
 "padding-left: 10px;")
@@ -924,7 +958,7 @@ class Ui_MainWindow(object):
         self.label_36 = QLabel(self.client_listPage)
         self.label_36.setObjectName(u"label_36")
         self.label_36.setGeometry(QRect(10, 10, 521, 41))
-        self.label_36.setFont(font5)
+        self.label_36.setFont(font6)
         self.label_36.setStyleSheet(u"background-color: rgb(0, 170, 255);\n"
 "color: white;\n"
 "padding-left: 10px;")
@@ -965,11 +999,11 @@ class Ui_MainWindow(object):
         self.label_25 = QLabel(self.confirmation_form)
         self.label_25.setObjectName(u"label_25")
         self.label_25.setGeometry(QRect(10, 6, 101, 20))
-        self.label_25.setFont(font8)
+        self.label_25.setFont(font3)
         self.label_28 = QLabel(self.confirmation_form)
         self.label_28.setObjectName(u"label_28")
         self.label_28.setGeometry(QRect(10, 86, 141, 20))
-        self.label_28.setFont(font8)
+        self.label_28.setFont(font3)
         self.send_code_confirmation = QPushButton(self.confirmation_form)
         self.send_code_confirmation.setObjectName(u"send_code_confirmation")
         self.send_code_confirmation.setGeometry(QRect(10, 170, 241, 31))
@@ -994,11 +1028,11 @@ class Ui_MainWindow(object):
         self.label_29 = QLabel(self.change_password_frame)
         self.label_29.setObjectName(u"label_29")
         self.label_29.setGeometry(QRect(20, 10, 171, 21))
-        self.label_29.setFont(font8)
+        self.label_29.setFont(font3)
         self.label_34 = QLabel(self.change_password_frame)
         self.label_34.setObjectName(u"label_34")
         self.label_34.setGeometry(QRect(20, 85, 221, 21))
-        self.label_34.setFont(font8)
+        self.label_34.setFont(font3)
         self.hide_password = QPushButton(self.change_password_frame)
         self.hide_password.setObjectName(u"hide_password")
         self.hide_password.setGeometry(QRect(220, 40, 21, 21))
@@ -1034,7 +1068,7 @@ class Ui_MainWindow(object):
         self.label_35 = QLabel(self.settingPage)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setGeometry(QRect(10, 30, 481, 41))
-        self.label_35.setFont(font5)
+        self.label_35.setFont(font6)
         self.label_35.setStyleSheet(u"background: rgb(0, 170, 255);\n"
 "padding-left: 10px;\n"
 "color: white;")
@@ -1184,6 +1218,10 @@ class Ui_MainWindow(object):
         self.description_form.setPlaceholderText(QCoreApplication.translate("MainWindow", u"description de l'article", None))
         self.submitBtn.setText(QCoreApplication.translate("MainWindow", u"Enregistrer modification", None))
         self.resetBtn.setText(QCoreApplication.translate("MainWindow", u"Vider les champs", None))
+        self.type_modification.setItemText(0, QCoreApplication.translate("MainWindow", u"Etat de Stock", None))
+        self.type_modification.setItemText(1, QCoreApplication.translate("MainWindow", u"Descriptifs", None))
+
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Modification sur :", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Prix Unitaire", None))
         self.prixUnitaire_detail.setText("")
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Nombre de piece dans un conteneur", None))
