@@ -658,19 +658,6 @@ QLineEdit{
                </property>
               </widget>
              </item>
-             <item>
-              <widget class="QLabel" name="appHeader">
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>Dashboard</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>

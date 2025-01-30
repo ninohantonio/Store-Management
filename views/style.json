@@ -30,8 +30,11 @@
 				"height": "parent"
 			}],
 			"toggleButton": [{
-				"buttonName": "menuBtn"
-
+				"buttonName": "menuBtn",
+				"icons": [{
+							"whenMenuIsCollapsed": ":/icons/right.png",
+							"whenMenuIsExpanded": ":/icons/left.png"
+				}]
 			}],
 			"menuTransitionAnimation": [{
 				"animationDuration": 300,
